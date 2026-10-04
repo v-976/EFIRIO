@@ -65,9 +65,9 @@
       "historyUrl": "https://www.likefm.ru/playlist",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
-      "confidence": "confirmed-official",
-      "notes": "Official playlist exposes current item and timed history. Regional selection exists; identify SPb request before promotion."
+      "regionalScope": "Saint Petersburg 98.1 is officially selectable, but returned playlist scope is not yet proven regional",
+      "confidence": "confirmed-official-unresolved-regional",
+      "notes": "Official Like FM site explicitly lists Saint Petersburg 98.1 FM and exposes current item plus minute-level timed playlist/history. However the same playlist surface is rendered while many cities are selectable and no verified SPb request parameter/cookie/API has yet been identified. Do not claim these times as Saint Petersburg-specific until selector semantics are captured."
     },
     {
       "stationId": "dfm-spb",
@@ -131,9 +131,9 @@
       "historyUrl": "https://www.energyfm.ru/playlist",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city handling needs validation",
-      "confidence": "confirmed-official",
-      "notes": "Official playlist exposes previous tracks with clock times and can contain non-music broadcast items. Resolve current 2026 regional semantics before promotion."
+      "regionalScope": "official network site lists regional frequencies; playlist regional scope remains unproven",
+      "confidence": "confirmed-official-unresolved-regional",
+      "notes": "Official ENERGY site provides a date/time song lookup and lists its regional broadcast network. The public playlist/lookup is clearly official and time-aware, but current evidence does not prove that its returned history follows a selected Saint Petersburg feed rather than the central/federal programme. Keep staged until regional request semantics are verified."
     },
     {
       "stationId": "monte-carlo-spb",
