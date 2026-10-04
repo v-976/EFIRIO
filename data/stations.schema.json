@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://efirio.local/schemas/stations.schema.json",
+  "title": "EFIRIO Station Catalogue",
+  "type": "object",
+  "required": ["schemaVersion", "updatedAt", "countries"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "updatedAt": { "type": ["string", "null"], "format": "date-time" },
+    "countries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/country" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "country": {
+      "type": "object",
+      "required": ["code", "name", "regions"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "regions": { "type": "array", "items": { "$ref": "#/$defs/region" } }
+      },
+      "additionalProperties": false
+    },
+    "region": {
+      "type": "object",
+      "required": ["id", "name", "cities"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "cities": { "type": "array", "items": { "$ref": "#/$defs/city" } }
+      },
+      "additionalProperties": false
+    },
+    "city": {
+      "type": "object",
+      "required": ["id", "name", "stations"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "stations": { "type": "array", "items": { "$ref": "#/$defs/station" } }
+      },
+      "additionalProperties": false
+    },
+    "station": {
+      "type": "object",
+      "required": ["id", "name", "frequencyMHz", "website", "streams", "metadata", "logo", "status", "verification"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "frequencyMHz": { "type": ["number", "null"], "minimum": 65, "maximum": 120 },
+        "website": { "type": ["string", "null"], "format": "uri" },
+        "streams": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/stream" }
+        },
+        "metadata": { "$ref": "#/$defs/metadata" },
+        "logo": { "type": ["string", "null"] },
+        "status": { "enum": ["active", "temporarily-unavailable", "inactive", "research"] },
+        "verification": { "$ref": "#/$defs/verification" }
+      },
+      "additionalProperties": false
+    },
+    "stream": {
+      "type": "object",
+      "required": ["url", "role", "format", "verifiedAt", "availableFromFinland"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "role": { "enum": ["primary", "fallback"] },
+        "format": { "enum": ["hls", "aac", "mp3", "ogg", "unknown"] },
+        "verifiedAt": { "type": ["string", "null"], "format": "date-time" },
+        "availableFromFinland": { "type": ["boolean", "null"] },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["type", "url", "historyAvailable"],
+      "properties": {
+        "type": { "enum": ["none", "icy", "json", "html", "hls", "unknown"] },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "historyAvailable": { "type": ["boolean", "null"] },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": ["stationVerifiedAt", "frequencyVerifiedAt", "sources"],
+      "properties": {
+        "stationVerifiedAt": { "type": ["string", "null"], "format": "date-time" },
+        "frequencyVerifiedAt": { "type": ["string", "null"], "format": "date-time" },
+        "sources": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
