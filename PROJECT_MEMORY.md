@@ -1,0 +1,117 @@
+# PROJECT_MEMORY — EFIRIO
+
+This file records durable project decisions and current state so development can continue across computers and AI sessions.
+
+## 2026-10-04 — Project start
+
+### Brand
+
+Selected product name:
+
+**EFIRIO**
+
+Selected tagline:
+
+**The radio of your city**
+
+Rejected/less suitable working names included Radiola, Efirium, EFIR, Radio Kefir, RadioMir, Volna and RadiGo due to existing use, radio/software conflicts or weaker brand uniqueness.
+
+### Logo direction
+
+Selected visual direction:
+
+**Modern Gradient E-Signal**
+
+A stylized letter E with broadcast arcs.
+
+Final preference:
+
+- light/high-visibility gradient
+- cyan → blue → purple → magenta
+- must remain readable on dark UI
+- monochrome variants required
+- geometry should survive 16–24 px rendering
+
+### Product definition
+
+EFIRIO is not intended to be a generic directory of thousands of random internet streams.
+
+Its differentiator is:
+
+**country → region → city → actual radio stations of that city**
+
+First Alpha city:
+
+**Saint Petersburg, Russia**
+
+### Initial platforms
+
+Two clients in one repository:
+
+1. PWA
+2. Native Android APK
+
+Future possibilities, not Alpha requirements:
+
+- native iOS
+- App Store
+- EU alternative iOS stores
+- Android Auto
+- CarPlay
+
+### Key Alpha features
+
+- city station list
+- FM frequency
+- station logo
+- Play/Pause
+- station switching
+- favourites
+- last station
+- stream recovery
+- primary/fallback stream
+- Now Playing
+- Artist
+- Title
+- track timestamp
+- listening history
+- favourite tracks
+
+### Privacy / distribution principles
+
+- no advertising
+- no account required for basic use
+- local-first favourites/history
+- no unnecessary data collection
+- prefer official public streams
+- no own radio relay unless necessary
+- PWA must remain independent from app stores
+- direct Android APK distribution allowed
+
+### Repository
+
+GitHub repository created:
+
+`v-976/EFIRIO`
+
+Default branch:
+
+`main`
+
+At bootstrap the repository contained only a minimal `README.md`.
+
+### Development workflow
+
+Dynamic Lead → specialist agents → QA → build model.
+
+Agent count is task-dependent, not fixed.
+
+### Next technical milestone
+
+1. choose web/PWA and Android technology stack
+2. formalize shared station catalogue schema
+3. build verified Saint Petersburg station dataset
+4. create minimal PWA playback proof
+5. create minimal Android playback proof
+6. add metadata/history layer
+7. package EFIRIO Alpha 0.1
