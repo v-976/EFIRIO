@@ -163,3 +163,25 @@ A station is not `active` merely because an aggregator lists it. Current existen
 3. create PWA playback proof using a verified entry
 4. create Android Media3 playback proof using the same entry
 5. test playback from Finland and real iPhone behaviour
+
+## 2026-10-04 — Now Playing semantics and station time zones
+
+EFIRIO Now Playing represents an **air item**, not only a music track. Normalized item kinds are `music`, `program`, `talk`, `jingle`, and `unknown`. Stations such as Humor FM can publish timed metadata for spoken/program segments as well as songs, and EFIRIO must preserve those items rather than leaving the previous song displayed.
+
+Timestamp rules:
+
+- Preserve a source-provided exact start timestamp as `startedAt` whenever available.
+- If the source provides no exact start time, record `detectedAt` when EFIRIO first observes the item change; this is approximate and must not be presented as an exact source time.
+- Metadata/history time belongs to the station/city time zone, not the listener device time zone.
+- Each city/station must ultimately carry an IANA time-zone identifier; do not implement time zones as fixed arithmetic offsets.
+- Saint Petersburg uses `Europe/Moscow` (MSK, UTC+3). Russia currently does not use seasonal clock changes, so Saint Petersburg remains UTC+3 throughout the year even when Finland changes between winter and summer time.
+- If a Saint Petersburg metadata source returns a local timestamp without an explicit zone/offset, interpret it in `Europe/Moscow`, not in the browser/device zone.
+- If an API supplies an explicit UTC offset or absolute timestamp, preserve that instant and format it for the station time zone when displaying station-air history.
+
+Metadata enrichment policy:
+
+- Prefer official station/API sources.
+- Prefer structured JSON/API metadata over HTML scraping when both are available.
+- Do not invent missing timestamps or metadata.
+- Distinguish exact source time, EFIRIO detection time, and no metadata.
+- For regional networks, verify that metadata corresponds to the Saint Petersburg feed rather than silently substituting Moscow/national-air metadata.
