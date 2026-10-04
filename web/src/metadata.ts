@@ -13,6 +13,12 @@ export type NormalizedTrack = {
   source: string;
 };
 
+export type MetadataProbeResult = {
+  ok: boolean;
+  track: NormalizedTrack | null;
+  error: string | null;
+};
+
 const POLL_MS = 15000;
 
 function text(value: unknown): string {
@@ -78,6 +84,27 @@ export async function fetchNowPlaying(metadata: MetadataConfig): Promise<Normali
   if (!response.ok) throw new Error(`METADATA_HTTP_${response.status}`);
   if (metadata.type === 'json') return normalizeJson(await response.json(), metadata.url);
   return normalizeHtml(await response.text(), metadata.url);
+}
+
+export async function probeMetadata(metadata: MetadataConfig, timeoutMs = 8000): Promise<MetadataProbeResult> {
+  if (!metadata.url) return { ok: false, track: null, error: 'NO_METADATA_URL' };
+  if (!['json', 'html'].includes(metadata.type)) return { ok: false, track: null, error: `UNSUPPORTED_${metadata.type.toUpperCase()}` };
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(metadata.url, { cache: 'no-store', signal: controller.signal });
+    if (!response.ok) return { ok: false, track: null, error: `HTTP_${response.status}` };
+    const track = metadata.type === 'json'
+      ? normalizeJson(await response.json(), metadata.url)
+      : normalizeHtml(await response.text(), metadata.url);
+    return track ? { ok: true, track, error: null } : { ok: false, track: null, error: 'NO_TRACK_PARSED' };
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') return { ok: false, track: null, error: 'TIMEOUT' };
+    if (error instanceof TypeError) return { ok: false, track: null, error: 'FETCH_OR_CORS' };
+    return { ok: false, track: null, error: error instanceof Error ? error.name : 'METADATA_ERROR' };
+  } finally {
+    window.clearTimeout(timer);
+  }
 }
 
 export function watchNowPlaying(
