@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04T16:53:00Z",
+  "updatedAt": "2026-10-04T17:20:08.554Z",
   "countries": [
     {
       "code": "RU",
@@ -14,48 +14,1273 @@
               "id": "saint-petersburg",
               "name": "Saint Petersburg",
               "stations": [
-                {"id":"dorozhnoe-radio-spb","name":"Дорожное радио","frequencyMHz":87.5,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending."}},
-                {"id":"retro-fm-spb","name":"Ретро FM","frequencyMHz":88.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending."}},
-                {"id":"avtoradio-spb","name":"Авторадио","frequencyMHz":88.4,"website":"https://www.avtoradio.ru/","streams":[],"metadata":{"type":"html","url":"https://www.avtoradio.ru/","historyAvailable":true,"notes":"Official site exposes current track and playlist/history; stream enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal","https://www.avtoradio.ru/"],"notes":"Official GPM source confirmed."}},
-                {"id":"humor-fm-spb","name":"Юмор FM","frequencyMHz":88.9,"website":"https://www.humorfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Official GPM source confirmed."}},
-                {"id":"vesti-fm-spb","name":"Вести FM","frequencyMHz":89.3,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-zenit-spb","name":"Радио Зенит","frequencyMHz":89.7,"website":"https://radiozenit.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Frequency confirmed in initial official-source pass."}},
-                {"id":"radio-hermitage-spb","name":"Радио Эрмитаж","frequencyMHz":90.1,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-vanya-spb","name":"Радио Ваня","frequencyMHz":90.6,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"novoe-radio-spb","name":"Новое Радио","frequencyMHz":91.1,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"sputnik-spb","name":"Radio Sputnik","frequencyMHz":91.5,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"kp-radio-spb","name":"Радио Комсомольская правда","frequencyMHz":92.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"hit-fm-spb","name":"Хит FM","frequencyMHz":92.4,"website":"https://hitfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://hitfm.ru/news/novyj-hit-sankt-peterburga-torzhestvennyj-start-veshaniya"],"notes":"Official Hit FM source confirmed."}},
-                {"id":"radio-vera-spb","name":"Радио Вера","frequencyMHz":92.9,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-gordost-spb","name":"Радио Гордость","frequencyMHz":93.3,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-mir-spb","name":"Радио Мир","frequencyMHz":93.7,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-zvezda-spb","name":"Радио Звезда","frequencyMHz":94.1,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"relax-fm-spb","name":"Relax FM","frequencyMHz":94.5,"website":"https://relax-fm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/station/branch/41/radio/37"],"notes":"Official GPM source confirmed."}},
-                {"id":"energy-spb","name":"Радио ENERGY","frequencyMHz":95.0,"website":"https://www.energyfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Official GPM source confirmed."}},
-                {"id":"studio-21-spb","name":"STUDIO 21","frequencyMHz":95.5,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"comedy-radio-spb","name":"Comedy Radio","frequencyMHz":95.9,"website":"https://comedy-radio.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Official GPM source confirmed."}},
-                {"id":"radio-jazz-spb","name":"Радио JAZZ","frequencyMHz":96.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-dacha-spb","name":"Радио Дача","frequencyMHz":97.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-orpheus-spb","name":"Радио Орфей","frequencyMHz":97.6,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"like-fm-spb","name":"Like FM","frequencyMHz":98.1,"website":"https://www.likefm.ru/","streams":[],"metadata":{"type":"html","url":"https://www.likefm.ru/playlist","historyAvailable":true,"notes":"Official site exposes current track and timestamped playlist; direct stream validation pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/news-page/uid/44032","https://www.likefm.ru/"],"notes":"Official sources confirm 98.1 FM; overrides stale 104.8 listings."}},
-                {"id":"royal-radio-spb","name":"Royal Radio","frequencyMHz":98.6,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-russia-spb","name":"Радио России — Санкт-Петербург","frequencyMHz":99.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"europa-plus-spb","name":"Европа Плюс","frequencyMHz":100.5,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"piter-fm-spb","name":"Питер FM","frequencyMHz":100.9,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"eldoradio-spb","name":"Эльдорадио","frequencyMHz":101.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"rbc-radio-spb","name":"Радио РБК","frequencyMHz":102.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://radiopedia.fandom.com/ru/wiki/Частотные_планы_радиостанций_в_городах_России/Санкт-Петербург"],"notes":"Current sources identify 102.0 as Радио РБК; older listings showing Rock FM are stale."}},
-                {"id":"radio-metro-spb","name":"Radio METRO","frequencyMHz":102.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"maximum-spb","name":"Радио MAXIMUM","frequencyMHz":102.8,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"dfm-spb","name":"DFM","frequencyMHz":103.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"detskoe-radio-spb","name":"Детское радио","frequencyMHz":103.7,"website":"https://detifm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Official GPM source confirmed."}},
-                {"id":"nashe-radio-spb","name":"НАШЕ Радио","frequencyMHz":104.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-shanson-spb","name":"Радио Шансон","frequencyMHz":104.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"love-radio-spb","name":"Love Radio","frequencyMHz":105.3,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"monte-carlo-spb","name":"Радио Monte Carlo","frequencyMHz":105.9,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-record-spb","name":"Радио Рекорд","frequencyMHz":106.3,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"radio-mayak-spb","name":"Радио Маяк","frequencyMHz":107.0,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"business-fm-spb","name":"Business FM","frequencyMHz":107.4,"website":null,"streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Metadata enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":null,"frequencyVerifiedAt":"2026-10-04T16:53:00Z","sources":["https://www.morze.ru/radio_tv/radio_tv_spb.htm","https://topradio.me/sankt-peterburg"],"notes":"Batch-imported; official-source enrichment pending."}},
-                {"id":"russkoe-radio-spb","name":"Русское Радио","frequencyMHz":107.8,"website":"https://rusradio.ru/","streams":[],"metadata":{"type":"html","url":"https://rusradio.ru/","historyAvailable":true,"notes":"Official site exposes LIVE/history; stream enrichment pending."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://rusradio.ru/oms/persons/1892-sankt-peterburg"],"notes":"Official station source confirmed."}}
+                {
+                  "id": "dorozhnoe-radio-spb",
+                  "name": "Дорожное радио",
+                  "frequencyMHz": 87.5,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://hls-01-dorognoe.emgsound.ru/15/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:03.606Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    },
+                    {
+                      "url": "http://dorognoe.hostingradio.ru:8000/radio",
+                      "role": "fallback",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:03.487Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "retro-fm-spb",
+                  "name": "Ретро FM",
+                  "frequencyMHz": 88,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://hls-01-retro.emgsound.ru/12/128/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:03.446Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    },
+                    {
+                      "url": "http://hls-01-regions.emgsound.ru/12_spb/playlist.m3u8",
+                      "role": "fallback",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:03.332Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "avtoradio-spb",
+                  "name": "Авторадио",
+                  "frequencyMHz": 88.4,
+                  "website": "https://www.avtoradio.ru/",
+                  "streams": [],
+                  "metadata": {
+                    "type": "html",
+                    "url": "https://www.avtoradio.ru/",
+                    "historyAvailable": true,
+                    "notes": "Official site exposes current track and playlist/history; stream enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal",
+                      "https://www.avtoradio.ru/"
+                    ],
+                    "notes": "Official GPM source confirmed."
+                  }
+                },
+                {
+                  "id": "humor-fm-spb",
+                  "name": "Юмор FM",
+                  "frequencyMHz": 88.9,
+                  "website": "https://www.humorfm.ru/",
+                  "streams": [
+                    {
+                      "url": "https://hls-01-gpm.hostingradio.ru/humorfm495/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:02.471Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal"
+                    ],
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "vesti-fm-spb",
+                  "name": "Вести FM",
+                  "frequencyMHz": 89.3,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_128kbps",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:06.377Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_64kbps",
+                      "role": "fallback",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:06.376Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "radio-zenit-spb",
+                  "name": "Радио Зенит",
+                  "frequencyMHz": 89.7,
+                  "website": "https://radiozenit.ru/",
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal"
+                    ],
+                    "notes": "Frequency confirmed in initial official-source pass."
+                  }
+                },
+                {
+                  "id": "radio-hermitage-spb",
+                  "name": "Радио Эрмитаж",
+                  "frequencyMHz": 90.1,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-vanya-spb",
+                  "name": "Радио Ваня",
+                  "frequencyMHz": 90.6,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://icecast-radiovanya.cdnvideo.ru/rv_spb",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:06.397Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    },
+                    {
+                      "url": "https://icecast-radiovanya.cdnvideo.ru/radiovanya",
+                      "role": "fallback",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:06.399Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aacp."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": "https://radiovanya.ru/streams/rv_spb",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "novoe-radio-spb",
+                  "name": "Новое Радио",
+                  "frequencyMHz": 91.1,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://stream.newradio.ru/novoe32.aacp",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:04.087Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    },
+                    {
+                      "url": "http://icecast.newradio.cdnvideo.ru/newradio3",
+                      "role": "fallback",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:04.392Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "json",
+                    "url": "https://music.mts.ru/radio_proxy_host/emg/novoeradio/fmgid/current.json",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "sputnik-spb",
+                  "name": "Radio Sputnik",
+                  "frequencyMHz": 91.5,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "kp-radio-spb",
+                  "name": "Радио Комсомольская правда",
+                  "frequencyMHz": 92,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "hit-fm-spb",
+                  "name": "Хит FM",
+                  "frequencyMHz": 92.4,
+                  "website": "https://hitfm.ru/",
+                  "streams": [
+                    {
+                      "url": "https://hitfm.hostingradio.ru/hitfm128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:04.955Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://hitfm.hostingradio.ru/hitfm96.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:04.933Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://hitfm.ru/news/novyj-hit-sankt-peterburga-torzhestvennyj-start-veshaniya"
+                    ],
+                    "notes": "Official Hit FM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "radio-vera-spb",
+                  "name": "Радио Вера",
+                  "frequencyMHz": 92.9,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-gordost-spb",
+                  "name": "Радио Гордость",
+                  "frequencyMHz": 93.3,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-mir-spb",
+                  "name": "Радио Мир",
+                  "frequencyMHz": 93.7,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-zvezda-spb",
+                  "name": "Радио Звезда",
+                  "frequencyMHz": 94.1,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "relax-fm-spb",
+                  "name": "Relax FM",
+                  "frequencyMHz": 94.5,
+                  "website": "https://relax-fm.ru/",
+                  "streams": [
+                    {
+                      "url": "https://hls-01-gpm.hostingradio.ru/relaxfm7/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:02.465Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/station/branch/41/radio/37"
+                    ],
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "energy-spb",
+                  "name": "Радио ENERGY",
+                  "frequencyMHz": 95,
+                  "website": "https://www.energyfm.ru/",
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal"
+                    ],
+                    "notes": "Official GPM source confirmed."
+                  }
+                },
+                {
+                  "id": "studio-21-spb",
+                  "name": "STUDIO 21",
+                  "frequencyMHz": 95.5,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "comedy-radio-spb",
+                  "name": "Comedy Radio",
+                  "frequencyMHz": 95.9,
+                  "website": "https://comedy-radio.ru/",
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal"
+                    ],
+                    "notes": "Official GPM source confirmed."
+                  }
+                },
+                {
+                  "id": "radio-jazz-spb",
+                  "name": "Радио JAZZ",
+                  "frequencyMHz": 96.4,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "http://nashe1.hostingradio.ru/jazz-128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:07.053Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "radio-dacha-spb",
+                  "name": "Радио Дача",
+                  "frequencyMHz": 97,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-orpheus-spb",
+                  "name": "Радио Орфей",
+                  "frequencyMHz": 97.6,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "like-fm-spb",
+                  "name": "Like FM",
+                  "frequencyMHz": 98.1,
+                  "website": "https://www.likefm.ru/",
+                  "streams": [
+                    {
+                      "url": "https://srv01.gpmradio.ru/stream/air/aac/64/219",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:03.067Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac; redirects to https://gpm.hostingradio.ru/gpm-likefm495.aacp."
+                    },
+                    {
+                      "url": "https://hls-01-gpm.hostingradio.ru/likefm495/playlist.m3u8",
+                      "role": "fallback",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:02.460Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "html",
+                    "url": "https://www.likefm.ru/playlist",
+                    "historyAvailable": true,
+                    "notes": "Official site exposes current track and timestamped playlist; direct stream validation pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/news-page/uid/44032",
+                      "https://www.likefm.ru/"
+                    ],
+                    "notes": "Official sources confirm 98.1 FM; overrides stale 104.8 listings. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "royal-radio-spb",
+                  "name": "Royal Radio",
+                  "frequencyMHz": 98.6,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-russia-spb",
+                  "name": "Радио России — Санкт-Петербург",
+                  "frequencyMHz": 99,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "europa-plus-spb",
+                  "name": "Европа Плюс",
+                  "frequencyMHz": 100.5,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://hls-02-europaplus.emgsound.ru/11/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:16:02.500Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    },
+                    {
+                      "url": "https://epdop.hostingradio.ru:8033/europaplus32.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:03.732Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "json",
+                    "url": "https://music.mts.ru/radio_proxy_host/emg/europaplus/fmgid/current.json",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "piter-fm-spb",
+                  "name": "Питер FM",
+                  "frequencyMHz": 100.9,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://icecast-piterfm.cdnvideo.ru/piterfm",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:07.086Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": "https://radiopiterfm.ru/streams/piterfm",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "eldoradio-spb",
+                  "name": "Эльдорадио",
+                  "frequencyMHz": 101.4,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "rbc-radio-spb",
+                  "name": "Радио РБК",
+                  "frequencyMHz": 102,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://radiopedia.fandom.com/ru/wiki/Частотные_планы_радиостанций_в_городах_России/Санкт-Петербург"
+                    ],
+                    "notes": "Current sources identify 102.0 as Радио РБК; older listings showing Rock FM are stale."
+                  }
+                },
+                {
+                  "id": "radio-metro-spb",
+                  "name": "Radio METRO",
+                  "frequencyMHz": 102.4,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "maximum-spb",
+                  "name": "Радио MAXIMUM",
+                  "frequencyMHz": 102.8,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://maximum.hostingradio.ru/maximum128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:05.884Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://maximum.hostingradio.ru/maximum96.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:05.874Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "dfm-spb",
+                  "name": "DFM",
+                  "frequencyMHz": 103.4,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://dfm.hostingradio.ru/dfm128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:05.938Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://dfm.hostingradio.ru/dfm96.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:05.943Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "detskoe-radio-spb",
+                  "name": "Детское радио",
+                  "frequencyMHz": 103.7,
+                  "website": "https://detifm.ru/",
+                  "streams": [
+                    {
+                      "url": "https://gpm.hostingradio.ru/detifm32.aacp",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:02.781Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "json",
+                    "url": "https://hls-01-gpm.hostingradio.ru/detifm495/metadata.json?format=fmgid&subformat=current",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://www.gpmradio.ru/multilocal"
+                    ],
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "nashe-radio-spb",
+                  "name": "НАШЕ Радио",
+                  "frequencyMHz": 104,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-shanson-spb",
+                  "name": "Радио Шансон",
+                  "frequencyMHz": 104.4,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://chanson.hostingradio.ru:8041/chanson256.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:06.720Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "json",
+                    "url": "https://music.mts.ru/radio_proxy_fmgid/stations/shanson/current.json",
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "love-radio-spb",
+                  "name": "Love Radio",
+                  "frequencyMHz": 105.3,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "monte-carlo-spb",
+                  "name": "Радио Monte Carlo",
+                  "frequencyMHz": 105.9,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "https://montecarlo.hostingradio.ru/montecarlo128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:05.738Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://montecarlo.hostingradio.ru/montecarlo96.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:06.014Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "radio-record-spb",
+                  "name": "Радио Рекорд",
+                  "frequencyMHz": 106.3,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "radio-mayak-spb",
+                  "name": "Радио Маяк",
+                  "frequencyMHz": 107,
+                  "website": null,
+                  "streams": [
+                    {
+                      "url": "http://icecast.vgtrk.cdnvideo.ru/mayakfm",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:06.347Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                },
+                {
+                  "id": "business-fm-spb",
+                  "name": "Business FM",
+                  "frequencyMHz": 107.4,
+                  "website": null,
+                  "streams": [],
+                  "metadata": {
+                    "type": "unknown",
+                    "url": null,
+                    "historyAvailable": null,
+                    "notes": "Metadata enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "research",
+                  "verification": {
+                    "stationVerifiedAt": null,
+                    "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
+                    "sources": [
+                      "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
+                      "https://topradio.me/sankt-peterburg"
+                    ],
+                    "notes": "Batch-imported; official-source enrichment pending."
+                  }
+                },
+                {
+                  "id": "russkoe-radio-spb",
+                  "name": "Русское Радио",
+                  "frequencyMHz": 107.8,
+                  "website": "https://rusradio.ru/",
+                  "streams": [
+                    {
+                      "url": "https://rusradio.hostingradio.ru/rusradio128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:16:04.811Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    },
+                    {
+                      "url": "https://rusradio.hostingradio.ru/rusradio96.aacp",
+                      "role": "fallback",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:16:04.808Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
+                  "metadata": {
+                    "type": "html",
+                    "url": "https://rusradio.ru/",
+                    "historyAvailable": true,
+                    "notes": "Official site exposes LIVE/history; stream enrichment pending."
+                  },
+                  "logo": null,
+                  "status": "active",
+                  "verification": {
+                    "stationVerifiedAt": "2026-10-04T16:30:00Z",
+                    "frequencyVerifiedAt": "2026-10-04T16:30:00Z",
+                    "sources": [
+                      "https://rusradio.ru/oms/persons/1892-sankt-peterburg"
+                    ],
+                    "notes": "Official station source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                  }
+                }
               ]
             }
           ]
