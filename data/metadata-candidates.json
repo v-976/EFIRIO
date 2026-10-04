@@ -23,18 +23,18 @@
       "timeAvailable": true,
       "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
       "confidence": "confirmed-official",
-      "notes": "Official playlist exposes artist/title/time. Do not promote until the Saint Petersburg region selector/request semantics are identified; default page can be Moscow."
+      "notes": "Official playlist exposes artist/title/time and a city selector. Search-visible query parameters do not reliably switch the rendered city, so no guessed region parameter is accepted. Need identify the actual site city-selection request/cookie/API before promotion."
     },
     {
       "stationId": "avtoradio-spb",
       "sourceType": "html",
-      "url": "https://www.avtoradio.ru/station",
-      "historyUrl": "https://www.avtoradio.ru/mobile-playlist",
+      "url": "https://www.avtoradio.ru/playlist/city/154/",
+      "historyUrl": "https://www.avtoradio.ru/playlist/city/154/",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
-      "confidence": "confirmed-official",
-      "notes": "Official site exposes current track, recent history and future items with clock times. Default page is Moscow; resolve SPb variant before promotion."
+      "regionalScope": "Saint Petersburg station page (city/154), but playlist content is explicitly federal/Moscow",
+      "confidence": "confirmed-official-federal-metadata",
+      "notes": "Official city/154 page identifies Saint Petersburg 88.4 FM, but Avtoradio explicitly states that the playlist service currently contains only Moscow/federal-air tracks. Therefore this must NOT be represented as exact Saint Petersburg regional metadata. It may be used only later as clearly labelled federal/reference metadata if product policy allows it."
     },
     {
       "stationId": "europa-plus-spb",
@@ -45,7 +45,7 @@
       "timeAvailable": "needs-validation",
       "regionalScope": "Saint Petersburg via region=spb",
       "confidence": "confirmed-official-regional",
-      "notes": "Official site recognizes region=spb: the regional surface identifies Saint Petersburg 100.5 FM and exposes SPb-specific programming such as Petersburg ONLINE. The playlist is therefore pinned to the station's SPb region rather than the Moscow default. Exact underlying metadata payload and timestamp fields still require browser/API inspection before production promotion."
+      "notes": "Official site recognizes region=spb: the regional surface identifies Saint Petersburg 100.5 FM and exposes SPb-specific programming such as Petersburg ONLINE. Exact underlying metadata payload and timestamp fields still require browser/API inspection before production promotion."
     },
     {
       "stationId": "novoe-radio-spb",
@@ -87,9 +87,9 @@
       "historyUrl": "https://comedy-radio.ru/playlist",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "Saint Petersburg listed; city request semantics need validation",
+      "regionalScope": "Saint Petersburg 95.9 is an official selectable city; exact metadata request semantics still need validation",
       "confidence": "confirmed-official",
-      "notes": "Official playlist/history confirmed and Saint Petersburg 95.9 is listed. Need identify city parameter/cookie/API used by site."
+      "notes": "Official playlist page explicitly lists Saint Petersburg 95.9 among station cities and provides playlist lookup. Do not infer that the default playlist response is SPb until the selector's request/cookie/API is identified."
     },
     {
       "stationId": "russkoe-radio-spb",
