@@ -18,11 +18,10 @@ const validationByKey = new Map(
   validation.results.map((r) => [`${r.stationId}:${r.candidateIndex}`, r]),
 );
 
-// Endpoints known to be a different regional/federal programme are not promoted
-// as Saint Petersburg production streams even when technically reachable.
-const excluded = new Set([
-  'nashe-radio-spb:0', // ICY identifies Moscow 101.8 FM
-]);
+// Add entries here only when a technically reachable endpoint is known to carry
+// the wrong regional/federal programme. The current NASHE candidate is the
+// dedicated Saint Petersburg mount, so it is intentionally not excluded.
+const excluded = new Set([]);
 
 const stations = catalogue.countries
   .flatMap((c) => c.regions ?? [])
@@ -51,7 +50,7 @@ for (const candidate of candidates.candidates) {
   }
 
   // Prefer a station-specific/regional candidate when it is first in discovery data.
-  // Otherwise prefer HTTPS, then HLS/MP3/AAC in discovery order.
+  // Otherwise prefer HTTPS, then discovery order.
   live.sort((a, b) => {
     const aHttps = a.audio.url.startsWith('https://') ? 1 : 0;
     const bHttps = b.audio.url.startsWith('https://') ? 1 : 0;
