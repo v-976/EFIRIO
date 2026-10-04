@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T17:16:08.210Z",
+  "generatedAt": "2026-10-04T17:41:45.673Z",
   "timeoutMs": 8000,
   "totals": {
-    "candidates": 34,
-    "reachable": 32,
-    "failed": 2
+    "candidates": 36,
+    "reachable": 36,
+    "failed": 0
   },
   "results": [
     {
@@ -20,8 +20,8 @@
       "icyName": "LikeFM-MSK",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 964,
-      "checkedAt": "2026-10-04T17:16:03.067Z",
+      "latencyMs": 806,
+      "checkedAt": "2026-10-04T17:41:40.722Z",
       "error": null
     },
     {
@@ -36,8 +36,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 328,
-      "checkedAt": "2026-10-04T17:16:02.460Z",
+      "latencyMs": 257,
+      "checkedAt": "2026-10-04T17:41:40.202Z",
       "error": null
     },
     {
@@ -52,8 +52,8 @@
       "icyName": "ÐÐµÑÑÐºÐ¾Ðµ ÑÐ°Ð´Ð¸Ð¾ - Ð Ð¾ÑÑÐ¸Ñ",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 648,
-      "checkedAt": "2026-10-04T17:16:02.781Z",
+      "latencyMs": 1013,
+      "checkedAt": "2026-10-04T17:41:40.959Z",
       "error": null
     },
     {
@@ -68,8 +68,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 338,
-      "checkedAt": "2026-10-04T17:16:02.471Z",
+      "latencyMs": 206,
+      "checkedAt": "2026-10-04T17:41:40.153Z",
       "error": null
     },
     {
@@ -84,8 +84,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 331,
-      "checkedAt": "2026-10-04T17:16:02.465Z",
+      "latencyMs": 216,
+      "checkedAt": "2026-10-04T17:41:40.163Z",
       "error": null
     },
     {
@@ -100,8 +100,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 366,
-      "checkedAt": "2026-10-04T17:16:02.500Z",
+      "latencyMs": 242,
+      "checkedAt": "2026-10-04T17:41:40.190Z",
       "error": null
     },
     {
@@ -116,8 +116,8 @@
       "icyName": "Europa Plus 320k",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 511,
-      "checkedAt": "2026-10-04T17:16:03.732Z",
+      "latencyMs": 655,
+      "checkedAt": "2026-10-04T17:41:41.774Z",
       "error": null
     },
     {
@@ -132,8 +132,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 109,
-      "checkedAt": "2026-10-04T17:16:03.332Z",
+      "latencyMs": 137,
+      "checkedAt": "2026-10-04T17:41:41.258Z",
       "error": null
     },
     {
@@ -148,8 +148,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 222,
-      "checkedAt": "2026-10-04T17:16:03.446Z",
+      "latencyMs": 293,
+      "checkedAt": "2026-10-04T17:41:41.415Z",
       "error": null
     },
     {
@@ -164,8 +164,8 @@
       "icyName": null,
       "icyMetaInt": null,
       "hlsManifest": true,
-      "latencyMs": 381,
-      "checkedAt": "2026-10-04T17:16:03.606Z",
+      "latencyMs": 251,
+      "checkedAt": "2026-10-04T17:41:41.374Z",
       "error": null
     },
     {
@@ -180,8 +180,8 @@
       "icyName": "Dorognoe Radio",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 260,
-      "checkedAt": "2026-10-04T17:16:03.487Z",
+      "latencyMs": 247,
+      "checkedAt": "2026-10-04T17:41:41.372Z",
       "error": null
     },
     {
@@ -196,8 +196,8 @@
       "icyName": "ÐÐ¾Ð²Ð¾Ðµ Ð Ð°Ð´Ð¸Ð¾ - Ð Ð¾ÑÑÐ¸Ñ",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 860,
-      "checkedAt": "2026-10-04T17:16:04.087Z",
+      "latencyMs": 764,
+      "checkedAt": "2026-10-04T17:41:41.889Z",
       "error": null
     },
     {
@@ -212,24 +212,24 @@
       "icyName": "www.newradio.ru",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 140,
-      "checkedAt": "2026-10-04T17:16:04.392Z",
+      "latencyMs": 165,
+      "checkedAt": "2026-10-04T17:41:42.214Z",
       "error": null
     },
     {
       "stationId": "studio-21-spb",
       "candidateIndex": 0,
-      "url": "http://icecast-studio21.cdnvideo.ru/S21cl_1s",
-      "expectedFormat": "mp3",
-      "ok": false,
-      "status": 404,
-      "finalUrl": "http://icecast-studio21.cdnvideo.ru/S21cl_1s",
-      "contentType": "text/html",
-      "icyName": null,
-      "icyMetaInt": null,
+      "url": "https://stream.studio21.ru/studio2196.aacp",
+      "expectedFormat": "aac",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://stream.studio21.ru/studio2196.aacp",
+      "contentType": "audio/aacp",
+      "icyName": "www.studio21.ru",
+      "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 781,
-      "checkedAt": "2026-10-04T17:16:05.033Z",
+      "latencyMs": 638,
+      "checkedAt": "2026-10-04T17:41:42.688Z",
       "error": null
     },
     {
@@ -244,8 +244,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 559,
-      "checkedAt": "2026-10-04T17:16:04.811Z",
+      "latencyMs": 614,
+      "checkedAt": "2026-10-04T17:41:42.665Z",
       "error": null
     },
     {
@@ -260,8 +260,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 555,
-      "checkedAt": "2026-10-04T17:16:04.808Z",
+      "latencyMs": 653,
+      "checkedAt": "2026-10-04T17:41:42.705Z",
       "error": null
     },
     {
@@ -276,8 +276,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 701,
-      "checkedAt": "2026-10-04T17:16:04.955Z",
+      "latencyMs": 758,
+      "checkedAt": "2026-10-04T17:41:42.810Z",
       "error": null
     },
     {
@@ -292,8 +292,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 679,
-      "checkedAt": "2026-10-04T17:16:04.933Z",
+      "latencyMs": 614,
+      "checkedAt": "2026-10-04T17:41:42.667Z",
       "error": null
     },
     {
@@ -308,8 +308,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 751,
-      "checkedAt": "2026-10-04T17:16:05.938Z",
+      "latencyMs": 678,
+      "checkedAt": "2026-10-04T17:41:43.651Z",
       "error": null
     },
     {
@@ -324,8 +324,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 755,
-      "checkedAt": "2026-10-04T17:16:05.943Z",
+      "latencyMs": 704,
+      "checkedAt": "2026-10-04T17:41:43.679Z",
       "error": null
     },
     {
@@ -340,8 +340,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 695,
-      "checkedAt": "2026-10-04T17:16:05.884Z",
+      "latencyMs": 1247,
+      "checkedAt": "2026-10-04T17:41:44.222Z",
       "error": null
     },
     {
@@ -356,8 +356,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 685,
-      "checkedAt": "2026-10-04T17:16:05.874Z",
+      "latencyMs": 1215,
+      "checkedAt": "2026-10-04T17:41:44.191Z",
       "error": null
     },
     {
@@ -372,8 +372,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 548,
-      "checkedAt": "2026-10-04T17:16:05.738Z",
+      "latencyMs": 765,
+      "checkedAt": "2026-10-04T17:41:43.741Z",
       "error": null
     },
     {
@@ -388,8 +388,8 @@
       "icyName": null,
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 824,
-      "checkedAt": "2026-10-04T17:16:06.014Z",
+      "latencyMs": 759,
+      "checkedAt": "2026-10-04T17:41:43.736Z",
       "error": null
     },
     {
@@ -404,8 +404,8 @@
       "icyName": "CHANSON-MSK",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 547,
-      "checkedAt": "2026-10-04T17:16:06.720Z",
+      "latencyMs": 543,
+      "checkedAt": "2026-10-04T17:41:44.917Z",
       "error": null
     },
     {
@@ -420,8 +420,8 @@
       "icyName": "Radio Vesti FM",
       "icyMetaInt": "8192",
       "hlsManifest": false,
-      "latencyMs": 203,
-      "checkedAt": "2026-10-04T17:16:06.377Z",
+      "latencyMs": 213,
+      "checkedAt": "2026-10-04T17:41:44.588Z",
       "error": null
     },
     {
@@ -436,8 +436,8 @@
       "icyName": "Radio Vesti FM",
       "icyMetaInt": "8192",
       "hlsManifest": false,
-      "latencyMs": 201,
-      "checkedAt": "2026-10-04T17:16:06.376Z",
+      "latencyMs": 192,
+      "checkedAt": "2026-10-04T17:41:44.568Z",
       "error": null
     },
     {
@@ -452,8 +452,8 @@
       "icyName": "Radio Mayak FM",
       "icyMetaInt": "8192",
       "hlsManifest": false,
-      "latencyMs": 171,
-      "checkedAt": "2026-10-04T17:16:06.347Z",
+      "latencyMs": 166,
+      "checkedAt": "2026-10-04T17:41:44.542Z",
       "error": null
     },
     {
@@ -468,8 +468,8 @@
       "icyName": "no name",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 221,
-      "checkedAt": "2026-10-04T17:16:06.397Z",
+      "latencyMs": 228,
+      "checkedAt": "2026-10-04T17:41:44.605Z",
       "error": null
     },
     {
@@ -484,8 +484,8 @@
       "icyName": "Radio Vanya Online",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 222,
-      "checkedAt": "2026-10-04T17:16:06.399Z",
+      "latencyMs": 231,
+      "checkedAt": "2026-10-04T17:41:44.608Z",
       "error": null
     },
     {
@@ -500,24 +500,56 @@
       "icyName": "Piter FM",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 201,
-      "checkedAt": "2026-10-04T17:16:07.086Z",
+      "latencyMs": 197,
+      "checkedAt": "2026-10-04T17:41:45.274Z",
       "error": null
     },
     {
       "stationId": "radio-orpheus-spb",
       "candidateIndex": 0,
-      "url": "https://orfeyfm.hostingradio.ru/orfeyfm64.aacp",
-      "expectedFormat": "aac",
-      "ok": false,
-      "status": 404,
-      "finalUrl": "https://orfeyfm.hostingradio.ru/orfeyfm64.aacp",
-      "contentType": "text/html",
+      "url": "https://orfeyfm.hostingradio.ru:8034/orfeyfm192.mp3",
+      "expectedFormat": "mp3",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://orfeyfm.hostingradio.ru:8034/orfeyfm192.mp3",
+      "contentType": "audio/mpeg",
+      "icyName": "no name",
+      "icyMetaInt": "16000",
+      "hlsManifest": false,
+      "latencyMs": 574,
+      "checkedAt": "2026-10-04T17:41:45.651Z",
+      "error": null
+    },
+    {
+      "stationId": "radio-vera-spb",
+      "candidateIndex": 0,
+      "url": "https://hls-01-radiovera.hostingradio.ru/rewind/radiovera/playlist.m3u8",
+      "expectedFormat": "hls",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://hls-01-radiovera.hostingradio.ru/rewind/radiovera/playlist.m3u8",
+      "contentType": "audio/mpegurl",
       "icyName": null,
       "icyMetaInt": null,
+      "hlsManifest": true,
+      "latencyMs": 203,
+      "checkedAt": "2026-10-04T17:41:45.281Z",
+      "error": null
+    },
+    {
+      "stationId": "radio-gordost-spb",
+      "candidateIndex": 0,
+      "url": "https://rgordost.hostingradio.ru/rgordost128.aacp",
+      "expectedFormat": "aac",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://rgordost.hostingradio.ru/rgordost128.aacp",
+      "contentType": "audio/aac",
+      "icyName": "no name",
+      "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 1324,
-      "checkedAt": "2026-10-04T17:16:08.210Z",
+      "latencyMs": 570,
+      "checkedAt": "2026-10-04T17:41:45.649Z",
       "error": null
     },
     {
@@ -532,24 +564,24 @@
       "icyName": "Radio Jazz 89.1 FM",
       "icyMetaInt": "16000",
       "hlsManifest": false,
-      "latencyMs": 166,
-      "checkedAt": "2026-10-04T17:16:07.053Z",
+      "latencyMs": 206,
+      "checkedAt": "2026-10-04T17:41:45.285Z",
       "error": null
     },
     {
       "stationId": "nashe-radio-spb",
       "candidateIndex": 0,
-      "url": "http://nashe5.hostingradio.ru/nashe-128.mp3",
+      "url": "https://nashe1.hostingradio.ru/nashespb128.mp3",
       "expectedFormat": "mp3",
       "ok": true,
       "status": 200,
-      "finalUrl": "http://nashe5.hostingradio.ru/nashe-128.mp3",
+      "finalUrl": "https://nashe1.hostingradio.ru/nashespb128.mp3",
       "contentType": "audio/mpeg",
-      "icyName": "NASHE Radio (Moscow) 101.8 FM",
-      "icyMetaInt": "16000",
+      "icyName": "Nashe Radio Saint-Peterburg",
+      "icyMetaInt": "8192",
       "hlsManifest": false,
-      "latencyMs": 192,
-      "checkedAt": "2026-10-04T17:16:07.080Z",
+      "latencyMs": 594,
+      "checkedAt": "2026-10-04T17:41:45.673Z",
       "error": null
     }
   ]

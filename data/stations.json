@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04T17:20:08.554Z",
+  "updatedAt": "2026-10-04T17:42:11.742Z",
   "countries": [
     {
       "code": "RU",
@@ -24,7 +24,7 @@
                       "url": "https://hls-01-dorognoe.emgsound.ru/15/playlist.m3u8",
                       "role": "primary",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:03.606Z",
+                      "verifiedAt": "2026-10-04T17:41:41.374Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     },
@@ -32,7 +32,7 @@
                       "url": "http://dorognoe.hostingradio.ru:8000/radio",
                       "role": "fallback",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:03.487Z",
+                      "verifiedAt": "2026-10-04T17:41:41.372Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -52,7 +52,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -65,7 +65,7 @@
                       "url": "https://hls-01-retro.emgsound.ru/12/128/playlist.m3u8",
                       "role": "primary",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:03.446Z",
+                      "verifiedAt": "2026-10-04T17:41:41.415Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     },
@@ -73,7 +73,7 @@
                       "url": "http://hls-01-regions.emgsound.ru/12_spb/playlist.m3u8",
                       "role": "fallback",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:03.332Z",
+                      "verifiedAt": "2026-10-04T17:41:41.258Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     }
@@ -93,7 +93,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported from current 2026 Saint Petersburg FM cross-check; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -130,7 +130,7 @@
                       "url": "https://hls-01-gpm.hostingradio.ru/humorfm495/playlist.m3u8",
                       "role": "primary",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:02.471Z",
+                      "verifiedAt": "2026-10-04T17:41:40.153Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     }
@@ -149,7 +149,7 @@
                     "sources": [
                       "https://www.gpmradio.ru/multilocal"
                     ],
-                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -162,7 +162,7 @@
                       "url": "https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_128kbps",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:06.377Z",
+                      "verifiedAt": "2026-10-04T17:41:44.588Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -170,7 +170,7 @@
                       "url": "https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_64kbps",
                       "role": "fallback",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:06.376Z",
+                      "verifiedAt": "2026-10-04T17:41:44.568Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -190,7 +190,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -250,7 +250,7 @@
                       "url": "https://icecast-radiovanya.cdnvideo.ru/rv_spb",
                       "role": "primary",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:06.397Z",
+                      "verifiedAt": "2026-10-04T17:41:44.605Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     },
@@ -258,7 +258,7 @@
                       "url": "https://icecast-radiovanya.cdnvideo.ru/radiovanya",
                       "role": "fallback",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:06.399Z",
+                      "verifiedAt": "2026-10-04T17:41:44.608Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aacp."
                     }
@@ -267,7 +267,7 @@
                     "type": "unknown",
                     "url": "https://radiovanya.ru/streams/rv_spb",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
                   "status": "active",
@@ -278,7 +278,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -291,7 +291,7 @@
                       "url": "https://stream.newradio.ru/novoe32.aacp",
                       "role": "primary",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:04.087Z",
+                      "verifiedAt": "2026-10-04T17:41:41.889Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     },
@@ -299,7 +299,7 @@
                       "url": "http://icecast.newradio.cdnvideo.ru/newradio3",
                       "role": "fallback",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:04.392Z",
+                      "verifiedAt": "2026-10-04T17:41:42.214Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -319,7 +319,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -380,7 +380,7 @@
                       "url": "https://hitfm.hostingradio.ru/hitfm128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:04.955Z",
+                      "verifiedAt": "2026-10-04T17:41:42.810Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -388,7 +388,7 @@
                       "url": "https://hitfm.hostingradio.ru/hitfm96.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:04.933Z",
+                      "verifiedAt": "2026-10-04T17:41:42.667Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -407,7 +407,7 @@
                     "sources": [
                       "https://hitfm.ru/news/novyj-hit-sankt-peterburga-torzhestvennyj-start-veshaniya"
                     ],
-                    "notes": "Official Hit FM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official Hit FM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -415,15 +415,24 @@
                   "name": "Радио Вера",
                   "frequencyMHz": 92.9,
                   "website": null,
-                  "streams": [],
+                  "streams": [
+                    {
+                      "url": "https://hls-01-radiovera.hostingradio.ru/rewind/radiovera/playlist.m3u8",
+                      "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-04T17:41:45.281Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
+                    }
+                  ],
                   "metadata": {
                     "type": "unknown",
-                    "url": null,
+                    "url": "https://radiovera.ru/radio.html",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
-                  "status": "research",
+                  "status": "active",
                   "verification": {
                     "stationVerifiedAt": null,
                     "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
@@ -431,7 +440,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -439,15 +448,24 @@
                   "name": "Радио Гордость",
                   "frequencyMHz": 93.3,
                   "website": null,
-                  "streams": [],
+                  "streams": [
+                    {
+                      "url": "https://rgordost.hostingradio.ru/rgordost128.aacp",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:41:45.649Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+                    }
+                  ],
                   "metadata": {
                     "type": "unknown",
-                    "url": null,
+                    "url": "https://радиогордость.рф/",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
-                  "status": "research",
+                  "status": "active",
                   "verification": {
                     "stationVerifiedAt": null,
                     "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
@@ -455,7 +473,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -516,7 +534,7 @@
                       "url": "https://hls-01-gpm.hostingradio.ru/relaxfm7/playlist.m3u8",
                       "role": "primary",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:02.465Z",
+                      "verifiedAt": "2026-10-04T17:41:40.163Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     }
@@ -535,7 +553,7 @@
                     "sources": [
                       "https://www.gpmradio.ru/station/branch/41/radio/37"
                     ],
-                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -566,15 +584,24 @@
                   "name": "STUDIO 21",
                   "frequencyMHz": 95.5,
                   "website": null,
-                  "streams": [],
+                  "streams": [
+                    {
+                      "url": "https://stream.studio21.ru/studio2196.aacp",
+                      "role": "primary",
+                      "format": "aac",
+                      "verifiedAt": "2026-10-04T17:41:42.688Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/aacp."
+                    }
+                  ],
                   "metadata": {
                     "type": "unknown",
-                    "url": null,
+                    "url": "https://studio21.ru/",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
-                  "status": "research",
+                  "status": "active",
                   "verification": {
                     "stationVerifiedAt": null,
                     "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
@@ -582,7 +609,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -618,7 +645,7 @@
                       "url": "http://nashe1.hostingradio.ru/jazz-128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:07.053Z",
+                      "verifiedAt": "2026-10-04T17:41:45.285Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -638,7 +665,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -670,15 +697,24 @@
                   "name": "Радио Орфей",
                   "frequencyMHz": 97.6,
                   "website": null,
-                  "streams": [],
+                  "streams": [
+                    {
+                      "url": "https://orfeyfm.hostingradio.ru:8034/orfeyfm192.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:41:45.651Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
                   "metadata": {
                     "type": "unknown",
-                    "url": null,
+                    "url": "https://radio.orpheus.ru/",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
-                  "status": "research",
+                  "status": "active",
                   "verification": {
                     "stationVerifiedAt": null,
                     "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
@@ -686,7 +722,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -699,7 +735,7 @@
                       "url": "https://srv01.gpmradio.ru/stream/air/aac/64/219",
                       "role": "primary",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:03.067Z",
+                      "verifiedAt": "2026-10-04T17:41:40.722Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac; redirects to https://gpm.hostingradio.ru/gpm-likefm495.aacp."
                     },
@@ -707,7 +743,7 @@
                       "url": "https://hls-01-gpm.hostingradio.ru/likefm495/playlist.m3u8",
                       "role": "fallback",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:02.460Z",
+                      "verifiedAt": "2026-10-04T17:41:40.202Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     }
@@ -727,7 +763,7 @@
                       "https://www.gpmradio.ru/news-page/uid/44032",
                       "https://www.likefm.ru/"
                     ],
-                    "notes": "Official sources confirm 98.1 FM; overrides stale 104.8 listings. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official sources confirm 98.1 FM; overrides stale 104.8 listings. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -788,7 +824,7 @@
                       "url": "https://hls-02-europaplus.emgsound.ru/11/playlist.m3u8",
                       "role": "primary",
                       "format": "hls",
-                      "verifiedAt": "2026-10-04T17:16:02.500Z",
+                      "verifiedAt": "2026-10-04T17:41:40.190Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpegurl."
                     },
@@ -796,7 +832,7 @@
                       "url": "https://epdop.hostingradio.ru:8033/europaplus32.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:03.732Z",
+                      "verifiedAt": "2026-10-04T17:41:41.774Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -816,7 +852,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -829,7 +865,7 @@
                       "url": "https://icecast-piterfm.cdnvideo.ru/piterfm",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:07.086Z",
+                      "verifiedAt": "2026-10-04T17:41:45.274Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -838,7 +874,7 @@
                     "type": "unknown",
                     "url": "https://radiopiterfm.ru/streams/piterfm",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
                   "status": "active",
@@ -849,7 +885,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -934,7 +970,7 @@
                       "url": "https://maximum.hostingradio.ru/maximum128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:05.884Z",
+                      "verifiedAt": "2026-10-04T17:41:44.222Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -942,7 +978,7 @@
                       "url": "https://maximum.hostingradio.ru/maximum96.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:05.874Z",
+                      "verifiedAt": "2026-10-04T17:41:44.191Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -962,7 +998,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -975,7 +1011,7 @@
                       "url": "https://dfm.hostingradio.ru/dfm128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:05.938Z",
+                      "verifiedAt": "2026-10-04T17:41:43.651Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -983,7 +1019,7 @@
                       "url": "https://dfm.hostingradio.ru/dfm96.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:05.943Z",
+                      "verifiedAt": "2026-10-04T17:41:43.679Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -1003,7 +1039,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1016,7 +1052,7 @@
                       "url": "https://gpm.hostingradio.ru/detifm32.aacp",
                       "role": "primary",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:02.781Z",
+                      "verifiedAt": "2026-10-04T17:41:40.959Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -1035,7 +1071,7 @@
                     "sources": [
                       "https://www.gpmradio.ru/multilocal"
                     ],
-                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official GPM source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1043,15 +1079,24 @@
                   "name": "НАШЕ Радио",
                   "frequencyMHz": 104,
                   "website": null,
-                  "streams": [],
+                  "streams": [
+                    {
+                      "url": "https://nashe1.hostingradio.ru/nashespb128.mp3",
+                      "role": "primary",
+                      "format": "mp3",
+                      "verifiedAt": "2026-10-04T17:41:45.673Z",
+                      "availableFromFinland": true,
+                      "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+                    }
+                  ],
                   "metadata": {
                     "type": "unknown",
-                    "url": null,
+                    "url": "https://www.nashe.ru/towns",
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
                   },
                   "logo": null,
-                  "status": "research",
+                  "status": "active",
                   "verification": {
                     "stationVerifiedAt": null,
                     "frequencyVerifiedAt": "2026-10-04T16:53:00Z",
@@ -1059,7 +1104,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1072,7 +1117,7 @@
                       "url": "https://chanson.hostingradio.ru:8041/chanson256.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:06.720Z",
+                      "verifiedAt": "2026-10-04T17:41:44.917Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -1092,7 +1137,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1129,7 +1174,7 @@
                       "url": "https://montecarlo.hostingradio.ru/montecarlo128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:05.738Z",
+                      "verifiedAt": "2026-10-04T17:41:43.741Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -1137,7 +1182,7 @@
                       "url": "https://montecarlo.hostingradio.ru/montecarlo96.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:06.014Z",
+                      "verifiedAt": "2026-10-04T17:41:43.736Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -1157,7 +1202,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1194,7 +1239,7 @@
                       "url": "http://icecast.vgtrk.cdnvideo.ru/mayakfm",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:06.347Z",
+                      "verifiedAt": "2026-10-04T17:41:44.542Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     }
@@ -1214,7 +1259,7 @@
                       "https://www.morze.ru/radio_tv/radio_tv_spb.htm",
                       "https://topradio.me/sankt-peterburg"
                     ],
-                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Batch-imported; official-source enrichment pending. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 },
                 {
@@ -1251,7 +1296,7 @@
                       "url": "https://rusradio.hostingradio.ru/rusradio128.mp3",
                       "role": "primary",
                       "format": "mp3",
-                      "verifiedAt": "2026-10-04T17:16:04.811Z",
+                      "verifiedAt": "2026-10-04T17:41:42.665Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
                     },
@@ -1259,7 +1304,7 @@
                       "url": "https://rusradio.hostingradio.ru/rusradio96.aacp",
                       "role": "fallback",
                       "format": "aac",
-                      "verifiedAt": "2026-10-04T17:16:04.808Z",
+                      "verifiedAt": "2026-10-04T17:41:42.705Z",
                       "availableFromFinland": true,
                       "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
                     }
@@ -1278,7 +1323,7 @@
                     "sources": [
                       "https://rusradio.ru/oms/persons/1892-sankt-peterburg"
                     ],
-                    "notes": "Official station source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z."
+                    "notes": "Official station source confirmed. Audio stream validated from Finland on 2026-10-04T17:16:08.210Z. Audio stream validated from Finland on 2026-10-04T17:41:45.673Z."
                   }
                 }
               ]
