@@ -1,5 +1,34 @@
 {
   "schemaVersion": 1,
-  "updatedAt": null,
-  "countries": []
+  "updatedAt": "2026-10-04T16:30:00Z",
+  "countries": [
+    {
+      "code": "RU",
+      "name": "Russia",
+      "regions": [
+        {
+          "id": "saint-petersburg",
+          "name": "Saint Petersburg",
+          "cities": [
+            {
+              "id": "saint-petersburg",
+              "name": "Saint Petersburg",
+              "stations": [
+                {"id":"avtoradio-spb","name":"Авторадио","frequencyMHz":88.4,"website":"https://www.avtoradio.ru/","streams":[],"metadata":{"type":"html","url":"https://www.avtoradio.ru/","historyAvailable":true,"notes":"Official site exposes current track and playlist/history. Direct stream endpoint still pending verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal","https://www.avtoradio.ru/"],"notes":"Station and 88.4 FM confirmed by GPM Radio."}},
+                {"id":"humor-fm-spb","name":"Юмор FM","frequencyMHz":88.9,"website":"https://www.humorfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending metadata endpoint verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Station and 88.9 FM confirmed by GPM Radio."}},
+                {"id":"radio-zenit-spb","name":"Радио Зенит","frequencyMHz":89.7,"website":"https://radiozenit.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending metadata endpoint verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Station and 89.7 FM confirmed by GPM Radio."}},
+                {"id":"hit-fm-spb","name":"Хит FM","frequencyMHz":92.4,"website":"https://hitfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending direct stream and metadata verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://hitfm.ru/news/novyj-hit-sankt-peterburga-torzhestvennyj-start-veshaniya"],"notes":"Official Hit FM source confirms Saint Petersburg 92.4 FM."}},
+                {"id":"relax-fm-spb","name":"Relax FM","frequencyMHz":94.5,"website":"https://relax-fm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending direct stream and metadata verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/station/branch/41/radio/37","https://www.gpmradio.ru/news-page/uid/39089"],"notes":"Current GPM Radio branch page confirms 94.5 FM."}},
+                {"id":"energy-spb","name":"Радио ENERGY","frequencyMHz":95.0,"website":"https://www.energyfm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending direct stream and metadata verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Station and 95.0 FM confirmed by GPM Radio."}},
+                {"id":"comedy-radio-spb","name":"Comedy Radio","frequencyMHz":95.9,"website":"https://comedy-radio.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending direct stream and metadata verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Station and 95.9 FM confirmed by GPM Radio."}},
+                {"id":"like-fm-spb","name":"Like FM","frequencyMHz":98.1,"website":"https://www.likefm.ru/","streams":[],"metadata":{"type":"html","url":"https://www.likefm.ru/playlist","historyAvailable":true,"notes":"Official site exposes current track and timestamped playlist. Direct stream endpoint still pending verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/news-page/uid/44032","https://www.likefm.ru/"],"notes":"Like FM moved to 98.1 FM on 2025-09-01; official site currently lists Saint Petersburg 98.1 FM."}},
+                {"id":"detskoe-radio-spb","name":"Детское радио","frequencyMHz":103.7,"website":"https://detifm.ru/","streams":[],"metadata":{"type":"unknown","url":null,"historyAvailable":null,"notes":"Pending direct stream and metadata verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://www.gpmradio.ru/multilocal"],"notes":"Station and 103.7 FM confirmed by GPM Radio."}},
+                {"id":"russkoe-radio-spb","name":"Русское Радио","frequencyMHz":107.8,"website":"https://rusradio.ru/","streams":[],"metadata":{"type":"html","url":"https://rusradio.ru/","historyAvailable":true,"notes":"Official site exposes LIVE/history UI. Direct stream endpoint still pending verification."},"logo":null,"status":"research","verification":{"stationVerifiedAt":"2026-10-04T16:30:00Z","frequencyVerifiedAt":"2026-10-04T16:30:00Z","sources":["https://rusradio.ru/oms/persons/1892-sankt-peterburg"],"notes":"Official Русское Радио site lists Saint Petersburg 107.8 FM."}}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
