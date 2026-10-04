@@ -106,12 +106,60 @@ Dynamic Lead → specialist agents → QA → build model.
 
 Agent count is task-dependent, not fixed.
 
+## 2026-10-04 — Alpha architecture selected
+
+### Web / PWA
+
+Selected stack:
+
+- TypeScript
+- React
+- Vite
+- browser HTML audio primitives
+- Media Session API as progressive enhancement
+- IndexedDB for track history
+- localStorage for small Alpha preferences
+- Service Worker + Web App Manifest
+
+No server framework for Alpha.
+
+### Android
+
+Selected stack:
+
+- Kotlin
+- Jetpack Compose
+- AndroidX Media3 / ExoPlayer
+- MediaSessionService owns playback
+- MediaController drives playback from UI
+- DataStore for preferences
+- Room for track history
+- Kotlin serialization for catalogue parsing
+
+### Shared catalogue
+
+Canonical data remains outside both clients in `data/`.
+
+Added JSON Schema contract: `data/stations.schema.json`.
+
+Important schema decision: streams are an ordered array with `primary` / `fallback` roles rather than two permanently hard-coded URL fields. This preserves the Alpha behaviour while allowing future expansion.
+
+Station-specific metadata endpoints belong in catalogue/configuration, not client constants.
+
+### Backend
+
+No EFIRIO backend for Alpha. A small proxy may be introduced only if a demonstrated browser restriction such as CORS prevents required metadata access. It should not become a radio relay by default.
+
+### Research
+
+Added `docs/STATION_RESEARCH.md` as the evidence ledger for Saint Petersburg.
+
+A station is not `active` merely because an aggregator lists it. Current existence, FM frequency and an actually playable stream must be verified.
+
 ### Next technical milestone
 
-1. choose web/PWA and Android technology stack
-2. formalize shared station catalogue schema
-3. build verified Saint Petersburg station dataset
-4. create minimal PWA playback proof
-5. create minimal Android playback proof
-6. add metadata/history layer
-7. package EFIRIO Alpha 0.1
+1. research and verify the first Saint Petersburg stations
+2. populate the canonical catalogue
+3. create PWA playback proof using a verified entry
+4. create Android Media3 playback proof using the same entry
+5. test playback from Finland and real iPhone behaviour
