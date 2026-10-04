@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-04T17:15:00Z",
+  "purpose": "Discovery ledger for candidate audio/metadata endpoints. Candidates are not production-approved until playback validation succeeds.",
+  "candidates": [
+    {"stationId":"like-fm-spb","audio":[{"url":"https://srv01.gpmradio.ru/stream/air/aac/64/219","format":"aac"},{"url":"https://hls-01-gpm.hostingradio.ru/likefm495/playlist.m3u8","format":"hls"}],"metadata":"https://hls-01-gpm.hostingradio.ru/likefm495/metadata.json?format=fmgid&subformat=current","confidence":"high","validation":"pending"},
+    {"stationId":"detskoe-radio-spb","audio":[{"url":"https://gpm.hostingradio.ru/detifm32.aacp","format":"aac"}],"metadata":"https://hls-01-gpm.hostingradio.ru/detifm495/metadata.json?format=fmgid&subformat=current","confidence":"high","validation":"pending"},
+    {"stationId":"humor-fm-spb","audio":[{"url":"https://hls-01-gpm.hostingradio.ru/humorfm495/playlist.m3u8","format":"hls"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"relax-fm-spb","audio":[{"url":"https://hls-01-gpm.hostingradio.ru/relaxfm7/playlist.m3u8","format":"hls"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"europa-plus-spb","audio":[{"url":"https://hls-02-europaplus.emgsound.ru/11/playlist.m3u8","format":"hls"},{"url":"https://epdop.hostingradio.ru:8033/europaplus32.aacp","format":"aac"}],"metadata":"https://music.mts.ru/radio_proxy_host/emg/europaplus/fmgid/current.json","confidence":"high","validation":"pending","notes":"Federal feed candidate; regional SPB feed still preferred if current endpoint is confirmed."},
+    {"stationId":"retro-fm-spb","audio":[{"url":"http://hls-01-regions.emgsound.ru/12_spb/playlist.m3u8","format":"hls"},{"url":"https://hls-01-retro.emgsound.ru/12/128/playlist.m3u8","format":"hls"}],"metadata":null,"confidence":"high","validation":"pending","notes":"First candidate is specifically labelled Saint Petersburg in discovered player data."},
+    {"stationId":"dorozhnoe-radio-spb","audio":[{"url":"https://hls-01-dorognoe.emgsound.ru/15/playlist.m3u8","format":"hls"},{"url":"http://dorognoe.hostingradio.ru:8000/radio","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"novoe-radio-spb","audio":[{"url":"https://stream.newradio.ru/novoe32.aacp","format":"aac"},{"url":"http://icecast.newradio.cdnvideo.ru/newradio3","format":"mp3"}],"metadata":"https://music.mts.ru/radio_proxy_host/emg/novoeradio/fmgid/current.json","confidence":"high","validation":"pending"},
+    {"stationId":"studio-21-spb","audio":[{"url":"http://icecast-studio21.cdnvideo.ru/S21cl_1s","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"russkoe-radio-spb","audio":[{"url":"https://rusradio.hostingradio.ru/rusradio128.mp3","format":"mp3"},{"url":"https://rusradio.hostingradio.ru/rusradio96.aacp","format":"aac"}],"metadata":"https://music.mts.ru/radio_proxy_host/rmg/rusradio/fmgid/current.json","confidence":"high","validation":"pending"},
+    {"stationId":"hit-fm-spb","audio":[{"url":"https://hitfm.hostingradio.ru/hitfm128.mp3","format":"mp3"},{"url":"https://hitfm.hostingradio.ru/hitfm96.aacp","format":"aac"}],"metadata":null,"confidence":"high","validation":"pending"},
+    {"stationId":"dfm-spb","audio":[{"url":"https://dfm.hostingradio.ru/dfm128.mp3","format":"mp3"},{"url":"https://dfm.hostingradio.ru/dfm96.aacp","format":"aac"}],"metadata":null,"confidence":"high","validation":"pending"},
+    {"stationId":"maximum-spb","audio":[{"url":"https://maximum.hostingradio.ru/maximum128.mp3","format":"mp3"},{"url":"https://maximum.hostingradio.ru/maximum96.aacp","format":"aac"}],"metadata":null,"confidence":"high","validation":"pending"},
+    {"stationId":"monte-carlo-spb","audio":[{"url":"https://montecarlo.hostingradio.ru/montecarlo128.mp3","format":"mp3"},{"url":"https://montecarlo.hostingradio.ru/montecarlo96.aacp","format":"aac"}],"metadata":null,"confidence":"high","validation":"pending"},
+    {"stationId":"radio-shanson-spb","audio":[{"url":"https://chanson.hostingradio.ru:8041/chanson256.mp3","format":"mp3"}],"metadata":"https://music.mts.ru/radio_proxy_fmgid/stations/shanson/current.json","confidence":"high","validation":"pending"},
+    {"stationId":"vesti-fm-spb","audio":[{"url":"https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_128kbps","format":"mp3"},{"url":"https://icecast-vgtrk.cdnvideo.ru/vestifm_mp3_64kbps","format":"mp3"}],"metadata":null,"confidence":"high","validation":"pending"},
+    {"stationId":"radio-mayak-spb","audio":[{"url":"http://icecast.vgtrk.cdnvideo.ru/mayakfm","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"radio-vanya-spb","audio":[{"url":"http://icecast-radiovanya.cdnvideo.ru/radiovanya","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"radio-jazz-spb","audio":[{"url":"http://nashe1.hostingradio.ru/jazz-128.mp3","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"},
+    {"stationId":"nashe-radio-spb","audio":[{"url":"http://nashe5.hostingradio.ru/nashe-128.mp3","format":"mp3"}],"metadata":null,"confidence":"medium","validation":"pending"}
+  ]
+}
