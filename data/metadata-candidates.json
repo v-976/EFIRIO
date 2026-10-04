@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Staging area for EFIRIO Now Playing/history sources. Only sources confirmed on station/operator-owned sites are promoted to stations.json.",
+  "updatedAt": "2026-10-04",
+  "candidates": [
+    {
+      "stationId": "radio-vanya-spb",
+      "sourceType": "html",
+      "url": "https://www.radiovanya.ru/streams/rv_spb",
+      "historyUrl": "https://www.radiovanya.ru/playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "Saint Petersburg",
+      "confidence": "confirmed-official",
+      "notes": "Official site has a distinct Radio Vanya SPb stream page. Official playlist exposes artist/title and clock time. Need browser/CORS and SPb-specific parser validation before promotion."
+    },
+    {
+      "stationId": "dorozhnoe-radio-spb",
+      "sourceType": "html",
+      "url": "https://dorozhnoe.ru/radiostation/playlist",
+      "historyUrl": "https://dorozhnoe.ru/radiostation/playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
+      "confidence": "confirmed-official",
+      "notes": "Official playlist exposes artist/title/time. Do not promote until the Saint Petersburg region selector/request semantics are identified; default page can be Moscow."
+    },
+    {
+      "stationId": "avtoradio-spb",
+      "sourceType": "html",
+      "url": "https://www.avtoradio.ru/station",
+      "historyUrl": "https://www.avtoradio.ru/mobile-playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
+      "confidence": "confirmed-official",
+      "notes": "Official site exposes current track, recent history and future items with clock times. Default page is Moscow; resolve SPb variant before promotion."
+    },
+    {
+      "stationId": "europa-plus-spb",
+      "sourceType": "html",
+      "url": "https://europaplus.ru/playlist/",
+      "historyUrl": "https://europaplus.ru/playlist/",
+      "historyAvailable": true,
+      "timeAvailable": "needs-validation",
+      "regionalScope": "city handling needs validation",
+      "confidence": "confirmed-official",
+      "notes": "Official playlist/live surface confirmed. Determine exact live/history payload and SPb selection semantics before promotion."
+    },
+    {
+      "stationId": "novoe-radio-spb",
+      "sourceType": "html",
+      "url": "https://newradio.ru/?modalOpen=broadcast",
+      "historyUrl": "https://newradio.ru/?modalOpen=broadcast",
+      "historyAvailable": true,
+      "timeAvailable": "needs-validation",
+      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
+      "confidence": "confirmed-official",
+      "notes": "Official broadcast modal exposes current/recent music and program information. Existing MTS JSON candidate remains separate because browser audit reported FETCH_OR_CORS."
+    },
+    {
+      "stationId": "like-fm-spb",
+      "sourceType": "html",
+      "url": "https://www.likefm.ru/playlist",
+      "historyUrl": "https://www.likefm.ru/playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city-selectable; Saint Petersburg must be resolved explicitly",
+      "confidence": "confirmed-official",
+      "notes": "Official playlist exposes current item and timed history. Regional selection exists; identify SPb request before promotion."
+    },
+    {
+      "stationId": "dfm-spb",
+      "sourceType": "html",
+      "url": "https://dfm.ru/online/dfm",
+      "historyUrl": "https://dfm.ru/online/dfm",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city handling needs validation",
+      "confidence": "confirmed-official",
+      "notes": "Official online page exposes current track and timed channel history, including non-music items such as advertising."
+    },
+    {
+      "stationId": "comedy-radio-spb",
+      "sourceType": "html",
+      "url": "https://comedy-radio.ru/playlist",
+      "historyUrl": "https://comedy-radio.ru/playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "Saint Petersburg listed; city request semantics need validation",
+      "confidence": "confirmed-official",
+      "notes": "Official playlist/history confirmed and Saint Petersburg 95.9 is listed. Need identify city parameter/cookie/API used by site."
+    },
+    {
+      "stationId": "russkoe-radio-spb",
+      "sourceType": "html",
+      "url": "https://rusradio.ru/air/mediateka",
+      "historyUrl": "https://rusradio.ru/air/mediateka",
+      "historyAvailable": true,
+      "timeAvailable": "needs-validation",
+      "regionalScope": "Saint Petersburg 107.8 explicitly selectable",
+      "confidence": "confirmed-official",
+      "notes": "Official site exposes LIVE/history and explicitly lists Saint Petersburg 107.8. Resolve the underlying city selection/API before promotion."
+    },
+    {
+      "stationId": "hit-fm-spb",
+      "sourceType": "html",
+      "url": "https://hitfm.ru/online/hit-fm/stream",
+      "historyUrl": "https://hitfm.ru/online/hit-fm/stream",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city handling needs validation",
+      "confidence": "confirmed-official",
+      "notes": "Official stream page exposes channel history with clock times. Resolve SPb regional semantics before promotion."
+    },
+    {
+      "stationId": "maximum-spb",
+      "sourceType": "html",
+      "url": "https://maximum.ru/online/",
+      "historyUrl": "https://maximum.ru/online/",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city handling needs validation",
+      "confidence": "confirmed-official",
+      "notes": "Official online surface exposes current track/history; regional variants exist. Resolve Saint Petersburg request semantics before promotion."
+    },
+    {
+      "stationId": "energy-spb",
+      "sourceType": "html",
+      "url": "https://www.energyfm.ru/playlist",
+      "historyUrl": "https://www.energyfm.ru/playlist",
+      "historyAvailable": true,
+      "timeAvailable": true,
+      "regionalScope": "city handling needs validation",
+      "confidence": "confirmed-official",
+      "notes": "Official playlist exposes previous tracks with clock times and can contain non-music broadcast items. Resolve current 2026 regional semantics before promotion."
+    },
+    {
+      "stationId": "monte-carlo-spb",
+      "sourceType": "html",
+      "url": "https://montecarlo.ru/spb/",
+      "historyUrl": "https://montecarlo.ru/spb/",
+      "historyAvailable": true,
+      "timeAvailable": "needs-validation",
+      "regionalScope": "Saint Petersburg",
+      "confidence": "confirmed-official",
+      "notes": "Official site has an explicit /spb/ regional surface and exposes player/history UI. Exact live/history payload still needs inspection."
+    }
+  ]
+}
