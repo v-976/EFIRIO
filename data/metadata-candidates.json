@@ -72,13 +72,13 @@
     {
       "stationId": "dfm-spb",
       "sourceType": "html",
-      "url": "https://dfm.ru/online/dfm",
-      "historyUrl": "https://dfm.ru/online/dfm",
+      "url": "https://dfm.ru/online/dfm/stream",
+      "historyUrl": "https://dfm.ru/online/dfm/stream",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city handling needs validation",
-      "confidence": "confirmed-official",
-      "notes": "Official online page exposes current track and timed channel history, including non-music items such as advertising."
+      "regionalScope": "official central/Moscow online feed; Saint Petersburg 103.4 exists in the official network, but no SPb-specific online metadata surface is verified",
+      "confidence": "confirmed-official-federal-metadata",
+      "notes": "Official DFM online stream page is explicitly labelled Moscow and exposes exact minute-level history including non-music items such as advertising. DFM's official regional-partner page separately lists Saint Petersburg 103.4. No evidence yet proves that the online history is the SPb feed, so do not promote it as exact Saint Petersburg metadata."
     },
     {
       "stationId": "comedy-radio-spb",
@@ -109,20 +109,20 @@
       "historyUrl": "https://hitfm.ru/online/hit-fm/stream",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city handling needs validation",
-      "confidence": "confirmed-official",
-      "notes": "Official stream page exposes channel history with clock times. Resolve SPb regional semantics before promotion."
+      "regionalScope": "official online surface is explicitly Moscow; no verified Saint Petersburg metadata selector/surface",
+      "confidence": "confirmed-official-federal-metadata",
+      "notes": "Official Hit FM main stream exposes exact minute-level channel history, but the page is explicitly labelled Moscow. This is useful evidence for parser/timestamp semantics but must not be represented as exact Saint Petersburg history without a verified regional endpoint or proof that SPb carries the identical feed."
     },
     {
       "stationId": "maximum-spb",
       "sourceType": "html",
-      "url": "https://maximum.ru/online/",
-      "historyUrl": "https://maximum.ru/online/",
+      "url": "https://maximum.ru/online/maximum",
+      "historyUrl": "https://maximum.ru/online/maximum",
       "historyAvailable": true,
       "timeAvailable": true,
-      "regionalScope": "city handling needs validation",
-      "confidence": "confirmed-official",
-      "notes": "Official online surface exposes current track/history; regional variants exist. Resolve Saint Petersburg request semantics before promotion."
+      "regionalScope": "official main online surface is Moscow; regional online variants exist (for example Omsk), but no Saint Petersburg variant has been verified",
+      "confidence": "confirmed-official-federal-metadata",
+      "notes": "Official MAXIMUM main channel exposes exact minute-level history including advertising and other non-music items. The site demonstrably supports separate regional online variants such as /oms/ and a dedicated MAXIMUM Omsk channel, proving regional divergence is possible. Therefore the Moscow history must not be silently assigned to Saint Petersburg."
     },
     {
       "stationId": "energy-spb",
