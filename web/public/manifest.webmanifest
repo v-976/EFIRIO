@@ -1,17 +1,17 @@
 {
-  "id": "/",
+  "id": "/EFIRIO/",
   "name": "EFIRIO — The radio of your city",
   "short_name": "EFIRIO",
   "description": "City radio player. Saint Petersburg Alpha.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/EFIRIO/",
+  "scope": "/EFIRIO/",
   "display": "standalone",
   "background_color": "#08111f",
   "theme_color": "#08111f",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
