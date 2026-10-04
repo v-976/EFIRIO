@@ -39,13 +39,13 @@
     {
       "stationId": "europa-plus-spb",
       "sourceType": "html",
-      "url": "https://europaplus.ru/playlist/",
-      "historyUrl": "https://europaplus.ru/playlist/",
+      "url": "https://europaplus.ru/playlist?region=spb",
+      "historyUrl": "https://europaplus.ru/playlist?region=spb",
       "historyAvailable": true,
       "timeAvailable": "needs-validation",
-      "regionalScope": "city handling needs validation",
-      "confidence": "confirmed-official",
-      "notes": "Official playlist/live surface confirmed. Determine exact live/history payload and SPb selection semantics before promotion."
+      "regionalScope": "Saint Petersburg via region=spb",
+      "confidence": "confirmed-official-regional",
+      "notes": "Official site recognizes region=spb: the regional surface identifies Saint Petersburg 100.5 FM and exposes SPb-specific programming such as Petersburg ONLINE. The playlist is therefore pinned to the station's SPb region rather than the Moscow default. Exact underlying metadata payload and timestamp fields still require browser/API inspection before production promotion."
     },
     {
       "stationId": "novoe-radio-spb",
