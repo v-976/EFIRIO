@@ -10,7 +10,7 @@
 - standards-based HTMLAudioElement playback layer
 - Media Session API as progressive enhancement
 - IndexedDB for track history
-- localStorage for small preferences such as last station and favourites during the first proof
+- localStorage for small preferences such as last station and favourites during the first proof; preference reads and writes are exception-safe, so blocked or full storage must not break station selection or playback
 - Service Worker / Web App Manifest for installability
 
 Reasoning: the web client is primarily an audio application with a modest UI. React + TypeScript keeps state and UI explicit without introducing a server framework. Vite provides a small build surface. Playback remains based on browser media primitives so Safari/iOS behaviour can be tested directly rather than hidden behind a large abstraction.
@@ -73,12 +73,35 @@ Normalized Now Playing record:
 stationId
 artist
 title
-startedAt       optional exact source time
-detectedAt      client detection time
+kind              music | program | talk | jingle | unknown
+startedAt         optional exact source time, ISO 8601 UTC
+detectedAt        client detection time, ISO 8601 UTC
+sourceLocalTime   raw station-local value while no instant is derivable
+timeZone          IANA time zone of the source city/station
+timeQuality       exact | local-only | detected
 source
 ```
 
-If `startedAt` is unavailable, history uses `detectedAt` and marks timing as detected rather than exact.
+`startedAt` is only produced when the source determines one unambiguous instant: an ISO value with `Z`/explicit offset, or a local date+time mapped into the station IANA zone. A bare wall-clock value (`14:30`), an ambiguous/non-existent local time (DST transitions) or an invalid date never becomes `startedAt`; the raw value is kept as `sourceLocalTime` with quality `local-only`. When neither exists, only `detectedAt` remains and quality is `detected`. Station time is rendered in the station zone, never in the browser/device zone.
+
+## Listening history
+
+History is local-only (`localStorage` key `efirio.trackHistory.v1`, no telemetry) and is written through a single gated path:
+
+- a station must be selected;
+- playback must be confirmed (audio `playing` event), and the event must belong to the current playback session: playback intent intact, element not paused, `readyState` at least `HAVE_CURRENT_DATA`, and the element `src` equal to the stream assigned for the session — events queued before a pause, stop, station switch or cancelled start are ignored;
+- the metadata must belong to the currently selected station: responses and errors that settle after a station switch are dropped by a session-liveness check, so stale responses from a previously selected station are rejected;
+- the item must differ from the last recorded item of the current session, so repeated metadata does not duplicate records.
+
+Selecting a station without successful playback, pausing, stopping or an error during playback never add records. Loading tolerates corrupted legacy records: bad entries are skipped individually and never break rendering or discard the healthy history.
+
+Retention applies both limits simultaneously:
+
+- at most the newest **100** records;
+- no records older than **48 hours**, measured by `detectedAt` (the moment EFIRIO actually observed the item during listening);
+- records whose `detectedAt` is invalid are removed instead of being guessed.
+
+Cleanup runs when history is loaded (and the cleaned payload is written back) and after every new record is added. `startedAt`/`sourceLocalTime` are never used for ageing.
 
 ## Playback state
 
