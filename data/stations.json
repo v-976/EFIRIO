@@ -136,10 +136,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "json",
+                    "url": "https://hls-01-gpm.hostingradio.ru/humorfm495/metadata.json?format=fmgid&subformat=current",
+                    "historyAvailable": true,
+                    "notes": "Official GPM metadata JSON confirmed in iPhone Safari on 2026-10-12: current item with artist/title/date/time and prev_tracks history. Stream path contains 495, so Saint Petersburg vs Moscow feed scope still needs comparison."
                   },
                   "logo": null,
                   "status": "active",

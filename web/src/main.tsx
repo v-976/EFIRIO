@@ -25,6 +25,41 @@ function nowPlayingTimeLabel(track: NormalizedTrack): string {
   return `Detected ${formatInTimeZone(track.detectedAt, track.timeZone, { withDate: true })}`;
 }
 
+/** Running line for the footer: station name (accent colour) + what is on air now. Scrolls only when it does not fit. */
+function airText(track: NormalizedTrack): string {
+  const artist = track.artist?.trim() ?? '';
+  const title = track.title?.trim() ?? '';
+  return artist && title ? `${artist} — ${title}` : artist || title;
+}
+
+function Ticker({ station, air }: { station: string; air: string }) {
+  const boxRef = React.useRef<HTMLDivElement | null>(null);
+  const itemRef = React.useRef<HTMLElement | null>(null);
+  const [scroll, setScroll] = React.useState(false);
+  const plain = station && air ? `${station} · ${air}` : station || air;
+  React.useLayoutEffect(() => {
+    const box = boxRef.current; const item = itemRef.current;
+    if (!box || !item) return;
+    setScroll(item.scrollWidth > box.clientWidth + 1);
+  }, [plain]);
+  const seconds = Math.max(10, plain.length * 0.3);
+  const content = (
+    <>
+      {station ? <em className="tickerStation">{station}</em> : null}
+      {station && air ? <i className="tickerDot">·</i> : null}
+      {air}
+    </>
+  );
+  return (
+    <div className="ticker" ref={boxRef} title={plain}>
+      <div className={scroll ? 'tickerTrack run' : 'tickerTrack'} style={scroll ? { animationDuration: `${seconds}s` } : undefined}>
+        <b className="tickerItem" ref={itemRef}>{content}</b>
+        {scroll ? <b className="tickerItem" aria-hidden="true">{content}</b> : null}
+      </div>
+    </div>
+  );
+}
+
 function mediaErrorText(error: MediaError | null) { if (!error) return 'unknown media error'; const names: Record<number, string> = { 1: 'MEDIA_ERR_ABORTED', 2: 'MEDIA_ERR_NETWORK', 3: 'MEDIA_ERR_DECODE', 4: 'MEDIA_ERR_SRC_NOT_SUPPORTED' }; return names[error.code] ?? `MEDIA_ERR_${error.code}`; }
 function probeStream(url: string, timeoutMs = 7000): Promise<{ ok: boolean; error: string | null }> { return new Promise((resolve) => { const audio = new Audio(); audio.preload = 'auto'; audio.muted = true; let settled = false; const finish = (ok: boolean, error: string | null) => { if (settled) return; settled = true; clearTimeout(timer); audio.pause(); audio.removeAttribute('src'); audio.load(); resolve({ ok, error }); }; const timer = window.setTimeout(() => finish(false, 'TIMEOUT'), timeoutMs); audio.addEventListener('playing', () => finish(true, null), { once: true }); audio.addEventListener('canplay', () => finish(true, null), { once: true }); audio.addEventListener('error', () => finish(false, mediaErrorText(audio.error)), { once: true }); audio.src = url; audio.load(); void audio.play().catch((error) => finish(false, error instanceof Error ? error.name : 'PLAY_REJECTED')); }); }
 
@@ -113,7 +148,7 @@ function App() {
     {selected && (nowPlaying || metadataStatus) ? <section className="nowPlaying"><small>NOW PLAYING</small><strong>{nowPlaying?.title || metadataStatus}</strong>{nowPlaying?.artist ? <span>{nowPlaying.artist}</span> : null}{nowPlaying ? <time>{nowPlayingTimeLabel(nowPlaying)}</time> : null}</section> : null}
     <section className="stations" aria-label="Saint Petersburg stations">{stations.map((station) => { const [badgeClass, badgeText] = badge(station); return <button className={`station ${selected?.id === station.id ? 'selected' : ''}`} key={station.id} onClick={() => void chooseStation(station, station.streams.length > 0)}><span className="frequency">{station.frequencyMHz?.toFixed(1) ?? '—'} <small>FM</small></span><span className="stationName">{station.name}</span><span className={badgeClass}>{badgeText}</span></button>; })}</section>
     {history.length > 0 ? <details className="history"><summary>Listening history · {history.length}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
-    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div><strong>{nowPlaying?.title || selected?.name || 'Choose a station'}</strong><span>{nowPlaying?.artist || (selected ? playerStatus : 'Saint Petersburg · Alpha 0.1')}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
+    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || 'Choose a station'}</strong>}<span>{selected ? playerStatus : 'Saint Petersburg · Alpha 0.1'}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
   </main>;
 }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
