@@ -45,6 +45,7 @@ const POLL_MS = 15000;
 function text(value: unknown): string { return typeof value === 'string' ? value.trim() : ''; }
 
 function firstString(root: unknown, keys: string[]): string {
+  // Prefer the current on-air item; never mistake a previous track for Now Playing.
   const queue: unknown[] = [root]; const visited = new Set<unknown>();
   while (queue.length) {
     const value = queue.shift();
@@ -98,14 +99,19 @@ function buildTrack(
 }
 
 function normalizeJson(data: unknown, source: string, context: MetadataContext): NormalizedTrack | null {
-  let artist = firstString(data, ['artist', 'artistName', 'performer', 'singer']);
-  let title = firstString(data, ['title', 'track', 'trackName', 'song', 'songName', 'name', 'program', 'programme', 'show']);
-  const combined = firstString(data, ['songtitle', 'streamTitle', 'nowPlaying', 'current']);
-  if ((!artist || !title) && combined) { const parsed = splitCombined(combined); artist ||= parsed.artist; title ||= parsed.title; }
-  if (!artist && !title) return null;
-  const rawTime = firstString(data, ['startedAt', 'startTime', 'start_at', 'time', 'timestamp']) || null;
-  const explicitKind = firstString(data, ['type', 'kind', 'contentType', 'category']);
-  return buildTrack({ artist, title, kind: inferKind(artist, title, explicitKind), rawTime }, source, context);
+  // Providers may include prev_tracks/history alongside the current item.
+  // Resolve current first, rather than breadth-first scanning into history.
+  const root = data && typeof data === 'object' ? data as Record<string, unknown> : null;
+  const current = root?.current ?? root?.now_playing ?? root?.nowPlaying ?? root?.current_track ?? root?.currentTrack ?? root?.track ?? root?.data ?? data;
+  const artist = firstString(current, ['artist', 'artistName', 'performer', 'singer']);
+  let title = firstString(current, ['title', 'trackName', 'song', 'songName', 'name', 'program', 'programme', 'show']);
+  let finalArtist = artist;
+  const combined = firstString(current, ['songtitle', 'streamTitle', 'nowPlaying']);
+  if ((!finalArtist || !title) && combined) { const parsed = splitCombined(combined); finalArtist ||= parsed.artist; title ||= parsed.title; }
+  if (!finalArtist && !title) return null;
+  const rawTime = firstString(current, ['startedAt', 'startTime', 'start_at', 'time', 'timestamp', 'date']) || null;
+  const explicitKind = firstString(current, ['type', 'kind', 'contentType', 'category']);
+  return buildTrack({ artist: finalArtist, title, kind: inferKind(finalArtist, title, explicitKind), rawTime }, source, context);
 }
 
 function normalizeHtml(html: string, source: string, context: MetadataContext): NormalizedTrack | null {
