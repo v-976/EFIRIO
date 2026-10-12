@@ -1,15 +1,28 @@
 import { deriveTimeQuality, normalizeSourceTime, type TimeQuality } from './time.ts';
 
 export type MetadataConfig = {
-  type: 'none' | 'icy' | 'json' | 'html' | 'hls' | 'unknown';
+  /**
+   * `air` — the hostingradio.ru / emgsound.ru air-log JSON that sits next to an
+   * HLS playlist (`…/<channel>/metadata.json`): `{ generatedTime, previous[],
+   * current, next[] }` with exact `startTime` (ISO with offset) and a numeric
+   * item `type` (1 advert, 2 station ID/jingle, 3 music, 4 programme).
+   */
+  type: 'none' | 'icy' | 'json' | 'html' | 'hls' | 'air' | 'unknown';
   url: string | null;
   historyAvailable: boolean | null;
   notes?: string;
 };
 
-export type NowPlayingKind = 'music' | 'program' | 'talk' | 'jingle' | 'unknown';
+export type NowPlayingKind = 'music' | 'program' | 'talk' | 'jingle' | 'advert' | 'unknown';
 
-export const NOW_PLAYING_KINDS: readonly NowPlayingKind[] = ['music', 'program', 'talk', 'jingle', 'unknown'];
+export const NOW_PLAYING_KINDS: readonly NowPlayingKind[] = ['music', 'program', 'talk', 'jingle', 'advert', 'unknown'];
+
+/** Metadata types this client can read. Everything else is treated as "no metadata". */
+export const SUPPORTED_METADATA_TYPES: readonly MetadataConfig['type'][] = ['json', 'html', 'air'];
+
+export function isSupportedMetadata(metadata: MetadataConfig | null | undefined): metadata is MetadataConfig & { url: string } {
+  return !!metadata?.url && SUPPORTED_METADATA_TYPES.includes(metadata.type);
+}
 
 export type NormalizedTrack = {
   artist: string;
@@ -25,6 +38,8 @@ export type NormalizedTrack = {
   timeZone: string | null;
   timeQuality: TimeQuality;
   source: string;
+  /** Cover art of the current item, when the source provides one. */
+  coverUrl?: string | null;
 };
 
 /**
@@ -44,6 +59,9 @@ const POLL_MS = 15000;
 
 function text(value: unknown): string { return typeof value === 'string' ? value.trim() : ''; }
 
+/** Keys that hold past/future items; their fields must never fill the current item. */
+const NON_CURRENT_KEYS = new Set(['prev_tracks', 'previous', 'prev', 'history', 'next_tracks', 'next', 'last_tracks', 'playlist']);
+
 function firstString(root: unknown, keys: string[]): string {
   // Prefer the current on-air item; never mistake a previous track for Now Playing.
   const queue: unknown[] = [root]; const visited = new Set<unknown>();
@@ -53,7 +71,7 @@ function firstString(root: unknown, keys: string[]): string {
     visited.add(value);
     const record = value as Record<string, unknown>;
     for (const key of keys) { const found = text(record[key]); if (found) return found; }
-    for (const child of Object.values(record)) if (child && typeof child === 'object') queue.push(child);
+    for (const [childKey, child] of Object.entries(record)) if (child && typeof child === 'object' && !NON_CURRENT_KEYS.has(childKey)) queue.push(child);
   }
   return '';
 }
@@ -65,6 +83,7 @@ function splitCombined(value: string): { artist: string; title: string } {
 
 function inferKind(artist: string, title: string, explicit = ''): NowPlayingKind {
   const value = `${explicit} ${artist} ${title}`.toLocaleLowerCase();
+  if (/^\s*реклама\s*$|advert/.test(`${artist} ${title}`.toLocaleLowerCase()) || /advert/.test(explicit.toLocaleLowerCase())) return 'advert';
   if (/jingle|джингл|позывн/.test(value)) return 'jingle';
   if (/program|programme|show|podcast|программ|шоу|новост|анекдот|stand.?up|стендап|квн|однажды|сатья|юмор/.test(value)) return 'program';
   if (/talk|speech|разговор|интервью|ведущ/.test(value)) return 'talk';
@@ -79,7 +98,7 @@ export function normalizeKind(value: unknown): NowPlayingKind {
 }
 
 function buildTrack(
-  fields: { artist: string; title: string; kind?: NowPlayingKind; rawTime?: unknown },
+  fields: { artist: string; title: string; kind?: NowPlayingKind; rawTime?: unknown; coverUrl?: string | null },
   source: string,
   context: MetadataContext,
 ): NormalizedTrack {
@@ -95,7 +114,41 @@ function buildTrack(
     timeZone,
     timeQuality: deriveTimeQuality(time.startedAt, time.sourceLocalTime),
     source,
+    ...(fields.coverUrl ? { coverUrl: fields.coverUrl } : {}),
   };
+}
+
+const AIR_KINDS: Record<number, NowPlayingKind> = { 1: 'advert', 2: 'jingle', 3: 'music', 4: 'program' };
+
+function httpsUrl(value: unknown): string | null {
+  const candidate = text(value);
+  return /^https:\/\//i.test(candidate) ? candidate : null;
+}
+
+/**
+ * hostingradio.ru / emgsound.ru air log. Only `current` is Now Playing; the
+ * `previous`/`next` lists are never used as a substitute, so an empty or
+ * missing current item yields "no metadata" instead of a stale track.
+ */
+export function normalizeAir(data: unknown, source: string, context: MetadataContext = {}): NormalizedTrack | null {
+  const root = data && typeof data === 'object' ? data as Record<string, unknown> : null;
+  const current = root?.current && typeof root.current === 'object' ? root.current as Record<string, unknown> : null;
+  if (!current) return null;
+  const artist = text(current.artist);
+  const title = text(current.title);
+  if (!artist && !title) return null;
+  const numericType = typeof current.type === 'number' ? current.type : Number(current.type);
+  const kind = AIR_KINDS[numericType] ?? inferKind(artist, title);
+  const coverUrl = httpsUrl(current.coverImageUrl300) ?? httpsUrl(current.coverImageUrl600) ?? httpsUrl(current.coverImageUrl100);
+  return buildTrack({ artist, title, kind, rawTime: current.startTime ?? null, coverUrl }, source, context);
+}
+
+function normalizeByType(metadata: MetadataConfig, body: string, context: MetadataContext): NormalizedTrack | null {
+  const source = metadata.url ?? 'unknown';
+  if (metadata.type === 'html') return normalizeHtml(body, source, context);
+  let parsed: unknown;
+  try { parsed = JSON.parse(body); } catch { return null; }
+  return metadata.type === 'air' ? normalizeAir(parsed, source, context) : normalizeJson(parsed, source, context);
 }
 
 function normalizeJson(data: unknown, source: string, context: MetadataContext): NormalizedTrack | null {
@@ -109,7 +162,12 @@ function normalizeJson(data: unknown, source: string, context: MetadataContext):
   const combined = firstString(current, ['songtitle', 'streamTitle', 'nowPlaying']);
   if ((!finalArtist || !title) && combined) { const parsed = splitCombined(combined); finalArtist ||= parsed.artist; title ||= parsed.title; }
   if (!finalArtist && !title) return null;
-  const rawTime = firstString(current, ['startedAt', 'startTime', 'start_at', 'time', 'timestamp', 'date']) || null;
+  let rawTime: string | null = firstString(current, ['startedAt', 'startTime', 'start_at', 'timestamp']) || null;
+  if (!rawTime) {
+    // fmgid-style payloads split the station-local start into `date` + `time`.
+    const date = firstString(current, ['date']); const clock = firstString(current, ['time']);
+    rawTime = date && /^\d{4}-\d{2}-\d{2}$/.test(date) && /^\d{1,2}:\d{2}(:\d{2})?$/.test(clock) ? `${date}T${clock.split(':')[0].length === 1 ? `0${clock}` : clock}` : (clock || date || null);
+  }
   const explicitKind = firstString(current, ['type', 'kind', 'contentType', 'category']);
   return buildTrack({ artist: finalArtist, title, kind: inferKind(finalArtist, title, explicitKind), rawTime }, source, context);
 }
@@ -130,21 +188,23 @@ function normalizeHtml(html: string, source: string, context: MetadataContext): 
 }
 
 export async function fetchNowPlaying(metadata: MetadataConfig, context: MetadataContext = {}): Promise<NormalizedTrack | null> {
-  if (!metadata.url || !['json', 'html'].includes(metadata.type)) return null;
+  if (!isSupportedMetadata(metadata)) return null;
   const response = await fetch(metadata.url, { cache: 'no-store' });
+  // The air service answers 404 while the current item is unknown (adverts
+  // between songs, a channel with no log): that is "nothing on air", not a fault.
+  if (metadata.type === 'air' && response.status === 404) return null;
   if (!response.ok) throw new Error(`METADATA_HTTP_${response.status}`);
-  if (metadata.type === 'json') return normalizeJson(await response.json(), metadata.url, context);
-  return normalizeHtml(await response.text(), metadata.url, context);
+  return normalizeByType(metadata, await response.text(), context);
 }
 
 export async function probeMetadata(metadata: MetadataConfig, timeoutMs = 8000, context: MetadataContext = {}): Promise<MetadataProbeResult> {
   if (!metadata.url) return { ok: false, track: null, error: 'NO_METADATA_URL' };
-  if (!['json', 'html'].includes(metadata.type)) return { ok: false, track: null, error: `UNSUPPORTED_${metadata.type.toUpperCase()}` };
+  if (!isSupportedMetadata(metadata)) return { ok: false, track: null, error: `UNSUPPORTED_${metadata.type.toUpperCase()}` };
   const controller = new AbortController(); const timer = window.setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(metadata.url, { cache: 'no-store', signal: controller.signal });
     if (!response.ok) return { ok: false, track: null, error: `HTTP_${response.status}` };
-    const track = metadata.type === 'json' ? normalizeJson(await response.json(), metadata.url, context) : normalizeHtml(await response.text(), metadata.url, context);
+    const track = normalizeByType(metadata, await response.text(), context);
     return track ? { ok: true, track, error: null } : { ok: false, track: null, error: 'NO_TRACK_PARSED' };
   } catch (error) {
     if (error instanceof DOMException && error.name === 'AbortError') return { ok: false, track: null, error: 'TIMEOUT' };

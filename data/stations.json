@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-04T17:42:11.742Z",
+  "updatedAt": "2026-10-12T12:00:00Z",
   "countries": [
     {
       "code": "RU",
@@ -38,10 +38,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-dorognoe.emgsound.ru/15/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as the primary HLS stream (/15/playlist.m3u8); the regional 15_spb channel exposes no current item."
                   },
                   "logo": null,
                   "status": "active",
@@ -79,10 +79,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-retro.emgsound.ru/12/128/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as the primary HLS stream; the 12_spb regional fallback reported an identical current item on verification."
                   },
                   "logo": null,
                   "status": "active",
@@ -136,10 +136,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "json",
-                    "url": "https://hls-01-gpm.hostingradio.ru/humorfm495/metadata.json?format=fmgid&subformat=current",
+                    "type": "air",
+                    "url": "https://hls-01-gpm.hostingradio.ru/humorfm495/metadata.json",
                     "historyAvailable": true,
-                    "notes": "Official GPM metadata JSON confirmed in iPhone Safari on 2026-10-12: current item with artist/title/date/time and prev_tracks history. Stream path contains 495, so Saint Petersburg vs Moscow feed scope still needs comparison."
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as the played stream humorfm495 (495 = Moscow/central feed). The humorfm812 Saint Petersburg channel exists but publishes no air log."
                   },
                   "logo": null,
                   "status": "active",
@@ -305,10 +305,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "json",
-                    "url": "https://music.mts.ru/radio_proxy_host/emg/novoeradio/fmgid/current.json",
+                    "type": "unknown",
+                    "url": null,
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "notes": "The MTS JSON endpoint https://music.mts.ru/radio_proxy_host/emg/novoeradio/fmgid/current.json does not allow cross-origin reads, so a browser/PWA cannot use it (verified 2026-10-12); kept for a future native client. No browser-readable source found yet."
                   },
                   "logo": null,
                   "status": "active",
@@ -394,10 +394,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-hitfm.hostingradio.ru/hitfm/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: central Hit FM online channel, the same one served by the hitfm.hostingradio.ru streams EFIRIO plays; not proven to equal the 92.4 FM Saint Petersburg air."
                   },
                   "logo": null,
                   "status": "active",
@@ -426,10 +426,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": "https://radiovera.ru/radio.html",
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "type": "air",
+                    "url": "https://hls-01-radiovera.hostingradio.ru/rewind/radiovera/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as the played HLS stream."
                   },
                   "logo": null,
                   "status": "active",
@@ -531,8 +531,16 @@
                   "website": "https://relax-fm.ru/",
                   "streams": [
                     {
-                      "url": "https://hls-01-gpm.hostingradio.ru/relaxfm7/playlist.m3u8",
+                      "url": "https://hls-01-gpm.hostingradio.ru/relaxfm812/playlist.m3u8",
                       "role": "primary",
+                      "format": "hls",
+                      "verifiedAt": "2026-10-12T11:50:00Z",
+                      "availableFromFinland": true,
+                      "notes": "Saint Petersburg (812) Relax FM channel; plays in Chromium from Finland and is the channel the air log describes."
+                    },
+                    {
+                      "url": "https://hls-01-gpm.hostingradio.ru/relaxfm7/playlist.m3u8",
+                      "role": "fallback",
                       "format": "hls",
                       "verifiedAt": "2026-10-04T17:41:40.163Z",
                       "availableFromFinland": true,
@@ -540,10 +548,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-gpm.hostingradio.ru/relaxfm812/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: Saint Petersburg channel relaxfm812, now the primary stream. The previous relaxfm7 stream (kept as fallback) publishes no air log."
                   },
                   "logo": null,
                   "status": "active",
@@ -749,10 +757,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "html",
-                    "url": "https://www.likefm.ru/playlist",
+                    "type": "air",
+                    "url": "https://hls-01-gpm.hostingradio.ru/likefm495/metadata.json",
                     "historyAvailable": true,
-                    "notes": "Official site exposes current track and timestamped playlist; direct stream validation pending."
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as both played streams (srv01 redirects to gpm-likefm495). The likefm812 Saint Petersburg channel exists but publishes no air log. Official HTML playlist https://www.likefm.ru/playlist is not browser-readable (CORS)."
                   },
                   "logo": null,
                   "status": "active",
@@ -838,10 +846,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "json",
-                    "url": "https://music.mts.ru/radio_proxy_host/emg/europaplus/fmgid/current.json",
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "type": "air",
+                    "url": "https://hls-02-europaplus.emgsound.ru/11/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: same channel as the primary HLS stream (/11/playlist.m3u8); the 11_spb regional channel reported an identical current item on verification. Previous MTS JSON endpoint is not browser-readable (CORS)."
                   },
                   "logo": null,
                   "status": "active",
@@ -984,10 +992,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-maximum.hostingradio.ru/maximum/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: central MAXIMUM online channel, the same one served by the maximum.hostingradio.ru streams EFIRIO plays."
                   },
                   "logo": null,
                   "status": "active",
@@ -1025,10 +1033,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-dfm.hostingradio.ru/dfm/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: central DFM online channel, the same one served by the dfm.hostingradio.ru streams EFIRIO plays."
                   },
                   "logo": null,
                   "status": "active",
@@ -1058,10 +1066,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "json",
-                    "url": "https://hls-01-gpm.hostingradio.ru/detifm495/metadata.json?format=fmgid&subformat=current",
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "type": "air",
+                    "url": "https://hls-01-gpm.hostingradio.ru/detifm495/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: GPM central channel detifm495; the played detifm32.aacp stream is the GPM central feed. The detifm812 Saint Petersburg channel exists but publishes no air log."
                   },
                   "logo": null,
                   "status": "active",
@@ -1123,10 +1131,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "json",
-                    "url": "https://music.mts.ru/radio_proxy_fmgid/stations/shanson/current.json",
+                    "type": "unknown",
+                    "url": null,
                     "historyAvailable": null,
-                    "notes": "Metadata enrichment pending. Metadata endpoint discovered; metadata semantics still require separate validation."
+                    "notes": "The MTS JSON endpoint https://music.mts.ru/radio_proxy_fmgid/stations/shanson/current.json does not allow cross-origin reads, so a browser/PWA cannot use it (verified 2026-10-12); kept for a future native client. No browser-readable source found yet."
                   },
                   "logo": null,
                   "status": "active",
@@ -1188,10 +1196,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "unknown",
-                    "url": null,
-                    "historyAvailable": null,
-                    "notes": "Metadata enrichment pending."
+                    "type": "air",
+                    "url": "https://hls-01-montecarlo.hostingradio.ru/montecarlo/metadata.json",
+                    "historyAvailable": true,
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: central Monte Carlo online channel, the same one served by the montecarlo.hostingradio.ru streams EFIRIO plays."
                   },
                   "logo": null,
                   "status": "active",
@@ -1310,10 +1318,10 @@
                     }
                   ],
                   "metadata": {
-                    "type": "html",
-                    "url": "https://rusradio.ru/",
+                    "type": "air",
+                    "url": "https://hls-01-rusradio.hostingradio.ru/rusradio/metadata.json",
                     "historyAvailable": true,
-                    "notes": "Official site exposes LIVE/history; stream enrichment pending."
+                    "notes": "hostingradio/emgsound air log (current item with exact startTime and item type; previous 20 items). Browser CORS-readable from https://v-976.github.io, verified 2026-10-12. Scope: central Russkoe Radio online channel, the same one served by the rusradio.hostingradio.ru streams EFIRIO plays. The log often has no current item (404) between songs; that is shown as no metadata."
                   },
                   "logo": null,
                   "status": "active",

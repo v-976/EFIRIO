@@ -150,6 +150,11 @@ export function serializeHistory(items: readonly HistoryItem[]): string {
   return JSON.stringify(items);
 }
 
+/** Air item kinds that belong in the listening history. */
+export function isHistoryKind(kind: unknown): boolean {
+  return kind !== 'advert' && kind !== 'jingle';
+}
+
 export function historyItemKey(item: Pick<HistoryItem, 'kind' | 'artist' | 'title'>): string {
   return contentKey(item.kind, item.artist, item.title);
 }
@@ -278,6 +283,9 @@ export class HistoryRecorder {
     const title = cleanString(track.title);
     const artist = cleanString(track.artist);
     if (!title && !artist) return null;
+    // Adverts and station IDs/jingles are shown as Now Playing but are not
+    // "what played": they would only bury songs and programmes in the history.
+    if (!isHistoryKind(track.kind)) return null;
 
     const key = contentKey(track.kind, artist, title);
     if (key === this.lastKey) return null; // repeated answer, no duplicate

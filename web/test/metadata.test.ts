@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fetchNowPlaying, trackKey, watchNowPlaying, type MetadataConfig, type NormalizedTrack } from '../src/metadata.ts';
+import { readFileSync } from 'node:fs';
+import { fetchNowPlaying, normalizeAir, trackKey, watchNowPlaying, type MetadataConfig, type NormalizedTrack } from '../src/metadata.ts';
 
 const originalFetch = globalThis.fetch;
 
@@ -145,4 +146,82 @@ test('an active session still receives metadata responses', async (t) => {
   assert.equal(watch.delivered.length, 1, 'normal delivery must stay intact');
   assert.equal(watch.delivered[0].title, 'Station track');
   assert.deepEqual(watch.errors, []);
+});
+
+// --- hostingradio.ru / emgsound.ru air log (`type: "air"`) ---
+
+
+const airConfig: MetadataConfig = { type: 'air', url: 'https://hls-01-gpm.hostingradio.ru/humorfm495/metadata.json', historyAvailable: true };
+const airFixture = JSON.parse(readFileSync(new URL('./fixtures/air-humorfm.json', import.meta.url), 'utf8')) as Record<string, unknown>;
+
+function serveStatus(payload: unknown, status: number): void {
+  globalThis.fetch = (async () => new Response(JSON.stringify(payload), { status, headers: { 'content-type': 'application/json' } })) as typeof fetch;
+}
+
+test('air log: reads only the current item with its exact start time and cover', async (t) => {
+  t.after(() => { globalThis.fetch = originalFetch; });
+  serve(airFixture);
+  const track = await fetchNowPlaying(airConfig, moscow);
+  assert.ok(track);
+  assert.equal(track.artist, 'Леонид Агутин');
+  assert.equal(track.title, 'Всё Ещё Вернётся');
+  assert.equal(track.kind, 'music');
+  assert.equal(track.startedAt, '2026-10-12T11:47:05.000Z');
+  assert.equal(track.timeQuality, 'exact');
+  assert.equal(track.coverUrl, 'https://meta.hostingradio.ru/files/elements/cover-images/300x300/example.jpg');
+});
+
+test('air log: numeric item types map to air kinds', () => {
+  const cases: Array<[number, string, string, NormalizedTrack['kind']]> = [
+    [1, '', 'Реклама', 'advert'],
+    [2, '', 'HUMOR FM', 'jingle'],
+    [3, 'Queen', 'Radio Ga Ga', 'music'],
+    [4, '', 'StandUp', 'program'],
+  ];
+  for (const [type, artist, title, expected] of cases) {
+    const track = normalizeAir({ current: { type, artist, title, startTime: '2026-10-12T14:47:05+03:00' } }, 'src', moscow);
+    assert.equal(track?.kind, expected, `type ${type}`);
+  }
+});
+
+test('air log: no current item never falls back to a previous track', async (t) => {
+  t.after(() => { globalThis.fetch = originalFetch; });
+  serve({ generatedTime: '2026-10-12T14:48:28+03:00', previous: airFixture.previous, next: [] });
+  assert.equal(await fetchNowPlaying(airConfig, moscow), null);
+  serve({ previous: airFixture.previous, current: { type: 3, cover: 'x' } });
+  assert.equal(await fetchNowPlaying(airConfig, moscow), null);
+});
+
+test('air log: a 404 means "nothing known on air", not a failure', async (t) => {
+  t.after(() => { globalThis.fetch = originalFetch; });
+  serveStatus({ error: 'Not found', is_live: true, station: 'rusradio' }, 404);
+  assert.equal(await fetchNowPlaying(airConfig, moscow), null);
+  serveStatus({ error: 'Failed to convert metadata' }, 500);
+  await assert.rejects(fetchNowPlaying(airConfig, moscow), /METADATA_HTTP_500/);
+});
+
+test('air log: a non-https cover is ignored', () => {
+  const track = normalizeAir({ current: { type: 3, artist: 'A', title: 'B', coverImageUrl300: 'http://insecure/x.jpg' } }, 'src', moscow);
+  assert.ok(track);
+  assert.equal(track.coverUrl, undefined);
+});
+
+// --- fmgid "current" payloads (regression) ---
+
+test('fmgid: a station ID without artist does not borrow the artist of a previous track', async (t) => {
+  t.after(() => { globalThis.fetch = originalFetch; });
+  serve({ title: 'Comedy Radio', date: '2026-10-12', time: '14:45:23', prev_tracks: [{ artist: 'Gym Class Heroes feat. Adam Levine', title: 'Stereo Hearts' }] });
+  const track = await fetchNowPlaying(config, moscow);
+  assert.ok(track);
+  assert.equal(track.artist, '');
+  assert.equal(track.title, 'Comedy Radio');
+});
+
+test('fmgid: separate date + time fields become an exact station-local start', async (t) => {
+  t.after(() => { globalThis.fetch = originalFetch; });
+  serve({ artist: 'Лолита', title: 'Ориентация Север', date: '2026-10-12', time: '14:45:36' });
+  const track = await fetchNowPlaying(config, moscow);
+  assert.ok(track);
+  assert.equal(track.startedAt, '2026-10-12T11:45:36.000Z');
+  assert.equal(track.timeQuality, 'exact');
 });

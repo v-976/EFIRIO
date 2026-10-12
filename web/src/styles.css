@@ -11,3 +11,6 @@
 @media(max-width:480px){.player .playerInfo{padding:0 8px}.player .playerInfo span{max-width:100%}}
 .player .tickerItem em{font-style:normal;color:#72f1d0}
 .player .tickerItem i{font-style:normal;color:#8998ad;padding:0 .55em}
+.nowPlaying .nowPlayingText{display:flex;flex-direction:column;gap:4px;min-width:0}
+.nowPlaying.withCover{flex-direction:row;align-items:center;gap:14px}
+.nowPlaying .cover{width:72px;height:72px;flex:none;border-radius:10px;object-fit:cover;background:#0b1524}

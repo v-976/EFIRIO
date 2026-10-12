@@ -237,3 +237,29 @@ Four review remarks were checked and the three confirmed ones fixed (retention l
 4. **Source encoding — NOT REPRODUCED.** All sources decode as strict UTF-8 with no replacement characters; the garbled Cyrillic was a PowerShell console artifact. No files were rewritten for encoding.
 
 Verified with `npm test` (54 tests), `npm run typecheck`, `npm run build`, plus a browser smoke test: clean start, station select/switch, real playback to `Live`, pause/resume, persistence of `efirio.lastStationId`, zero console errors.
+
+## 2026-10-12 — Now Playing: hostingradio/emgsound air logs
+
+### Finding
+
+Browser audit from the deployed PWA origin (`https://v-976.github.io`) showed that the MTS JSON endpoints (`music.mts.ru/radio_proxy_…`) used for Europa Plus, Novoe Radio and Radio Shanson **do not allow cross-origin reads**, so they never worked in the PWA. The official HTML playlist pages are blocked the same way.
+
+The streaming providers themselves publish a CORS-readable air log next to each HLS channel: `https://hls-01-<host>.hostingradio.ru/<channel>/metadata.json` and `https://hls-0N-<host>.emgsound.ru/<n>/metadata.json`. Shape: `{ generatedTime, previous[20], current, next[] }`; items carry `startTime` (ISO with +03:00 offset → exact), `artist`, `title`, cover URLs and a numeric `type`: 1 advert, 2 station ID/jingle, 3 music, 4 programme. The same service answers `?format=fmgid&subformat=current` with a flatter, less precise payload. HTTP 404 with `{"error":"Not found","is_live":true}` means the channel exists but no current item is known (common between songs on some channels).
+
+Channel suffix `495` = Moscow/central feed, `812` = Saint Petersburg. GPM has `812` channels for Humor FM, Relax FM, Like FM, Detskoe, Avtoradio and Comedy Radio, but only `relaxfm812` publishes an air log.
+
+### Decisions
+
+- New metadata type `air` (catalogue schema + `normalizeAir` in `web/src/metadata.ts`). Only `current` is ever Now Playing; `previous`/`next` are never substituted.
+- **Scope rule:** metadata must describe the stream EFIRIO actually plays. Where EFIRIO plays a central online channel, its air log is correct for what the listener hears, even if the FM 812 broadcast differs; the catalogue notes say so per station.
+- Relax FM primary stream switched to the Saint Petersburg channel `relaxfm812` (it has an air log); `relaxfm7` kept as fallback.
+- New air kind `advert`. Adverts and station IDs/jingles are displayed in Now Playing but are not written to the listening history.
+- Cover art (`coverImageUrl300`, https only) is shown in Now Playing and passed to Media Session artwork.
+- Fixed: the JSON normalizer searched into `prev_tracks`/`previous`, so a station ID without an artist borrowed the artist of the previous song. fmgid `date` + `time` now combine into an exact station-local start.
+- Novoe Radio and Radio Shanson set back to `unknown` until a browser-readable source is found.
+
+Now Playing coverage of stations with a stream: 7 configured (of which only 1–2 really worked in the browser) → 14: Дорожное, Ретро FM, Юмор FM, Хит FM, Радио Вера, Relax FM, Like FM, Европа Плюс, MAXIMUM, DFM, Детское, Monte Carlo, Русское Радио (intermittent).
+
+Still without metadata: Вести FM, Радио Ваня, Новое Радио, Радио Гордость, Studio 21, Радио JAZZ, Орфей, Питер FM, НАШЕ, Шансон, Маяк (icecast servers do not expose status JSON cross-origin).
+
+Verified with `npm test` (63 tests).

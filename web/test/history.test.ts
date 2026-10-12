@@ -465,3 +465,24 @@ test('a cancelled start cannot open the gate', () => {
     'a fresh stream is still buffering (readyState below HAVE_CURRENT_DATA)',
   );
 });
+
+test('adverts and station IDs are shown as Now Playing but never enter the history', () => {
+  const history = recorder();
+  history.selectStation(stationA);
+  history.setPlaying(true);
+  history.handleMetadata(track({ title: 'Song one' }), stationA.id);
+  history.handleMetadata(track({ artist: '', title: 'Реклама', kind: 'advert' }), stationA.id);
+  history.handleMetadata(track({ artist: '', title: 'HUMOR FM', kind: 'jingle' }), stationA.id);
+  history.handleMetadata(track({ artist: '', title: 'StandUp', kind: 'program' }), stationA.id);
+  assert.deepEqual(history.list.map((item) => item.title), ['StandUp', 'Song one']);
+});
+
+test('a song repeated after a jingle is not recorded twice', () => {
+  const history = recorder();
+  history.selectStation(stationA);
+  history.setPlaying(true);
+  history.handleMetadata(track({ title: 'Song one' }), stationA.id);
+  history.handleMetadata(track({ artist: '', title: 'Station ID', kind: 'jingle' }), stationA.id);
+  history.handleMetadata(track({ title: 'Song one' }), stationA.id);
+  assert.equal(history.list.length, 1);
+});
