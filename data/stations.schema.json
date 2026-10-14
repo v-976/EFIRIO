@@ -153,6 +153,14 @@
             "$ref": "#/$defs/stream"
           }
         },
+        "feed": {
+          "type": "string",
+          "enum": [
+            "local",
+            "federal"
+          ],
+          "description": "Scope of the online feed EFIRIO actually plays. local = this city's own air (the stream matches the FM row for this city). federal = a shared central/federal online feed that serves many cities at once, so the audio may not match this city's local FM broadcast. Absent means local. Saint Petersburg entries predate this field and are all local."
+        },
         "metadata": {
           "$ref": "#/$defs/metadata"
         },

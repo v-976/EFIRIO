@@ -4,7 +4,7 @@
 
 EFIRIO is a city-focused internet radio project. Instead of presenting an undifferentiated catalogue of thousands of streams, EFIRIO is designed around the real radio landscape of a selected city.
 
-Initial Alpha target: **Saint Petersburg, Russia**.
+Alpha 0.1 target: **Russia — 35 cities across 33 regions**, with Saint Petersburg as the reference city. Cities are selected in the app; adding another city is a catalogue change, not a code change.
 
 ## Clients
 
@@ -24,9 +24,11 @@ The station catalogue is kept separate from client code so station data, streams
 
 ## Alpha 0.1 goals
 
-- Saint Petersburg station catalogue
+- Country → region → city → station catalogue
 - Verified current FM frequencies
 - Verified working internet streams
+- Shared federal feeds labelled as such, never passed off as local broadcasts
+- City selection and city search, persisted between visits
 - Primary + fallback stream support
 - Play / Pause and station switching
 - Now Playing metadata

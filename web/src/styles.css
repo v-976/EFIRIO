@@ -14,3 +14,22 @@
 .nowPlaying .nowPlayingText{display:flex;flex-direction:column;gap:4px;min-width:0}
 .nowPlaying.withCover{flex-direction:row;align-items:center;gap:14px}
 .nowPlaying .cover{width:72px;height:72px;flex:none;border-radius:10px;object-fit:cover;background:#0b1524}
+
+/* Region → city picker. Uses the existing palette only; no new brand colours. */
+.cityPicker{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.cityField{display:flex;flex-direction:column;gap:6px;min-width:0}
+.cityField>span{font-size:10px;letter-spacing:.16em;color:#8998ad}
+.cityField select,.cityField input{width:100%;font:inherit;color:#f7fbff;background:#0b1524cc;border:1px solid #17263b;border-radius:12px;padding:11px 12px;appearance:none;-webkit-appearance:none}
+.cityField select{background-image:linear-gradient(45deg,transparent 50%,#8998ad 50%),linear-gradient(135deg,#8998ad 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:34px}
+.cityField select:focus,.cityField input:focus{outline:none;border-color:#587eff}
+.cityField.citySearch{grid-column:1/-1}
+.cityField input::placeholder{color:#718198}
+.cityMatches{display:grid;gap:8px;margin:0 0 12px;padding:10px;border:1px solid #243650;border-radius:12px;background:#0b1524}
+.cityMatches p{margin:0;font-size:12px;color:#8998ad}
+.cityMatch{display:flex;align-items:baseline;justify-content:space-between;gap:10px;width:100%;text-align:left;border:1px solid #17263b;background:transparent;color:#f7fbff;border-radius:10px;padding:9px 12px;cursor:pointer}
+.cityMatch:hover,.cityMatch.current{border-color:#587eff}
+.cityMatch b{font-size:13px;font-weight:600}
+.cityMatch span{font-size:11px;color:#8998ad}
+@media(max-width:480px){.cityPicker{grid-template-columns:1fr}}
+/* Shared central feed: a deliberately quiet tag so it never reads as a local station. */
+.stationName .feedScope{display:inline-block;margin-left:8px;font-size:10px;color:#8998ad;font-weight:500}

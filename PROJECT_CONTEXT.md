@@ -7,7 +7,7 @@
 
 EFIRIO is a city-first internet radio application. The defining product concept is that users can select a country, region and city and then see the stations that actually belong to that city's radio landscape, preferably including their current FM frequencies.
 
-The first Alpha covers **Saint Petersburg only**, but the architecture must support multiple countries from the beginning.
+The first Alpha covers **Russia — 35 cities across 33 regions**, with Saint Petersburg as the reference city, but the architecture must support multiple countries from the beginning.
 
 ## Platforms
 
@@ -62,6 +62,19 @@ status
 ```
 
 The schema may grow later without breaking existing clients.
+
+### Feed scope
+
+An internet stream is often a single central feed reused across many cities. Publishing such a URL under a city's FM frequency would tell the listener they are hearing that city's broadcast when they are hearing a shared channel.
+
+Stations therefore carry an optional `feed` field:
+
+- `local` (or absent) — the stream matches this city's own FM air.
+- `federal` — the same URL serves several cities; the audio may differ from this city's local FM programme.
+
+Clients show this as a quiet tag rather than an error: the station is the right one and plays correctly, it is simply not this city's own FM programme. Saint Petersburg entries predate the field and are all local.
+
+`feed` is inferred from evidence (a URL is shared when it serves three or more cities), never from a list of network names. Moscow is the documented exception: its central/MSK channels are that city's actual air, so they stay `local`.
 
 ## Stream policy
 

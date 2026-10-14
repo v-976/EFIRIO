@@ -263,3 +263,39 @@ Now Playing coverage of stations with a stream: 7 configured (of which only 1–
 Still without metadata: Вести FM, Радио Ваня, Новое Радио, Радио Гордость, Studio 21, Радио JAZZ, Орфей, Питер FM, НАШЕ, Шансон, Маяк (icecast servers do not expose status JSON cross-origin).
 
 Verified with `npm test` (63 tests).
+
+## 2026-10-14 — R2: География России (region → city → stations)
+
+EFIRIO went from one city to 35 cities across 33 Russian regions. Saint Petersburg is unchanged: its catalogue block is byte-identical to `cdafc4a`, and the only edit to pre-existing data is the root `updatedAt` bump.
+
+### Data
+
+- `data/stations.json`: 846 stations (42 in Saint Petersburg, unchanged + 804 new). Frequencies from `topradio.me` city lists, streams independently probed and kept only on HTTP 2xx with an HLS manifest or audio content type. 160 rows with no verifiable stream were dropped rather than filled with guesses — there are no new `research` entries. All evidence and dates in `docs/STATION_RESEARCH.md`.
+- Schema gained one **optional** station field, `feed: "local" | "federal"` (713 of 846 are federal). Absent means local, so Saint Petersburg needed no edits.
+- 347 stations now carry an `air` Now Playing log, reusing the M1-era air-log contract — `metadata.ts`, `history.ts` and the player are untouched.
+
+### Decision: shared feeds must not pass as local broadcasts
+
+Most Russian networks stream one central feed to every city. Publishing that URL under a city's FM frequency would tell the listener they are hearing Novosibirsk's 93.8 when they are hearing the Moscow channel. So:
+
+- `feed` is **inferred from evidence, not a name list** — a URL is shared when it serves three or more cities.
+- Moscow is the documented exception: in Moscow those central/MSK channels *are* that city's actual air, so they stay `local`. Without this, Moscow would have been mislabelled wholesale.
+- The UI shows a quiet muted *federal feed* tag. Deliberately not a warning colour: the stream works and is the right station, it just may not be the local FM programme.
+
+### Decision: single statically-imported catalogue, no lazy loading
+
+Adding 1.3 MB of pretty JSON would normally argue for per-region dynamic import. Rejected for Alpha: it would complicate the one component that owns playback, persistence and metadata for a size cost that gzip absorbs well. The shipped JS is 976 kB raw / **113 kB gzip**. Worth revisiting only with measured evidence of a slow first load.
+
+### Decision: one recorder per city time zone
+
+`HistoryRecorder.defaultTimeZone` is fixed at construction. Rather than mutate history internals, the recorder is rebuilt when the city's zone changes — history itself is global and survives, only the fallback zone follows the city. `recorder.selectStation(null)` ends the listening session so a track from the old city can never be attributed to the new one.
+
+### UI
+
+Region select → city select → city search, all derived from the catalogue so a new city is a data-only change. Search matches Cyrillic and Latin spellings case-insensitively. `cityId` persists in `localStorage` (`efirio.cityId`); a new install, an unknown or a removed id falls back to Saint Petersburg without touching the stored value. Changing city tears down playback, the metadata watcher, runtime badges, audit results and Media Session together. Region colours, logo, layout and the existing station row are unchanged.
+
+Fixed during QA: an out-of-range city id used to silently reset the user to Saint Petersburg; `changeCity` now ignores ids it cannot resolve.
+
+### Verification
+
+`tsc -b` clean, 63 tests pass, production build succeeds. Browser: default Saint Petersburg (42 stations); Cyrillic search → Москва (42, all local); Новосибирск (28, 25 tagged federal); Якутск via region select (13); playback reaches `Live` on the city-specific `kpradio…novosibirsk.radiokp64.mp3` with Media Session reading "98.3 FM · Новосибирск"; `cityId` survives a reload; a corrupt `cityId` falls back to Saint Petersburg; city change stops playback and clears Media Session; zero console errors.
