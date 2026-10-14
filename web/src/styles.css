@@ -33,3 +33,18 @@
 @media(max-width:480px){.cityPicker{grid-template-columns:1fr}}
 /* Shared central feed: a deliberately quiet tag so it never reads as a local station. */
 .stationName .feedScope{display:inline-block;margin-left:8px;font-size:10px;color:#8998ad;font-weight:500}
+
+/* Internet catalogue: Internet -> country -> stations. Existing palette only. */
+.cityPicker .scopeField{grid-column:1/-1}
+/* The country code takes the frequency column so rows stay aligned without ever
+   implying an FM frequency for an internet-only station. */
+.station .frequency.netGeo{font-size:14px;font-weight:800;letter-spacing:.08em;color:#8998ad}
+/* Country, city and genres sit beneath the name on their own line. */
+.stationName .feedScope.netScope{display:block;margin:4px 0 0;font-size:10px;color:#8998ad}
+/* Incremental rendering: only a chunk of a large country list is mounted at a time. */
+.showMore{width:100%;margin-top:4px;border:1px dashed #31547f;background:transparent;color:#d9ebff;border-radius:15px;padding:13px 14px;cursor:pointer;font-size:13px}
+.showMore:hover{border-color:#587eff}
+.catalogueNote{margin:0 0 12px;font-size:12px;color:#8998ad}
+p.catalogueNote{margin:6px 0 2px}
+.catalogueNote.error{color:#ff9ca8}
+@media(max-width:480px){.station .frequency.netGeo{font-size:13px}}

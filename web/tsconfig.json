@@ -17,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "../data/stations.json"]
+  "include": ["src", "../data/stations.json", "../data/internet-index.json"]
 }

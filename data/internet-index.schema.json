@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://efirio.local/schemas/internet-index.schema.json",
+  "title": "EFIRIO Internet Catalogue Index",
+  "description": "Always bundled with the app: the list of available internet countries. Each country's stations live in a separate file loaded on demand, so opening the Internet section never downloads the whole catalogue and no per-launch network request is made.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "countries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "code",
+        "name",
+        "timeZone",
+        "stationCount"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "Matches data/internet/<id>.json, which the client imports on demand."
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeZone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stationCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

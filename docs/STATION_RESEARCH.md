@@ -89,3 +89,42 @@ All R2 stream and metadata checks were run on **2026-10-14**. A stream was kept 
 ## Time zones
 
 Each city carries an IANA zone, validated with `Intl.DateTimeFormat`. `Asia/Khabarovsk`, `Asia/Kemerovo` and `Asia/Saratov` are rejected by Node ICU, so those cities use `Asia/Vladivostok`, `Asia/Novosibirsk` and `Europe/Saratov` respectively. `Asia/Tomsk`, `Asia/Barnaul` and `Europe/Volgograd` are accepted as-is.
+
+## United Kingdom internet catalogue (R3.1)
+
+The UK catalogue is a separate static file, `data/internet/united-kingdom.json`, loaded on demand. It does not touch the Russian data or the `countries[].regions[].cities[]` shape, so no Russian city or stream depends on it. The index lives at `data/internet-index.json`, outside the folder that `import.meta.glob` scans, so the glob only ever sees per-country chunks and the index stays a small static import.
+
+### Numbers (verified 2026-10-14)
+
+- 2526 unique GB-labelled candidates discovered via the Radio Browser API.
+- 1744 after merging duplicate channel entries (116 collapsed by brand-plus-bitrate normalisation).
+- 1254 confirmed as UK-affiliated: 855 by Wikipedia, 336 by first-party page content, 63 by page plus location agreement.
+- 1075 published with a working stream; 179 confirmed but dropped for lack of any verified HTTPS stream.
+- 1119 distinct stream URLs; 778 mp3, 208 aac, 89 hls.
+- Region known for 424 (England 352, Scotland 45, Wales 17, Northern Ireland 10); city known for 162; genre for 631; language for 628; website for 1048.
+- 111 HLS manifests scanned: no DRM, no encryption.
+
+### Evidence tiers
+
+Radio Browser supplied the candidate list only, never the affiliation. Each candidate had to earn one of three tiers:
+
+1. **Wikipedia** — the name matched an article from the UK licence-area list or a UK radio category.
+2. **Page content** — the station's own site carried a UK nation, Ofcom mention, UK postcode or UK phone number.
+3. **Page plus location** — the site named a place that agrees with the Radio Browser location record.
+
+No station is inferred from server location, TLD or hostname, and no FM frequency is ever attached to an internet-only station (`frequencyMHz` is `null` by construction). Crown Dependencies, Gibraltar and the Republic of Ireland are excluded; the Isle of Man, Jersey and Guernsey veto four otherwise-matching entries.
+
+### Method decisions worth recording
+
+- **JavaScript-shell homepages needed a second pass.** Hundreds of UK independents render their front page from a client-side shell carrying no location text at all. A follow-up pass read each station's own `/contact` and `/about` pages, which is where a UK address actually lives, and recovered 420 confirmations.
+- **The Wikipedia parser captured 32 group headings** ("Sussex", "Midlands", "Greater London") as if they were station rows. Left in the index they would confirm any station merely mentioning the county, so they are stripped before matching.
+- **A single generic word is the one weak case.** A category-crawl title that is one generic word no longer confirms a station on its own; it must be the exact brand or be backed by another signal. A licence-table row is the station's own licence entry and is never treated as loose. This cost nothing: 48 single-word matches remain, 42 from the licence table, and the 6 category-only ones are all exact brand matches.
+- **Only HTTPS streams ship.** An `http://` URL is blocked as mixed content from an HTTPS origin, so http-only groups are excluded; a dedicated retry pass recovered 58 that did serve the same path over HTTPS.
+- **Genre tags are filtered before they become filters.** Radio Browser tags include the station's own frequency, its bitrate and internal markers such as `##browserfriendly`; all are dropped. Decade spellings (`80s`, `80's`, `80\u2019s`) fold into one value. Only genres shared by at least four stations are offered in the dropdown — 103 of 570 distinct tags — while every station keeps its full tag set for display.
+
+### Known gaps
+
+- **Now Playing: 0 of 1075.** 3057 candidate endpoints were probed with the real Pages origin. Nothing returned an open CORS header: 135 answered `Access-Control-Allow-Origin: null`, 185 returned HTML rather than JSON, and the rest 404, 401, 403 or 502. Metadata is configured only where the browser can actually read it, so rather than fabricate titles, these stations ship without a Now Playing adapter. This is a CORS limit at the station, not a parsing limit in EFIRIO.
+- **199 confirmed stations have no HTTPS stream** and are therefore absent from the catalogue.
+- **City is known for only 162 of 1075.** Most entries are national or brand-level with no reliable city, and none was guessed.
+- Genre coverage is uneven: 467 distinct tags appear on fewer than four stations and so are searchable by name but not selectable as filters.

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import catalogueData from '../../data/stations.json';
+import internetIndexData from '../../data/internet-index.json';
 import { HistoryRecorder, canOpenHistoryOnPlaying, historyTimeLabel, type HistoryItem, type StorageLike } from './history.ts';
 import { isSupportedMetadata, probeMetadata, type MetadataConfig, type MetadataProbeResult, type NormalizedTrack, watchNowPlaying } from './metadata.ts';
 import { safeGetItem, safeSetItem } from './storage.ts';
@@ -13,6 +14,34 @@ type Station = { id: string; name: string; frequencyMHz: number | null; streams:
 type City = { id: string; name: string; timeZone?: string | null; stations: Station[] };
 type Region = { id: string; name: string; cities: City[] };
 type Catalogue = { countries: Array<{ regions: Region[] }> };
+
+/**
+ * Internet catalogue entries reuse the player's `Station` shape so the existing
+ * playback, metadata and history code keeps working unchanged, and add the
+ * geography an internet station actually has. `frequencyMHz` is always null:
+ * an internet-only station has no FM frequency and one must never be invented.
+ */
+type InternetStream = Stream & { verifiedAt?: string; availableFromFinland?: boolean | null; notes?: string };
+type InternetStation = {
+  id: string;
+  name: string;
+  country: string;
+  region: string | null;
+  city: string | null;
+  language: string | null;
+  genres: string[];
+  frequencyMHz: null;
+  website: string | null;
+  streams: InternetStream[];
+  metadata: MetadataConfig;
+  logo: string | null;
+  status: Station['status'];
+  verification: { stationVerifiedAt: string | null; sources: string[]; notes: string };
+};
+type InternetCountry = { id: string; name: string; code: string; timeZone: string | null; stations: InternetStation[] };
+type InternetIndex = { schemaVersion: number; updatedAt: string | null; countries: Array<{ id: string; name: string; code: string; timeZone: string | null; stationCount: number }> };
+/** Russia keeps the existing city hierarchy; Internet drills to a country with no region/city of its own. */
+type Scope = 'russia' | 'internet';
 type RuntimeState = 'available' | 'connecting' | 'live' | 'failed';
 type AuditResult = { stationId: string; stationName: string; ok: boolean; streamIndex: number | null; format: string | null; error: string | null };
 type StationMetadataAudit = MetadataProbeResult & { stationId: string; stationName: string };
@@ -22,6 +51,22 @@ const LAST_STATION_KEY = 'efirio.lastStationId';
 const CITY_ID_KEY = 'efirio.cityId';
 const FALLBACK_CITY_ID = 'saint-petersburg';
 const APP_VERSION = 'Alpha 0.1';
+const SCOPE_KEY = 'efirio.scope';
+const INTERNET_COUNTRY_KEY = 'efirio.internetCountryId';
+
+/** The index is tiny and always bundled; each country's stations are a separate chunk fetched only when opened. */
+// The index ships as data rather than a typed module, so it is narrowed through
+// `unknown`. Keeping the country list shape in `InternetIndex` is what the schema and
+// the catalogue builder are validated against at build time.
+const internetIndex = internetIndexData as unknown as InternetIndex;
+// The index lives beside the catalogue files so that the glob below only ever sees
+// per-country chunks, never the index itself. Each country module is the record.
+const internetCountryModules = import.meta.glob('../../data/internet/*.json', { import: 'default' });
+function loadInternetCountry(id: string): Promise<InternetCountry> {
+  const loader = internetCountryModules[`../../data/internet/${id}.json`];
+  if (!loader) return Promise.reject(new Error(`No internet catalogue for "${id}"`));
+  return loader().then((module) => module as InternetCountry);
+}
 
 /** Every city in the catalogue with its region, so the UI can walk region → city without hard-coding either. */
 type LocatedCity = { city: City; region: Region };
@@ -88,8 +133,26 @@ function App() {
   const located = resolveCity(cityId);
   const city = located.city;
   const cityRegion = located.region;
-  const stations = city?.stations ?? [];
-  const cityTimeZone = typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null;
+  /**
+   * Scope lives in its own key, deliberately separate from `efirio.cityId`, so
+   * switching between Russia and Internet never disturbs the saved Russian city.
+   */
+  const [scope, setScope] = React.useState<Scope>(() => (safeGetItem(() => localStorage.getItem(SCOPE_KEY)) === 'internet' ? 'internet' : 'russia'));
+  const [internetCountryId, setInternetCountryId] = React.useState<string | null>(() => safeGetItem(() => localStorage.getItem(INTERNET_COUNTRY_KEY)));
+  const [internetCountryData, setInternetCountryData] = React.useState<InternetCountry | null>(null);
+  const [internetLoading, setInternetLoading] = React.useState(false);
+  const [internetError, setInternetError] = React.useState('');
+  const isInternet = scope === 'internet';
+  /** Falls back to the first listed country when the saved id is unknown or removed. */
+  const internetCountry = React.useMemo(() => internetIndex.countries.find((candidate) => candidate.id === internetCountryId) ?? internetIndex.countries[0] ?? null, [internetCountryId]);
+  /** Where the player says we are: the Russian city, or the internet country. */
+  const placeLabel = isInternet ? (internetCountry?.name ?? 'Интернет') : city.name;
+  const russianStations: Station[] = city?.stations ?? [];
+  const internetStations: InternetStation[] = internetCountryData?.stations ?? [];
+  const stations: Station[] = isInternet ? internetStations : russianStations;
+  const cityTimeZone = isInternet
+    ? (internetCountryData?.timeZone ?? null)
+    : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
   const playableStations = React.useMemo(() => stations.filter((station) => station.streams.length > 0), [stations]);
   const audioRef = React.useRef<HTMLAudioElement | null>(null); const selectedRef = React.useRef<Station | null>(null); const streamIndexRef = React.useRef(0); const shouldPlayRef = React.useRef(false); const playTokenRef = React.useRef(0); const nowPlayingRef = React.useRef<NormalizedTrack | null>(null);
   /** Stream assigned for the current playback session; null while interrupted. */
@@ -106,7 +169,7 @@ function App() {
     recorderZoneRef.current = cityTimeZone;
   }
   const recorder = recorderRef.current;
-  const [isPlaying, setIsPlaying] = React.useState(false); const [playerStatus, setPlayerStatus] = React.useState(`${city.name} · ${APP_VERSION}`); const [runtime, setRuntime] = React.useState<Record<string, RuntimeState>>({}); const [diagnostic, setDiagnostic] = React.useState('');
+  const [isPlaying, setIsPlaying] = React.useState(false); const [playerStatus, setPlayerStatus] = React.useState(`${placeLabel} · ${APP_VERSION}`); const [runtime, setRuntime] = React.useState<Record<string, RuntimeState>>({}); const [diagnostic, setDiagnostic] = React.useState('');
   const [auditRunning, setAuditRunning] = React.useState(false); const [auditProgress, setAuditProgress] = React.useState(''); const [auditResults, setAuditResults] = React.useState<AuditResult[]>([]);
   const [metadataAuditRunning, setMetadataAuditRunning] = React.useState(false); const [metadataAuditProgress, setMetadataAuditProgress] = React.useState(''); const [metadataAuditResults, setMetadataAuditResults] = React.useState<StationMetadataAudit[]>([]);
   const [nowPlaying, setNowPlaying] = React.useState<NormalizedTrack | null>(null); const [metadataStatus, setMetadataStatus] = React.useState('');
@@ -115,18 +178,17 @@ function App() {
   React.useEffect(() => { selectedRef.current = selected; }, [selected]);
   const setStationRuntime = React.useCallback((stationId: string, state: RuntimeState) => setRuntime((current) => ({ ...current, [stationId]: state })), []);
   /** Read at call time so `updateMediaSession` keeps a stable identity when the city changes. */
-  const cityNameRef = React.useRef(city.name);
-  React.useEffect(() => { cityNameRef.current = city.name; }, [city.name]);
+  const cityNameRef = React.useRef(placeLabel);
+  React.useEffect(() => { cityNameRef.current = placeLabel; }, [placeLabel]);
   const updateMediaSession = React.useCallback((station: Station | null, track?: NormalizedTrack | null) => { if (!station || !('mediaSession' in navigator)) return; const place = cityNameRef.current; navigator.mediaSession.metadata = new MediaMetadata({ title: track?.title || station.name, artist: track?.artist || (station.frequencyMHz ? `${station.frequencyMHz.toFixed(1)} FM · ${place}` : place), album: station.name, artwork: track?.coverUrl ? [{ src: track.coverUrl, sizes: '300x300', type: track.coverUrl.endsWith('.webp') ? 'image/webp' : 'image/jpeg' }] : [] }); }, []);
 
   /**
-   * Leaving a city tears down everything that belongs to the old one: playback,
-   * the pending metadata watcher, runtime badges and the recorder session, so a
-   * late track or audio callback from the previous city can never surface here.
+   * Leaving a city, or the whole scope, tears down everything that belongs to the
+   * outgoing context: playback, the pending metadata watcher, runtime badges and the
+   * recorder session, so a late track or audio callback from the previous context can
+   * never surface on the next one.
    */
-  const changeCity = React.useCallback((nextCityId: string) => {
-    const next = findCity(nextCityId);
-    if (!next || next.city.id === cityId) return; // unknown ids must never silently fall back to another city
+  const teardownPlayback = React.useCallback((nextLabel: string) => {
     playTokenRef.current += 1;
     metadataSessionRef.current += 1;
     expectedSrcRef.current = null;
@@ -147,11 +209,50 @@ function App() {
     setMetadataAuditProgress('');
     setIsPlaying(false);
     setSelected(null);
-    setPlayerStatus(`${next.city.name} · ${APP_VERSION}`);
+    setPlayerStatus(`${nextLabel} · ${APP_VERSION}`);
     safeSetItem(() => localStorage.setItem(LAST_STATION_KEY, ''));
+  }, []);
+
+  const changeCity = React.useCallback((nextCityId: string) => {
+    const next = findCity(nextCityId);
+    if (!next || next.city.id === cityId) return; // unknown ids must never silently fall back to another city
+    teardownPlayback(next.city.name);
     safeSetItem(() => localStorage.setItem(CITY_ID_KEY, next.city.id));
     setCityId(next.city.id);
-  }, [cityId]);
+  }, [cityId, teardownPlayback]);
+
+  /**
+   * Switching scope leaves the Russian city id and its restore mechanism exactly as
+   * they were; only the scope flag itself is stored. Internet and Russia never share
+   * a selected station, so the last-station id is cleared for the same reason a city
+   * change clears it.
+   */
+  const changeScope = React.useCallback((nextScope: Scope) => {
+    if (nextScope === scope) return;
+    teardownPlayback(nextScope === 'internet' ? (internetCountry?.name ?? 'Интернет') : city.name);
+    safeSetItem(() => localStorage.setItem(SCOPE_KEY, nextScope));
+    setScope(nextScope);
+  }, [scope, teardownPlayback, internetCountry, city.name]);
+
+  /** Countries are separate static files, loaded only when that country is opened. */
+  React.useEffect(() => {
+    if (!isInternet || !internetCountry) return;
+    const target = internetCountry.id;
+    if (internetCountryData?.id === target) return;
+    let cancelled = false;
+    setInternetLoading(true);
+    setInternetError('');
+    void loadInternetCountry(target)
+      .then((data) => {
+        if (cancelled) return;
+        setInternetCountryData(data);
+        setInternetCountryId(target);
+        safeSetItem(() => localStorage.setItem(INTERNET_COUNTRY_KEY, target));
+      })
+      .catch(() => { if (!cancelled) setInternetError('Country catalogue could not be loaded'); })
+      .finally(() => { if (!cancelled) setInternetLoading(false); });
+    return () => { cancelled = true; };
+  }, [isInternet, internetCountry, internetCountryData]);
 
   React.useEffect(() => {
     setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus('');
@@ -218,35 +319,106 @@ function App() {
     return ALL_CITIES.filter(({ city: candidate }) => candidate.name.toLowerCase().includes(needle)).slice(0, 24);
   }, [trimmedQuery]);
 
+  /** Internet filters: station-name search plus genre/city, only where the catalogue knows them. */
+  const [netQuery, setNetQuery] = React.useState('');
+  const [netGenre, setNetGenre] = React.useState('');
+  const [netCity, setNetCity] = React.useState('');
+  const trimmedNetQuery = netQuery.trim().toLowerCase();
+  const genreCounts = React.useMemo(() => internetStations.reduce((counts, station) => { for (const genre of station.genres) counts.set(genre, (counts.get(genre) ?? 0) + 1); return counts; }, new Map<string, number>()), [internetStations]);
+  // A filter must only offer what it can meaningfully select. Full Radio Browser tag
+  // strings run to hundreds of near-duplicate one-offs, so only genres shared by at
+  // least four stations are offered as filters; every station keeps its full tag set.
+  const GENRE_MIN_SHARE = 4;
+    const netGenres = React.useMemo(() => [...genreCounts.entries()].filter(([, count]) => count >= GENRE_MIN_SHARE).map(([genre]) => genre).sort((a, b) => a.localeCompare(b)), [genreCounts]);
+  const netCities = React.useMemo(() => [...new Set(internetStations.map((station) => station.city).filter((value): value is string => !!value))].sort((a, b) => a.localeCompare(b)), [internetStations]);
+  const filteredInternet = React.useMemo(() => {
+    if (!isInternet) return [] as InternetStation[];
+    return internetStations.filter((station) => (!trimmedNetQuery || station.name.toLowerCase().includes(trimmedNetQuery)) && (!netGenre || station.genres.includes(netGenre)) && (!netCity || station.city === netCity));
+  }, [isInternet, internetStations, trimmedNetQuery, netGenre, netCity]);
+  /**
+   * The internet catalogue holds well over a thousand entries, so only this many rows
+   * are mounted at once; the rest are reached incrementally through "Show more".
+   */
+  const VISIBLE_CHUNK = 60;
+  const [visibleCount, setVisibleCount] = React.useState(VISIBLE_CHUNK);
+  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData]);
+  const visibleStations: Station[] = isInternet ? filteredInternet.slice(0, visibleCount) : stations;
+
   return <main className="shell">
     <header className="brand"><div className="mark" aria-hidden="true">E)))</div><div><h1>EFIRIO</h1><p>The radio of your city</p></div></header>
-    <section className="location"><span>Russia</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></section>
+    <section className="location">{isInternet
+      ? <><span>Интернет</span><b>›</b><span>{internetCountry?.name ?? '—'}</span><b>›</b><span>Радиостанции</span></>
+      : <><span>Russia</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
     <section className="cityPicker">
-      <label className="cityField"><span>Region</span>
-        <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
-          {REGIONS.map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+      <label className="cityField scopeField"><span>Category</span>
+        <select value={scope} onChange={(event) => changeScope(event.target.value as Scope)}>
+          <option value="russia">Россия</option>
+          <option value="internet">Интернет</option>
         </select>
       </label>
-      <label className="cityField"><span>City</span>
-        <select value={city?.id ?? ''} onChange={(event) => changeCity(event.target.value)}>
-          {citiesInRegion.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
-        </select>
-      </label>
-      <label className="cityField citySearch"><span>Find a city</span>
-        <input type="search" inputMode="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="City name" aria-label="Search for a city" />
-      </label>
+      {isInternet ? <>
+        <label className="cityField"><span>Country</span>
+          <select value={internetCountry?.id ?? ''} onChange={(event) => setInternetCountryId(event.target.value)}>
+            {internetIndex.countries.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
+          </select>
+        </label>
+        <label className="cityField citySearch"><span>Find a station</span>
+          <input type="search" inputMode="search" autoComplete="off" value={netQuery} onChange={(event) => setNetQuery(event.target.value)} placeholder="Station name" aria-label="Search for a station" />
+        </label>
+        {netGenres.length > 0 ? <label className="cityField"><span>Genre</span>
+          <select value={netGenre} onChange={(event) => setNetGenre(event.target.value)}>
+            <option value="">All genres</option>
+            {netGenres.map((genre) => <option key={genre} value={genre}>{genre}</option>)}
+          </select>
+        </label> : null}
+        {netCities.length > 0 ? <label className="cityField"><span>City</span>
+          <select value={netCity} onChange={(event) => setNetCity(event.target.value)}>
+            <option value="">All cities</option>
+            {netCities.map((name) => <option key={name} value={name}>{name}</option>)}
+          </select>
+        </label> : null}
+      </> : <>
+        <label className="cityField"><span>Region</span>
+          <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
+            {REGIONS.map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+          </select>
+        </label>
+        <label className="cityField"><span>City</span>
+          <select value={city?.id ?? ''} onChange={(event) => changeCity(event.target.value)}>
+            {citiesInRegion.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
+          </select>
+        </label>
+        <label className="cityField citySearch"><span>Find a city</span>
+          <input type="search" inputMode="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="City name" aria-label="Search for a city" />
+        </label>
+      </>}
     </section>
-    {trimmedQuery ? <section className="cityMatches" aria-label="City search results">
+    {!isInternet && trimmedQuery ? <section className="cityMatches" aria-label="City search results">
       {matches.length ? matches.map(({ city: candidate, region }) => <button key={candidate.id} className={`cityMatch ${candidate.id === city?.id ? 'current' : ''}`} onClick={() => { setQuery(''); changeCity(candidate.id); }}><b>{candidate.name}</b><span>{region.name}</span></button>) : <p>No city matches “{trimmedQuery}”</p>}
     </section> : null}
-    <section className="audit"><button onClick={() => void runAudit()} disabled={auditRunning}>{auditRunning ? 'Auditing…' : 'Audit browser playback'}</button><span>{auditProgress || 'Tests every validated station in this browser'}</span></section>
-    {auditResults.length > 0 ? <section className="auditSummary"><strong>{auditResults.filter((r) => r.ok).length}/{auditResults.length} playable</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All tested stations passed'}</span></section> : null}
-    <section className="audit"><button onClick={() => void runMetadataAudit()} disabled={metadataAuditRunning}>{metadataAuditRunning ? 'Auditing metadata…' : 'Audit Now Playing'}</button><span>{metadataAuditProgress || `Tests metadata for every ${city?.name ?? 'listed'} station`}</span></section>
-    {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{metadataAuditResults.filter((r) => r.ok).length}/{metadataAuditResults.length} Now Playing</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All stations returned track metadata'}</span></section> : null}
+    {isInternet && internetLoading ? <section className="catalogueNote"><span>Loading {internetCountry?.name ?? 'country'} catalogue…</span></section> : null}
+    {isInternet && internetError ? <section className="catalogueNote error"><span>{internetError}</span></section> : null}
+    {!isInternet ? <>
+      <section className="audit"><button onClick={() => void runAudit()} disabled={auditRunning}>{auditRunning ? 'Auditing…' : 'Audit browser playback'}</button><span>{auditProgress || 'Tests every validated station in this browser'}</span></section>
+      {auditResults.length > 0 ? <section className="auditSummary"><strong>{auditResults.filter((r) => r.ok).length}/{auditResults.length} playable</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All tested stations passed'}</span></section> : null}
+      <section className="audit"><button onClick={() => void runMetadataAudit()} disabled={metadataAuditRunning}>{metadataAuditRunning ? 'Auditing metadata…' : 'Audit Now Playing'}</button><span>{metadataAuditProgress || `Tests metadata for every ${city?.name ?? 'listed'} station`}</span></section>
+      {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{metadataAuditResults.filter((r) => r.ok).length}/{metadataAuditResults.length} Now Playing</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All stations returned track metadata'}</span></section> : null}
+    </> : null}
     {selected && (nowPlaying || metadataStatus) ? <section className={nowPlaying?.coverUrl ? 'nowPlaying withCover' : 'nowPlaying'}>{nowPlaying?.coverUrl ? <img className="cover" src={nowPlaying.coverUrl} alt="" loading="lazy" referrerPolicy="no-referrer" /> : null}<div className="nowPlayingText"><small>NOW PLAYING{nowPlaying && KIND_LABELS[nowPlaying.kind] ? ` · ${KIND_LABELS[nowPlaying.kind]}` : ''}</small><strong>{nowPlaying?.title || metadataStatus}</strong>{nowPlaying?.artist ? <span>{nowPlaying.artist}</span> : null}{nowPlaying ? <time>{nowPlayingTimeLabel(nowPlaying)}</time> : null}</div></section> : null}
-    <section className="stations" aria-label={`${city?.name ?? 'Selected city'} stations`}>{stations.map((station) => { const [badgeClass, badgeText] = badge(station); return <button className={`station ${selected?.id === station.id ? 'selected' : ''}`} key={station.id} onClick={() => void chooseStation(station, station.streams.length > 0)}><span className="frequency">{station.frequencyMHz?.toFixed(1) ?? '—'} <small>FM</small></span><span className="stationName">{station.name}{station.feed === 'federal' ? <small className="feedScope" title="Shared federal/central online feed — this city's own FM broadcast may differ">federal feed</small> : null}</span><span className={badgeClass}>{badgeText}</span></button>; })}</section>
+    <section className="stations" aria-label={`${placeLabel} stations`}>{visibleStations.map((station) => {
+      const [badgeClass, badgeText] = badge(station);
+      const net = isInternet ? (station as InternetStation) : null;
+      return <button className={`station ${selected?.id === station.id ? 'selected' : ''}`} key={station.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
+        {net ? <span className="frequency netGeo">GB</span> : <span className="frequency">{station.frequencyMHz?.toFixed(1) ?? '—'} <small>FM</small></span>}
+        <span className="stationName">{station.name}{net
+          ? <small className="feedScope netScope">{net.country}{net.city ? ` · ${net.city}` : ''}{net.genres.length ? ` · ${net.genres.join(', ')}` : ''}</small>
+          : station.feed === 'federal' ? <small className="feedScope" title="Shared federal/central online feed — this city's own FM broadcast may differ">federal feed</small> : null}</span>
+        <span className={badgeClass}>{badgeText}</span>
+      </button>;
+    })}{isInternet && !visibleStations.length && !internetLoading ? <p className="catalogueNote"><span>{trimmedNetQuery ? `No station matches “${netQuery.trim()}”` : 'No station matches the selected filters'}</span></p> : null}</section>
+    {isInternet && visibleCount < filteredInternet.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>Show more · {Math.min(VISIBLE_CHUNK, filteredInternet.length - visibleCount)} of {filteredInternet.length - visibleCount} remaining</button> : null}
     {history.length > 0 ? <details className="history"><summary>Listening history · {history.length}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
-    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || 'Choose a station'}</strong>}<span>{selected ? playerStatus : `${city?.name ?? ''} · ${APP_VERSION}`}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
+    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || 'Choose a station'}</strong>}<span>{selected ? playerStatus : `${placeLabel} · ${APP_VERSION}`}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
   </main>;
 }
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

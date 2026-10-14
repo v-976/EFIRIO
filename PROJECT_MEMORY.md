@@ -299,3 +299,31 @@ Fixed during QA: an out-of-range city id used to silently reset the user to Sain
 ### Verification
 
 `tsc -b` clean, 63 tests pass, production build succeeds. Browser: default Saint Petersburg (42 stations); Cyrillic search → Москва (42, all local); Новосибирск (28, 25 tagged federal); Якутск via region select (13); playback reaches `Live` on the city-specific `kpradio…novosibirsk.radiokp64.mp3` with Media Session reading "98.3 FM · Новосибирск"; `cityId` survives a reload; a corrupt `cityId` falls back to Saint Petersburg; city change stops playback and clears Media Session; zero console errors.
+
+## R3.1: internet scope (United Kingdom)
+
+### Decision: internet catalogue kept structurally separate from the Russian tree
+
+`data/internet/united-kingdom.json` sits outside `countries[].regions[].cities[]`, so the Russian catalogue stays byte-identical and no Russian code path reads the new shape. The index is a small static import; each country is a separate static file loaded on demand through `import.meta.glob`, which makes Vite code-split it: the UK chunk is 1,058 kB raw / **93 kB gzip**, and it is never fetched while the user is in Russian scope. The index sits at `data/internet-index.json`, outside the globbed folder, so the glob only sees country files and nothing is double-bundled. Verified in the network log: one chunk request on entering the scope, zero while in Russian scope.
+
+### Decision: the scope picker is a field, not a new screen
+
+A `Category` field was added to the existing `cityPicker` and the breadcrumb becomes `Интернет › country › Радиостанции`. Region, city and city-search are preserved untouched for Russian scope; internet scope swaps in country, station-name search and genre/city filters. This keeps the layout, palette, brand and station row the user already knows, and it means a second country is a data file plus one index entry — no component change.
+
+### Decision: persistence is a separate key, and the Russian key is never rewritten
+
+`efirio.scope` and `efirio.internetCountryId` sit alongside `efirio.cityId`. Entering the internet scope tears playback down through the same shared teardown used by a Russian city change and clears the last-station key, so a track from one scope can never be attributed to the other. The country is loaded lazily and falls back to the first entry in the index if the stored id is unknown.
+
+### Decision: no Now Playing adapter is shipped for the UK
+
+3057 candidate endpoints were probed with the real Pages origin and none returned an open CORS header — 135 answered `Access-Control-Allow-Origin: null`, 185 returned HTML instead of JSON, the rest failed outright. Because EFIRIO must never invent a track title, and only browser-readable JSON is configurable, the UK stations ship with no metadata adapter. The Russian `air`/`json`/`html` handling is untouched.
+
+### Genre filters are derived, not dumped
+
+Raw Radio Browser tags run to 570 distinct values including each station's own frequency, its bitrate and internal markers. Frequencies, bitrates and codec words are dropped, decade spellings fold into one value, and only genres on at least four stations (103) are offered as filters. Every station still displays its full tag set.
+
+### Verification
+
+`tsc -b` clean, 63 tests pass, production build succeeds. `data/stations.json` is unchanged. Browser: Russian scope first, 42 Saint Petersburg rows, all with FM frequencies and no internet chrome; `Category › Интернет` loads the UK catalogue with the GB chip, country subline and no frequency; search and the genre filter narrow correctly; chunked rendering caps the list at 60 mounted rows with a working `Show more` (955 remaining after one click); **BBC Radio 2 plays** — HLS manifest plus segments returned 206 and the player reached `Live`; scope and country survive a reload while `efirio.cityId` stays intact, and switching back to Russia restores the 42 local rows.
+
+Fixed during this work: 32 Wikipedia group headings were matching as stations; a leaked page title was reaching the territory check; 420 UK stations were invisible because their homepages are JavaScript shells; the genre dropdown offered 570 unusable values.

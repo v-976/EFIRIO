@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://efirio.local/schemas/internet.schema.json",
+  "title": "EFIRIO Internet Station Catalogue",
+  "description": "One file per country of internet radio stations. Deliberately separate from stations.schema.json so the Russian region/city hierarchy stays byte-identical. A station's region and city are only present when the station's own declared location resolved against the known-place lookup; they are never inferred from server location or TLD.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "country",
+    "stations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "country": {
+      "$ref": "#/$defs/country"
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/station"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "country": {
+      "type": "object",
+      "required": [
+        "id",
+        "code",
+        "name",
+        "timeZone"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
+          "description": "File name stem: the catalogue is loaded from data/internet/<id>.json on demand."
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timeZone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "IANA time zone used for station-local metadata and air times, for example Europe/London."
+        }
+      },
+      "additionalProperties": false
+    },
+    "station": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "country",
+        "region",
+        "city",
+        "language",
+        "genres",
+        "frequencyMHz",
+        "website",
+        "streams",
+        "metadata",
+        "logo",
+        "status",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the country, for example Великобритания."
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "description": "One of the four United Kingdom nations when reliably known, otherwise null. Never invented."
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "description": "A real city when reliably known, otherwise null. Counties and vague regions stay null rather than being mislabelled as a city."
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "genres": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "description": "Empty when no genre is known; genres are never inferred."
+        },
+        "frequencyMHz": {
+          "type": "null",
+          "description": "Always null. An internet-only station has no FM frequency and one must never be assigned."
+        },
+        "website": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "streams": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stream"
+          },
+          "minItems": 1
+        },
+        "metadata": {
+          "$ref": "#/$defs/metadata"
+        },
+        "logo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "active",
+            "temporarily-unavailable",
+            "inactive",
+            "research"
+          ]
+        },
+        "verification": {
+          "$ref": "#/$defs/verification"
+        }
+      },
+      "additionalProperties": false
+    },
+    "stream": {
+      "type": "object",
+      "required": [
+        "url",
+        "role",
+        "format",
+        "verifiedAt",
+        "availableFromFinland"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://",
+          "description": "HTTPS only: an http:// audio URL is blocked as mixed content from the HTTPS origin."
+        },
+        "role": {
+          "enum": [
+            "primary",
+            "fallback"
+          ]
+        },
+        "format": {
+          "enum": [
+            "hls",
+            "aac",
+            "mp3",
+            "ogg",
+            "unknown"
+          ],
+          "description": "Ogg is excluded in practice: iOS Safari cannot play it."
+        },
+        "verifiedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "availableFromFinland": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "type",
+        "url",
+        "historyAvailable"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "none",
+            "icy",
+            "json",
+            "html",
+            "hls",
+            "air",
+            "unknown"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "historyAvailable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "stationVerifiedAt",
+        "frequencyVerifiedAt",
+        "sources"
+      ],
+      "properties": {
+        "stationVerifiedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "When the country affiliation and stream set were confirmed."
+        },
+        "frequencyVerifiedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "description": "Always null: internet stations have no FM frequency to verify."
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Independent evidence for the country affiliation and the station's own pages."
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
