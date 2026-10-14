@@ -99,9 +99,9 @@ The UK catalogue is a separate static file, `data/internet/united-kingdom.json`,
 - 2526 unique GB-labelled candidates discovered via the Radio Browser API.
 - 1744 after merging duplicate channel entries (116 collapsed by brand-plus-bitrate normalisation).
 - 1254 confirmed as UK-affiliated: 855 by Wikipedia, 336 by first-party page content, 63 by page plus location agreement.
-- 1075 published with a working stream; 179 confirmed but dropped for lack of any verified HTTPS stream.
-- 1119 distinct stream URLs; 778 mp3, 208 aac, 89 hls.
-- Region known for 424 (England 352, Scotland 45, Wales 17, Northern Ireland 10); city known for 162; genre for 631; language for 628; website for 1048.
+- 1076 published with a working stream (1075 from the R3.1 run plus Dance Attack FM, recovered from the official site the same day — see the post-run addition below); 179 confirmed but dropped for lack of any verified HTTPS stream.
+- 1120 distinct stream URLs; 779 mp3, 208 aac, 89 hls.
+- Region known for 424 (England 352, Scotland 45, Wales 17, Northern Ireland 10); city known for 162; genre for 632; language for 629; website for 1049.
 - 111 HLS manifests scanned: no DRM, no encryption.
 
 ### Evidence tiers
@@ -120,11 +120,17 @@ No station is inferred from server location, TLD or hostname, and no FM frequenc
 - **The Wikipedia parser captured 32 group headings** ("Sussex", "Midlands", "Greater London") as if they were station rows. Left in the index they would confirm any station merely mentioning the county, so they are stripped before matching.
 - **A single generic word is the one weak case.** A category-crawl title that is one generic word no longer confirms a station on its own; it must be the exact brand or be backed by another signal. A licence-table row is the station's own licence entry and is never treated as loose. This cost nothing: 48 single-word matches remain, 42 from the licence table, and the 6 category-only ones are all exact brand matches.
 - **Only HTTPS streams ship.** An `http://` URL is blocked as mixed content from an HTTPS origin, so http-only groups are excluded; a dedicated retry pass recovered 58 that did serve the same path over HTTPS.
-- **Genre tags are filtered before they become filters.** Radio Browser tags include the station's own frequency, its bitrate and internal markers such as `##browserfriendly`; all are dropped. Decade spellings (`80s`, `80's`, `80\u2019s`) fold into one value. Only genres shared by at least four stations are offered in the dropdown — 103 of 570 distinct tags — while every station keeps its full tag set for display.
+- **Genre tags are filtered before they become filters.** Radio Browser tags include the station's own frequency, its bitrate and internal markers such as `##browserfriendly`; all are dropped. Decade spellings (`80s`, `80's`, `80\u2019s`) fold into one value. Only genres shared by at least four stations are offered in the dropdown — 103 of 571 distinct tags — while every station keeps its full tag set for display.
 
 ### Known gaps
 
-- **Now Playing: 0 of 1075.** 3057 candidate endpoints were probed with the real Pages origin. Nothing returned an open CORS header: 135 answered `Access-Control-Allow-Origin: null`, 185 returned HTML rather than JSON, and the rest 404, 401, 403 or 502. Metadata is configured only where the browser can actually read it, so rather than fabricate titles, these stations ship without a Now Playing adapter. This is a CORS limit at the station, not a parsing limit in EFIRIO.
+- **Now Playing: 0 of 1076.** 3057 candidate endpoints were probed with the real Pages origin. Nothing returned an open CORS header: 135 answered `Access-Control-Allow-Origin: null`, 185 returned HTML rather than JSON, and the rest 404, 401, 403 or 502. Metadata is configured only where the browser can actually read it, so rather than fabricate titles, these stations ship without a Now Playing adapter. This is a CORS limit at the station, not a parsing limit in EFIRIO.
 - **199 confirmed stations have no HTTPS stream** and are therefore absent from the catalogue.
-- **City is known for only 162 of 1075.** Most entries are national or brand-level with no reliable city, and none was guessed.
-- Genre coverage is uneven: 467 distinct tags appear on fewer than four stations and so are searchable by name but not selectable as filters.
+- **City is known for only 162 of 1076.** Most entries are national or brand-level with no reliable city, and none was guessed.
+- Genre coverage is uneven: 468 distinct tags appear on fewer than four stations and so are searchable by name but not selectable as filters.
+
+### Post-run addition: Dance Attack FM (2026-10-14)
+
+The station was absent from the R3.1 run for two independent reasons. Its only Radio Browser stream, `http://streaming04.liveboxstream.uk:8045/1`, was pure HTTP with no HTTPS variant — the probe found it alive at 200 `audio/mpeg`, but http-only groups are excluded as mixed content and the dedicated HTTPS retry did not recover it. Affiliation-wise the automated evidence stopped at a homepage-place match that could not agree with any location record (Radio Browser's `state` field is empty), so no tier was earned and the classifier recorded `placeOnlyRejected` alongside `noStream`.
+
+A targeted verification against the official site resolved both, by declaration rather than by pattern match: `https://www.danceattack.fm/` states the station is "a U.K. focussed non-profit station" paying PPL & PRS, and its own player configuration carries an active HTTPS stream, `https://s6.autopo.st/proxy/gqfwzcil?mp=/1` — MP3 192 kbps, `Access-Control-Allow-Origin: *`, 540 kB delivered over 12 s of sustained playback from the probe origin. Genres are the site's own self-description (Dance, Trance, House, Progressive, Psytrance); no city is stated, so `city` stays `null`; the stream exposes no `icy-metaint` and the site's `ownmetadataurl` is empty, so Now Playing remains unconfigured rather than guessed. Checked in the EFIRIO player on a dev server: the row click reaches `Live` with a clean console. The catalogue now publishes 1076 stations.
