@@ -1,0 +1,1026 @@
+{
+ "id": "finland",
+ "name": "Финляндия",
+ "code": "FI",
+ "timeZone": "Europe/Helsinki",
+ "updatedAt": "2026-10-15",
+ "stations": [
+  {
+   "id": "doubleclapradio",
+   "name": "Doubleclap Radio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "englanti",
+   "genres": [
+    "dance",
+    "electronic",
+    "hardstyle",
+    "house",
+    "lounge",
+    "psytrance",
+    "trance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://doubleclap.dance/",
+   "streams": [
+    {
+     "url": "https://s3.radio.co/scfd7273b2/listen",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    },
+    {
+     "url": "https://s3.radio.co/scfd7273b2/low",
+     "role": "fallback",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid fed9a975-d67c-44d1-8591-f44208c196e3)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "finnradio",
+   "name": "FinnRadio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "alternative",
+    "indie",
+    "online"
+   ],
+   "frequencyMHz": null,
+   "website": "https://finnradio.net/",
+   "streams": [
+    {
+     "url": "https://servidor39-5.brlogic.com:7076/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid a1d96ed6-a5db-41cb-b294-8ed44973a468)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "fugefm",
+   "name": "FugeFM",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://fuengirola.fi/fugefm/",
+   "streams": [
+    {
+     "url": "https://streaming.broadcast.radio/fugefm",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid f7001430-7f36-4562-93b8-31b7f070a327)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "fyrryradio",
+   "name": "Fyrryradio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://fyrryradio.fi",
+   "streams": [
+    {
+     "url": "https://play.fyrryradio.fi/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "radioasemat.fi — Traficom radio licence page \"fyrryradio\" (0 FM rows, data refreshed 2026-10-15)",
+     "Mediamonitori — official site, operator: yksityishenkilö",
+     "Official site verified: https://fyrryradio.fi"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "hyprdemosceneradio",
+   "name": "HYPR demoscene radio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "englanti",
+   "genres": [
+    "demos",
+    "demoscene"
+   ],
+   "frequencyMHz": null,
+   "website": "https://hypr.website/",
+   "streams": [
+    {
+     "url": "https://hypr.website/hypr.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid d1b6995d-3877-4f20-9f4d-4dea4eb6eadf)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "idaradio",
+   "name": "IDA Radio",
+   "country": "Финляндия",
+   "region": "Uusimaa",
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "alternative",
+    "community",
+    "electronic",
+    "underground"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.idaidaida.net/",
+   "streams": [
+    {
+     "url": "https://broadcast.idaidaida.net:8000/stream",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 48f5b31a-5e1a-480f-9036-62307c441990)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "kesaseuraradio",
+   "name": "Kesäseuraradio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "christian",
+    "community",
+    "talk"
+   ],
+   "frequencyMHz": null,
+   "website": "https://kesaseuraradio.fi/",
+   "streams": [
+    {
+     "url": "https://kesaseuraradio.out.airtime.pro/kesaseuraradio_b",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    },
+    {
+     "url": "https://srk-radio.s3.amazonaws.com/Valmiit_ohjelmat_2020_mp3/P%C3%A4iv%C3%A4n_seuravieras.mp3",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Mediamonitori — official site, operator: Suomen Rauhanyhdistysten Keskusyhdistys",
+     "Radio Browser — discovery entry (uuid 297bb132-c38f-47f7-aa30-03a3cfc0de13)",
+     "Official site verified: https://kesaseuraradio.fi/"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "ninjabox247",
+   "name": "NinjaBox 24/7",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "chill",
+    "deep house",
+    "drum & bass",
+    "dubtechno",
+    "electronic",
+    "neurofunk"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.savustamo.fi/",
+   "streams": [
+    {
+     "url": "https://djuplink.com/ninjabox.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid a19530b7-3549-4a93-bc7b-022a1e1cb2ff)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "prideradio",
+   "name": "Pride Radio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "dance",
+    "hits",
+    "lgbt",
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radioplay.fi/pride-radio",
+   "streams": [
+    {
+     "url": "https://streaming.radioplay.fi/fi_pride_128.mp3",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 65ee044c-b0e0-4fc2-961e-3817014ff330)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radioboofi",
+   "name": "Radio Boofi",
+   "country": "Финляндия",
+   "region": "Varsinais-Suomi",
+   "city": null,
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://iranian.fi/",
+   "streams": [
+    {
+     "url": "https://radio.iranian.fi/listen/vip/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid ba8ca8d2-32f0-4f31-aea4-4e57773e6357)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiosantaclaus",
+   "name": "Radio Santa Claus",
+   "country": "Финляндия",
+   "region": "Uusimaa",
+   "city": null,
+   "language": "englanti",
+   "genres": [
+    "christmas music",
+    "helsinki",
+    "rsl"
+   ],
+   "frequencyMHz": null,
+   "website": "http://www.radiosantaclaus.com/",
+   "streams": [
+    {
+     "url": "https://streaming.radiostreamlive.com/radiosantaclaus_devices",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 962b509f-0601-11e8-ae97-52543be04c81)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiosoho",
+   "name": "Radio Soho",
+   "country": "Финляндия",
+   "region": "Pirkanmaa",
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "community",
+    "local",
+    "music"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radiosoho.fi/",
+   "streams": [
+    {
+     "url": "https://sohostream.djonline.fi:8008/radio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid f3fcac89-0f90-4534-90af-0a1d9fae1624)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiotempo",
+   "name": "Radio Tempo",
+   "country": "Финляндия",
+   "region": "Kymenlaakso",
+   "city": null,
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://www.radiotempo.fi/",
+   "streams": [
+    {
+     "url": "https://cast.radiotempo.fi/radiotempo",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Wikipedia fi — listed region: Kymenlaakso",
+     "Radio Browser — discovery entry (uuid b6b4301e-7c69-4c01-b798-5083b5b11f5c)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiotuottaja1",
+   "name": "Radio Tuottaja1",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "music",
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://kaupunkikanava.fi/",
+   "streams": [
+    {
+     "url": "https://kaupunkiradio.radiotaajuus.fi:9013/radio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 549e9584-1d27-4a8b-8755-dca57bbe82a8)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiowm",
+   "name": "Radio W&M",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "englanti",
+   "genres": [
+    "americana",
+    "blues",
+    "classical",
+    "country",
+    "dance",
+    "disco",
+    "english",
+    "finnish",
+    "funk",
+    "gothic",
+    "jazz",
+    "latin pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://catskinrex.net/radio-wm/",
+   "streams": [
+    {
+     "url": "https://stream.zeno.fm/qgeotx9vzpluv",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 5fa5e2f9-c8fd-4100-9bd3-447a768edd70)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radiosefi",
+   "name": "RadioSE.fi",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://www.radiose.fi/",
+   "streams": [
+    {
+     "url": "https://wr2.downtime.fi/kaakko.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 12f3ea7f-4041-4d54-9a57-fdb0f0c32714)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "radioverkko",
+   "name": "Radioverkko",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "community"
+   ],
+   "frequencyMHz": null,
+   "website": "http://radioverkko.fi/",
+   "streams": [
+    {
+     "url": "https://radioverkko.fi:8002/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 96270e6c-0601-11e8-ae97-52543be04c81)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "replaynewssuomi",
+   "name": "REPLAY NEWS - Suomi",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "finland",
+   "genres": [
+    "information",
+    "news"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.replaynews.net/",
+   "streams": [
+    {
+     "url": "https://replaynewsfi.ice.infomaniak.ch/replaynewsfi-128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid b98188e0-3392-485d-8265-c3995c9b1858)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "tampereenkiakkoradiotappara",
+   "name": "Tampereen Kiakkoradio: Tappara",
+   "country": "Финляндия",
+   "region": "Pirkanmaa",
+   "city": "Tampere",
+   "language": "suomi",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://kiakkoradio.fi/",
+   "streams": [
+    {
+     "url": "https://st.downtime.fi/kiakko-tappara.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 17d8fdef-c658-4d5a-bbbe-d19ec6e82982)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "tekoalyradio",
+   "name": "Tekoälyradio",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "ai",
+    "hits",
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radioplay.fi/tekoalyradio",
+   "streams": [
+    {
+     "url": "https://live-bauerfi.sharp-stream.com/fi_tekoalyradio_64.aac?direct=true",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    },
+    {
+     "url": "https://streaming.radioplay.fi/fi_tekoalyradio_128.mp3",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 64636a34-a2f0-4388-bc20-6b0415aa2434)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "vombafm",
+   "name": "Vömba FM",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "estonian",
+   "genres": [
+    "80s",
+    "90s",
+    "community",
+    "estonian",
+    "online"
+   ],
+   "frequencyMHz": null,
+   "website": "https://vombafm.fi/",
+   "streams": [
+    {
+     "url": "https://c4.radioboss.fm:18123/live",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 77a2ea2c-ae79-48bf-998a-0be1752563e9)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "yleklassinen",
+   "name": "Yle Klassinen",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "classical",
+    "music"
+   ],
+   "frequencyMHz": null,
+   "website": "https://yle.fi/aihe/klassinen",
+   "streams": [
+    {
+     "url": "https://icecast.live.yle.fi/radio/YleKlassinen/icecast.audio",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    },
+    {
+     "url": "https://yleradiolive5.akamaized.net/hls/live/20000872/yleklassinen/master.m3u8",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type application/x-mpegURL."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid 22c402d1-2a7f-4713-8e2b-646070026dba)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "yleradio1hifi",
+   "name": "Yle Radio 1 Hifi",
+   "country": "Финляндия",
+   "region": null,
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "classical"
+   ],
+   "frequencyMHz": null,
+   "website": "https://areena.yle.fi/podcastit/ohjelmat/yle-radio-1",
+   "streams": [
+    {
+     "url": "https://icecast.live.yle.fi/radio/YleRadio1Hifi/icecast.audio",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser — discovery entry (uuid f6d91cef-82e6-4bd7-92ea-1c98e99cf3d0)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  },
+  {
+   "id": "ysari",
+   "name": "Ysäri",
+   "country": "Финляндия",
+   "region": "Uusimaa",
+   "city": null,
+   "language": "suomi",
+   "genres": [
+    "90s",
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radioplay.fi/ysari/",
+   "streams": [
+    {
+     "url": "https://live-bauerfi.sharp-stream.com/fi_ysari_64.aac?direct=true",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/aac."
+    },
+    {
+     "url": "https://stream-redirect.bauermedia.fi/ysari/ysari_128.mp3?aw_0_1st.bauer_loggedin=false&aw_0_1st.playerid=BMUK_tunein",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-15T14:13:21.532Z",
+     "availableFromFinland": true,
+     "notes": "Validated from Finland: HTTP 200; content-type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "No CORS-enabled metadata endpoint verified."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-15",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Wikipedia fi — list of Finnish radio stations (osavaltakunnallinen)",
+     "Radio Browser — discovery entry (uuid 5b477c0e-5a75-42b9-af39-d7b9d73d065a)"
+    ],
+    "notes": "Internet-only; streams validated from Finland on 2026-10-15."
+   }
+  }
+ ]
+}

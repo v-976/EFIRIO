@@ -134,3 +134,38 @@ No station is inferred from server location, TLD or hostname, and no FM frequenc
 The station was absent from the R3.1 run for two independent reasons. Its only Radio Browser stream, `http://streaming04.liveboxstream.uk:8045/1`, was pure HTTP with no HTTPS variant — the probe found it alive at 200 `audio/mpeg`, but http-only groups are excluded as mixed content and the dedicated HTTPS retry did not recover it. Affiliation-wise the automated evidence stopped at a homepage-place match that could not agree with any location record (Radio Browser's `state` field is empty), so no tier was earned and the classifier recorded `placeOnlyRejected` alongside `noStream`.
 
 A targeted verification against the official site resolved both, by declaration rather than by pattern match: `https://www.danceattack.fm/` states the station is "a U.K. focussed non-profit station" paying PPL & PRS, and its own player configuration carries an active HTTPS stream, `https://s6.autopo.st/proxy/gqfwzcil?mp=/1` — MP3 192 kbps, `Access-Control-Allow-Origin: *`, 540 kB delivered over 12 s of sustained playback from the probe origin. Genres are the site's own self-description (Dance, Trance, House, Progressive, Psytrance); no city is stated, so `city` stays `null`; the stream exposes no `icy-metaint` and the site's `ownmetadataurl` is empty, so Now Playing remains unconfigured rather than guessed. Checked in the EFIRIO player on a dev server: the row click reaches `Live` with a clean console. The catalogue now publishes 1076 stations.
+
+## Finland (R3.2) — numbers (verified 2026-10-15)
+
+- 367 candidate records after cross-source deduplication; 21 further duplicates merged into parents; 236 excluded with a recorded reason each; **115 published** — 91 terrestrial (`data/finland.json`) plus 24 internet-only (`data/internet/finland.json`).
+- Terrestrial split: 7 nationwide (POPfm, Radio Nova, Yle Radio 1, Yle Radio Suomi, Yle Radio Vega, Yle X3M, YleX), 78 regional, 6 local. Geography: 19 regions, 133 cities, including Åland (Ahvenanmaa) as part of Finland.
+- Streams: 91/91 terrestrial and 24/24 internet entries validated by actual audio delivery from Finland (content-type plus head bytes: MPEG frame sync, AAC or HLS manifest), never by HTTP status alone. HTTPS only.
+- Now Playing: 11 of 115 — the Radio Dei windows, one JSON endpoint per mount, mount-scoped with `Access-Control-Allow-Origin: *`. No other Finnish entry exposed a browser-readable endpoint; absence never blocks publication.
+- Exclusions (236): 139 no active FM and no stream; 59 closed or historical; 30 active with FM presence but no confirmed stream; 5 geography unconfirmed; 3 foreign broadcasters. Per-station reasons, sources and websites are in `data/research/finland.json`.
+
+## Finland — evidence tiers
+
+Radio Browser was discovery only, as for the UK. Affiliation and geography were earned from:
+
+1. **radioasemat.fi** — the Finnish FM station list built on the Traficom register, refreshed 15.10.2026. The primary source for every FM frequency and its locality; each locality was mapped to its region through a municipality table (317 keys, Åland included). POPfm's own 65-row footprint was cross-checked against the raw page.
+2. **Yle itself** — official `yle.fi` icecast mounts (validated per channel) and the wiki Yle Radio Suomi transmitter table (77 rows, office and site per locality) for regional variants.
+3. **Official station sites** — stream URLs were taken from the stations' own players where Radio Browser carried only a stale HTTP link; a station was never excluded for a stale aggregator URL if its own site still played.
+
+No station's geography was inferred from server location, TLD or site language, and internet accessibility was never treated as membership in the internet-only category.
+
+## Finland — method decisions worth recording
+
+- **Regional variants are windows of one station, not copies.** Yle Radio Suomi, Yle Radio Vega and Radio Dei publish per-city streams under one brand. Each verified variant is a registry record whose `frequencies[]` rows carry the transmitter locality and region; the window appears when the user's region or city matches, and a multi-city coverage zone never fabricates extra copies. Nationwide stations are never duplicated into region or city lists.
+- **Coverage outranks catalogue tier.** A station broadcasting on many confirmed localities (Sandels on 16, Sea FM on 13, Radio Kaleva on 9) is classified `regional` by footprint even when a wiki list called it local; only the seven confirmed single-programme national networks are `nationwide`.
+- **Åland stays Finnish.** Ahvenanmaa is a normal region: Mix Megapol, Rockklassiker and Steel FM carry their Åland FM rows, Ålands Radio publishes as a local station with a stream but no confirmed FM row, and all original-language names (Sámi included) are preserved as written.
+- **Wiki transmitter cells use comma decimals.** The first parser pass matched only two digits before the comma, so `100,3` read as 0.3 and thirteen 100–107 MHz rows lost their frequency while still creating their city bucket — which is how the Sund row of the Turku window surfaced the bug. The parser now takes two or three digits; all thirteen rows are restored with correct values.
+- **POPfm came back by one bounded player capture.** Its official site is a Blazor app whose `<audio>` src arrives over the SignalR circuit, invisible to a static hunt; one scripted click on the site's own play button yielded `https://stream.rcs.revma.com/hr92cvyzz2nwv` — a stable base that redirects to a token'd edge — validated as `audio/mpeg` with MPEG frame sync and now published as the primary stream of a nationwide station.
+- **Yle Mondo stays in diagnostics.** A bounded browser attempt found no live channel in 2026: Areena's search returns nothing for "mondo", `yle.fi/radio` has no Mondo entry and the historical icecast mount 404s. Recorded as stream-not-confirmed rather than invented.
+- **Jouluradio is seasonal,** its nelonenmedia host dead on 2026-10-15 off-season — excluded with a seasonal reason. **Soft FM** remains permanently excluded: wiki mention only, no site, no stream.
+
+## Finland — known gaps
+
+- Now Playing works for 11 of 115 entries; the rest expose nothing browser-readable and ship without an adapter rather than with a guessed one.
+- 30 entries with confirmed FM presence have no confirmed stream as of 2026-10-15 and wait in `data/research/finland.json`.
+- Åland's own FM frequencies could not be confirmed from an authoritative Finnish source; Ålands Radio therefore ships with an `FI` country chip and no MHz.
+- Desktop browser verification only — not tested on real iPhone Safari hardware; no iOS background-playback claims.

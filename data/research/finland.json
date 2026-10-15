@@ -1,0 +1,2953 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-15",
+ "note": "R3.2 Finland research diagnostics: candidates not published (or merged) with reasons. Publishing requires a playable verified stream.",
+ "summary": {
+  "candidates": 367,
+  "mergedOrRelayed": 21,
+  "publishedTerrestrial": 91,
+  "publishedInternet": 24,
+  "excluded": 236,
+  "typeCounts": {
+   "regional": 78,
+   "local": 6,
+   "nationwide": 7
+  },
+  "reasonCounts": {
+   "no-active-fm-no-stream": 139,
+   "geography-unconfirmed": 5,
+   "foreign-broadcaster": 3,
+   "closed-or-historical": 59,
+   "stream-not-confirmed": 30
+  }
+ },
+ "merged": [
+  {
+   "from": "radiopatmos",
+   "into": "patmos"
+  },
+  {
+   "from": "ylevega",
+   "into": "yleradiovega"
+  },
+  {
+   "from": "ylesmiradio",
+   "into": "ylesamiradio"
+  },
+  {
+   "from": "finestplusfm",
+   "into": "finestplus"
+  },
+  {
+   "from": "zoomrock",
+   "into": "zoomrockfm"
+  },
+  {
+   "from": "radiovaasaradiovasa",
+   "into": "radiovaasa"
+  },
+  {
+   "from": "jworgaanentoisto",
+   "into": "jworg"
+  },
+  {
+   "from": "monikulttuuri",
+   "into": "jarviradiomonikulttuuri"
+  },
+  {
+   "from": "seafm",
+   "into": "seafmradio"
+  },
+  {
+   "from": "yleklassinenhls",
+   "into": "yleklassinen"
+  },
+  {
+   "from": "radionrj",
+   "into": "nrj"
+  },
+  {
+   "from": "ylespmi",
+   "into": "ylesamiradio"
+  },
+  {
+   "from": "iskelmapaikalliset",
+   "into": "iskelmasastamala+iskelmaporvoo"
+  },
+  {
+   "from": "terasradio1iskelma",
+   "into": "iskelma (relay rows merged)"
+  },
+  {
+   "from": "terasradio2basso",
+   "into": "basso (relay rows merged)"
+  },
+  {
+   "from": "terasradio3radionova",
+   "into": "radionova (relay rows merged)"
+  },
+  {
+   "from": "terasradio4radiorock",
+   "into": "radiorock (relay rows merged)"
+  },
+  {
+   "from": "terasradio5ylex",
+   "into": "ylex (relay rows merged)"
+  },
+  {
+   "from": "terasradio6radiosuomi",
+   "into": "yleradiosuomi (relay rows merged)"
+  },
+  {
+   "from": "iskelmasfn",
+   "into": "iskelma (relay rows merged)"
+  },
+  {
+   "from": "yleradiosuomihelsinki",
+   "into": "yleradiosuomi (window = national feed)"
+  }
+ ],
+ "excluded": [
+  {
+   "key": "aitohitti",
+   "name": "Aito Hitti",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "aitoiskelmaoikeaasema",
+   "name": "Aito Iskelmä Oikea Asema",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "aitokajaus",
+   "name": "Aito Kajaus",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "box",
+   "name": "Box",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "businessfm",
+   "name": "Business FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "eazy101",
+   "name": "Eazy 101",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "funtampere",
+   "name": "FUN Tampere",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "iluv2k",
+   "name": "I LUV 2K",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "kiss",
+   "name": "Kiss",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "rb",
+    "wiki"
+   ]
+  },
+  {
+   "key": "menaisetradio",
+   "name": "Me Naiset Radio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "metrohelsinki",
+   "name": "Metro Helsinki",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "mikaeli",
+   "name": "Mikaeli",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "oifm",
+   "name": "Oi FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "pispalanradio",
+   "name": "Pispalan Radio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "play",
+   "name": "Play",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "paijanneradio",
+   "name": "Päijänneradio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radio882",
+   "name": "Radio 88,2",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radio967",
+   "name": "Radio 967",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioaalto",
+   "name": "Radio Aalto",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioaino",
+   "name": "Radio Aino",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioalex",
+   "name": "Radio Alex",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiojyvaskyla",
+   "name": "Radio Jyväskylä",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiokaakko",
+   "name": "Radio KAAKKO",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "rb",
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiokeskisavo",
+   "name": "Radio Keski-Savo",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioklf",
+   "name": "Radio KLF",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiokompassi",
+   "name": "Radio Kompassi",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiolakeus",
+   "name": "Radio Lakeus",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiolokki",
+   "name": "Radio Lokki",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiomajakka",
+   "name": "Radio Majakka",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiomanta",
+   "name": "Radio Manta",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiomelodia",
+   "name": "Radio Melodia",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiomikkeli",
+   "name": "Radio Mikkeli",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiopaitapiiska",
+   "name": "Radio Paitapiiska",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiopikkupaka",
+   "name": "Radio Pikkupäkä",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiorapu",
+   "name": "Radio Rapu",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosalminen",
+   "name": "Radio Salminen",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosata",
+   "name": "Radio Sata",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosavonmaa",
+   "name": "Radio Savonmaa",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioseinajoki",
+   "name": "Radio Seinäjoki",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosputnik",
+   "name": "Radio Sputnik",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosunclassics",
+   "name": "Radio Sun Classics",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiosyke",
+   "name": "Radio Syke",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioykkonen",
+   "name": "Radio Ykkönen",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radioankkuri",
+   "name": "Radioankkuri",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "radiomafia",
+   "name": "Radiomafia",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "rogmofm",
+   "name": "Rogmo FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "rytmiradiolahti",
+   "name": "Rytmiradio Lahti",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "rap",
+   "name": "RÄP",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "saimaanaallot",
+   "name": "Saimaan aallot",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "simpsio969",
+   "name": "Simpsiö 96,9",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "spinfm",
+   "name": "Spin FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "spiritfm",
+   "name": "Spirit FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "starfm",
+   "name": "Star FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "savelradio",
+   "name": "Sävelradio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "thevoice",
+   "name": "The Voice",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "u103",
+   "name": "U103",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "ylepuhe",
+   "name": "Yle Puhe",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "rb",
+    "wiki"
+   ]
+  },
+  {
+   "key": "yleq",
+   "name": "YleQ",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "zoomfm",
+   "name": "Zoom FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Wikipedia lists the station as closed/lakkautettu; no current Traficom licence.",
+   "sources": [
+    "wiki"
+   ]
+  },
+  {
+   "key": "abdulbasitabdulsamad",
+   "name": "Abdulbasit Abdulsamad",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Not a Finnish broadcaster (Radio Browser country/name evidence).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "nightwish",
+   "name": "Nightwish",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Not a Finnish broadcaster (Radio Browser country/name evidence).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "sverigesradiosrsisuradio",
+   "name": "Sveriges Radio - SR Sisuradio",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Not a Finnish broadcaster (Radio Browser country/name evidence).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "exafmpopmusikpaengelskaochspanska",
+   "name": " EXA FM: Popmusik på engelska och spanska",
+   "reasonCode": "geography-unconfirmed",
+   "reason": "No Finnish geography evidence (Radio Browser country field absent/non-FI, no Traficom licence).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "exafmpopmusikpaengelskaochspanska",
+   "name": " EXA FM: Popmusik på engelska och spanska",
+   "reasonCode": "geography-unconfirmed",
+   "reason": "Internet-only candidate without Finnish geography evidence.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "fyrryradio",
+   "name": "Fyrryradio",
+   "reasonCode": "geography-unconfirmed",
+   "reason": "No Finnish geography evidence (Radio Browser country field absent/non-FI, no Traficom licence).",
+   "sources": [
+    "ras",
+    "media"
+   ]
+  },
+  {
+   "key": "turunwappuradio",
+   "name": "Turun Wappuradio",
+   "reasonCode": "geography-unconfirmed",
+   "reason": "No Finnish geography evidence (Radio Browser country field absent/non-FI, no Traficom licence).",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ]
+  },
+  {
+   "key": "turunwappuradio",
+   "name": "Turun Wappuradio",
+   "reasonCode": "geography-unconfirmed",
+   "reason": "Internet-only candidate without Finnish geography evidence.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ]
+  },
+  {
+   "key": "ticktockradio1950",
+   "name": "\tTick Tock Radio - 1950",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "asuntomessutlempaalassa",
+   "name": "Asuntomessut Lempäälässä",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "autokilpailu",
+   "name": "Autokilpailu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "autokisa",
+   "name": "AUTOKISA",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "bigwheelskuulutus",
+   "name": "Big Wheels kuulutus",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "crkisaradio",
+   "name": "CR-Kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "crosscountrykisaradio",
+   "name": "Cross country kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "driftjatruckshow",
+   "name": "Drift ja Truck Show",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "driveinelokuvanaytos",
+   "name": "Drive-in elokuvanäytös",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "driveinjumis2026",
+   "name": "Drive-In Jumis 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "driveinkirkkoradio",
+   "name": "Drivein kirkkoradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "endurogpkisakeskus",
+   "name": "Enduro GP kisakeskus",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "endurogpmaastokoe",
+   "name": "Enduro GP Maastokoe",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "fhraraceradio",
+   "name": "FHRA Race Radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "fiskarsvillagebikeexpo",
+   "name": "Fiskars Village Bike Expo",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "fixussmrallikitee",
+   "name": "Fixus SM ralli Kitee",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "frckisaradio",
+   "name": "FRC-Kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "freakybikeparade",
+   "name": "Freaky bike parade",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "harjoitusradio",
+   "name": "Harjoitusradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "heinavedenvauhtiajot",
+   "name": "Heinäveden Vauhtiajot",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "helmi",
+   "name": "Helmi",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "helmiradio",
+   "name": "Helmiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "hyvarilanradio",
+   "name": "Hyvärilän radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "haly2026",
+   "name": "HÄLY2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "imatranmoottorikerhonkisaradi",
+   "name": "Imatran Moottorikerhon kisaradi",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "irrcimatranajot26",
+   "name": "IRRC Imatran Ajot 26",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmaankkuri",
+   "name": "Iskelmä Ankkuri",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmaoulu",
+   "name": "Iskelmä Oulu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "jokkistapahtumaradio",
+   "name": "Jokkis-Tapahtumaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "joulurauma",
+   "name": "JouluRauma",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": "https://www.joulurauma.fi/"
+  },
+  {
+   "key": "kaaosradio24hchill",
+   "name": "Kaaos Radio 24h Chill",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kaaosradiochiptune",
+   "name": "Kaaos Radio Chiptune",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kaaosradiotechnoelectro",
+   "name": "Kaaos Radio Techno Electro",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kaaosradio24h",
+   "name": "Kaaosradio - 24h",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kalajoenseurakuntaradio",
+   "name": "Kalajoen seurakuntaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": "https://www.kalajoenseurakunta.fi/"
+  },
+  {
+   "key": "kansainvaliseteramessut2026",
+   "name": "Kansainväliset erämessut 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "kenttaradio",
+   "name": "Kenttäradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "kerhoradiotestaus",
+   "name": "Kerhoradio (testaus)",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "keygenfm",
+   "name": "Keygen FM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kisaradio",
+   "name": "Kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "kiteeraceevent",
+   "name": "Kitee Race Event",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "kohinaoldschoolgameanddemomusic",
+   "name": "Kohina - Old School Game and Demo Music",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "kokemaenravit",
+   "name": "Kokemäen Ravit",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "korpiradio",
+   "name": "Korpiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": null
+  },
+  {
+   "key": "kouvolanfkradio",
+   "name": "Kouvolan FK radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "kuhanfm",
+   "name": "Kuhan FM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "rb",
+    "media"
+   ],
+   "website": "https://www.kuhan.fm/"
+  },
+  {
+   "key": "kurapyorakisaradio",
+   "name": "Kurapyörä kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "korttiradio",
+   "name": "Körttiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://www.herattajajuhlat.fi/"
+  },
+  {
+   "key": "lahdenfk",
+   "name": "Lahden FK",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "lbc",
+   "name": "LBC",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "leminkotiseuturadio",
+   "name": "Lemin Kotiseuturadio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://www.museosara.fi"
+  },
+  {
+   "key": "lyhytaikainenradio",
+   "name": "Lyhytaikainen radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "maaseudultakasinmessut2026",
+   "name": "Maaseudulta Käsin messut 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "meluradio",
+   "name": "Melu-radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "motocrosskisaradio",
+   "name": "Motocross kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "motopark",
+   "name": "Motopark",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "mtvuutiset",
+   "name": "MTV Uutiset",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "mxjoukkuekisaradio",
+   "name": "MX joukkuekisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "mxkisaradio",
+   "name": "MX kisaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "mokkiradio",
+   "name": "Mökkiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "nrjsuomi",
+   "name": "NRJ Suomi",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "opistoradio",
+   "name": "Opistoradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://www.ranuanopisto.fi/"
+  },
+  {
+   "key": "pasiradio",
+   "name": "Pasiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": "https://www.pasiradio.com/"
+  },
+  {
+   "key": "poikkeusolojenharjoitusleminkotiseuturadio",
+   "name": "Poikkeusolojen harjoitus/Lemin Kotiseuturadio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "powercup2026",
+   "name": "Power Cup 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "powerparkradio",
+   "name": "PowerPark radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "pullingradio",
+   "name": "Pulling Radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "raatalanhumpparalli",
+   "name": "Raatalan Humpparalli",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radio316",
+   "name": "Radio 3:16",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://sro.fi/radio-ja-tv/"
+  },
+  {
+   "key": "radiobigwheels",
+   "name": "Radio Big Wheels",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": "https://bigwheels.fi/radio/"
+  },
+  {
+   "key": "radiobigwheelsradiosolex",
+   "name": "Radio Big Wheels / Radio Solex",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiobimmer",
+   "name": "Radio Bimmer",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radioblacksmithknoll",
+   "name": "Radio Blacksmith Knoll",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://rbsk6120.radio.am/"
+  },
+  {
+   "key": "radiocityhelsinki",
+   "name": "Radio City Helsinki",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocityjyvaskyla",
+   "name": "Radio City Jyväskylä",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocitykouvola",
+   "name": "Radio City Kouvola",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocityoulu",
+   "name": "Radio City Oulu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocitytampere",
+   "name": "Radio City Tampere",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocityturku",
+   "name": "Radio City Turku",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiogospel",
+   "name": "Radio Gospel",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "http://www.radiogospel.fi/"
+  },
+  {
+   "key": "radiohami",
+   "name": "Radio Hami",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://radiohami.fi/"
+  },
+  {
+   "key": "radiohear",
+   "name": "Radio Hear",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiohiekka",
+   "name": "Radio Hiekka",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "rb",
+    "media"
+   ],
+   "website": "https://www.radiohiekka.fi/"
+  },
+  {
+   "key": "radiohumu",
+   "name": "Radio Humu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radioiame",
+   "name": "Radio IAME",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radioinari",
+   "name": "Radio Inari",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiomegaoulu",
+   "name": "Radio Mega Oulu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "radionatale",
+   "name": "Radio Natale",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "radionovanliikennetiedotuskampanja",
+   "name": "Radio Novan liikennetiedotuskampanja",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiopaltanen",
+   "name": "Radio Paltanen",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiorex",
+   "name": "Radio Rex",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "radioroihu",
+   "name": "Radio Roihu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiotrombit",
+   "name": "Radio Trombit",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiokito",
+   "name": "Radio-Kitö",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radioasema",
+   "name": "Radioasema",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiodiodi",
+   "name": "Radiodiodi",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://radiodiodi.fi/"
+  },
+  {
+   "key": "radioplayer",
+   "name": "Radioplayer",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "radiotaajuushelsinki",
+   "name": "Radiotaajuus Helsinki",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiotaajuushuittinen",
+   "name": "Radiotaajuus Huittinen",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiowo",
+   "name": "RadiOwO",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "rakkaudenwappuradio",
+   "name": "Rakkauden Wappuradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "rb",
+    "media"
+   ],
+   "website": "https://wappuradio.fi/"
+  },
+  {
+   "key": "rallismjkl",
+   "name": "RalliSMJKL",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "rallisprintmunaranni2026",
+   "name": "Rallisprint Munaränni 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "rataradio",
+   "name": "Rataradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "rattoradio",
+   "name": "Rattoradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "rb",
+    "media"
+   ],
+   "website": "https://www.rattoradio.fi/"
+  },
+  {
+   "key": "rayo",
+   "name": "Rayo",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "realmix",
+   "name": "Realmix",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://www.realmix.fi/"
+  },
+  {
+   "key": "rondoclassicklasu",
+   "name": "Rondo Classic Klasu",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "rondoclassicklasupro",
+   "name": "Rondo Classic Klasu Pro",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "ruuhimakicircuit",
+   "name": "Ruuhimäki Circuit",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "salpausselankisat",
+   "name": "Salpausselän kisat",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "sambaradio",
+   "name": "Sambaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "scandinavianweekendradio",
+   "name": "Scandinavian Weekend Radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras",
+    "media",
+    "wiki"
+   ],
+   "website": "http://swradio.net/"
+  },
+  {
+   "key": "sectorally2026",
+   "name": "Secto Rally 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "smrallisprintleppavirta",
+   "name": "SM Rallisprint Leppävirta",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "smjaaratakonnevesi",
+   "name": "SM-JÄÄRATA KONNEVESI",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "snowrace",
+   "name": "Snow race",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "somura",
+   "name": "SOMURA",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "sulkavansuursoudutlive",
+   "name": "Sulkavan Suursoudut Live",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "supla",
+   "name": "Supla",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "suviseuraradio",
+   "name": "Suviseuraradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [],
+   "website": null
+  },
+  {
+   "key": "suviseuraradiokauhava2026",
+   "name": "Suviseuraradio - Kauhava 2026",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "tapahtumaradio",
+   "name": "Tapahtumaradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "tonecofm",
+   "name": "TonecoFM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://toneco.fi/"
+  },
+  {
+   "key": "torikahvitfm",
+   "name": "Torikahvitfm",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://torikahvit.fi/fi"
+  },
+  {
+   "key": "tractorpullingckisa",
+   "name": "Tractor Pulling C-kisa",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "tranceportfm",
+   "name": "Tranceport FM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "trombit",
+   "name": "Trombit",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "media"
+   ],
+   "website": "https://trombit.net/"
+  },
+  {
+   "key": "unexplainedagencyradio",
+   "name": "Unexplained Agency Radio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "vaskiradio",
+   "name": "Vaskiradio",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm",
+    "media"
+   ],
+   "website": "https://vaskiradio.fi/"
+  },
+  {
+   "key": "villitesitys",
+   "name": "Villit esitys",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "watercross",
+   "name": "Watercross",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "xhausuajm",
+   "name": "X HausUA JM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "yle100konsertinharjoitukset",
+   "name": "Yle 100 konsertin harjoitukset",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "yle100konsertti",
+   "name": "Yle 100 konsertti",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "yleradio1hifi256kbs",
+   "name": "Yle Radio1HIFI 256 Kb/s",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "ylesuomikemi",
+   "name": "Yle Suomi Kemi",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "ylevegahuvudstadsregionen",
+   "name": "Yle Vega Huvudstadsregionen",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "rb"
+   ],
+   "website": null
+  },
+  {
+   "key": "zoomrockfm",
+   "name": "ZoomRock FM",
+   "reasonCode": "no-active-fm-no-stream",
+   "reason": "No active FM licence in Traficom-derived data and no playable stream confirmed as of 2026-10-15.",
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://zoomrock.fi/"
+  },
+  {
+   "key": "auranaallotsalo",
+   "name": "Auran Aallot Salo",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 93.5
+    }
+   ],
+   "sources": [
+    "ras",
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmajanne",
+   "name": "Iskelmä Janne",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Hämeenlinna",
+     "region": "Kanta-Häme",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Valkeakoski",
+     "region": "Pirkanmaa",
+     "mhz": 101.7
+    }
+   ],
+   "sources": [
+    "ras",
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmalahti",
+   "name": "Iskelmä Lahti",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Lahti",
+     "region": "Päijät-Häme",
+     "mhz": 106
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmapori",
+   "name": "Iskelmä Pori",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Pori",
+     "region": "Satakunta",
+     "mhz": 88.2
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmaporvoo",
+   "name": "Iskelmä Porvoo",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Loviisa",
+     "region": "Uusimaa",
+     "mhz": 106.7
+    },
+    {
+     "locality": "Porvoo",
+     "region": "Uusimaa",
+     "mhz": 99.8
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 99.8
+    }
+   ],
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://alueradiot.fi/"
+  },
+  {
+   "key": "iskelmarovaniemi",
+   "name": "Iskelmä Rovaniemi",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Rovaniemi",
+     "region": "Lappi",
+     "mhz": 97.2
+    }
+   ],
+   "sources": [
+    "ras",
+    "wiki"
+   ],
+   "website": null
+  },
+  {
+   "key": "iskelmasastamala",
+   "name": "Iskelmä Sastamala",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Hämeenkyrö",
+     "region": "Pirkanmaa",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Kankaanpää",
+     "region": "Satakunta",
+     "mhz": 105.3
+    },
+    {
+     "locality": "Sastamala",
+     "region": "Pirkanmaa",
+     "mhz": 97.7
+    }
+   ],
+   "sources": [
+    "ras",
+    "wiki",
+    "media"
+   ],
+   "website": "https://alueradiot.fi/"
+  },
+  {
+   "key": "jouluradio2026",
+   "name": "Jouluradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (41) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Espoo",
+     "region": "Uusimaa",
+     "mhz": 102
+    },
+    {
+     "locality": "Espoo",
+     "region": "Uusimaa",
+     "mhz": 105.8
+    },
+    {
+     "locality": "Forssa",
+     "region": "Kanta-Häme",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Helsinki",
+     "region": "Uusimaa",
+     "mhz": 105.8
+    },
+    {
+     "locality": "Helsinki",
+     "region": "Uusimaa",
+     "mhz": 102
+    },
+    {
+     "locality": "Hollola",
+     "region": "Päijät-Häme",
+     "mhz": 100
+    },
+    {
+     "locality": "Hyvinkää",
+     "region": "Uusimaa",
+     "mhz": 92.7
+    },
+    {
+     "locality": "Hämeenlinna",
+     "region": "Kanta-Häme",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Iisalmi",
+     "region": "Pohjois-Savo",
+     "mhz": 103.8
+    },
+    {
+     "locality": "Joensuu",
+     "region": "Pohjois-Karjala",
+     "mhz": 100.7
+    },
+    {
+     "locality": "Jyväskylä",
+     "region": "Keski-Suomi",
+     "mhz": 98.8
+    },
+    {
+     "locality": "Kaarina",
+     "region": "Varsinais-Suomi",
+     "mhz": 93.8
+    },
+    {
+     "locality": "Kajaani",
+     "region": "Kainuu",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Kokkola",
+     "region": "Keski-Pohjanmaa",
+     "mhz": 100.7
+    },
+    {
+     "locality": "Kotka",
+     "region": "Kymenlaakso",
+     "mhz": 97.3
+    },
+    {
+     "locality": "Kouvola",
+     "region": "Kymenlaakso",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Kuopio",
+     "region": "Pohjois-Savo",
+     "mhz": 96.3
+    },
+    {
+     "locality": "Lahti",
+     "region": "Päijät-Häme",
+     "mhz": 100
+    },
+    {
+     "locality": "Lappeenranta",
+     "region": "Etelä-Karjala",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Lapua",
+     "region": "Etelä-Pohjanmaa",
+     "mhz": 91.8
+    },
+    {
+     "locality": "Lohja",
+     "region": "Uusimaa",
+     "mhz": 107.9
+    },
+    {
+     "locality": "Loimaa",
+     "region": "Varsinais-Suomi",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Mikkeli",
+     "region": "Etelä-Savo",
+     "mhz": 102.4
+    },
+    {
+     "locality": "Oulu",
+     "region": "Pohjois-Pohjanmaa",
+     "mhz": 91.6
+    },
+    {
+     "locality": "Pori",
+     "region": "Satakunta",
+     "mhz": 88.7
+    },
+    {
+     "locality": "Porvoo",
+     "region": "Uusimaa",
+     "mhz": 89.2
+    },
+    {
+     "locality": "Raahe",
+     "region": "Pohjois-Pohjanmaa",
+     "mhz": 96.6
+    },
+    {
+     "locality": "Rovaniemi",
+     "region": "Lappi",
+     "mhz": 90
+    },
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Savonlinna",
+     "region": "Etelä-Savo",
+     "mhz": 92.3
+    },
+    {
+     "locality": "Seinäjoki",
+     "region": "Etelä-Pohjanmaa",
+     "mhz": 91.8
+    },
+    {
+     "locality": "Sotkamo",
+     "region": "Kainuu",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Tampere",
+     "region": "Pirkanmaa",
+     "mhz": 101.6
+    },
+    {
+     "locality": "Turku",
+     "region": "Varsinais-Suomi",
+     "mhz": 93.8
+    },
+    {
+     "locality": "Ulvila",
+     "region": "Satakunta",
+     "mhz": 88.7
+    },
+    {
+     "locality": "Vaasa",
+     "region": "Pohjanmaa",
+     "mhz": 100.2
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 102
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 92.7
+    },
+    {
+     "locality": "Varkaus",
+     "region": "Pohjois-Savo",
+     "mhz": 96
+    },
+    {
+     "locality": "Ylöjärvi",
+     "region": "Pirkanmaa",
+     "mhz": 101.6
+    }
+   ],
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://www.jouluradio.fi/"
+  },
+  {
+   "key": "jworg",
+   "name": "JW.ORG",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Hämeenlinna",
+     "region": "Kanta-Häme",
+     "mhz": 104.1
+    }
+   ],
+   "sources": [
+    "ras-nofm",
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "jarviradiomonikulttuuri",
+   "name": "Järviradio (Monikulttuuri)",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Huittinen",
+     "region": "Satakunta",
+     "mhz": 92.3
+    }
+   ],
+   "sources": [
+    "ras",
+    "ras-nofm"
+   ],
+   "website": null
+  },
+  {
+   "key": "jarviradiojoensuu",
+   "name": "Järviradio Joensuu",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Joensuu",
+     "region": "Pohjois-Karjala",
+     "mhz": 101.5
+    },
+    {
+     "locality": "Kitee",
+     "region": "Pohjois-Karjala",
+     "mhz": 87.7
+    },
+    {
+     "locality": "Kontiolahti",
+     "region": "Pohjois-Karjala",
+     "mhz": 101.5
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "kalajoenseurakunnanjumalanpal",
+   "name": "Kalajoen seurakunnan jumalanpal",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Kalajoki",
+     "region": "Pohjois-Pohjanmaa",
+     "mhz": 95
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "kevytkanava",
+   "name": "Kevyt Kanava",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (2) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Kaarina",
+     "region": "Varsinais-Suomi",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Turku",
+     "region": "Varsinais-Suomi",
+     "mhz": 91.5
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "killerinraviradio",
+   "name": "Killerin Raviradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Jyväskylä",
+     "region": "Keski-Suomi",
+     "mhz": 90.5
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "kilpakorvenraviradio",
+   "name": "Kilpakorven raviradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Jämsä",
+     "region": "Keski-Suomi",
+     "mhz": 105
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "lahiradio",
+   "name": "Lähiradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Espoo",
+     "region": "Uusimaa",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Helsinki",
+     "region": "Uusimaa",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 100.3
+    }
+   ],
+   "sources": [
+    "ras",
+    "media",
+    "wiki"
+   ],
+   "website": "http://www.lahiradio.fi/"
+  },
+  {
+   "key": "radiocityforssa",
+   "name": "Radio City Forssa",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (2) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Forssa",
+     "region": "Kanta-Häme",
+     "mhz": 88.6
+    },
+    {
+     "locality": "Ypäjä",
+     "region": "Kanta-Häme",
+     "mhz": 88.6
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocityhameenlinna",
+   "name": "Radio City Hämeenlinna",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Hämeenlinna",
+     "region": "Kanta-Häme",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Valkeakoski",
+     "region": "Pirkanmaa",
+     "mhz": 88.9
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiocitysalo",
+   "name": "Radio City Salo",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Salo",
+     "region": "Varsinais-Suomi",
+     "mhz": 88.2
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "radiomusa",
+   "name": "Radio Musa",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Tampere",
+     "region": "Pirkanmaa",
+     "mhz": 100.5
+    }
+   ],
+   "sources": [
+    "ras",
+    "rb",
+    "media",
+    "wiki"
+   ],
+   "website": "http://www.hitit.fi/"
+  },
+  {
+   "key": "radiosateily",
+   "name": "Radio Säteily",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Rovaniemi",
+     "region": "Lappi",
+     "mhz": 89
+    }
+   ],
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://www.sateily.com/"
+  },
+  {
+   "key": "radiotaajuuskuopio",
+   "name": "Radiotaajuus Kuopio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Kuopio",
+     "region": "Pohjois-Savo",
+     "mhz": 88.8
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "raviradio",
+   "name": "Raviradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Kajaani",
+     "region": "Kainuu",
+     "mhz": 87.8
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "raviradiooulu",
+   "name": "Raviradio Oulu",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Oulu",
+     "region": "Pohjois-Pohjanmaa",
+     "mhz": 88.4
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "reiskanrahinat",
+   "name": "Reiskan Rähinät",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Loimaa",
+     "region": "Varsinais-Suomi",
+     "mhz": 95.6
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "serres1",
+   "name": "Serres 1",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Saarijärvi",
+     "region": "Keski-Suomi",
+     "mhz": 104.1
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "tampereenkiakkoradio",
+   "name": "Tampereen Kiakkoradio",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (2) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Tampere",
+     "region": "Pirkanmaa",
+     "mhz": 89
+    },
+    {
+     "locality": "Ylöjärvi",
+     "region": "Pirkanmaa",
+     "mhz": 89
+    }
+   ],
+   "sources": [
+    "ras",
+    "media",
+    "wiki"
+   ],
+   "website": "https://kiakkoradio.fi/"
+  },
+  {
+   "key": "tunturienkirkko",
+   "name": "Tunturien kirkko",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (1) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Muonio",
+     "region": "Lappi",
+     "mhz": 89.3
+    }
+   ],
+   "sources": [
+    "ras",
+    "media"
+   ],
+   "website": "https://www.muonionseurakunta.fi/"
+  },
+  {
+   "key": "vermoareena",
+   "name": "Vermo Areena",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (3) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Espoo",
+     "region": "Uusimaa",
+     "mhz": 87.6
+    },
+    {
+     "locality": "Helsinki",
+     "region": "Uusimaa",
+     "mhz": 87.6
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 87.6
+    }
+   ],
+   "sources": [
+    "ras"
+   ],
+   "website": null
+  },
+  {
+   "key": "ylemondo",
+   "name": "Yle Mondo",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Active FM rows (4) but no playable HTTPS/AAC/MP3/HLS stream confirmed as of 2026-10-15; held for research.",
+   "frequencies": [
+    {
+     "locality": "Espoo",
+     "region": "Uusimaa",
+     "mhz": 97.5
+    },
+    {
+     "locality": "Helsinki",
+     "region": "Uusimaa",
+     "mhz": 97.5
+    },
+    {
+     "locality": "Porvoo",
+     "region": "Uusimaa",
+     "mhz": 97.5
+    },
+    {
+     "locality": "Vantaa",
+     "region": "Uusimaa",
+     "mhz": 97.5
+    }
+   ],
+   "sources": [
+    "ras",
+    "media",
+    "wiki"
+   ],
+   "website": "https://yle.fi/aihe/artikkeli/2015/05/20/yle-mondo-monikielinen-radiokanava"
+  }
+ ]
+}
