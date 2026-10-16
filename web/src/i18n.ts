@@ -32,19 +32,12 @@ export const LANGUAGE_KEY = 'efirio.uiLanguage';
 export const en = {
   tagline: 'The radio of your city',
   languageLabel: 'Language',
-  // Category names.
-  scopeRussia: 'Russia',
+  // Category names. The country categories (Russia, Finland, Estonia) render as
+  // endonyms straight from `countries.ts` — a country name is never translated.
   scopeInternet: 'Internet',
-  scopeFinland: 'Finland',
-  scopeFinlandInternet: 'Finland — Internet',
-  scopeEstonia: 'Estonia',
-  scopeEstoniaInternet: 'Estonia — Internet',
   // Breadcrumbs and geography terms.
   crumbInternet: 'Internet',
   crumbStations: 'Radio stations',
-  placeRussia: 'Russia',
-  placeFinland: 'Finland',
-  placeEstonia: 'Estonia',
   allCountry: 'Whole country',
   allCities: 'All cities',
   categoryLabel: 'Category',
@@ -60,8 +53,8 @@ export const en = {
   stationGeoPlaceholder: 'Station, city or region',
   searchStationAria: 'Search for a station',
   searchCityAria: 'Search for a city',
-  searchFinlandAria: 'Search Finland by station, city or region',
-  searchEstoniaAria: 'Search Estonia by station, city or region',
+  searchFinlandAria: 'Search {country} by station, city or region',
+  searchEstoniaAria: 'Search {country} by station, city or region',
   cityResultsAria: 'City search results',
   stationsAria: '{place} stations',
   // Catalogue messages.
@@ -70,10 +63,8 @@ export const en = {
   noStationFilters: 'No station matches the selected filters',
   loadingCatalogue: 'Loading {name} catalogue…',
   errCountryLoad: 'The country catalogue could not be loaded',
-  errFinlandInternetLoad: 'The «Finland — Internet» catalogue could not be loaded',
-  errEstoniaInternetLoad: 'The «Estonia — Internet» catalogue could not be loaded',
-  errFinlandLoad: 'The Finland catalogue could not be loaded',
-  errEstoniaLoad: 'The Estonia catalogue could not be loaded',
+  errFinlandLoad: 'The {country} catalogue could not be loaded',
+  errEstoniaLoad: 'The {country} catalogue could not be loaded',
   // Player states.
   chooseStation: 'Choose a station',
   prevStation: 'Previous station',

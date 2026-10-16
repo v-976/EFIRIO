@@ -1,1 +1,1 @@
-{"schemaVersion":1,"updatedAt":"2026-10-14","countries":[{"id":"united-kingdom","name":"Великобритания","code":"GB","timeZone":"Europe/London","stationCount":1075}]}
+{"schemaVersion":1,"updatedAt":"2026-10-16","countries":[{"id":"united-kingdom","name":"Великобритания","code":"GB","timeZone":"Europe/London","stationCount":1076},{"id":"finland","name":"Финляндия","code":"FI","timeZone":"Europe/Helsinki","stationCount":24},{"id":"estonia","name":"Эстония","code":"EE","timeZone":"Europe/Tallinn","stationCount":38}]}
