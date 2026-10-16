@@ -1,0 +1,419 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-16",
+ "note": "R3.4 Эстония: исследование наземных FM/AM и internet-only станций. Каталог публикуется только с подтверждёнными официальными HTTPS-потоками; http-only, сезонные и неподтверждённые кандидаты исключены с причинами.",
+ "summary": {
+  "candidates": 183,
+  "ttjaLicences": 34,
+  "ttjaTransmitters": 242,
+  "publishedTerrestrial": 34,
+  "publishedInternet": 38,
+  "excluded": 30,
+  "typeCounts": {
+   "nationwide": 11,
+   "local": 7,
+   "regional": 16
+  }
+ },
+ "sources": [
+  "TTJA (регулятор Эстонии): «FM raadiojaamade saatejaamad», PDF от 04.07.2025 — 34 лицензии, 242 передатчика (site/maakond/МГц); страница обновлена 31.08.2026",
+  "ERR (публичный вещатель): err.ee навигация каналов, icecast.err.ee потоки, новости о продаже Tre Raadio (07.01.2026) и запуске XFM (19.01.2026)",
+  "Официальные сайты станций и групп: xfm.ee, bigfm.ee, hitsradio.ee, sky.ee, nrj.sky.ee, superradio.sky.ee, raadiod.tv3.ee, pleier.ee (Duo), relaxfm.ee, pereraadio.ee, mediaeli.ee, ruutfm.treraadio.ee, ringfm.treraadio.ee, druzi.ee, kadi.ee, aripaev.ee, radiomaximum.ee, idaidaida.net, spacefm.ee, pcr.fm, hitmix.ee, taifuun.eu, happyu.ee, olematu.ee, radionostalgia.ee, hpsbassline.club, radio.globalexport.ee, sss-radio.ee",
+  "Radio Browser (EE) — только discovery кандидатов и подсказки URL; каждая запись перепроверена",
+  "et.wikipedia.org/wiki/Tre_Raadio — хронология закрытия (со ссылками на ERR)",
+  "dabplus.ee (Levira) — DAB+-сеть R1/R3, даты запуска"
+ ],
+ "ttja": {
+  "pdf": "FM raadiojaamade saatejaamad, 04.07.2025 (34 litsentsi / 242 saatejaama)",
+  "licenceTableAliases": [
+   {
+    "licence": "Sky Raadio",
+    "table": "Sky Radio",
+    "transmitters": 5
+   },
+   {
+    "licence": "Super Raadio",
+    "table": "Super Radio",
+    "transmitters": 5
+   },
+   {
+    "licence": "Radio drUzi",
+    "table": "drUzi",
+    "transmitters": 4
+   }
+  ],
+  "geographyNote": "site→населённый пункт: городские кварталы (Tallinn Kloostrimetsa, Tartu Soinaste, Pärnu Tammiste, Kiviõli Maidla, Kärdla Palade, Haapsalu Linnamäe/Rohuküla/Uuemõisa, Jõhvi Ahtme, Narva Peeterristi, Rakvere Karitsa/Karista и т.п.) сведены к своему городу; прочие токены сохранены как деревенские локальности. «Võru ja Põlva maakond» → «Võru maakond». Опечатка PDF «RAKVERE KARISTA» = Rakvere Karitsa.",
+  "pereraadioFeeds": "Лицензия Pereraadio — одна сеть (10 передатчиков). Официальные онлайн-фиды Tartu/Tallinn/Kuressaare подтверждены; распределение FM-частот между фидами официально не опубликовано, поэтому в каталоге одна запись Pereraadio (тартуский эфир), фиды Tallinn и Kuressaare задокументированы."
+ },
+ "closedOrRenamed": [
+  {
+   "name": "Tre Raadio / Tre Raadio plus",
+   "outcome": "XFM с 19.01.2026 на бывших частотах (10 передатчиков)",
+   "sources": [
+    "ERR 07.01.2026 (продажа NUVOLA Media OÜ)",
+    "ERR 19.01.2026 (запуск XFM на частотах Tre)",
+    "et.wikipedia (последний эфир 16.01.2026)",
+    "xfm.ee (официальный сайт, «üle-Eestiline raadiojaam»)"
+   ]
+  }
+ ],
+ "dab": {
+  "network": "Levira: DAB+ два мультиплекса R1 и R3, покрытие ~80% населения (dabplus.ee, данные на 16.10.2026)",
+  "rollout": [
+   "01.09.2025: Tallinn, Koeru, Valgjärve",
+   "Октябрь 2025: Pärnu и Haapsalu (только R3)",
+   "Ноябрь 2025: Tartu"
+  ],
+  "documentedOnly": [
+   {
+    "name": "R2 ALTPop (ERR)",
+    "note": "В навигации err.ee помечен «(DAB)»; поток r2alternatiiv.mp3 подтверждён, но в пользовательские категории не включён (правило этапа)."
+   },
+   {
+    "name": "Duo Christmas (Duo Media)",
+    "note": "Канал pleier.ee/digijaamad/duo-christmas (сезонный) — свидетельство DAB-присутствия Duo."
+   },
+   {
+    "name": "Tre Raadio (исторически)",
+    "note": "По et.wikipedia Tre Raadio вещала на DAB+ (Tallinn, Paide, Rakvere, Jõgeva); бренд закрыт."
+   }
+  ],
+  "note": "Полный актуальный перечень DAB-каналов на dabplus.ee рендерится виджетом JS и не извлекается статически; перечень выше — подтверждённые факты. DAB-станции в категории «Эстония»/«Эстония — Интернет» не публикуются без отдельного согласования."
+ },
+ "nowPlaying": {
+  "status": "none-confirmed",
+  "note": "Для эстонских станций подтверждённых CORS-эндпоинтов метаданных (как icecast.err.ee/json_* у ERR нет) не найдено; icy-name отражает имя потока, а не трек. Все записи каталога — metadata.type=none, historyAvailable=false."
+ },
+ "am": {
+  "station": "Radio Eli («Семейное Радио Эли»)",
+  "frequency": "AM 1035 kHz, передатчик под Тарту (Кавасту), международное покрытие",
+  "evidence": [
+   "TTJA: в Эстонии работает одна AM-станция — 1035 кГц",
+   "mediaeli.ee «О радиостанции»: выход в эфир 03.10.2001 на 1035 кГц",
+   "pereraadio.ee: карта AM-levi (am_levi.jpg)",
+   "icecast.pereraadio.ee:9000/RadioEli подтверждён"
+  ],
+  "encoding": "frequencyMHz 1.035 + band \"AM\" в frequencies[]; UI показывает «1035 кГц»."
+ },
+ "internetOnlyNote": "«Эстония — İnternet»: подтверждённые FM/AM отсутствуют (сверено с перечнем TTJA). NRJ — в перечне TTJA отсутствует; DAB-присутствие NRJ в машиночитаемом виде не подтверждено, поэтому опубликован как internet-only.",
+ "merged": [
+  {
+   "from": "sky-radio (RB «Sky-Radio»)",
+   "into": "skyraadio"
+  },
+  {
+   "from": "super radio / rrretro / rrock (RB «Super радио/Ретро/Рок»)",
+   "into": "superraadio / superretro / superrock"
+  },
+  {
+   "from": "Радіо DrUzi (RB)",
+   "into": "druzi"
+  },
+  {
+   "from": "radioeli / Семейное Радио Эли (RB «mediaeli»)",
+   "into": "radioeli"
+  },
+  {
+   "from": "tre raadio regional streams (RB kesk-eesti/parnu/viru/rapla-tre)",
+   "into": "xfm (закрытые фиды)"
+  },
+  {
+   "from": "kuma fm (RB «Kuma FM 101.0»)",
+   "into": "xfm (исторический предшественник: Kuma → Kesk-Eesti Tre → XFM)"
+  },
+  {
+   "from": "duo greatesthits (RB)",
+   "into": "hitmix"
+  },
+  {
+   "from": "ringfm tartustuudio (RB)",
+   "into": "ringfm (fallback-поток)"
+  },
+  {
+   "from": "starFMEesti96 (RB «Star FM Eesti»)",
+   "into": "starfmeesti"
+  },
+  {
+   "from": "volna128/volna320 (RB «Star FM+»)",
+   "into": "starfmplus"
+  }
+ ],
+ "excluded": [
+  {
+   "key": "treraadio",
+   "name": "Tre Raadio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Продана 07.01.2026 (NUVOLA Media OÜ), последний эфир 16.01.2026; с 19.01.2026 на её частотах вещает XFM (ERR, et.wikipedia). Частоты опубликованы записью XFM.",
+   "sources": [
+    "err",
+    "wiki",
+    "ttja"
+   ]
+  },
+  {
+   "key": "treraadioplus",
+   "name": "Tre Raadio plus",
+   "reasonCode": "closed-or-historical",
+   "reason": "Та же сеть Ring FM Media OÜ; частоты (Rapla 91.3, Pärnu 92.7, Paide 101.0, Viljandi 101.7) входят в сеть XFM с 19.01.2026 (ERR).",
+   "sources": [
+    "err",
+    "wiki",
+    "ttja"
+   ]
+  },
+  {
+   "key": "kumafm",
+   "name": "Kuma FM",
+   "reasonCode": "closed-or-historical",
+   "reason": "Kuma Raadio переименована в Kesk-Eesti Tre Raadio (2016, et.wikipedia), затем в XFM (2026); единственный URL — http://IP-адрес:8004 (не HTTPS).",
+   "sources": [
+    "rb",
+    "wiki"
+   ]
+  },
+  {
+   "key": "r2altpop",
+   "name": "R2 ALTPop",
+   "reasonCode": "dab-only-documented",
+   "reason": "В навигации err.ee канал помечен «(DAB)»; по правилам этапа DAB-станции документируются и не публикуются без отдельного согласования.",
+   "sources": [
+    "err"
+   ]
+  },
+  {
+   "key": "duosoftmix",
+   "name": "Duo Softmix",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Канал упоминается в меню pleier.ee, но страница /duo-softmix отдаёт 404, рабочий поток не найден (duosoftmix.aac — 404).",
+   "sources": [
+    "pleier"
+   ]
+  },
+  {
+   "key": "skyplusdnb",
+   "name": "Sky Plus DnB",
+   "reasonCode": "seasonal-or-promo",
+   "reason": "Сезонный/промо-сабпоток Sky Plus: отдельной официальной страницы нет (RB ссылается на sky.ee/skyplus), запускался в зимний сезон.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "kissfmeurovision",
+   "name": "Kiss FM Eurovision",
+   "reasonCode": "seasonal-or-promo",
+   "reason": "Сезонный сабпоток Kiss FM (Евровидение), официального круглогодичного статуса нет.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "kissfmpride",
+   "name": "Kiss FM Pride",
+   "reasonCode": "seasonal-or-promo",
+   "reason": "Промо-сабпоток Kiss FM (Pride), сезонный.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "retrojoulud",
+   "name": "Retro FM Jõulud",
+   "reasonCode": "seasonal-or-promo",
+   "reason": "Рождественский сабпоток Retro FM, сезонный.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "retrolove",
+   "name": "Retro Love",
+   "reasonCode": "seasonal-or-promo",
+   "reason": "Сезонный (8 февраля) сабпоток Retro FM.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "sooviraadio",
+   "name": "Sooviraadio",
+   "reasonCode": "no-https-stream",
+   "reason": "Единственный поток http://uunox.net:8888 (mixed content запрещён), сам сайт sooviraadio.ee недоступен при повторной проверке.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "rahvaraadio",
+   "name": "Rahvaraadio",
+   "reasonCode": "no-https-stream",
+   "reason": "Поток только http://streamer.tt.ee:8000 (mixed content); HTTPS-вариант не подтверждён.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "nikradofem",
+   "name": "NikRadofem",
+   "reasonCode": "stream-unreachable",
+   "reason": "live.nikradofem.online недоступен (две попытки, обе — ошибка транспорта).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "raadioprt",
+   "name": "Raadio PRT",
+   "reasonCode": "no-official-presence",
+   "reason": "Хобби-поток на бесплатном хостинге (supabase, rf.gd), стабильность не гарантирована.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "raadioremix",
+   "name": "Raadio REMIX",
+   "reasonCode": "no-official-presence",
+   "reason": "Бесплатный хостинг hostbee.nl, официального сайта нет (rb.gd — бесплатный конструктор).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "chatraadio",
+   "name": "Chat Raadio",
+   "reasonCode": "no-official-presence",
+   "reason": "Хобби-поток streemlion; сайт jasva.net не является официальным сайтом радиостанции.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "raadio11",
+   "name": "Raadio 11",
+   "reasonCode": "no-official-presence",
+   "reason": "Поток на греческом хостинге mcr.streams.gr, официального сайта нет.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "radioazathothrevival",
+   "name": "Radio Azathoth Revival",
+   "reasonCode": "no-official-presence",
+   "reason": "Бесплатный хостинг asurahosting, официального сайта нет.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "estonianpartyradio",
+   "name": "Estonian Party Radio",
+   "reasonCode": "no-official-presence",
+   "reason": "Поток на бесплатном torontocast, официального сайта нет.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "vombafm",
+   "name": "Võmba FM",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Домен vőmbafm.fi (Финляндия), не эстонская станция.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "finestradio",
+   "name": "FinEst Radio",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Финская станция (finestfm.fi).",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "hitsshowradioest",
+   "name": "Hits Show Radio - EST",
+   "reasonCode": "no-official-presence",
+   "reason": "Страница на wixsite.com, поток zeno.fm — хобби-проект без официального сайта.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "raadio3000",
+   "name": "Raadio 3000",
+   "reasonCode": "closed-or-historical",
+   "reason": "Нет действующей лицензии TTJA (04.07.2025) и подтверждённого потока.",
+   "sources": [
+    "ttja",
+    "rb"
+   ]
+  },
+  {
+   "key": "talkback",
+   "name": "Talkback",
+   "reasonCode": "closed-or-historical",
+   "reason": "Нет в перечне TTJA 04.07.2025, действующий поток не подтверждён.",
+   "sources": [
+    "ttja"
+   ]
+  },
+  {
+   "key": "nommeraadio",
+   "name": "Nõmme Radio",
+   "reasonCode": "closed-or-historical",
+   "reason": "Нет в перечне TTJA 04.07.2025, действующий поток не подтверждён.",
+   "sources": [
+    "ttja"
+   ]
+  },
+  {
+   "key": "raadiohiiumaa",
+   "name": "Raadio Hiiumaa",
+   "reasonCode": "closed-or-historical",
+   "reason": "Нет в перечне TTJA 04.07.2025, действующий поток не подтверждён.",
+   "sources": [
+    "ttja"
+   ]
+  },
+  {
+   "key": "tulin",
+   "name": "Tulin",
+   "reasonCode": "closed-or-historical",
+   "reason": "Нет в перечне TTJA 04.07.2025, действующий поток не подтверждён.",
+   "sources": [
+    "ttja"
+   ]
+  },
+  {
+   "key": "hqvariants",
+   "name": " Vikerraadio HQ320 / Raadio 2 HQ320 / R2p / R2 Eesti / R4 HQ320",
+   "reasonCode": "variant-or-replay",
+   "reason": "Монтировки HQ-битрейта или неопознанные варианты основных потоков ERR (vikerraadiokorge, raadio2korge, r2pkorge, r2eesti, r4hq320) — отдельными станциями не публикуются.",
+   "sources": [
+    "icecast.err.ee"
+   ]
+  },
+  {
+   "key": "tregrstreams",
+   "name": "Tre Raadio Kesk-Eesti / Pärnu / Virumaa / Rapla (онлайн-региофиды)",
+   "reasonCode": "closed-or-historical",
+   "reason": "Региональные сабпотоки Tre Raadio на cdn/sc2.treraadio.ee возвращают не-аудио (404) после закрытия бренда.",
+   "sources": [
+    "rb"
+   ]
+  },
+  {
+   "key": "junkmounts",
+   "name": "myradio24 / radiojar / a10.asurahosting / sapircast / rcast / streemlion-прочее",
+   "reasonCode": "no-official-presence",
+   "reason": "Безымянные или универсальные потоки без официального сайта и эстонской идентичности.",
+   "sources": [
+    "rb"
+   ]
+  }
+ ]
+}

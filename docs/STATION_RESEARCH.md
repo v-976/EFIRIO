@@ -169,3 +169,45 @@ No station's geography was inferred from server location, TLD or site language, 
 - 30 entries with confirmed FM presence have no confirmed stream as of 2026-10-15 and wait in `data/research/finland.json`.
 - Åland's own FM frequencies could not be confirmed from an authoritative Finnish source; Ålands Radio therefore ships with an `FI` country chip and no MHz.
 - Desktop browser verification only — not tested on real iPhone Safari hardware; no iOS background-playback claims.
+
+## Estonia (R3.4) — numbers (verified 2026-10-16)
+
+- 183 candidate records (149 unique station names from discovery cross-checked across catalogues, plus the 34 TTJA licences); **72 published** — 34 terrestrial (`data/estonia.json`) plus 38 internet-only (`data/internet/estonia.json`); 30 excluded with a recorded reason each.
+- Terrestrial split: 11 nationwide (Vikerraadio, Raadio 2, Klassikaraadio, Raadio 4, Sky Plus, Retro FM, Star FM, Raadio Kuku, Raadio Elmar, Pereraadio, XFM), 16 regional, 7 local. Geography: all 15 maakonnad, 39 cities. One AM entry: Radio Eli, `1.035 MHz` encoded with `band: 'AM'` → UI «1035 кГц».
+- Streams: 34/34 terrestrial and 38/38 internet entries validated by actual audio delivery (content-type plus head bytes: MPEG frame sync, AAC, or HLS manifest), never by HTTP status alone. HTTPS only.
+- Now Playing: 0 of 72 — no Estonian station exposed a CORS-readable metadata endpoint; the icy stream name is the station name, not a track. Absence never blocks publication.
+- Exclusions (30): 9 closed or historical; 8 no official presence (free-hosting/hobby pages); 5 seasonal or promo feeds (Kiss Eurovision, Kiss Pride, Sky Plus DnB, Retro Jõulud, Retro Love); 2 http-only; 2 foreign broadcasters; 1 DAB-only (documented); 1 stream not confirmed; 1 stream unreachable (NikRadofem, twice); 1 variant-or-replay. Per-station reasons, sources and websites are in `data/research/estonia.json`.
+
+## Estonia — evidence tiers
+
+1. **TTJA** (Estonian Media Authority) — the «FM raadiojaamade saatejaamad» licence register, PDF dated 04.07.2025: 34 licences, 242 transmitters, each with locality and MHz. The authoritative basis for every FM frequency and its territory; the register's alias table normalises programme spellings (Sky Radio, Super Radio, drUzi).
+2. **ERR and the operators' own sites** — official stream endpoints (icecast.err.ee per channel, skymedia-live.bitflip.ee, router.euddn.net, ice.leviracloud.eu, pereraadio's own icecast, stream.relaxfm.ee) taken from each station's own player configuration and validated by real audio bytes; where a player published a cleaner path than the aggregator, the official path ships.
+3. **Official coverage maps** — pereraadio.ee (`x_pr_leviala_u.jpg`, 10 tx = TTJA), x_sr_leviala.jpg (Semeinoje: Narva 95.6 + Ahtme 98.2), mediaeli.ee `am_levi.jpg` (AM 1035 kHz coverage from Kavastu). These settle the Radio Eli / Semeinoje split and the single-AM claim.
+4. **ERR/xfm.ee/et.wikipedia** — the Tre Raadio closure (last broadcast 16.01.2026, sold to NUVOLA 07.01.2026) and XFM's nationwide self-description, correcting the 04.07.2025 register where it is stale.
+
+No station's geography was inferred from server location, TLD or site language; internet accessibility was never treated as membership in the internet-only category.
+
+## Estonia — method decisions worth recording
+
+- **The register is authoritative but dated; official media corrects it, catalogues never do.** TTJA still lists Tre Raadio's ten transmitters under the closed brand. The closure is confirmed by ERR reporting, the operator and et.wikipedia, so those rows publish as XFM. No aggregator listing ever moved a frequency.
+- **Radio Eli is the only AM, and kHz is encoded, not faked.** `frequencyMHz: 1.035` with `band: 'AM'` keeps the number honest while the UI prints «1035 кГц»; the Media Session subtitle prints kHz for sub-10-MHz values. No other entry in any catalogue carries `band`.
+- **Radio Eli ≠ Semeinoje Radio.** The 98.2 FM on mediaeli.ee is the second Russian-language wave (Semeinoje, Narva+Ahtme), matching the TTJA register exactly; Radio Eli itself has only AM. Merging them — as a naive scrape of mediaeli.ee invites — would have given Radio Eli two FM frequencies it does not have.
+- **Pereraadio is one station, not three.** Its official coverage map equals the TTJA register (10 tx, Tartu feed); the Tallinn and Kuressaare feed pages carry no officially distributed frequencies, so the feeds are documented in the catalogue notes and never split into copies.
+- **Type is a footprint rule, not a name list.** ≥10 maakonnad → nationwide (11 stations); 2–9 maakonnad, or one maakond spanning several localities → regional (Semeinoje's Narva+Ahtme stays regional despite one maakond); a single locality → local (7 stations).
+- **Clean official paths replace player-instrumented URLs.** Skymedia's eleven channels consolidate under `skymedia-live.bitflip.ee/{SKYPLUS,SKY,RR_AAC,NRJ,KISS,RETRO,R7,rck,rrretro,rrock,Legendaarne}` (Kadi via its `edge06.cdn.bitflip.ee:8888/kadi` edge); Radio Duo's clean `router.euddn.net/…/radioduo.aac` replaced the pleier wrapper; Star FM+ publishes the `volna320-mp3` primary its own player references (the stream's icy name still reads «Radio Volna», a legacy label). Elmari Kuld resolves to `router…/elmarikuld.aac`; its Duo Softmix sibling 404s and was dropped rather than guessed.
+- **KlaRa's MP3 siblings are confirmed**, and KlaRa Meditatsioon additionally offers Opus. NRJ publishes as internet-only: it holds no TTJA FM licence and its DAB presence is not machine-readable, so nothing terrestrial is claimed for it.
+- **Kuku High ships with `website: null`** — kuku.ee and kuku.pleier.ee serve a generic «Kuula Postimees» landing page rather than the programme's own page; a wrong website is worse than none.
+- **Kaguraadio's HLS URL carries a rotating chunklist id.** The manifest resolved through its `chunklist_…` segment list (`playlist.m3u8` itself 404s); the note records that the exact query may rotate and the mount path is the stable part.
+- **Seasonal and junk never ship.** Kiss Eurovision/Pride, Sky Plus DnB, Retro Jõulud and Retro Love are time-boxed feeds; Sooviraadio (dead site + http), Rahvaraadio (http-only), NikRadofem (unreachable twice) and Kuma FM (raw IP + http, the predecessor of XFM) are excluded with their reasons, without retries.
+
+## Estonia — DAB+ (documentation only)
+
+`dabplus.ee` documents two DAB+ networks (R1, R3), ~80% population coverage, with a rollout beginning 01.09.2025 and multiplexes added through 10–11.2025. The full channel list is rendered by a JavaScript widget and could not be extracted machine-readably, so the published DAB state is partial. ERR's R2 ALTPop is marked «(DAB)» by ERR itself and appears in no terrestrial or internet category; the one DAB-only candidate found during discovery carries exclusion code `dab-only-documented`. No DAB entry was promoted to a user category without an agreed rule.
+
+## Estonia — known gaps
+
+- Now Playing works for 0 of 72 entries; no browser-readable endpoint was confirmed, so none ships rather than with a guessed adapter.
+- The TTJA PDF (04.07.2025, page last seen 31.08.2026) is stale in exactly one known place (Tre→XFM) and was corrected from official media; other late licence changes would only surface on the next register refresh.
+- The DAB+ channel list remains partially documented (JS widget); a future stage may extract it and decide the DAB category rule.
+- Kaguraadio's rotating HLS chunklist query may break the primary URL without a catalogue change; the mount is the stable part.
+- Desktop browser verification only — not tested on real iPhone Safari hardware; no iOS background-playback claims.

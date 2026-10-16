@@ -1,0 +1,1537 @@
+{
+ "id": "estonia",
+ "name": "Эстония",
+ "code": "EE",
+ "timeZone": "Europe/Tallinn",
+ "updatedAt": "2026-10-16",
+ "stations": [
+  {
+   "id": "r2pop",
+   "name": "R2 Pop",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://r2extra.err.ee/r2pop",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/r2pop.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: r2extra.err.ee/r2pop — «R2 EXTRA veebijaamad» в навигации err.ee",
+     "Официальный поток icecast.err.ee/r2pop.mp3 (icy «R2 Pop») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "r2chill",
+   "name": "R2 Chill",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "chill"
+   ],
+   "frequencyMHz": null,
+   "website": "https://r2extra.err.ee/r2chill",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/r2chill.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: r2extra.err.ee/r2chill",
+     "Официальный поток icecast.err.ee/r2chill.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "r2rock",
+   "name": "R2 Rock",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": null,
+   "website": "https://r2extra.err.ee/r2rock",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/r2rock.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: r2extra.err.ee/r2rock",
+     "Официальный поток icecast.err.ee/r2rock.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "klarajazz",
+   "name": "KlaRa Jazz",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "jazz"
+   ],
+   "frequencyMHz": null,
+   "website": "https://klara.err.ee/jazz",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/klarajazz.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: klara.err.ee/jazz — канал Klassikaraadio",
+     "Официальный поток icecast.err.ee/klarajazz.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "klaraklassika",
+   "name": "KlaRa Klassika",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "classical"
+   ],
+   "frequencyMHz": null,
+   "website": "https://klara.err.ee/klassika",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/klaraklassika.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: klara.err.ee/klassika",
+     "Официальный поток icecast.err.ee/klaraklassika.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "klaranostalgia",
+   "name": "KlaRa Nostalgia",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "nostalgia"
+   ],
+   "frequencyMHz": null,
+   "website": "https://klara.err.ee/nostalgia",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/klaranostalgia.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: klara.err.ee/nostalgia",
+     "Официальный поток icecast.err.ee/klaranostalgia.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "klarameditatsioon",
+   "name": "KlaRa Meditatsioon",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "meditation"
+   ],
+   "frequencyMHz": null,
+   "website": "https://klara.err.ee/klarameditatsioon",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/klarameditatsioon.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: klara.err.ee/klarameditatsioon",
+     "Официальный поток icecast.err.ee/klarameditatsioon.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "r4retro",
+   "name": "R4 Retro",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "vene",
+   "genres": [
+    "retro"
+   ],
+   "frequencyMHz": null,
+   "website": "https://r4extra.err.ee/r4retro",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/r4retro.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "ERR: r4extra.err.ee/r4retro — веб-канал Raadio 4",
+     "Официальный поток icecast.err.ee/r4retro.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "elmaritantsuohtu",
+   "name": "Elmari Tantsuõhtu",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://elmaritantsuohtu.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/elmaritantsuohtu.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница elmaritantsuohtu.pleier.ee (Duo Media)",
+     "Официальный поток router.euddn.net подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "elmariballaadid",
+   "name": "Elmari Ballaadid",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "ballad"
+   ],
+   "frequencyMHz": null,
+   "website": "https://elmar.pleier.ee/elmari-ballaadid",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/EB_elmariballaadid.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница elmar.pleier.ee/elmari-ballaadid",
+     "Официальный поток router.euddn.net подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "elmarikuld",
+   "name": "Elmari Kuld",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "oldies"
+   ],
+   "frequencyMHz": null,
+   "website": "https://elmarikuld.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/elmarikuld.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница elmarikuld.pleier.ee",
+     "Официальный поток router.euddn.net/elmarikuld.aac подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "myhitsrock",
+   "name": "MyHits Rock",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": null,
+   "website": "https://myhitsrock.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/MHR_myhitsrock.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница myhitsrock.pleier.ee",
+     "Официальный поток router.euddn.net подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "myhitsdance",
+   "name": "MyHits Dance",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://myhitsdance.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/md_mhdance.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница myhitsdance.pleier.ee",
+     "Официальный поток router.euddn.net подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kukuhigh",
+   "name": "Kuku High",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": null,
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/kuku_high.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Radio Browser: Kuku High → router.euddn.net/kuku_high.mp3 (Duo Media)",
+     "Официальный поток router.euddn.net/kuku_high.mp3 (icy «Kuku High») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "duorock",
+   "name": "Duo Rock",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": null,
+   "website": "https://raadioduo.pleier.ee/duo-rock",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/rokk.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница raadioduo.pleier.ee/duo-rock",
+     "Официальный поток router.euddn.net/rokk.aac (icy «Duo Rock») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "duocountry",
+   "name": "Duo Country",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "country"
+   ],
+   "frequencyMHz": null,
+   "website": "https://raadioduo.pleier.ee/duo-country",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/dc_duocountry.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница raadioduo.pleier.ee/duo-country",
+     "Официальный поток router.euddn.net/dc_duocountry.aac подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "duoparty",
+   "name": "Duo Party",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://raadioduo.pleier.ee/duo-party",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/duodance.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница raadioduo.pleier.ee/duo-party",
+     "Официальный поток router.euddn.net/duodance.aac (icy «Duo Party») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "duogold",
+   "name": "Duo Gold",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "oldies"
+   ],
+   "frequencyMHz": null,
+   "website": "https://duogold.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/kuld.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница duogold.pleier.ee",
+     "Официальный поток router.euddn.net/kuld.aac (icy «Duo Gold») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "hitmix",
+   "name": "HitMix",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "oldies"
+   ],
+   "frequencyMHz": null,
+   "website": "https://hitmix.ee/",
+   "streams": [
+    {
+     "url": "https://hitmix.ee:8443/HIT_320",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/hitmix.aac",
+     "role": "fallback",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт hitmix.ee (страница raadioduo.pleier.ee/duo-greatest-hits ведёт на тот же канал)",
+     "Официальный поток hitmix.ee:8443/HIT_320 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kidzone",
+   "name": "Raadio Kidzone",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "children"
+   ],
+   "frequencyMHz": null,
+   "website": "https://kidzone.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/kidzone.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница kidzone.pleier.ee; анонс «Eesti esimene lasteraadio» на raadioduo.pleier.ee",
+     "Официальный поток router.euddn.net/kidzone.aac подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "nrj",
+   "name": "NRJ",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "pop",
+    "dance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://nrj.sky.ee/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/NRJ",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт nrj.sky.ee (Sky group)",
+     "Официальный поток skymedia-live.bitflip.ee/NRJ (icy «NRJ FM stream») подтверждён (HTTP 200 + аудио).",
+     "В перечне TTJA (34 лицензии, 04.07.2025) NRJ отсутствует — подтверждённого FM/AM нет."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "superretro",
+   "name": "Super Ретро",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "vene",
+   "genres": [
+    "retro"
+   ],
+   "frequencyMHz": null,
+   "website": "https://superradio.sky.ee/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/rrretro",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт superradio.sky.ee (суппоток Super Raadio)",
+     "Официальный поток skymedia-live.bitflip.ee/rrretro подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "superrock",
+   "name": "Super Рок",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "vene",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": null,
+   "website": "https://super.radio/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/rrock",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт super.radio (суппоток Super Raadio)",
+     "Официальный поток skymedia-live.bitflip.ee/rrock подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "relaxcafe",
+   "name": "Relax cafe",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "lounge"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.relaxfm.ee/",
+   "streams": [
+    {
+     "url": "https://stream.relaxfm.ee/cafe",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт relaxfm.ee (онлайн-фид Relax FM)",
+     "Официальный поток stream.relaxfm.ee/cafe подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "relaxinstrumental",
+   "name": "Relax Instrumental",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "instrumental"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.relaxfm.ee/",
+   "streams": [
+    {
+     "url": "https://stream.relaxfm.ee/instrumental",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт relaxfm.ee (онлайн-фид Relax FM)",
+     "Официальный поток stream.relaxfm.ee/instrumental подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "relaxinternational",
+   "name": "Relax International",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.relaxfm.ee/",
+   "streams": [
+    {
+     "url": "https://stream.relaxfm.ee/international",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт relaxfm.ee (онлайн-фид Relax FM)",
+     "Официальный поток stream.relaxfm.ee/international подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "bigfm",
+   "name": "BIGfm",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "hits"
+   ],
+   "frequencyMHz": null,
+   "website": "https://bigfm.ee/",
+   "streams": [
+    {
+     "url": "https://sc2.flamebox.org/bigfm-hd",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт bigfm.ee (BIGmedia; «uus raadio Eestis»)",
+     "Официальный поток sc2.flamebox.org/bigfm-hd подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "hitsradioestonia",
+   "name": "Hits Radio Estonia",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "hits"
+   ],
+   "frequencyMHz": null,
+   "website": "https://hitsradio.ee/",
+   "streams": [
+    {
+     "url": "https://artemis.streamerr.co/listen/hitsradioestonia/radio.mp3",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://cdn.treraadio.ee/pohja-tre",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, MP3-цепочка. Сабпоток бывшей Tre Raadio Põhja-Eesti на CDN Ring FM Media."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт hitsradio.ee (эфирная сетка + плеер)",
+     "Официальный поток artemis.streamerr.co (icy «Hits Radio Estonia») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "spacefm",
+   "name": "Space FM",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": null,
+   "website": "https://spacefm.ee/",
+   "streams": [
+    {
+     "url": "https://stream.spacefm.ee/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт spacefm.ee",
+     "Официальный поток stream.spacefm.ee/live подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "pcrfm",
+   "name": "PCR.fm",
+   "country": "Эстония",
+   "region": null,
+   "city": "Pärnu",
+   "language": "eesti",
+   "genres": [
+    "club"
+   ],
+   "frequencyMHz": null,
+   "website": "https://pcr.fm/",
+   "streams": [
+    {
+     "url": "https://pcrfm.radiocult.fm/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт pcr.fm (Pärnu Club Radio)",
+     "Официальный поток pcrfm.radiocult.fm подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "idaradio",
+   "name": "IDA Radio",
+   "country": "Эстония",
+   "region": null,
+   "city": "Tallinn",
+   "language": "eesti",
+   "genres": [
+    "alternative"
+   ],
+   "frequencyMHz": null,
+   "website": "https://idaidaida.net/",
+   "streams": [
+    {
+     "url": "https://broadcast.idaidaida.net:8000/stream",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт idaidaida.net (Таллин)",
+     "Официальный поток broadcast.idaidaida.net (icy «IDA Raadio - Tallinn») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "globalexportfm",
+   "name": "Global Export FM",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://radio.globalexport.ee/",
+   "streams": [
+    {
+     "url": "https://radio.globalexport.ee/stream.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт radio.globalexport.ee",
+     "Официальный поток radio.globalexport.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "haapsalybassline",
+   "name": "Haapsaly Bassline",
+   "country": "Эстония",
+   "region": null,
+   "city": "Haapsalu",
+   "language": "eesti",
+   "genres": [
+    "bassline"
+   ],
+   "frequencyMHz": null,
+   "website": "https://hpsbassline.club/",
+   "streams": [
+    {
+     "url": "https://azura.hpsbassline.club/listen/haapsaly_bassline/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт hpsbassline.club (Хаапсалу)",
+     "Официальный поток azura.hpsbassline.club подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "radionostalgiaestonia",
+   "name": "Radio Nostalgia Estonia",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "nostalgia"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radionostalgia.ee/",
+   "streams": [
+    {
+     "url": "https://c16.radioboss.fm:8327/stream",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт radionostalgia.ee",
+     "Официальный поток c16.radioboss.fm подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "raadioaieon",
+   "name": "Raadio AiEon",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://raadio.aieon.ee/",
+   "streams": [
+    {
+     "url": "https://raadio.aieon.ee/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальная страница raadio.aieon.ee/public/raadio",
+     "Официальный поток raadio.aieon.ee/radio.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "radioolematu",
+   "name": "Radio Olematu",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://olematu.ee/",
+   "streams": [
+    {
+     "url": "https://radio.olematu.ee/listen/radio_olematu/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт olematu.ee",
+     "Официальный поток radio.olematu.ee (icy «Radio Olematu») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "radiohappyu",
+   "name": "Raadio HappyU",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": null,
+   "website": "https://happyu.ee/",
+   "streams": [
+    {
+     "url": "https://radio.streemlion.com:2525/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт happyu.ee (ссылка «HappyU live stream» ведёт на этот поток)",
+     "Официальный поток radio.streemlion.com подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "taifuunfm",
+   "name": "TaifuunFM",
+   "country": "Эстония",
+   "region": null,
+   "city": null,
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://taifuun.eu/",
+   "streams": [
+    {
+     "url": "https://taifuun.eu/taifuunfm.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт taifuun.eu (собственный поток на домене сайта)",
+     "Официальный поток taifuun.eu/taifuunfm.mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Internet-only: подтверждённого FM/AM-вещания нет (TTJA 04.07.2025). Потоки проверены из Финляндии 16.10.2026."
+   }
+  }
+ ]
+}

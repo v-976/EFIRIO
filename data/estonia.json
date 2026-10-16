@@ -1,0 +1,3183 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-16",
+ "country": {
+  "id": "estonia",
+  "name": "Эстония",
+  "code": "EE",
+  "timeZone": "Europe/Tallinn"
+ },
+ "stations": [
+  {
+   "id": "vikerraadio",
+   "name": "Vikerraadio",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 104.1,
+   "frequencies": [
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 91.2
+    },
+    {
+     "locality": "Dirhami",
+     "region": "Lääne maakond",
+     "mhz": 91.7
+    },
+    {
+     "locality": "Lõupõllu",
+     "region": "Saare maakond",
+     "mhz": 92.1
+    },
+    {
+     "locality": "Sillamäe",
+     "region": "Ida-Viru maakond",
+     "mhz": 92.3
+    },
+    {
+     "locality": "Märjamaa",
+     "region": "Rapla maakond",
+     "mhz": 95.7
+    },
+    {
+     "locality": "Ruhnu",
+     "region": "Saare maakond",
+     "mhz": 96.4
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 104.1
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 104.7
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 104.8
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 105.1
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 105.3
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 105.4
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 105.6
+    },
+    {
+     "locality": "Orissaare",
+     "region": "Saare maakond",
+     "mhz": 105.9
+    },
+    {
+     "locality": "Pehka",
+     "region": "Lääne-Viru maakond",
+     "mhz": 106
+    },
+    {
+     "locality": "Valgjärve",
+     "region": "Põlva maakond",
+     "mhz": 106.1
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 106.7
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 107
+    }
+   ],
+   "website": "https://vikerraadio.err.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/vikerraadio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Vikerraadio» — 18 передатчиков",
+     "Официальный поток icecast.err.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "raadio2",
+   "name": "Raadio 2",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 101.6,
+   "frequencies": [
+    {
+     "locality": "Pehka",
+     "region": "Lääne-Viru maakond",
+     "mhz": 95.8
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 96.3
+    },
+    {
+     "locality": "Lõupõllu",
+     "region": "Saare maakond",
+     "mhz": 98.1
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 99.1
+    },
+    {
+     "locality": "Kabala",
+     "region": "Rapla maakond",
+     "mhz": 99.5
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 101.6
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 102.3
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 102.3
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 102.6
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 102.9
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 102.9
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 103.1
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 103.3
+    },
+    {
+     "locality": "Orissaare",
+     "region": "Saare maakond",
+     "mhz": 103.4
+    },
+    {
+     "locality": "Valgjärve",
+     "region": "Põlva maakond",
+     "mhz": 103.6
+    }
+   ],
+   "website": "https://r2.err.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/raadio2.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio 2» — 15 передатчиков",
+     "Официальный поток icecast.err.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "klassikaraadio",
+   "name": "Klassikaraadio",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 106.6,
+   "frequencies": [
+    {
+     "locality": "Kabala",
+     "region": "Rapla maakond",
+     "mhz": 89.1
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 89.4
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 90.3
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 90.4
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 90.5
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 94.9
+    },
+    {
+     "locality": "Lõupõllu",
+     "region": "Saare maakond",
+     "mhz": 103.7
+    },
+    {
+     "locality": "Pehka",
+     "region": "Lääne-Viru maakond",
+     "mhz": 104.5
+    },
+    {
+     "locality": "Valgjärve",
+     "region": "Põlva maakond",
+     "mhz": 105.7
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 106.3
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 106.6
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 107
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 107.3
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 107.6
+    },
+    {
+     "locality": "Orissaare",
+     "region": "Saare maakond",
+     "mhz": 107.8
+    }
+   ],
+   "website": "https://klassikaraadio.err.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/klassikaraadio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Klassikaraadio» — 15 передатчиков",
+     "Официальный поток icecast.err.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "raadio4",
+   "name": "Raadio 4",
+   "type": "nationwide",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 94.5,
+   "frequencies": [
+    {
+     "locality": "Valga",
+     "region": "Valga maakond",
+     "mhz": 92.5
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 93.4
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 93.6
+    },
+    {
+     "locality": "Pehka",
+     "region": "Lääne-Viru maakond",
+     "mhz": 94.2
+    },
+    {
+     "locality": "Sillamäe",
+     "region": "Ida-Viru maakond",
+     "mhz": 94.2
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 94.4
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 94.5
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 94.8
+    },
+    {
+     "locality": "Kabala",
+     "region": "Rapla maakond",
+     "mhz": 95.1
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 95.3
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 95.5
+    },
+    {
+     "locality": "Mõksi",
+     "region": "Võru maakond",
+     "mhz": 99.9
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 100.9
+    }
+   ],
+   "website": "https://r4.err.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/raadio4.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio 4» — 13 передатчиков (vene keeles)",
+     "Официальный поток icecast.err.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "raadiotallinn",
+   "name": "Raadio Tallinn",
+   "type": "local",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 103.5,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 103.5
+    }
+   ],
+   "website": "https://raadiotallinn.err.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.err.ee/raadiotallinn.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio Tallinn» — 1 передатчик (Tallinn Tornimäe 103.5)",
+     "Официальный поток icecast.err.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "skyplus",
+   "name": "Sky Plus",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 95.4,
+   "frequencies": [
+    {
+     "locality": "Kehtna",
+     "region": "Rapla maakond",
+     "mhz": 87.7
+    },
+    {
+     "locality": "Sävere",
+     "region": "Järva maakond",
+     "mhz": 92.6
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 93.6
+    },
+    {
+     "locality": "Holsta",
+     "region": "Võru maakond",
+     "mhz": 93.8
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 95.4
+    },
+    {
+     "locality": "Vätta",
+     "region": "Saare maakond",
+     "mhz": 96.3
+    },
+    {
+     "locality": "Lustvere",
+     "region": "Jõgeva maakond",
+     "mhz": 96.5
+    },
+    {
+     "locality": "Audru",
+     "region": "Pärnu maakond",
+     "mhz": 96.8
+    },
+    {
+     "locality": "Kärdla",
+     "region": "Hiiu maakond",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 97.6
+    },
+    {
+     "locality": "Otepää",
+     "region": "Valga maakond",
+     "mhz": 99.1
+    },
+    {
+     "locality": "Liiva",
+     "region": "Saare maakond",
+     "mhz": 99.6
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 99.7
+    },
+    {
+     "locality": "Assamalla",
+     "region": "Lääne-Viru maakond",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Kiviõli",
+     "region": "Ida-Viru maakond",
+     "mhz": 103.3
+    },
+    {
+     "locality": "Päri",
+     "region": "Lääne maakond",
+     "mhz": 106.8
+    }
+   ],
+   "website": "https://sky.ee/skyplus",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/SKYPLUS",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://stream.skymedia.ee/live/SKYPLUS",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Sky Plus» — 17 передатчиков",
+     "Официальный поток skymedia-live.bitflip.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "skyraadio",
+   "name": "Sky Raadio",
+   "type": "regional",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 98.4,
+   "frequencies": [
+    {
+     "locality": "Võle",
+     "region": "Lääne-Viru maakond",
+     "mhz": 93.8
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 98.4
+    },
+    {
+     "locality": "Kohtla-Järve",
+     "region": "Ida-Viru maakond",
+     "mhz": 102.1
+    },
+    {
+     "locality": "Luunja",
+     "region": "Tartu maakond",
+     "mhz": 107.2
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 107.9
+    }
+   ],
+   "website": "https://www.sky-radio.fm/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/SKY",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Sky Raadio» — 5 передатчиков; таблица передатчиков в PDF помечена «Sky Radio»",
+     "Официальный поток skymedia-live.bitflip.ee/SKY (icy «Sky Radio Stream») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "superraadio",
+   "name": "Super Raadio",
+   "type": "regional",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 90.6,
+   "frequencies": [
+    {
+     "locality": "Kiviõli",
+     "region": "Ida-Viru maakond",
+     "mhz": 89.5
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 90.6
+    },
+    {
+     "locality": "Assamalla",
+     "region": "Lääne-Viru maakond",
+     "mhz": 99.2
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 101.2
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 103.6
+    }
+   ],
+   "website": "https://superradio.sky.ee/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/RR_AAC",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, ADTS-цепочка. Монтировка RR_AAC и icy-name «Russkoe Radio Stream» — легаси после ребрендинга Русского Радио в Super Raadio."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Super Raadio» — 5 передатчиков; таблица в PDF помечена «Super Radio»",
+     "Официальный поток skymedia-live.bitflip.ee/RR_AAC подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "retrofm",
+   "name": "Retro FM",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 97.8,
+   "frequencies": [
+    {
+     "locality": "Himma",
+     "region": "Põlva maakond",
+     "mhz": 88
+    },
+    {
+     "locality": "Kõmsi",
+     "region": "Pärnu maakond",
+     "mhz": 88.2
+    },
+    {
+     "locality": "Kohtla-Järve",
+     "region": "Ida-Viru maakond",
+     "mhz": 93
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Kaarma",
+     "region": "Saare maakond",
+     "mhz": 95.4
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 97.8
+    },
+    {
+     "locality": "Aadma",
+     "region": "Hiiu maakond",
+     "mhz": 97.9
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 97.9
+    },
+    {
+     "locality": "Varbola",
+     "region": "Rapla maakond",
+     "mhz": 98
+    },
+    {
+     "locality": "Sävere",
+     "region": "Järva maakond",
+     "mhz": 98.1
+    },
+    {
+     "locality": "Audru",
+     "region": "Pärnu maakond",
+     "mhz": 98.3
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 98.6
+    },
+    {
+     "locality": "Võle",
+     "region": "Lääne-Viru maakond",
+     "mhz": 98.7
+    }
+   ],
+   "website": "https://sky.ee/retrofm",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/RETRO",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Retro FM» — 13 передатчиков",
+     "Официальный поток skymedia-live.bitflip.ee/RETRO подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "rockfm",
+   "name": "Rock FM",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 88.8,
+   "frequencies": [
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 87.8
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 88.8
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 90.4
+    },
+    {
+     "locality": "Killinge",
+     "region": "Valga maakond",
+     "mhz": 90.8
+    },
+    {
+     "locality": "Are",
+     "region": "Pärnu maakond",
+     "mhz": 93.9
+    },
+    {
+     "locality": "Himma",
+     "region": "Võru maakond",
+     "mhz": 98.3
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 103.1
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 104.2
+    },
+    {
+     "locality": "Vätta",
+     "region": "Saare maakond",
+     "mhz": 107.5
+    }
+   ],
+   "website": "https://sky.ee/rockfm",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/rck",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Rock FM» — 9 передатчиков",
+     "Официальный поток skymedia-live.bitflip.ee/rck подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kissfm",
+   "name": "Kiss FM",
+   "type": "local",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 93.2,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 93.2
+    }
+   ],
+   "website": "https://sky.ee/kissfm",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/KISS",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Kiss FM» — 1 передатчик (Tallinn 93.2)",
+     "Официальный поток skymedia-live.bitflip.ee/KISS подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "legendaarne",
+   "name": "Legendaarne Raadio",
+   "type": "local",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 99.3,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 99.3
+    }
+   ],
+   "website": "https://sky.ee/legendaarne",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/Legendaarne",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Legendaarne Raadio» — 1 передатчик (Tallinn 99.3)",
+     "Официальный поток skymedia-live.bitflip.ee/Legendaarne подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "starfm",
+   "name": "Star FM",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 96.6,
+   "frequencies": [
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 88.1
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 89.3
+    },
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 92.2
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 92.9
+    },
+    {
+     "locality": "Kuressaare",
+     "region": "Saare maakond",
+     "mhz": 93.3
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 96.6
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 99.4
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Põltsamaa",
+     "region": "Jõgeva maakond",
+     "mhz": 101.9
+    },
+    {
+     "locality": "Tsirguliina",
+     "region": "Valga maakond",
+     "mhz": 102.8
+    },
+    {
+     "locality": "Parksepa",
+     "region": "Võru maakond",
+     "mhz": 103.2
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 106.3
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 107.2
+    }
+   ],
+   "website": "https://raadiod.tv3.ee/starfm/",
+   "streams": [
+    {
+     "url": "https://ice.leviracloud.eu/star320-mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://ice.leviracloud.eu/star96-aac",
+     "role": "fallback",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Star FM» — 13 передатчиков",
+     "Официальный портал raadiod.tv3.ee/starfm; Официальный поток ice.leviracloud.eu/star320-mp3 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "starfmeesti",
+   "name": "Star FM EESTI",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 95.8,
+   "frequencies": [
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 88.5
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 89.6
+    },
+    {
+     "locality": "Parksepa",
+     "region": "Võru maakond",
+     "mhz": 94.8
+    },
+    {
+     "locality": "Põltsamaa",
+     "region": "Jõgeva maakond",
+     "mhz": 95.8
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 95.8
+    },
+    {
+     "locality": "Tsirguliina",
+     "region": "Valga maakond",
+     "mhz": 100.4
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 103.8
+    }
+   ],
+   "website": "https://raadiod.tv3.ee/starfmeesti/",
+   "streams": [
+    {
+     "url": "https://ice.leviracloud.eu/starFMEesti96-aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Star FM EESTI» — 7 передатчиков; отдельная лицензия и отдельный поток (icy «StarFM Eesti»)",
+     "Официальный поток ice.leviracloud.eu/starFMEesti96-aac подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "starfmplus",
+   "name": "Star FM+",
+   "type": "regional",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 107.1,
+   "frequencies": [
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 89
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 106.9
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 107.1
+    }
+   ],
+   "website": "https://raadiod.tv3.ee/starfmplus/",
+   "streams": [
+    {
+     "url": "https://ice.leviracloud.eu/volna320-mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, MP3-цепочка. Плеер raadiod.tv3.ee/starfmplus ссылается на эту монтировку; icy-name «Radio Volna» — легаси."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Star FM+» — 3 передатчика (vene keeles)",
+     "Официальный плеер raadiod.tv3.ee/starfmplus ссылается на ice.leviracloud.eu/volna*"
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "powerhitradio",
+   "name": "Power Hit Radio",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 102.1,
+   "frequencies": [
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 89.7
+    },
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 92.5
+    },
+    {
+     "locality": "Tsirguliina",
+     "region": "Valga maakond",
+     "mhz": 102
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 102.1
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 103.9
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 105.4
+    }
+   ],
+   "website": "https://raadiod.tv3.ee/power/",
+   "streams": [
+    {
+     "url": "https://ice.leviracloud.eu/phr320-aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://ice.leviracloud.eu/phr96-aac",
+     "role": "fallback",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Power Hit Radio» — 6 передатчиков",
+     "Официальный поток ice.leviracloud.eu/phr320-aac подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kuku",
+   "name": "Raadio Kuku",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 100.7,
+   "frequencies": [
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 89.9
+    },
+    {
+     "locality": "Haanja",
+     "region": "Võru maakond",
+     "mhz": 91.8
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 93.2
+    },
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 99.6
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 100.2
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 100.4
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 100.4
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 100.5
+    },
+    {
+     "locality": "Kuressaare",
+     "region": "Saare maakond",
+     "mhz": 100.6
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 100.7
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 100.9
+    },
+    {
+     "locality": "Orissaare",
+     "region": "Saare maakond",
+     "mhz": 102
+    },
+    {
+     "locality": "Koikse",
+     "region": "Rapla maakond",
+     "mhz": 103.2
+    },
+    {
+     "locality": "Tsirguliina",
+     "region": "Valga maakond",
+     "mhz": 105.3
+    }
+   ],
+   "website": "https://kuku.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/kuku_low.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio Kuku» — 15 передатчиков",
+     "Официальный поток router.euddn.net (Duo Media) подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "elmar",
+   "name": "Raadio Elmar",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 91.5,
+   "frequencies": [
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 88.5
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 91
+    },
+    {
+     "locality": "Valgjärve",
+     "region": "Põlva maakond",
+     "mhz": 91.2
+    },
+    {
+     "locality": "Kuressaare",
+     "region": "Saare maakond",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 91.7
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 92.2
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 93.1
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 99
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 101.2
+    },
+    {
+     "locality": "Koikse",
+     "region": "Rapla maakond",
+     "mhz": 101.3
+    }
+   ],
+   "website": "https://elmar.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/elmar.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio Elmar» — 11 передатчиков",
+     "Официальный поток router.euddn.net (Duo Media) подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "myhits",
+   "name": "Raadio MyHits",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 97.2,
+   "frequencies": [
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 89.8
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 91
+    },
+    {
+     "locality": "Parksepa",
+     "region": "Võru maakond",
+     "mhz": 92.3
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 97.2
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 97.2
+    },
+    {
+     "locality": "Koeru",
+     "region": "Järva maakond",
+     "mhz": 97.4
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 97.4
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 99.8
+    },
+    {
+     "locality": "Orissaare",
+     "region": "Saare maakond",
+     "mhz": 104.5
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 104.9
+    }
+   ],
+   "website": "https://myhits.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/myhits.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio MyHits» — 10 передатчиков",
+     "Официальный поток router.euddn.net (Duo Media) подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "radioduo",
+   "name": "Raadio Duo",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 90.2,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 90.2
+    },
+    {
+     "locality": "Saduküla",
+     "region": "Jõgeva maakond",
+     "mhz": 90.9
+    },
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 91.8
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 92
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 93.7
+    },
+    {
+     "locality": "Kuressaare",
+     "region": "Saare maakond",
+     "mhz": 102.5
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 107.8
+    }
+   ],
+   "website": "https://raadioduo.pleier.ee/",
+   "streams": [
+    {
+     "url": "https://router.euddn.net/8103046e16b71d15d692b57c187875c7/radioduo.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio Duo» — 7 передатчиков",
+     "Официальная страница raadioduo.pleier.ee ссылается на router.euddn.net/radioduo.aac; подтверждено (HTTP 200 + ADTS)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "relaxfm",
+   "name": "Relax FM",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 88.3,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 88.3
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 92.4
+    },
+    {
+     "locality": "Aste",
+     "region": "Saare maakond",
+     "mhz": 92.6
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 94.8
+    },
+    {
+     "locality": "Audru",
+     "region": "Pärnu maakond",
+     "mhz": 96.4
+    },
+    {
+     "locality": "Holsta",
+     "region": "Võru maakond",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Valgjärve",
+     "region": "Põlva maakond",
+     "mhz": 102.4
+    },
+    {
+     "locality": "Luunja",
+     "region": "Tartu maakond",
+     "mhz": 103
+    }
+   ],
+   "website": "https://www.relaxfm.ee/",
+   "streams": [
+    {
+     "url": "https://stream.relaxfm.ee/relax",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Relax FM» — 8 передатчиков (Northstar Media OÜ)",
+     "Официальный поток stream.relaxfm.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "pereraadio",
+   "name": "Pereraadio",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 89.6,
+   "frequencies": [
+    {
+     "locality": "Ahtme",
+     "region": "Ida-Viru maakond",
+     "mhz": 88.2
+    },
+    {
+     "locality": "Kärdla",
+     "region": "Hiiu maakond",
+     "mhz": 88.7
+    },
+    {
+     "locality": "Puka",
+     "region": "Valga maakond",
+     "mhz": 88.7
+    },
+    {
+     "locality": "Pada",
+     "region": "Lääne-Viru maakond",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 89
+    },
+    {
+     "locality": "Vätta",
+     "region": "Saare maakond",
+     "mhz": 89
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 89.4
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 89.6
+    },
+    {
+     "locality": "Võru",
+     "region": "Võru maakond",
+     "mhz": 95.7
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 97.5
+    }
+   ],
+   "website": "https://www.pereraadio.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.pereraadio.ee:9000/Tartu",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Pereraadio» — 10 передатчиков (карта levi на pereraadio.ee совпадает с PDF)",
+     "Официальный поток icecast.pereraadio.ee:9000 подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Главный эфир — тартуская студия. Официальные региональные онлайн-фиды Pereraadio Tallinn (icecast.pereraadio.ee:9000/Tallinn) и Kuressaare (…/Kuressaare) подтверждены как отдельные потоки; FM-частоты между фидами официально не распределены, поэтому отдельными записями не публикуются. Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "semeinojeradio",
+   "name": "Semeinoje Radio",
+   "type": "regional",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 95.6,
+   "frequencies": [
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 95.6
+    },
+    {
+     "locality": "Ahtme",
+     "region": "Ida-Viru maakond",
+     "mhz": 98.2
+    }
+   ],
+   "website": "https://www.pereraadio.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.pereraadio.ee:9000/Semeinoje",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Semeinoje Radio» — 2 передатчика (Narva 95.6, Ahtme 98.2; официальная карта pereraadio.ee)",
+     "Официальный поток icecast.pereraadio.ee:9000/Semeinoje подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "radioeli",
+   "name": "Radio Eli",
+   "type": "local",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 1.035,
+   "frequencies": [
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 1.035,
+     "band": "AM"
+    }
+   ],
+   "website": "https://www.mediaeli.ee/",
+   "streams": [
+    {
+     "url": "https://icecast.pereraadio.ee:9000/RadioEli",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA (страница обзора FM): «в Эстонии работает одна AM-станция — 1035 кГц»",
+     "mediaeli.ee «О радиостанции»: запуск 03.10.2001 на 1035 кГц (AM, Тарту/Кавасту)",
+     "Официальный поток icecast.pereraadio.ee:9000/RadioEli подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Единственная в Эстонии AM-станция (международное покрытие). mediaeli.ee (официальный сайт «Семейное Радио Эли»): вещание на средних волнах 1035 кГц с передатчиком под Тарту (Кавасту) с 03.10.2001; карта AM-levi опубликована на pereraadio.ee. FM-лицензии нет — география привязана к Тарту. Поток проверен из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "xfm",
+   "name": "XFM",
+   "type": "nationwide",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 105.8,
+   "frequencies": [
+    {
+     "locality": "Männamaa",
+     "region": "Hiiu maakond",
+     "mhz": 87.8
+    },
+    {
+     "locality": "Raikküla",
+     "region": "Rapla maakond",
+     "mhz": 91.3
+    },
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 92.7
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 92.9
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 94.2
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 94.4
+    },
+    {
+     "locality": "Rakvere",
+     "region": "Lääne-Viru maakond",
+     "mhz": 97
+    },
+    {
+     "locality": "Paide",
+     "region": "Järva maakond",
+     "mhz": 101
+    },
+    {
+     "locality": "Viljandi",
+     "region": "Viljandi maakond",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 105.8
+    }
+   ],
+   "website": "https://xfm.ee/",
+   "streams": [
+    {
+     "url": "https://sc2.treraadio.ee/xfm-tallinn",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA PDF: лицензии «Tre Raadio» (6) и «Tre Raadio plus» (4), права до 2031",
+     "ERR 07.01.2026: продажа Tre Raadio NUVOLA Media OÜ",
+     "ERR 19.01.2026: «Tre raadio sagedustel alustas raadiojaam XFM»",
+     "et.wikipedia (Tre Raadio): последний эфир 16.01.2026",
+     "xfm.ee: официальный сайт XFM (BIGmedia/Digiposter)"
+    ],
+    "notes": "10 передатчиков — бывшая сеть Tre Raadio (6) + Tre Raadio plus (4): 07.01.2026 Siim Pohlak продал Tre Raadio NUVOLA Media OÜ; 19.01.2026 XFM начал вещание на частотах Tre Raadio (ERR), название Tre Raadio исчезло 16.01.2026 (et.wikipedia). xfm.ee подтверждает «üle-Eestiline raadiojaam» (всеобщая эстонская станция) и частоты Paide 101.0 / Rakvere 97.0 MHz. Поток проверен из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "ringfm",
+   "name": "Ring FM",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 101.7,
+   "frequencies": [
+    {
+     "locality": "Mõksi",
+     "region": "Võru maakond",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 104.7
+    }
+   ],
+   "website": "https://ringfm.treraadio.ee/",
+   "streams": [
+    {
+     "url": "https://cdn.treraadio.ee/ringfm",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    },
+    {
+     "url": "https://cdn.treraadio.ee/tartustuudio",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, MP3-цепочка. Тартуский студийный сабпоток Ring FM."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Ring FM» — 2 передатчика (Tartu 104.7, Võru 101.7)",
+     "Официальный поток cdn.treraadio.ee/ringfm подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "ruutfm",
+   "name": "Ruut FM",
+   "type": "local",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 96.6,
+   "frequencies": [
+    {
+     "locality": "Sangaste",
+     "region": "Valga maakond",
+     "mhz": 96.6
+    }
+   ],
+   "website": "https://ruutfm.treraadio.ee/",
+   "streams": [
+    {
+     "url": "https://a1.asurahosting.com/listen/ruut_fm/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, MP3-цепочка. URL подтверждён официальной ссылкой плеера на ruutfm.treraadio.ee."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Ruut FM» — 1 передатчик (Sangaste 96.6)",
+     "ruutfm.treraadio.ee (официальный сайт) ссылается на этот поток"
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kadi",
+   "name": "Raadio Kadi",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 90.1,
+   "frequencies": [
+    {
+     "locality": "Käina",
+     "region": "Hiiu maakond",
+     "mhz": 90.1
+    },
+    {
+     "locality": "Aste",
+     "region": "Saare maakond",
+     "mhz": 90.5
+    },
+    {
+     "locality": "Liiva",
+     "region": "Saare maakond",
+     "mhz": 98.6
+    }
+   ],
+   "website": "https://kadi.ee/",
+   "streams": [
+    {
+     "url": "https://edge06.cdn.bitflip.ee:8888/kadi",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio Kadi» — 3 передатчика (Saare maakond)",
+     "Официальный поток edge06.cdn.bitflip.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "kaguraadio",
+   "name": "Kaguraadio",
+   "type": "local",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 100.7,
+   "frequencies": [
+    {
+     "locality": "Põlva",
+     "region": "Põlva maakond",
+     "mhz": 100.7
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://radio.vlevelscdn.net/radio/kaguraadio.stream/chunklist_w936127105.m3u8",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии (два прохода, 15–16.10.2026): HLS-плейлист + MP3-сегмент. Имя chunklist может ротироваться на стороне CDN."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Kaguraadio» — 1 передатчик (Põlva 100.7)",
+     "Официальный поток radio.vlevelscdn.net (HLS) подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "HLS-поток с CDN vlevelscdn: имя chunklist-плейлиста фиксировано на момент проверки, но может ротироваться — риск требует повторной проверки при обновлении каталога."
+   }
+  },
+  {
+   "id": "raadio7",
+   "name": "Raadio 7",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 103.1,
+   "frequencies": [
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 88.6
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 92.1
+    },
+    {
+     "locality": "Tamsalu",
+     "region": "Lääne-Viru maakond",
+     "mhz": 96.1
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 103.1
+    }
+   ],
+   "website": "https://raadio7.ee/",
+   "streams": [
+    {
+     "url": "https://skymedia-live.bitflip.ee/R7",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Raadio 7» — 4 передатчика",
+     "Официальный поток skymedia-live.bitflip.ee/R7 (icy «Raadio 7») подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "aripaeva",
+   "name": "Äripäeva raadio",
+   "type": "regional",
+   "language": "eesti",
+   "genres": [],
+   "frequencyMHz": 92.4,
+   "frequencies": [
+    {
+     "locality": "Pärnu",
+     "region": "Pärnu maakond",
+     "mhz": 91.9
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 92.4
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 94.6
+    },
+    {
+     "locality": "Haapsalu",
+     "region": "Lääne maakond",
+     "mhz": 96
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 97.7
+    },
+    {
+     "locality": "Sauvere",
+     "region": "Saare maakond",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Kabala",
+     "region": "Rapla maakond",
+     "mhz": 101.8
+    },
+    {
+     "locality": "Paide",
+     "region": "Järva maakond",
+     "mhz": 104.3
+    }
+   ],
+   "website": "https://www.aripaev.ee/raadio/",
+   "streams": [
+    {
+     "url": "https://www.aripaev.ee/raadio/stream.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Äripäeva raadio» — 8 передатчиков",
+     "Официальный поток aripaev.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "maximum",
+   "name": "Radio Maximum",
+   "type": "regional",
+   "language": "vene",
+   "genres": [],
+   "frequencyMHz": 100,
+   "frequencies": [
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 96.3
+    },
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 100
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 100
+    }
+   ],
+   "website": "https://radiomaximum.ee/",
+   "streams": [
+    {
+     "url": "https://stream.radiomaximum.ee/stream",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «RADIO MAXIMUM» — 3 передатчика (vene keeles)",
+     "Официальный поток stream.radiomaximum.ee подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "sssradio",
+   "name": "SSS-Radio",
+   "type": "local",
+   "language": "soome ja inglise",
+   "genres": [],
+   "frequencyMHz": 93.7,
+   "frequencies": [
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 93.7
+    }
+   ],
+   "website": "https://sss-radio.ee/",
+   "streams": [
+    {
+     "url": "https://uvn-67-97.tll01.zonevs.eu/sss-radio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «SSS-Radio» — 1 передатчик (Tallinn Laki 93.7; soome ja inglise keeles)",
+     "Официальный поток zonevs.eu подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  },
+  {
+   "id": "druzi",
+   "name": "Radio drUzi",
+   "type": "regional",
+   "language": "ukraina, eesti ja vene",
+   "genres": [],
+   "frequencyMHz": 104.9,
+   "frequencies": [
+    {
+     "locality": "Narva",
+     "region": "Ida-Viru maakond",
+     "mhz": 89.8
+    },
+    {
+     "locality": "Tartu",
+     "region": "Tartu maakond",
+     "mhz": 94.1
+    },
+    {
+     "locality": "Kohtla-Nõmme",
+     "region": "Ida-Viru maakond",
+     "mhz": 97.7
+    },
+    {
+     "locality": "Tallinn",
+     "region": "Harju maakond",
+     "mhz": 104.9
+    }
+   ],
+   "website": "https://druzi.ee/",
+   "streams": [
+    {
+     "url": "https://druzi.fm:8443/192mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-16T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 16.10.2026: HTTP 200, аудио-сигнатура проверена (цепочка кадров)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-16",
+    "frequencyVerifiedAt": "2026-10-16",
+    "sources": [
+     "TTJA «FM raadiojaamade saatejaamad» (PDF 04.07.2025): лицензия «Radio drUzi» — 4 передатчика (ukraina, eesti ja vene keeles); таблица в PDF помечена «drUzi»",
+     "Официальный поток druzi.fm подтверждён (HTTP 200 + аудио)."
+    ],
+    "notes": "Потоки проверены из Финляндии 16.10.2026."
+   }
+  }
+ ],
+ "nationwide": [
+  "vikerraadio",
+  "raadio2",
+  "klassikaraadio",
+  "raadio4",
+  "skyplus",
+  "retrofm",
+  "starfm",
+  "kuku",
+  "elmar",
+  "pereraadio",
+  "xfm"
+ ],
+ "regions": [
+  {
+   "id": "harju-maakond",
+   "name": "Harju maakond",
+   "stations": [
+    "raadiotallinn",
+    "skyraadio",
+    "superraadio",
+    "rockfm",
+    "kissfm",
+    "legendaarne",
+    "starfmeesti",
+    "starfmplus",
+    "powerhitradio",
+    "myhits",
+    "radioduo",
+    "relaxfm",
+    "raadio7",
+    "aripaeva",
+    "maximum",
+    "sssradio",
+    "druzi"
+   ],
+   "cities": [
+    "tallinn"
+   ]
+  },
+  {
+   "id": "hiiu-maakond",
+   "name": "Hiiu maakond",
+   "stations": [
+    "myhits",
+    "radioduo",
+    "kadi"
+   ],
+   "cities": [
+    "mannamaa",
+    "kaina"
+   ]
+  },
+  {
+   "id": "ida-viru-maakond",
+   "name": "Ida-Viru maakond",
+   "stations": [
+    "skyraadio",
+    "superraadio",
+    "rockfm",
+    "starfmplus",
+    "radioduo",
+    "relaxfm",
+    "semeinojeradio",
+    "aripaeva",
+    "maximum",
+    "druzi"
+   ],
+   "cities": [
+    "kohtla-jarve",
+    "narva",
+    "kivioli",
+    "kohtla-nomme",
+    "ahtme"
+   ]
+  },
+  {
+   "id": "jogeva-maakond",
+   "name": "Jõgeva maakond",
+   "stations": [
+    "starfmeesti",
+    "radioduo"
+   ],
+   "cities": [
+    "poltsamaa",
+    "sadukula"
+   ]
+  },
+  {
+   "id": "jarva-maakond",
+   "name": "Järva maakond",
+   "stations": [
+    "myhits",
+    "aripaeva"
+   ],
+   "cities": [
+    "koeru",
+    "paide"
+   ]
+  },
+  {
+   "id": "laane-maakond",
+   "name": "Lääne maakond",
+   "stations": [
+    "rockfm",
+    "starfmeesti",
+    "myhits",
+    "aripaeva"
+   ],
+   "cities": [
+    "haapsalu"
+   ]
+  },
+  {
+   "id": "laane-viru-maakond",
+   "name": "Lääne-Viru maakond",
+   "stations": [
+    "skyraadio",
+    "superraadio",
+    "starfmeesti",
+    "powerhitradio",
+    "myhits",
+    "raadio7"
+   ],
+   "cities": [
+    "vole",
+    "assamalla",
+    "rakvere",
+    "tamsalu"
+   ]
+  },
+  {
+   "id": "polva-maakond",
+   "name": "Põlva maakond",
+   "stations": [
+    "relaxfm",
+    "kaguraadio"
+   ],
+   "cities": [
+    "valgjarve",
+    "polva"
+   ]
+  },
+  {
+   "id": "parnu-maakond",
+   "name": "Pärnu maakond",
+   "stations": [
+    "rockfm",
+    "powerhitradio",
+    "myhits",
+    "relaxfm",
+    "raadio7",
+    "aripaeva"
+   ],
+   "cities": [
+    "are",
+    "parnu",
+    "audru"
+   ]
+  },
+  {
+   "id": "rapla-maakond",
+   "name": "Rapla maakond",
+   "stations": [
+    "aripaeva"
+   ],
+   "cities": [
+    "kabala"
+   ]
+  },
+  {
+   "id": "saare-maakond",
+   "name": "Saare maakond",
+   "stations": [
+    "rockfm",
+    "starfmeesti",
+    "myhits",
+    "radioduo",
+    "relaxfm",
+    "kadi",
+    "aripaeva"
+   ],
+   "cities": [
+    "vatta",
+    "sauvere",
+    "orissaare",
+    "kuressaare",
+    "aste",
+    "liiva"
+   ]
+  },
+  {
+   "id": "tartu-maakond",
+   "name": "Tartu maakond",
+   "stations": [
+    "skyraadio",
+    "superraadio",
+    "rockfm",
+    "powerhitradio",
+    "myhits",
+    "radioduo",
+    "relaxfm",
+    "radioeli",
+    "ringfm",
+    "raadio7",
+    "aripaeva",
+    "druzi"
+   ],
+   "cities": [
+    "luunja",
+    "tartu"
+   ]
+  },
+  {
+   "id": "valga-maakond",
+   "name": "Valga maakond",
+   "stations": [
+    "rockfm",
+    "starfmeesti",
+    "powerhitradio",
+    "ruutfm"
+   ],
+   "cities": [
+    "killinge",
+    "tsirguliina",
+    "sangaste"
+   ]
+  },
+  {
+   "id": "viljandi-maakond",
+   "name": "Viljandi maakond",
+   "stations": [
+    "rockfm",
+    "powerhitradio",
+    "radioduo",
+    "relaxfm"
+   ],
+   "cities": [
+    "viljandi"
+   ]
+  },
+  {
+   "id": "voru-maakond",
+   "name": "Võru maakond",
+   "stations": [
+    "rockfm",
+    "starfmeesti",
+    "myhits",
+    "relaxfm",
+    "ringfm"
+   ],
+   "cities": [
+    "himma",
+    "parksepa",
+    "holsta",
+    "moksi"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "tallinn",
+   "name": "Tallinn",
+   "regionId": "harju-maakond",
+   "stations": [
+    "raadiotallinn",
+    "skyraadio",
+    "superraadio",
+    "rockfm",
+    "kissfm",
+    "legendaarne",
+    "starfmeesti",
+    "starfmplus",
+    "powerhitradio",
+    "myhits",
+    "radioduo",
+    "relaxfm",
+    "raadio7",
+    "aripaeva",
+    "maximum",
+    "sssradio",
+    "druzi"
+   ]
+  },
+  {
+   "id": "vole",
+   "name": "Võle",
+   "regionId": "laane-viru-maakond",
+   "stations": [
+    "skyraadio"
+   ]
+  },
+  {
+   "id": "kohtla-jarve",
+   "name": "Kohtla-Järve",
+   "regionId": "ida-viru-maakond",
+   "stations": [
+    "skyraadio"
+   ]
+  },
+  {
+   "id": "narva",
+   "name": "Narva",
+   "regionId": "ida-viru-maakond",
+   "stations": [
+    "skyraadio",
+    "superraadio",
+    "rockfm",
+    "starfmplus",
+    "relaxfm",
+    "semeinojeradio",
+    "maximum",
+    "druzi"
+   ]
+  },
+  {
+   "id": "luunja",
+   "name": "Luunja",
+   "regionId": "tartu-maakond",
+   "stations": [
+    "skyraadio",
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "kivioli",
+   "name": "Kiviõli",
+   "regionId": "ida-viru-maakond",
+   "stations": [
+    "superraadio"
+   ]
+  },
+  {
+   "id": "assamalla",
+   "name": "Assamalla",
+   "regionId": "laane-viru-maakond",
+   "stations": [
+    "superraadio"
+   ]
+  },
+  {
+   "id": "tartu",
+   "name": "Tartu",
+   "regionId": "tartu-maakond",
+   "stations": [
+    "superraadio",
+    "rockfm",
+    "powerhitradio",
+    "myhits",
+    "radioduo",
+    "radioeli",
+    "ringfm",
+    "raadio7",
+    "aripaeva",
+    "druzi"
+   ]
+  },
+  {
+   "id": "viljandi",
+   "name": "Viljandi",
+   "regionId": "viljandi-maakond",
+   "stations": [
+    "rockfm",
+    "powerhitradio",
+    "radioduo",
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "haapsalu",
+   "name": "Haapsalu",
+   "regionId": "laane-maakond",
+   "stations": [
+    "rockfm",
+    "starfmeesti",
+    "myhits",
+    "aripaeva"
+   ]
+  },
+  {
+   "id": "killinge",
+   "name": "Killinge",
+   "regionId": "valga-maakond",
+   "stations": [
+    "rockfm"
+   ]
+  },
+  {
+   "id": "are",
+   "name": "Are",
+   "regionId": "parnu-maakond",
+   "stations": [
+    "rockfm"
+   ]
+  },
+  {
+   "id": "himma",
+   "name": "Himma",
+   "regionId": "voru-maakond",
+   "stations": [
+    "rockfm"
+   ]
+  },
+  {
+   "id": "vatta",
+   "name": "Vätta",
+   "regionId": "saare-maakond",
+   "stations": [
+    "rockfm"
+   ]
+  },
+  {
+   "id": "rakvere",
+   "name": "Rakvere",
+   "regionId": "laane-viru-maakond",
+   "stations": [
+    "starfmeesti",
+    "powerhitradio",
+    "myhits"
+   ]
+  },
+  {
+   "id": "sauvere",
+   "name": "Sauvere",
+   "regionId": "saare-maakond",
+   "stations": [
+    "starfmeesti",
+    "myhits",
+    "aripaeva"
+   ]
+  },
+  {
+   "id": "parksepa",
+   "name": "Parksepa",
+   "regionId": "voru-maakond",
+   "stations": [
+    "starfmeesti",
+    "myhits"
+   ]
+  },
+  {
+   "id": "poltsamaa",
+   "name": "Põltsamaa",
+   "regionId": "jogeva-maakond",
+   "stations": [
+    "starfmeesti"
+   ]
+  },
+  {
+   "id": "tsirguliina",
+   "name": "Tsirguliina",
+   "regionId": "valga-maakond",
+   "stations": [
+    "starfmeesti",
+    "powerhitradio"
+   ]
+  },
+  {
+   "id": "kohtla-nomme",
+   "name": "Kohtla-Nõmme",
+   "regionId": "ida-viru-maakond",
+   "stations": [
+    "starfmplus",
+    "radioduo",
+    "aripaeva",
+    "maximum",
+    "druzi"
+   ]
+  },
+  {
+   "id": "parnu",
+   "name": "Pärnu",
+   "regionId": "parnu-maakond",
+   "stations": [
+    "powerhitradio",
+    "myhits",
+    "raadio7",
+    "aripaeva"
+   ]
+  },
+  {
+   "id": "koeru",
+   "name": "Koeru",
+   "regionId": "jarva-maakond",
+   "stations": [
+    "myhits"
+   ]
+  },
+  {
+   "id": "orissaare",
+   "name": "Orissaare",
+   "regionId": "saare-maakond",
+   "stations": [
+    "myhits"
+   ]
+  },
+  {
+   "id": "mannamaa",
+   "name": "Männamaa",
+   "regionId": "hiiu-maakond",
+   "stations": [
+    "myhits",
+    "radioduo"
+   ]
+  },
+  {
+   "id": "sadukula",
+   "name": "Saduküla",
+   "regionId": "jogeva-maakond",
+   "stations": [
+    "radioduo"
+   ]
+  },
+  {
+   "id": "kuressaare",
+   "name": "Kuressaare",
+   "regionId": "saare-maakond",
+   "stations": [
+    "radioduo"
+   ]
+  },
+  {
+   "id": "aste",
+   "name": "Aste",
+   "regionId": "saare-maakond",
+   "stations": [
+    "relaxfm",
+    "kadi"
+   ]
+  },
+  {
+   "id": "audru",
+   "name": "Audru",
+   "regionId": "parnu-maakond",
+   "stations": [
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "holsta",
+   "name": "Holsta",
+   "regionId": "voru-maakond",
+   "stations": [
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "valgjarve",
+   "name": "Valgjärve",
+   "regionId": "polva-maakond",
+   "stations": [
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "ahtme",
+   "name": "Ahtme",
+   "regionId": "ida-viru-maakond",
+   "stations": [
+    "semeinojeradio"
+   ]
+  },
+  {
+   "id": "moksi",
+   "name": "Mõksi",
+   "regionId": "voru-maakond",
+   "stations": [
+    "ringfm"
+   ]
+  },
+  {
+   "id": "sangaste",
+   "name": "Sangaste",
+   "regionId": "valga-maakond",
+   "stations": [
+    "ruutfm"
+   ]
+  },
+  {
+   "id": "kaina",
+   "name": "Käina",
+   "regionId": "hiiu-maakond",
+   "stations": [
+    "kadi"
+   ]
+  },
+  {
+   "id": "liiva",
+   "name": "Liiva",
+   "regionId": "saare-maakond",
+   "stations": [
+    "kadi"
+   ]
+  },
+  {
+   "id": "polva",
+   "name": "Põlva",
+   "regionId": "polva-maakond",
+   "stations": [
+    "kaguraadio"
+   ]
+  },
+  {
+   "id": "tamsalu",
+   "name": "Tamsalu",
+   "regionId": "laane-viru-maakond",
+   "stations": [
+    "raadio7"
+   ]
+  },
+  {
+   "id": "kabala",
+   "name": "Kabala",
+   "regionId": "rapla-maakond",
+   "stations": [
+    "aripaeva"
+   ]
+  },
+  {
+   "id": "paide",
+   "name": "Paide",
+   "regionId": "jarva-maakond",
+   "stations": [
+    "aripaeva"
+   ]
+  }
+ ]
+}

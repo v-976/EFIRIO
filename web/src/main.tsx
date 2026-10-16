@@ -41,7 +41,7 @@ type InternetStation = {
 type InternetCountry = { id: string; name: string; code: string; timeZone: string | null; stations: InternetStation[] };
 type InternetIndex = { schemaVersion: number; updatedAt: string | null; countries: Array<{ id: string; name: string; code: string; timeZone: string | null; stationCount: number }> };
 /** Russia keeps the existing city hierarchy; Internet drills to a country with no region/city of its own. */
-type Scope = 'russia' | 'internet' | 'finland' | 'finland-internet';
+type Scope = 'russia' | 'internet' | 'finland' | 'finland-internet' | 'estonia' | 'estonia-internet';
 /**
  * Finland is a standalone terrestrial catalogue with its own geography: a nationwide
  * bucket («Вся страна»), regions and cities. Station records live once in a registry;
@@ -77,8 +77,40 @@ type FinlandCatalogue = {
   regions: FinlandRegion[];
   cities: FinlandCity[];
 };
-/** Shared view shape so the Russia audit/metadata helpers accept Finland entries structurally. */
-type CatalogueStation = Station | InternetStation | FinlandStation;
+/**
+ * Estonia (R3.4) mirrors the Finland shape exactly, with one addition: an AM
+ * frequency carries `band: 'AM'` (Radio Eli, AM 1035 kHz) so the chip renders
+ * «1035 кГц» instead of inventing an FM number.
+ */
+type EstoniaFrequency = { locality: string | null; region: string | null; mhz: number; band?: 'FM' | 'AM' };
+type EstoniaStation = {
+  id: string;
+  name: string;
+  type: 'nationwide' | 'regional' | 'local';
+  language: string | null;
+  genres: string[];
+  frequencyMHz: number | null;
+  frequencies: EstoniaFrequency[];
+  website: string | null;
+  streams: InternetStream[];
+  metadata: MetadataConfig;
+  logo: string | null;
+  status: Station['status'];
+  verification: { stationVerifiedAt: string | null; frequencyVerifiedAt: string | null; sources: string[]; notes: string };
+};
+type EstoniaRegion = { id: string; name: string; stations: string[]; cities: string[] };
+type EstoniaCity = { id: string; name: string; regionId: string; stations: string[] };
+type EstoniaCatalogue = {
+  schemaVersion: number;
+  updatedAt: string | null;
+  country: { id: string; name: string; code: string; timeZone: string | null };
+  stations: EstoniaStation[];
+  nationwide: string[];
+  regions: EstoniaRegion[];
+  cities: EstoniaCity[];
+};
+/** Shared view shape so the Russia audit/metadata helpers accept Finland/Estonia entries structurally. */
+type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStation;
 type RuntimeState = 'available' | 'connecting' | 'live' | 'failed';
 type AuditResult = { stationId: string; stationName: string; ok: boolean; streamIndex: number | null; format: string | null; error: string | null };
 type StationMetadataAudit = MetadataProbeResult & { stationId: string; stationName: string };
@@ -95,6 +127,11 @@ const FINLAND_REGION_KEY = 'efirio.finlandRegionId';
 const FINLAND_CITY_KEY = 'efirio.finlandCityId';
 const FINLAND_ALL_REGIONS = 'all';
 const FINLAND_ALL_CITIES = 'all';
+/** Estonia keeps its own geography keys, exactly like Finland: no other scope is ever disturbed. */
+const ESTONIA_REGION_KEY = 'efirio.estoniaRegionId';
+const ESTONIA_CITY_KEY = 'efirio.estoniaCityId';
+const ESTONIA_ALL_REGIONS = 'all';
+const ESTONIA_ALL_CITIES = 'all';
 
 /** The index is tiny and always bundled; each country's stations are a separate chunk fetched only when opened. */
 // The index ships as data rather than a typed module, so it is narrowed through
@@ -121,6 +158,19 @@ function loadFinlandCatalogue(): Promise<FinlandCatalogue> {
   const loader = finlandModules['../../data/finland.json'];
   if (!loader) return Promise.reject(new Error('Finland catalogue unavailable'));
   return loader().then((module) => module as FinlandCatalogue);
+}
+
+/**
+ * The Estonian terrestrial catalogue follows the same pattern: a single country
+ * file behind its own glob, fetched only when «Эстония» is opened. The Estonian
+ * internet-only catalogue is a regular `data/internet/*.json` country file and
+ * reuses `loadInternetCountry('estonia')` (the UK-only index is untouched).
+ */
+const estoniaModules = import.meta.glob('../../data/estonia.json', { import: 'default' });
+function loadEstoniaCatalogue(): Promise<EstoniaCatalogue> {
+  const loader = estoniaModules['../../data/estonia.json'];
+  if (!loader) return Promise.reject(new Error('Estonia catalogue unavailable'));
+  return loader().then((module) => module as EstoniaCatalogue);
 }
 
 /** Every city in the catalogue with its region, so the UI can walk region → city without hard-coding either. */
@@ -194,7 +244,7 @@ function App() {
    */
   const [scope, setScope] = React.useState<Scope>(() => {
     const saved = safeGetItem(() => localStorage.getItem(SCOPE_KEY));
-    return saved === 'internet' || saved === 'finland' || saved === 'finland-internet' ? saved : 'russia';
+    return saved === 'internet' || saved === 'finland' || saved === 'finland-internet' || saved === 'estonia' || saved === 'estonia-internet' ? saved : 'russia';
   });
   const [internetCountryId, setInternetCountryId] = React.useState<string | null>(() => safeGetItem(() => localStorage.getItem(INTERNET_COUNTRY_KEY)));
   const [internetCountryData, setInternetCountryData] = React.useState<InternetCountry | null>(null);
@@ -203,16 +253,23 @@ function App() {
   const isInternet = scope === 'internet';
   const isFinland = scope === 'finland';
   const isFinlandInternet = scope === 'finland-internet';
-  const isNetLike = isInternet || isFinlandInternet;
+  const isEstonia = scope === 'estonia';
+  const isEstoniaInternet = scope === 'estonia-internet';
+  const isNetLike = isInternet || isFinlandInternet || isEstoniaInternet;
   /** Falls back to the first listed country when the saved id is unknown or removed. */
   const internetCountry = React.useMemo(() => internetIndex.countries.find((candidate) => candidate.id === internetCountryId) ?? internetIndex.countries[0] ?? null, [internetCountryId]);
-  /** One shared country-file state serves both internet categories; the id tells them apart. */
-  const ukCountryData = internetCountryData && internetCountryData.id !== 'finland' ? internetCountryData : null;
+  /** One shared country-file state serves every internet category; the id tells them apart. */
+  const ukCountryData = internetCountryData && internetCountryData.id !== 'finland' && internetCountryData.id !== 'estonia' ? internetCountryData : null;
   const finlandNetData = internetCountryData?.id === 'finland' ? internetCountryData : null;
+  const estoniaNetData = internetCountryData?.id === 'estonia' ? internetCountryData : null;
   /** Finland terrestrial catalogue, loaded on demand from its own lazy chunk. */
   const [finlandData, setFinlandData] = React.useState<FinlandCatalogue | null>(null);
   const [finlandLoading, setFinlandLoading] = React.useState(false);
   const [finlandError, setFinlandError] = React.useState('');
+  /** Estonia terrestrial catalogue, loaded on demand from its own lazy chunk. */
+  const [estoniaData, setEstoniaData] = React.useState<EstoniaCatalogue | null>(null);
+  const [estoniaLoading, setEstoniaLoading] = React.useState(false);
+  const [estoniaError, setEstoniaError] = React.useState('');
   /**
    * Finland geography persists under its own keys: neither the saved Russian city
    * nor the UK internet selection is ever read or written here. Unknown or removed
@@ -271,23 +328,81 @@ function App() {
     const ids = !fiRegion ? finlandData.nationwide : (fiCity ? fiCity.stations : fiRegion.stations);
     return ids.map((id) => fiGeoIndex.get(id)?.station).filter((station): station is FinlandStation => !!station);
   }, [finlandData, fiGeoIndex, trimmedFiQuery, fiSearchResults, fiRegion, fiCity]);
-  /** Where the player says we are: the Russian city, the internet country or the Finnish context. */
+  /**
+   * Estonia geography persists under its own keys, exactly like Finland: neither
+   * the saved Russian city nor the UK internet selection is ever read or written here.
+   */
+  const [estoniaRegionId, setEstoniaRegionId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(ESTONIA_REGION_KEY)) || ESTONIA_ALL_REGIONS);
+  const [estoniaCityId, setEstoniaCityId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(ESTONIA_CITY_KEY)) || ESTONIA_ALL_CITIES);
+  const eeRegion = estoniaData?.regions.find((candidate) => candidate.id === estoniaRegionId) ?? null;
+  const eeCities = React.useMemo(() => (eeRegion && estoniaData ? estoniaData.cities.filter((candidate) => candidate.regionId === eeRegion.id) : []), [estoniaData, eeRegion]);
+  const eeCity = eeCities.find((candidate) => candidate.id === estoniaCityId) ?? null;
+  /** Estonia search covers station names, cities and regions across the whole catalogue (all 15 maakonnad). */
+  const [eeQuery, setEeQuery] = React.useState('');
+  const trimmedEeQuery = eeQuery.trim();
+  const eeGeoIndex = React.useMemo(() => {
+    const index = new Map<string, { station: EstoniaStation; regions: string[]; cities: string[] }>();
+    if (!estoniaData) return index;
+    for (const station of estoniaData.stations) index.set(station.id, { station, regions: [], cities: [] });
+    for (const region of estoniaData.regions) for (const id of region.stations) index.get(id)?.regions.push(region.name);
+    for (const cityEntry of estoniaData.cities) {
+      const regionName = estoniaData.regions.find((candidate) => candidate.id === cityEntry.regionId)?.name ?? '';
+      for (const id of cityEntry.stations) {
+        const entry = index.get(id);
+        if (!entry) continue;
+        entry.cities.push(cityEntry.name);
+        if (regionName && !entry.regions.includes(regionName)) entry.regions.push(regionName);
+      }
+    }
+    return index;
+  }, [estoniaData]);
+  const eeSearchResults = React.useMemo(() => {
+    const needle = trimmedEeQuery.toLowerCase();
+    if (!needle) return [];
+    const results: Array<{ station: EstoniaStation; where: string }> = [];
+    for (const entry of eeGeoIndex.values()) {
+      const hitCity = entry.cities.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      const hitRegion = entry.regions.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      // Nationwide stations live only in the nationwide bucket, yet their confirmed
+      // TTJA transmitter rows carry the searched town — frequency rows are
+      // territory-tagged, so they count as a geographic match without copying stations.
+      const hitFreq = entry.station.frequencies.find((value) => (value.locality ?? '').toLowerCase().includes(needle) || (value.region ?? '').toLowerCase().includes(needle)) ?? null;
+      const hitFreqLocality = hitFreq && (hitFreq.locality ?? '').toLowerCase().includes(needle) ? hitFreq.locality : null;
+      const hitFreqRegion = hitFreq && (hitFreq.region ?? '').toLowerCase().includes(needle) ? hitFreq.region : null;
+      const match = entry.station.name.toLowerCase().includes(needle) || !!hitCity || !!hitRegion || !!hitFreq;
+      if (match) results.push({ station: entry.station, where: hitCity ?? hitFreqLocality ?? hitRegion ?? hitFreqRegion ?? entry.cities[0] ?? entry.regions[0] ?? '' });
+    }
+    return results;
+  }, [eeGeoIndex, trimmedEeQuery]);
+  const estoniaVisibleStations = React.useMemo<EstoniaStation[]>(() => {
+    if (!estoniaData) return [];
+    if (trimmedEeQuery) return eeSearchResults.map((entry) => entry.station);
+    const ids = !eeRegion ? estoniaData.nationwide : (eeCity ? eeCity.stations : eeRegion.stations);
+    return ids.map((id) => eeGeoIndex.get(id)?.station).filter((station): station is EstoniaStation => !!station);
+  }, [estoniaData, eeGeoIndex, trimmedEeQuery, eeSearchResults, eeRegion, eeCity]);
+  /** Where the player says we are: the Russian city, an internet country or a terrestrial context. */
   const placeLabel = isInternet
     ? (internetCountry?.name ?? 'Интернет')
-    : isFinlandInternet
-      ? 'Финляндия — Интернет'
-      : isFinland
-        ? (fiCity?.name ?? fiRegion?.name ?? 'Финляндия')
-        : city.name;
+    : isEstoniaInternet
+      ? 'Эстония — Интернет'
+      : isFinlandInternet
+        ? 'Финляндия — Интернет'
+        : isEstonia
+          ? (eeCity?.name ?? eeRegion?.name ?? 'Эстония')
+          : isFinland
+            ? (fiCity?.name ?? fiRegion?.name ?? 'Финляндия')
+            : city.name;
   const russianStations: Station[] = city?.stations ?? [];
-  const netCountryData = isInternet ? ukCountryData : isFinlandInternet ? finlandNetData : null;
+  const netCountryData = isInternet ? ukCountryData : isEstoniaInternet ? estoniaNetData : isFinlandInternet ? finlandNetData : null;
   const internetStations: InternetStation[] = netCountryData?.stations ?? [];
-  const stations: Station[] = isNetLike ? internetStations : isFinland ? finlandVisibleStations : russianStations;
+  const stations: Station[] = isNetLike ? internetStations : isEstonia ? estoniaVisibleStations : isFinland ? finlandVisibleStations : russianStations;
   const cityTimeZone = netCountryData
     ? netCountryData.timeZone
-    : isFinland
-      ? (finlandData?.country.timeZone ?? null)
-      : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
+    : isEstonia
+      ? (estoniaData?.country.timeZone ?? null)
+      : isFinland
+        ? (finlandData?.country.timeZone ?? null)
+        : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
   const playableStations = React.useMemo(() => stations.filter((station) => station.streams.length > 0), [stations]);
   const audioRef = React.useRef<HTMLAudioElement | null>(null); const selectedRef = React.useRef<Station | null>(null); const streamIndexRef = React.useRef(0); const shouldPlayRef = React.useRef(false); const playTokenRef = React.useRef(0); const nowPlayingRef = React.useRef<NormalizedTrack | null>(null);
   /** Stream assigned for the current playback session; null while interrupted. */
@@ -315,7 +430,7 @@ function App() {
   /** Read at call time so `updateMediaSession` keeps a stable identity when the city changes. */
   const cityNameRef = React.useRef(placeLabel);
   React.useEffect(() => { cityNameRef.current = placeLabel; }, [placeLabel]);
-  const updateMediaSession = React.useCallback((station: Station | null, track?: NormalizedTrack | null) => { if (!station || !('mediaSession' in navigator)) return; const place = cityNameRef.current; navigator.mediaSession.metadata = new MediaMetadata({ title: track?.title || station.name, artist: track?.artist || (station.frequencyMHz ? `${station.frequencyMHz.toFixed(1)} FM · ${place}` : place), album: station.name, artwork: track?.coverUrl ? [{ src: track.coverUrl, sizes: '300x300', type: track.coverUrl.endsWith('.webp') ? 'image/webp' : 'image/jpeg' }] : [] }); }, []);
+  const updateMediaSession = React.useCallback((station: Station | null, track?: NormalizedTrack | null) => { if (!station || !('mediaSession' in navigator)) return; const place = cityNameRef.current; navigator.mediaSession.metadata = new MediaMetadata({ title: track?.title || station.name, artist: track?.artist || (station.frequencyMHz ? (station.frequencyMHz < 10 ? `${Math.round(station.frequencyMHz * 1000)} kHz · ${place}` : `${station.frequencyMHz.toFixed(1)} FM · ${place}`) : place), album: station.name, artwork: track?.coverUrl ? [{ src: track.coverUrl, sizes: '300x300', type: track.coverUrl.endsWith('.webp') ? 'image/webp' : 'image/jpeg' }] : [] }); }, []);
 
   /**
    * Leaving a city, or the whole scope, tears down everything that belongs to the
@@ -370,7 +485,11 @@ function App() {
         ? 'Финляндия'
         : nextScope === 'finland-internet'
           ? 'Финляндия — Интернет'
-          : city.name;
+          : nextScope === 'estonia'
+            ? 'Эстония'
+            : nextScope === 'estonia-internet'
+              ? 'Эстония — Интернет'
+              : city.name;
     teardownPlayback(label);
     safeSetItem(() => localStorage.setItem(SCOPE_KEY, nextScope));
     setScope(nextScope);
@@ -396,6 +515,27 @@ function App() {
     setFinlandCityId(cityEntry?.id ?? FINLAND_ALL_CITIES);
     safeSetItem(() => localStorage.setItem(FINLAND_CITY_KEY, cityEntry?.id ?? FINLAND_ALL_CITIES));
   }, [fiCities, fiRegion, teardownPlayback]);
+
+  /**
+   * Region and city changes inside Estonia behave exactly like the Finland ones:
+   * playback stops and the selection persists under the Estonia-only keys; the
+   * saved Russian city and the UK internet selection are never touched.
+   */
+  const changeEstoniaRegion = React.useCallback((nextRegionId: string) => {
+    const region = estoniaData?.regions.find((candidate) => candidate.id === nextRegionId) ?? null;
+    teardownPlayback(region?.name ?? 'Вся страна');
+    setEstoniaRegionId(region?.id ?? ESTONIA_ALL_REGIONS);
+    setEstoniaCityId(ESTONIA_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(ESTONIA_REGION_KEY, region?.id ?? ESTONIA_ALL_REGIONS));
+    safeSetItem(() => localStorage.setItem(ESTONIA_CITY_KEY, ESTONIA_ALL_CITIES));
+  }, [estoniaData, teardownPlayback]);
+
+  const changeEstoniaCity = React.useCallback((nextCityId: string) => {
+    const cityEntry = eeCities.find((candidate) => candidate.id === nextCityId) ?? null;
+    teardownPlayback(cityEntry?.name ?? (eeRegion?.name ?? 'Вся страна'));
+    setEstoniaCityId(cityEntry?.id ?? ESTONIA_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(ESTONIA_CITY_KEY, cityEntry?.id ?? ESTONIA_ALL_CITIES));
+  }, [eeCities, eeRegion, teardownPlayback]);
 
   /** Countries are separate static files, loaded only when that country is opened. */
   React.useEffect(() => {
@@ -430,6 +570,22 @@ function App() {
     return () => { cancelled = true; };
   }, [isFinlandInternet, internetCountryData]);
 
+  /**
+   * «Эстония — Интернет» loads `data/internet/estonia.json` directly: the index
+   * stays UK-only, so the shared index state is never consulted or overwritten.
+   */
+  React.useEffect(() => {
+    if (!isEstoniaInternet || internetCountryData?.id === 'estonia') return;
+    let cancelled = false;
+    setInternetLoading(true);
+    setInternetError('');
+    void loadInternetCountry('estonia')
+      .then((data) => { if (!cancelled) setInternetCountryData(data); })
+      .catch(() => { if (!cancelled) setInternetError('Каталог «Эстония — Интернет» не загрузился'); })
+      .finally(() => { if (!cancelled) setInternetLoading(false); });
+    return () => { cancelled = true; };
+  }, [isEstoniaInternet, internetCountryData]);
+
   /** The Finnish terrestrial catalogue is a lazy chunk, fetched on the first switch to the category. */
   React.useEffect(() => {
     if (!isFinland || finlandData) return;
@@ -442,6 +598,19 @@ function App() {
       .finally(() => { if (!cancelled) setFinlandLoading(false); });
     return () => { cancelled = true; };
   }, [isFinland, finlandData]);
+
+  /** The Estonian terrestrial catalogue is a lazy chunk, fetched on the first switch to the category. */
+  React.useEffect(() => {
+    if (!isEstonia || estoniaData) return;
+    let cancelled = false;
+    setEstoniaLoading(true);
+    setEstoniaError('');
+    void loadEstoniaCatalogue()
+      .then((data) => { if (!cancelled) setEstoniaData(data); })
+      .catch(() => { if (!cancelled) setEstoniaError('Каталог Эстонии не загрузился'); })
+      .finally(() => { if (!cancelled) setEstoniaLoading(false); });
+    return () => { cancelled = true; };
+  }, [isEstonia, estoniaData]);
 
   React.useEffect(() => {
     setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus('');
@@ -533,9 +702,9 @@ function App() {
    */
   const VISIBLE_CHUNK = 60;
   const [visibleCount, setVisibleCount] = React.useState(VISIBLE_CHUNK);
-  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId]);
-  const shownList: Station[] = isNetLike ? filteredInternet : isFinland ? finlandVisibleStations : stations;
-  const chunkedView = isNetLike || isFinland;
+  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId, trimmedEeQuery, estoniaData, estoniaRegionId, estoniaCityId]);
+  const shownList: Station[] = isNetLike ? filteredInternet : isEstonia ? estoniaVisibleStations : isFinland ? finlandVisibleStations : stations;
+  const chunkedView = isNetLike || isFinland || isEstonia;
   const visibleStations: Station[] = chunkedView ? shownList.slice(0, visibleCount) : stations;
   /**
    * The frequency chip follows the current geography — the place that matched an
@@ -560,17 +729,47 @@ function App() {
     }
     return fi.frequencyMHz;
   };
+  /**
+   * Estonia chip: the matched frequency *with its band*. An AM row (Radio Eli,
+   * AM 1035 kHz) renders «1035 кГц» — an FM number is never invented either way.
+   */
+  const eeFrequency = (ee: EstoniaStation, where?: string): { mhz: number; band: 'FM' | 'AM' } | null => {
+    const bandOf = (value: EstoniaFrequency): { mhz: number; band: 'FM' | 'AM' } => ({ mhz: value.mhz, band: value.band ?? 'FM' });
+    if (ee.frequencies.length) {
+      if (where) {
+        const hit = ee.frequencies.find((value) => (value.locality && (value.locality === where || value.locality.startsWith(where) || where.startsWith(value.locality))) || value.region === where);
+        if (hit) return bandOf(hit);
+      }
+      if (eeCity) {
+        const hit = ee.frequencies.find((value) => value.locality && (value.locality === eeCity.name || value.locality.startsWith(eeCity.name)));
+        if (hit) return bandOf(hit);
+      }
+      if (eeRegion) {
+        const hit = ee.frequencies.find((value) => value.region === eeRegion.name);
+        if (hit) return bandOf(hit);
+      }
+      if (ee.frequencyMHz != null) {
+        const hit = ee.frequencies.find((value) => value.mhz === ee.frequencyMHz);
+        if (hit) return bandOf(hit);
+      }
+    }
+    return ee.frequencyMHz != null ? { mhz: ee.frequencyMHz, band: 'FM' } : null;
+  };
   const netGeoCode = isInternet ? (internetCountry?.code ?? 'GB') : (netCountryData?.code ?? 'FI');
 
   return <main className="shell">
     <header className="brand"><div className="mark" aria-hidden="true">E)))</div><div><h1>EFIRIO</h1><p>The radio of your city</p></div></header>
     <section className="location">{isInternet
       ? <><span>Интернет</span><b>›</b><span>{internetCountry?.name ?? '—'}</span><b>›</b><span>Радиостанции</span></>
-      : isFinlandInternet
-        ? <><span>Финляндия — Интернет</span><b>›</b><span>Радиостанции</span></>
-        : isFinland
-          ? <><span>Финляндия</span><b>›</b><span>{fiRegion?.name ?? 'Вся страна'}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
-          : <><span>Russia</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
+      : isEstoniaInternet
+        ? <><span>Эстония — Интернет</span><b>›</b><span>Радиостанции</span></>
+        : isFinlandInternet
+          ? <><span>Финляндия — Интернет</span><b>›</b><span>Радиостанции</span></>
+          : isEstonia
+            ? <><span>Эстония</span><b>›</b><span>{eeRegion?.name ?? 'Вся страна'}</span>{eeCity ? <><b>›</b><span>{eeCity.name}</span></> : null}</>
+            : isFinland
+              ? <><span>Финляндия</span><b>›</b><span>{fiRegion?.name ?? 'Вся страна'}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
+              : <><span>Russia</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
     <section className="cityPicker">
       <label className="cityField scopeField"><span>Category</span>
         <select value={scope} onChange={(event) => changeScope(event.target.value as Scope)}>
@@ -578,6 +777,8 @@ function App() {
           <option value="internet">Интернет</option>
           <option value="finland">Финляндия</option>
           <option value="finland-internet">Финляндия — Интернет</option>
+          <option value="estonia">Эстония</option>
+          <option value="estonia-internet">Эстония — Интернет</option>
         </select>
       </label>
       {isNetLike ? <>
@@ -617,6 +818,22 @@ function App() {
         <label className="cityField citySearch"><span>Find a station</span>
           <input type="search" inputMode="search" autoComplete="off" value={fiQuery} onChange={(event) => setFiQuery(event.target.value)} placeholder="Station, city or region" aria-label="Search Finland by station, city or region" />
         </label>
+      </> : isEstonia ? <>
+        <label className="cityField"><span>Region</span>
+          <select value={eeRegion?.id ?? ESTONIA_ALL_REGIONS} onChange={(event) => changeEstoniaRegion(event.target.value)}>
+            <option value={ESTONIA_ALL_REGIONS}>Вся страна</option>
+            {(estoniaData?.regions ?? []).map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+          </select>
+        </label>
+        {eeRegion ? <label className="cityField"><span>City</span>
+          <select value={eeCity?.id ?? ESTONIA_ALL_CITIES} onChange={(event) => changeEstoniaCity(event.target.value)}>
+            <option value={ESTONIA_ALL_CITIES}>Все города</option>
+            {eeCities.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
+          </select>
+        </label> : null}
+        <label className="cityField citySearch"><span>Find a station</span>
+          <input type="search" inputMode="search" autoComplete="off" value={eeQuery} onChange={(event) => setEeQuery(event.target.value)} placeholder="Station, city or region" aria-label="Search Estonia by station, city or region" />
+        </label>
       </> : <>
         <label className="cityField"><span>Region</span>
           <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
@@ -636,10 +853,12 @@ function App() {
     {scope === 'russia' && trimmedQuery ? <section className="cityMatches" aria-label="City search results">
       {matches.length ? matches.map(({ city: candidate, region }) => <button key={candidate.id} className={`cityMatch ${candidate.id === city?.id ? 'current' : ''}`} onClick={() => { setQuery(''); changeCity(candidate.id); }}><b>{candidate.name}</b><span>{region.name}</span></button>) : <p>No city matches “{trimmedQuery}”</p>}
     </section> : null}
-    {isNetLike && internetLoading ? <section className="catalogueNote"><span>Loading {isInternet ? (internetCountry?.name ?? 'country') : 'Финляндия'} catalogue…</span></section> : null}
+    {isNetLike && internetLoading ? <section className="catalogueNote"><span>Loading {isInternet ? (internetCountry?.name ?? 'country') : isEstoniaInternet ? 'Эстония' : 'Финляндия'} catalogue…</span></section> : null}
     {isNetLike && internetError ? <section className="catalogueNote error"><span>{internetError}</span></section> : null}
     {isFinland && finlandLoading ? <section className="catalogueNote"><span>Loading Финляндия catalogue…</span></section> : null}
     {isFinland && finlandError ? <section className="catalogueNote error"><span>{finlandError}</span></section> : null}
+    {isEstonia && estoniaLoading ? <section className="catalogueNote"><span>Loading Эстония catalogue…</span></section> : null}
+    {isEstonia && estoniaError ? <section className="catalogueNote error"><span>{estoniaError}</span></section> : null}
     {scope === 'russia' ? <>
       <section className="audit"><button onClick={() => void runAudit()} disabled={auditRunning}>{auditRunning ? 'Auditing…' : 'Audit browser playback'}</button><span>{auditProgress || 'Tests every validated station in this browser'}</span></section>
       {auditResults.length > 0 ? <section className="auditSummary"><strong>{auditResults.filter((r) => r.ok).length}/{auditResults.length} playable</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All tested stations passed'}</span></section> : null}
@@ -649,6 +868,21 @@ function App() {
     {selected && (nowPlaying || metadataStatus) ? <section className={nowPlaying?.coverUrl ? 'nowPlaying withCover' : 'nowPlaying'}>{nowPlaying?.coverUrl ? <img className="cover" src={nowPlaying.coverUrl} alt="" loading="lazy" referrerPolicy="no-referrer" /> : null}<div className="nowPlayingText"><small>NOW PLAYING{nowPlaying && KIND_LABELS[nowPlaying.kind] ? ` · ${KIND_LABELS[nowPlaying.kind]}` : ''}</small><strong>{nowPlaying?.title || metadataStatus}</strong>{nowPlaying?.artist ? <span>{nowPlaying.artist}</span> : null}{nowPlaying ? <time>{nowPlayingTimeLabel(nowPlaying)}</time> : null}</div></section> : null}
     <section className="stations" aria-label={`${placeLabel} stations`}>{visibleStations.map((station) => {
       const [badgeClass, badgeText] = badge(station);
+      if (isEstonia) {
+        const ee = station as EstoniaStation;
+        const where = trimmedEeQuery ? (eeSearchResults.find((entry) => entry.station.id === ee.id)?.where ?? '') : '';
+        const eeHit = eeFrequency(ee, where || undefined);
+        const typeLabel = ee.type === 'nationwide' ? 'Вся страна' : ee.type === 'regional' ? 'Региональная' : 'Локальная';
+        return <button className={`station ${selected?.id === ee.id ? 'selected' : ''}`} key={ee.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
+          {eeHit != null
+            ? eeHit.band === 'AM'
+              ? <span className="frequency">{Math.round(eeHit.mhz * 1000)} <small>кГц</small></span>
+              : <span className="frequency">{eeHit.mhz.toFixed(1)} <small>FM</small></span>
+            : <span className="frequency netGeo">EE</span>}
+          <span className="stationName">{ee.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
+          <span className={badgeClass}>{badgeText}</span>
+        </button>;
+      }
       if (isFinland) {
         const fi = station as FinlandStation;
         // In search results show the place that actually matched the query, not an arbitrary first city.
@@ -669,7 +903,7 @@ function App() {
           : station.feed === 'federal' ? <small className="feedScope" title="Shared federal/central online feed — this city's own FM broadcast may differ">federal feed</small> : null}</span>
         <span className={badgeClass}>{badgeText}</span>
       </button>;
-    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && (isNetLike ? !!netCountryData : !!finlandData) ? <p className="catalogueNote"><span>{isFinland && trimmedFiQuery ? `No station matches “${fiQuery.trim()}”` : trimmedNetQuery ? `No station matches “${netQuery.trim()}”` : 'No station matches the selected filters'}</span></p> : null}</section>
+    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && (isNetLike ? !!netCountryData : isEstonia ? !!estoniaData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? `No station matches “${eeQuery.trim()}”` : isFinland && trimmedFiQuery ? `No station matches “${fiQuery.trim()}”` : trimmedNetQuery ? `No station matches “${netQuery.trim()}”` : 'No station matches the selected filters'}</span></p> : null}</section>
     {chunkedView && visibleCount < shownList.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>Show more · {Math.min(VISIBLE_CHUNK, shownList.length - visibleCount)} of {shownList.length - visibleCount} remaining</button> : null}
     {history.length > 0 ? <details className="history"><summary>Listening history · {history.length}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
     <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || 'Choose a station'}</strong>}<span>{selected ? playerStatus : `${placeLabel} · ${APP_VERSION}`}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
