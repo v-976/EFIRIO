@@ -3,10 +3,19 @@ import { createRoot } from 'react-dom/client';
 import catalogueData from '../../data/stations.json';
 import internetIndexData from '../../data/internet-index.json';
 import { HistoryRecorder, canOpenHistoryOnPlaying, historyTimeLabel, type HistoryItem, type StorageLike } from './history.ts';
+import {
+  LANGUAGE_LABELS, SUPPORTED_LANGUAGES, getLanguage, getLanguageVersion, initLanguage, registerLocaleLoaders,
+  setLanguage, subscribeLanguage, translate,
+  type Language, type MessageKey, type MessageParams, type TFunction,
+} from './i18n.ts';
 import { isSupportedMetadata, probeMetadata, type MetadataConfig, type MetadataProbeResult, type NormalizedTrack, watchNowPlaying } from './metadata.ts';
 import { safeGetItem, safeSetItem } from './storage.ts';
 import { formatInTimeZone } from './time.ts';
 import './styles.css';
+
+/** Every non-English dictionary is its own lazy chunk; English ships inline as the fallback. */
+const localeModules = import.meta.glob('./locales/*.ts', { import: 'default' });
+registerLocaleLoaders(localeModules);
 
 type Stream = { url: string; role: 'primary' | 'fallback'; format: string };
 /** `feed` is absent on Saint Petersburg entries, which predate the field and are all local. */
@@ -114,6 +123,8 @@ type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStat
 type RuntimeState = 'available' | 'connecting' | 'live' | 'failed';
 type AuditResult = { stationId: string; stationName: string; ok: boolean; streamIndex: number | null; format: string | null; error: string | null };
 type StationMetadataAudit = MetadataProbeResult & { stationId: string; stationName: string };
+/** Player status as a message key (+ params) so a language switch re-renders it live. */
+type PlayerStatus = { key: MessageKey; params?: MessageParams };
 
 const catalogue = catalogueData as Catalogue;
 const LAST_STATION_KEY = 'efirio.lastStationId';
@@ -186,14 +197,14 @@ function findCity(id: string | null): LocatedCity | undefined {
 function resolveCity(id: string | null): LocatedCity { return findCity(id) ?? findCity(FALLBACK_CITY_ID) ?? ALL_CITIES[0]; }
 
 /** Now Playing time is always rendered in the station time zone, never the device zone. */
-function nowPlayingTimeLabel(track: NormalizedTrack): string {
-  if (track.timeQuality === 'exact' && track.startedAt) return `Source time ${formatInTimeZone(track.startedAt, track.timeZone, { withDate: true })}`;
-  if (track.sourceLocalTime) return `Station time ${track.sourceLocalTime}${track.timeZone ? ` (${track.timeZone})` : ''}`;
-  return `Detected ${formatInTimeZone(track.detectedAt, track.timeZone, { withDate: true })}`;
+function nowPlayingTimeLabel(t: TFunction, track: NormalizedTrack): string {
+  if (track.timeQuality === 'exact' && track.startedAt) return t('timeSource', { time: formatInTimeZone(track.startedAt, track.timeZone, { withDate: true }) });
+  if (track.sourceLocalTime) return track.timeZone ? t('timeStation', { time: track.sourceLocalTime, zone: track.timeZone }) : t('timeStationNoZone', { time: track.sourceLocalTime });
+  return t('timeDetected', { time: formatInTimeZone(track.detectedAt, track.timeZone, { withDate: true }) });
 }
 
-/** Short label for non-music air items; music needs no label. */
-const KIND_LABELS: Partial<Record<NormalizedTrack['kind'], string>> = { program: 'PROGRAMME', talk: 'TALK', jingle: 'STATION ID', advert: 'ADVERT' };
+/** Short label for non-music air items; music needs no label. Values are message keys. */
+const KIND_KEYS: Partial<Record<NormalizedTrack['kind'], MessageKey>> = { program: 'kindProgramme', talk: 'kindTalk', jingle: 'kindJingle', advert: 'kindAdvert' };
 
 /** Running line for the footer: station name (accent colour) + what is on air now. Scrolls only when it does not fit. */
 function airText(track: NormalizedTrack): string {
@@ -234,6 +245,16 @@ function mediaErrorText(error: MediaError | null) { if (!error) return 'unknown 
 function probeStream(url: string, timeoutMs = 7000): Promise<{ ok: boolean; error: string | null }> { return new Promise((resolve) => { const audio = new Audio(); audio.preload = 'auto'; audio.muted = true; let settled = false; const finish = (ok: boolean, error: string | null) => { if (settled) return; settled = true; clearTimeout(timer); audio.pause(); audio.removeAttribute('src'); audio.load(); resolve({ ok, error }); }; const timer = window.setTimeout(() => finish(false, 'TIMEOUT'), timeoutMs); audio.addEventListener('playing', () => finish(true, null), { once: true }); audio.addEventListener('canplay', () => finish(true, null), { once: true }); audio.addEventListener('error', () => finish(false, mediaErrorText(audio.error)), { once: true }); audio.src = url; audio.load(); void audio.play().catch((error) => finish(false, error instanceof Error ? error.name : 'PLAY_REJECTED')); }); }
 
 function App() {
+  /**
+   * Live UI language. The snapshot is a version counter that also bumps when a
+   * lazy dictionary finishes loading, and it is an effect dependency — so side
+   * effects keyed on the language (the document title) re-run once the
+   * translated strings actually arrive, not only when the code changes.
+   */
+  const langVersion = React.useSyncExternalStore(subscribeLanguage, getLanguageVersion, () => 0);
+  const lang = getLanguage();
+  const t = React.useCallback<TFunction>((key, params) => translate(lang, key, params), [lang]);
+  React.useEffect(() => { document.documentElement.lang = lang; document.title = `EFIRIO — ${t('tagline')}`; }, [lang, langVersion, t]);
   const [cityId, setCityId] = React.useState<string | null>(() => { const saved = safeGetItem(() => localStorage.getItem(CITY_ID_KEY)); return resolveCity(saved).city.id; });
   const located = resolveCity(cityId);
   const city = located.city;
@@ -249,7 +270,8 @@ function App() {
   const [internetCountryId, setInternetCountryId] = React.useState<string | null>(() => safeGetItem(() => localStorage.getItem(INTERNET_COUNTRY_KEY)));
   const [internetCountryData, setInternetCountryData] = React.useState<InternetCountry | null>(null);
   const [internetLoading, setInternetLoading] = React.useState(false);
-  const [internetError, setInternetError] = React.useState('');
+  /** Error states hold a message key, so the text follows the active language. */
+  const [internetError, setInternetError] = React.useState<MessageKey | null>(null);
   const isInternet = scope === 'internet';
   const isFinland = scope === 'finland';
   const isFinlandInternet = scope === 'finland-internet';
@@ -265,11 +287,11 @@ function App() {
   /** Finland terrestrial catalogue, loaded on demand from its own lazy chunk. */
   const [finlandData, setFinlandData] = React.useState<FinlandCatalogue | null>(null);
   const [finlandLoading, setFinlandLoading] = React.useState(false);
-  const [finlandError, setFinlandError] = React.useState('');
+  const [finlandError, setFinlandError] = React.useState<MessageKey | null>(null);
   /** Estonia terrestrial catalogue, loaded on demand from its own lazy chunk. */
   const [estoniaData, setEstoniaData] = React.useState<EstoniaCatalogue | null>(null);
   const [estoniaLoading, setEstoniaLoading] = React.useState(false);
-  const [estoniaError, setEstoniaError] = React.useState('');
+  const [estoniaError, setEstoniaError] = React.useState<MessageKey | null>(null);
   /**
    * Finland geography persists under its own keys: neither the saved Russian city
    * nor the UK internet selection is ever read or written here. Unknown or removed
@@ -382,15 +404,15 @@ function App() {
   }, [estoniaData, eeGeoIndex, trimmedEeQuery, eeSearchResults, eeRegion, eeCity]);
   /** Where the player says we are: the Russian city, an internet country or a terrestrial context. */
   const placeLabel = isInternet
-    ? (internetCountry?.name ?? 'Интернет')
+    ? (internetCountry?.name ?? t('crumbInternet'))
     : isEstoniaInternet
-      ? 'Эстония — Интернет'
+      ? t('scopeEstoniaInternet')
       : isFinlandInternet
-        ? 'Финляндия — Интернет'
+        ? t('scopeFinlandInternet')
         : isEstonia
-          ? (eeCity?.name ?? eeRegion?.name ?? 'Эстония')
+          ? (eeCity?.name ?? eeRegion?.name ?? t('placeEstonia'))
           : isFinland
-            ? (fiCity?.name ?? fiRegion?.name ?? 'Финляндия')
+            ? (fiCity?.name ?? fiRegion?.name ?? t('placeFinland'))
             : city.name;
   const russianStations: Station[] = city?.stations ?? [];
   const netCountryData = isInternet ? ukCountryData : isEstoniaInternet ? estoniaNetData : isFinlandInternet ? finlandNetData : null;
@@ -419,10 +441,10 @@ function App() {
     recorderZoneRef.current = cityTimeZone;
   }
   const recorder = recorderRef.current;
-  const [isPlaying, setIsPlaying] = React.useState(false); const [playerStatus, setPlayerStatus] = React.useState(`${placeLabel} · ${APP_VERSION}`); const [runtime, setRuntime] = React.useState<Record<string, RuntimeState>>({}); const [diagnostic, setDiagnostic] = React.useState('');
+  const [isPlaying, setIsPlaying] = React.useState(false); const [playerStatus, setPlayerStatus] = React.useState<PlayerStatus>({ key: 'placeVersion' }); const [runtime, setRuntime] = React.useState<Record<string, RuntimeState>>({}); const [diagnostic, setDiagnostic] = React.useState('');
   const [auditRunning, setAuditRunning] = React.useState(false); const [auditProgress, setAuditProgress] = React.useState(''); const [auditResults, setAuditResults] = React.useState<AuditResult[]>([]);
   const [metadataAuditRunning, setMetadataAuditRunning] = React.useState(false); const [metadataAuditProgress, setMetadataAuditProgress] = React.useState(''); const [metadataAuditResults, setMetadataAuditResults] = React.useState<StationMetadataAudit[]>([]);
-  const [nowPlaying, setNowPlaying] = React.useState<NormalizedTrack | null>(null); const [metadataStatus, setMetadataStatus] = React.useState('');
+  const [nowPlaying, setNowPlaying] = React.useState<NormalizedTrack | null>(null); const [metadataStatus, setMetadataStatus] = React.useState<MessageKey | null>(null);
   const [history, setHistory] = React.useState<HistoryItem[]>(() => recorder.list);
   React.useEffect(() => recorder.subscribe(setHistory), [recorder]);
   React.useEffect(() => { selectedRef.current = selected; }, [selected]);
@@ -430,7 +452,7 @@ function App() {
   /** Read at call time so `updateMediaSession` keeps a stable identity when the city changes. */
   const cityNameRef = React.useRef(placeLabel);
   React.useEffect(() => { cityNameRef.current = placeLabel; }, [placeLabel]);
-  const updateMediaSession = React.useCallback((station: Station | null, track?: NormalizedTrack | null) => { if (!station || !('mediaSession' in navigator)) return; const place = cityNameRef.current; navigator.mediaSession.metadata = new MediaMetadata({ title: track?.title || station.name, artist: track?.artist || (station.frequencyMHz ? (station.frequencyMHz < 10 ? `${Math.round(station.frequencyMHz * 1000)} kHz · ${place}` : `${station.frequencyMHz.toFixed(1)} FM · ${place}`) : place), album: station.name, artwork: track?.coverUrl ? [{ src: track.coverUrl, sizes: '300x300', type: track.coverUrl.endsWith('.webp') ? 'image/webp' : 'image/jpeg' }] : [] }); }, []);
+  const updateMediaSession = React.useCallback((station: Station | null, track?: NormalizedTrack | null) => { if (!station || !('mediaSession' in navigator)) return; const place = cityNameRef.current; const unitKHz = translate(getLanguage(), 'unitKHz'); const unitFM = translate(getLanguage(), 'unitFM'); navigator.mediaSession.metadata = new MediaMetadata({ title: track?.title || station.name, artist: track?.artist || (station.frequencyMHz ? (station.frequencyMHz < 10 ? `${Math.round(station.frequencyMHz * 1000)} ${unitKHz} · ${place}` : `${station.frequencyMHz.toFixed(1)} ${unitFM} · ${place}`) : place), album: station.name, artwork: track?.coverUrl ? [{ src: track.coverUrl, sizes: '300x300', type: track.coverUrl.endsWith('.webp') ? 'image/webp' : 'image/jpeg' }] : [] }); }, []);
 
   /**
    * Leaving a city, or the whole scope, tears down everything that belongs to the
@@ -438,7 +460,7 @@ function App() {
    * recorder session, so a late track or audio callback from the previous context can
    * never surface on the next one.
    */
-  const teardownPlayback = React.useCallback((nextLabel: string) => {
+  const teardownPlayback = React.useCallback(() => {
     playTokenRef.current += 1;
     metadataSessionRef.current += 1;
     expectedSrcRef.current = null;
@@ -450,7 +472,7 @@ function App() {
     recorderRef.current?.selectStation(null);
     selectedRef.current = null;
     setNowPlaying(null);
-    setMetadataStatus('');
+    setMetadataStatus(null);
     setRuntime({});
     setDiagnostic('');
     setAuditResults([]);
@@ -459,14 +481,14 @@ function App() {
     setMetadataAuditProgress('');
     setIsPlaying(false);
     setSelected(null);
-    setPlayerStatus(`${nextLabel} · ${APP_VERSION}`);
+    setPlayerStatus({ key: 'placeVersion' });
     safeSetItem(() => localStorage.setItem(LAST_STATION_KEY, ''));
   }, []);
 
   const changeCity = React.useCallback((nextCityId: string) => {
     const next = findCity(nextCityId);
     if (!next || next.city.id === cityId) return; // unknown ids must never silently fall back to another city
-    teardownPlayback(next.city.name);
+    teardownPlayback();
     safeSetItem(() => localStorage.setItem(CITY_ID_KEY, next.city.id));
     setCityId(next.city.id);
   }, [cityId, teardownPlayback]);
@@ -479,21 +501,10 @@ function App() {
    */
   const changeScope = React.useCallback((nextScope: Scope) => {
     if (nextScope === scope) return;
-    const label = nextScope === 'internet'
-      ? (internetCountry?.name ?? 'Интернет')
-      : nextScope === 'finland'
-        ? 'Финляндия'
-        : nextScope === 'finland-internet'
-          ? 'Финляндия — Интернет'
-          : nextScope === 'estonia'
-            ? 'Эстония'
-            : nextScope === 'estonia-internet'
-              ? 'Эстония — Интернет'
-              : city.name;
-    teardownPlayback(label);
+    teardownPlayback();
     safeSetItem(() => localStorage.setItem(SCOPE_KEY, nextScope));
     setScope(nextScope);
-  }, [scope, teardownPlayback, internetCountry, city.name]);
+  }, [scope, teardownPlayback]);
 
   /**
    * Region and city changes inside Finland behave exactly like a Russian city
@@ -502,7 +513,7 @@ function App() {
    */
   const changeFinlandRegion = React.useCallback((nextRegionId: string) => {
     const region = finlandData?.regions.find((candidate) => candidate.id === nextRegionId) ?? null;
-    teardownPlayback(region?.name ?? 'Вся страна');
+    teardownPlayback();
     setFinlandRegionId(region?.id ?? FINLAND_ALL_REGIONS);
     setFinlandCityId(FINLAND_ALL_CITIES);
     safeSetItem(() => localStorage.setItem(FINLAND_REGION_KEY, region?.id ?? FINLAND_ALL_REGIONS));
@@ -511,10 +522,10 @@ function App() {
 
   const changeFinlandCity = React.useCallback((nextCityId: string) => {
     const cityEntry = fiCities.find((candidate) => candidate.id === nextCityId) ?? null;
-    teardownPlayback(cityEntry?.name ?? (fiRegion?.name ?? 'Вся страна'));
+    teardownPlayback();
     setFinlandCityId(cityEntry?.id ?? FINLAND_ALL_CITIES);
     safeSetItem(() => localStorage.setItem(FINLAND_CITY_KEY, cityEntry?.id ?? FINLAND_ALL_CITIES));
-  }, [fiCities, fiRegion, teardownPlayback]);
+  }, [fiCities, teardownPlayback]);
 
   /**
    * Region and city changes inside Estonia behave exactly like the Finland ones:
@@ -523,7 +534,7 @@ function App() {
    */
   const changeEstoniaRegion = React.useCallback((nextRegionId: string) => {
     const region = estoniaData?.regions.find((candidate) => candidate.id === nextRegionId) ?? null;
-    teardownPlayback(region?.name ?? 'Вся страна');
+    teardownPlayback();
     setEstoniaRegionId(region?.id ?? ESTONIA_ALL_REGIONS);
     setEstoniaCityId(ESTONIA_ALL_CITIES);
     safeSetItem(() => localStorage.setItem(ESTONIA_REGION_KEY, region?.id ?? ESTONIA_ALL_REGIONS));
@@ -532,10 +543,10 @@ function App() {
 
   const changeEstoniaCity = React.useCallback((nextCityId: string) => {
     const cityEntry = eeCities.find((candidate) => candidate.id === nextCityId) ?? null;
-    teardownPlayback(cityEntry?.name ?? (eeRegion?.name ?? 'Вся страна'));
+    teardownPlayback();
     setEstoniaCityId(cityEntry?.id ?? ESTONIA_ALL_CITIES);
     safeSetItem(() => localStorage.setItem(ESTONIA_CITY_KEY, cityEntry?.id ?? ESTONIA_ALL_CITIES));
-  }, [eeCities, eeRegion, teardownPlayback]);
+  }, [eeCities, teardownPlayback]);
 
   /** Countries are separate static files, loaded only when that country is opened. */
   React.useEffect(() => {
@@ -544,7 +555,7 @@ function App() {
     if (internetCountryData?.id === target) return;
     let cancelled = false;
     setInternetLoading(true);
-    setInternetError('');
+    setInternetError(null);
     void loadInternetCountry(target)
       .then((data) => {
         if (cancelled) return;
@@ -552,7 +563,7 @@ function App() {
         setInternetCountryId(target);
         safeSetItem(() => localStorage.setItem(INTERNET_COUNTRY_KEY, target));
       })
-      .catch(() => { if (!cancelled) setInternetError('Country catalogue could not be loaded'); })
+      .catch(() => { if (!cancelled) setInternetError('errCountryLoad'); })
       .finally(() => { if (!cancelled) setInternetLoading(false); });
     return () => { cancelled = true; };
   }, [isInternet, internetCountry, internetCountryData]);
@@ -562,10 +573,10 @@ function App() {
     if (!isFinlandInternet || internetCountryData?.id === 'finland') return;
     let cancelled = false;
     setInternetLoading(true);
-    setInternetError('');
+    setInternetError(null);
     void loadInternetCountry('finland')
       .then((data) => { if (!cancelled) setInternetCountryData(data); })
-      .catch(() => { if (!cancelled) setInternetError('Каталог «Финляндия — Интернет» не загрузился'); })
+      .catch(() => { if (!cancelled) setInternetError('errFinlandInternetLoad'); })
       .finally(() => { if (!cancelled) setInternetLoading(false); });
     return () => { cancelled = true; };
   }, [isFinlandInternet, internetCountryData]);
@@ -578,10 +589,10 @@ function App() {
     if (!isEstoniaInternet || internetCountryData?.id === 'estonia') return;
     let cancelled = false;
     setInternetLoading(true);
-    setInternetError('');
+    setInternetError(null);
     void loadInternetCountry('estonia')
       .then((data) => { if (!cancelled) setInternetCountryData(data); })
-      .catch(() => { if (!cancelled) setInternetError('Каталог «Эстония — Интернет» не загрузился'); })
+      .catch(() => { if (!cancelled) setInternetError('errEstoniaInternetLoad'); })
       .finally(() => { if (!cancelled) setInternetLoading(false); });
     return () => { cancelled = true; };
   }, [isEstoniaInternet, internetCountryData]);
@@ -591,10 +602,10 @@ function App() {
     if (!isFinland || finlandData) return;
     let cancelled = false;
     setFinlandLoading(true);
-    setFinlandError('');
+    setFinlandError(null);
     void loadFinlandCatalogue()
       .then((data) => { if (!cancelled) setFinlandData(data); })
-      .catch(() => { if (!cancelled) setFinlandError('Каталог Финляндии не загрузился'); })
+      .catch(() => { if (!cancelled) setFinlandError('errFinlandLoad'); })
       .finally(() => { if (!cancelled) setFinlandLoading(false); });
     return () => { cancelled = true; };
   }, [isFinland, finlandData]);
@@ -604,30 +615,30 @@ function App() {
     if (!isEstonia || estoniaData) return;
     let cancelled = false;
     setEstoniaLoading(true);
-    setEstoniaError('');
+    setEstoniaError(null);
     void loadEstoniaCatalogue()
       .then((data) => { if (!cancelled) setEstoniaData(data); })
-      .catch(() => { if (!cancelled) setEstoniaError('Каталог Эстонии не загрузился'); })
+      .catch(() => { if (!cancelled) setEstoniaError('errEstoniaLoad'); })
       .finally(() => { if (!cancelled) setEstoniaLoading(false); });
     return () => { cancelled = true; };
   }, [isEstonia, estoniaData]);
 
   React.useEffect(() => {
-    setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus('');
+    setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus(null);
     if (!isSupportedMetadata(selected?.metadata)) return;
-    setMetadataStatus('Loading track…');
+    setMetadataStatus('loadingTrack');
     const session = metadataSessionRef.current;
     const isActive = () => session === metadataSessionRef.current;
     return watchNowPlaying(selected.metadata, { timeZone: cityTimeZone, isActive }, (track) => {
-      if (!track) { setMetadataStatus('No track metadata'); return; }
-      setMetadataStatus(''); setNowPlaying(track); nowPlayingRef.current = track; updateMediaSession(selected, track);
+      if (!track) { setMetadataStatus('noTrackMetadata'); return; }
+      setMetadataStatus(null); setNowPlaying(track); nowPlayingRef.current = track; updateMediaSession(selected, track);
       recorder.handleMetadata(track, selected.id);
-    }, (error) => { console.warn('[EFIRIO] metadata', selected.id, error); setMetadataStatus('Metadata unavailable'); });
+    }, (error) => { console.warn('[EFIRIO] metadata', selected.id, error); setMetadataStatus('metadataUnavailable'); });
   }, [selected, cityTimeZone, recorder, updateMediaSession]);
 
-  const playStream = React.useCallback(async (station: Station, streamIndex = 0, token = ++playTokenRef.current): Promise<void> => { const audio = audioRef.current; const stream = station.streams[streamIndex]; if (!audio || !stream || token !== playTokenRef.current) return; streamIndexRef.current = streamIndex; setStationRuntime(station.id, 'connecting'); setPlayerStatus(streamIndex === 0 ? 'Connecting…' : 'Connecting to fallback…'); setDiagnostic(`${stream.role} · ${stream.format} · ${stream.url}`); updateMediaSession(station, nowPlaying); audio.src = stream.url; expectedSrcRef.current = stream.url; audio.load(); try { await audio.play(); if (token !== playTokenRef.current) return; setIsPlaying(true); setStationRuntime(station.id, 'live'); setPlayerStatus(streamIndex === 0 ? 'Live' : 'Live · fallback'); } catch (error) { if (token !== playTokenRef.current) return; const reason = error instanceof Error ? error.name : mediaErrorText(audio.error); setDiagnostic(`${stream.role} · ${stream.format} · ${reason} · ${stream.url}`); if (shouldPlayRef.current && streamIndex + 1 < station.streams.length) await playStream(station, streamIndex + 1, token); else { setIsPlaying(false); setStationRuntime(station.id, 'failed'); setPlayerStatus(`Failed · ${mediaErrorText(audio.error)}`); } } }, [nowPlaying, setStationRuntime, updateMediaSession]);
-  const chooseStation = React.useCallback(async (station: Station, autoPlay = true) => { playTokenRef.current += 1; metadataSessionRef.current += 1; expectedSrcRef.current = null; selectedRef.current = station; setSelected(station); recorderRef.current?.selectStation(station); nowPlayingRef.current = null; safeSetItem(() => localStorage.setItem(LAST_STATION_KEY, station.id)); streamIndexRef.current = 0; updateMediaSession(station); const audio = audioRef.current; if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); } setIsPlaying(false); if (!station.streams.length) { shouldPlayRef.current = false; setPlayerStatus('Stream unavailable'); setDiagnostic('No validated production stream'); return; } setStationRuntime(station.id, 'available'); if (autoPlay) { shouldPlayRef.current = true; await playStream(station, 0, playTokenRef.current); } else setPlayerStatus('Available'); }, [playStream, setStationRuntime, updateMediaSession]);
-  const togglePlayback = React.useCallback(async () => { const station = selectedRef.current; const audio = audioRef.current; if (!station?.streams.length || !audio) return; if (isPlaying) { shouldPlayRef.current = false; expectedSrcRef.current = null; audio.pause(); setIsPlaying(false); setPlayerStatus('Paused'); return; } shouldPlayRef.current = true; await playStream(station, streamIndexRef.current); }, [isPlaying, playStream]);
+  const playStream = React.useCallback(async (station: Station, streamIndex = 0, token = ++playTokenRef.current): Promise<void> => { const audio = audioRef.current; const stream = station.streams[streamIndex]; if (!audio || !stream || token !== playTokenRef.current) return; streamIndexRef.current = streamIndex; setStationRuntime(station.id, 'connecting'); setPlayerStatus({ key: streamIndex === 0 ? 'connecting' : 'connectingFallback' }); setDiagnostic(`${stream.role} · ${stream.format} · ${stream.url}`); updateMediaSession(station, nowPlaying); audio.src = stream.url; expectedSrcRef.current = stream.url; audio.load(); try { await audio.play(); if (token !== playTokenRef.current) return; setIsPlaying(true); setStationRuntime(station.id, 'live'); setPlayerStatus({ key: streamIndex === 0 ? 'live' : 'liveFallback' }); } catch (error) { if (token !== playTokenRef.current) return; const reason = error instanceof Error ? error.name : mediaErrorText(audio.error); setDiagnostic(`${stream.role} · ${stream.format} · ${reason} · ${stream.url}`); if (shouldPlayRef.current && streamIndex + 1 < station.streams.length) await playStream(station, streamIndex + 1, token); else { setIsPlaying(false); setStationRuntime(station.id, 'failed'); setPlayerStatus({ key: 'failedWith', params: { error: mediaErrorText(audio.error) } }); } } }, [nowPlaying, setStationRuntime, updateMediaSession]);
+  const chooseStation = React.useCallback(async (station: Station, autoPlay = true) => { playTokenRef.current += 1; metadataSessionRef.current += 1; expectedSrcRef.current = null; selectedRef.current = station; setSelected(station); recorderRef.current?.selectStation(station); nowPlayingRef.current = null; safeSetItem(() => localStorage.setItem(LAST_STATION_KEY, station.id)); streamIndexRef.current = 0; updateMediaSession(station); const audio = audioRef.current; if (audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); } setIsPlaying(false); if (!station.streams.length) { shouldPlayRef.current = false; setPlayerStatus({ key: 'streamUnavailable' }); setDiagnostic('No validated production stream'); return; } setStationRuntime(station.id, 'available'); if (autoPlay) { shouldPlayRef.current = true; await playStream(station, 0, playTokenRef.current); } else setPlayerStatus({ key: 'available' }); }, [playStream, setStationRuntime, updateMediaSession]);
+  const togglePlayback = React.useCallback(async () => { const station = selectedRef.current; const audio = audioRef.current; if (!station?.streams.length || !audio) return; if (isPlaying) { shouldPlayRef.current = false; expectedSrcRef.current = null; audio.pause(); setIsPlaying(false); setPlayerStatus({ key: 'paused' }); return; } shouldPlayRef.current = true; await playStream(station, streamIndexRef.current); }, [isPlaying, playStream]);
   const stepStation = React.useCallback(async (direction: -1 | 1) => { if (!playableStations.length) return; const current = selectedRef.current; const currentIndex = current ? playableStations.findIndex((station) => station.id === current.id) : -1; const baseIndex = currentIndex >= 0 ? currentIndex : direction > 0 ? -1 : 0; const nextIndex = (baseIndex + direction + playableStations.length) % playableStations.length; await chooseStation(playableStations[nextIndex], true); }, [chooseStation, playableStations]);
 
   const runAudit = React.useCallback(async () => { if (auditRunning) return; shouldPlayRef.current = false; playTokenRef.current += 1; audioRef.current?.pause(); expectedSrcRef.current = null; recorderRef.current?.setPlaying(false); setIsPlaying(false); setAuditRunning(true); setAuditResults([]); const results: AuditResult[] = []; for (let stationIndex = 0; stationIndex < playableStations.length; stationIndex += 1) { const station = playableStations[stationIndex]; setAuditProgress(`${stationIndex + 1}/${playableStations.length} · ${station.name}`); let passed: AuditResult | null = null; let lastError = 'NO_STREAM_PASSED'; for (let streamIndex = 0; streamIndex < station.streams.length; streamIndex += 1) { const stream = station.streams[streamIndex]; const probe = await probeStream(stream.url); if (probe.ok) { passed = { stationId: station.id, stationName: station.name, ok: true, streamIndex, format: stream.format, error: null }; break; } lastError = `${stream.role}/${stream.format}: ${probe.error}`; } const result = passed ?? { stationId: station.id, stationName: station.name, ok: false, streamIndex: null, format: null, error: lastError }; results.push(result); setAuditResults([...results]); setStationRuntime(station.id, result.ok ? 'available' : 'failed'); } setAuditRunning(false); setAuditProgress(`Complete · ${results.filter((r) => r.ok).length}/${results.length} browser-playable`); console.table(results); }, [auditRunning, playableStations, setStationRuntime]);
@@ -658,7 +669,7 @@ function App() {
     return () => { shouldPlayRef.current = false; expectedSrcRef.current = null; recorderRef.current?.setPlaying(false); audio.pause(); audio.removeEventListener('playing', onPlaying); audio.removeEventListener('pause', onPause); audio.removeEventListener('error', onError); audioRef.current = null; };
   }, []);
   React.useEffect(() => { if (!selected || !('mediaSession' in navigator)) return; const mediaSession = navigator.mediaSession; mediaSession.setActionHandler('play', () => void togglePlayback()); mediaSession.setActionHandler('pause', () => void togglePlayback()); mediaSession.setActionHandler('previoustrack', () => void stepStation(-1)); mediaSession.setActionHandler('nexttrack', () => void stepStation(1)); return () => { mediaSession.setActionHandler('play', null); mediaSession.setActionHandler('pause', null); mediaSession.setActionHandler('previoustrack', null); mediaSession.setActionHandler('nexttrack', null); }; }, [selected, stepStation, togglePlayback]);
-  const badge = (station: Station) => { if (!station.streams.length) return ['research', 'Unavailable']; const state = runtime[station.id] ?? 'available'; if (state === 'connecting') return ['research', 'Connecting']; if (state === 'live') return ['ready', 'Live']; if (state === 'failed') return ['research', 'Failed']; return ['ready', 'Available']; };
+  const badge = (station: Station): [string, MessageKey] => { if (!station.streams.length) return ['research', 'unavailable']; const state = runtime[station.id] ?? 'available'; if (state === 'connecting') return ['research', 'connecting']; if (state === 'live') return ['ready', 'live']; if (state === 'failed') return ['research', 'failed']; return ['ready', 'available']; };
 
   /** Region → city. Picking a region whose cities do not include the current city lands on its first city. */
   const citiesInRegion = cityRegion?.cities ?? [];
@@ -758,127 +769,132 @@ function App() {
   const netGeoCode = isInternet ? (internetCountry?.code ?? 'GB') : (netCountryData?.code ?? 'FI');
 
   return <main className="shell">
-    <header className="brand"><div className="mark" aria-hidden="true">E)))</div><div><h1>EFIRIO</h1><p>The radio of your city</p></div></header>
+    <header className="brand"><div className="mark" aria-hidden="true">E)))</div><div><h1>EFIRIO</h1><p>{t('tagline')}</p></div></header>
     <section className="location">{isInternet
-      ? <><span>Интернет</span><b>›</b><span>{internetCountry?.name ?? '—'}</span><b>›</b><span>Радиостанции</span></>
+      ? <><span>{t('crumbInternet')}</span><b>›</b><span>{internetCountry?.name ?? '—'}</span><b>›</b><span>{t('crumbStations')}</span></>
       : isEstoniaInternet
-        ? <><span>Эстония — Интернет</span><b>›</b><span>Радиостанции</span></>
+        ? <><span>{t('scopeEstoniaInternet')}</span><b>›</b><span>{t('crumbStations')}</span></>
         : isFinlandInternet
-          ? <><span>Финляндия — Интернет</span><b>›</b><span>Радиостанции</span></>
+          ? <><span>{t('scopeFinlandInternet')}</span><b>›</b><span>{t('crumbStations')}</span></>
           : isEstonia
-            ? <><span>Эстония</span><b>›</b><span>{eeRegion?.name ?? 'Вся страна'}</span>{eeCity ? <><b>›</b><span>{eeCity.name}</span></> : null}</>
+            ? <><span>{t('placeEstonia')}</span><b>›</b><span>{eeRegion?.name ?? t('allCountry')}</span>{eeCity ? <><b>›</b><span>{eeCity.name}</span></> : null}</>
             : isFinland
-              ? <><span>Финляндия</span><b>›</b><span>{fiRegion?.name ?? 'Вся страна'}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
-              : <><span>Russia</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
+              ? <><span>{t('placeFinland')}</span><b>›</b><span>{fiRegion?.name ?? t('allCountry')}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
+              : <><span>{t('placeRussia')}</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
     <section className="cityPicker">
-      <label className="cityField scopeField"><span>Category</span>
+      <label className="cityField scopeField"><span>{t('categoryLabel')}</span>
         <select value={scope} onChange={(event) => changeScope(event.target.value as Scope)}>
-          <option value="russia">Россия</option>
-          <option value="internet">Интернет</option>
-          <option value="finland">Финляндия</option>
-          <option value="finland-internet">Финляндия — Интернет</option>
-          <option value="estonia">Эстония</option>
-          <option value="estonia-internet">Эстония — Интернет</option>
+          <option value="russia">{t('scopeRussia')}</option>
+          <option value="internet">{t('scopeInternet')}</option>
+          <option value="finland">{t('scopeFinland')}</option>
+          <option value="finland-internet">{t('scopeFinlandInternet')}</option>
+          <option value="estonia">{t('scopeEstonia')}</option>
+          <option value="estonia-internet">{t('scopeEstoniaInternet')}</option>
+        </select>
+      </label>
+      <label className="cityField"><span>{t('languageLabel')}</span>
+        <select value={lang} onChange={(event) => setLanguage(event.target.value as Language)}>
+          {SUPPORTED_LANGUAGES.map((code) => <option key={code} value={code}>{LANGUAGE_LABELS[code]}</option>)}
         </select>
       </label>
       {isNetLike ? <>
-        {isInternet ? <label className="cityField"><span>Country</span>
+        {isInternet ? <label className="cityField"><span>{t('countryLabel')}</span>
           <select value={internetCountry?.id ?? ''} onChange={(event) => setInternetCountryId(event.target.value)}>
             {internetIndex.countries.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
           </select>
         </label> : null}
-        <label className="cityField citySearch"><span>Find a station</span>
-          <input type="search" inputMode="search" autoComplete="off" value={netQuery} onChange={(event) => setNetQuery(event.target.value)} placeholder="Station name" aria-label="Search for a station" />
+        <label className="cityField citySearch"><span>{t('findStation')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={netQuery} onChange={(event) => setNetQuery(event.target.value)} placeholder={t('stationNamePlaceholder')} aria-label={t('searchStationAria')} />
         </label>
-        {netGenres.length > 0 ? <label className="cityField"><span>Genre</span>
+        {netGenres.length > 0 ? <label className="cityField"><span>{t('genreLabel')}</span>
           <select value={netGenre} onChange={(event) => setNetGenre(event.target.value)}>
-            <option value="">All genres</option>
+            <option value="">{t('allGenres')}</option>
             {netGenres.map((genre) => <option key={genre} value={genre}>{genre}</option>)}
           </select>
         </label> : null}
-        {netCities.length > 0 ? <label className="cityField"><span>City</span>
+        {netCities.length > 0 ? <label className="cityField"><span>{t('cityLabel')}</span>
           <select value={netCity} onChange={(event) => setNetCity(event.target.value)}>
-            <option value="">All cities</option>
+            <option value="">{t('allCities')}</option>
             {netCities.map((name) => <option key={name} value={name}>{name}</option>)}
           </select>
         </label> : null}
       </> : isFinland ? <>
-        <label className="cityField"><span>Region</span>
+        <label className="cityField"><span>{t('regionLabel')}</span>
           <select value={fiRegion?.id ?? FINLAND_ALL_REGIONS} onChange={(event) => changeFinlandRegion(event.target.value)}>
-            <option value={FINLAND_ALL_REGIONS}>Вся страна</option>
+            <option value={FINLAND_ALL_REGIONS}>{t('allCountry')}</option>
             {(finlandData?.regions ?? []).map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
           </select>
         </label>
-        {fiRegion ? <label className="cityField"><span>City</span>
+        {fiRegion ? <label className="cityField"><span>{t('cityLabel')}</span>
           <select value={fiCity?.id ?? FINLAND_ALL_CITIES} onChange={(event) => changeFinlandCity(event.target.value)}>
-            <option value={FINLAND_ALL_CITIES}>Все города</option>
+            <option value={FINLAND_ALL_CITIES}>{t('allCities')}</option>
             {fiCities.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
           </select>
         </label> : null}
-        <label className="cityField citySearch"><span>Find a station</span>
-          <input type="search" inputMode="search" autoComplete="off" value={fiQuery} onChange={(event) => setFiQuery(event.target.value)} placeholder="Station, city or region" aria-label="Search Finland by station, city or region" />
+        <label className="cityField citySearch"><span>{t('findStation')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={fiQuery} onChange={(event) => setFiQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchFinlandAria')} />
         </label>
       </> : isEstonia ? <>
-        <label className="cityField"><span>Region</span>
+        <label className="cityField"><span>{t('regionLabel')}</span>
           <select value={eeRegion?.id ?? ESTONIA_ALL_REGIONS} onChange={(event) => changeEstoniaRegion(event.target.value)}>
-            <option value={ESTONIA_ALL_REGIONS}>Вся страна</option>
+            <option value={ESTONIA_ALL_REGIONS}>{t('allCountry')}</option>
             {(estoniaData?.regions ?? []).map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
           </select>
         </label>
-        {eeRegion ? <label className="cityField"><span>City</span>
+        {eeRegion ? <label className="cityField"><span>{t('cityLabel')}</span>
           <select value={eeCity?.id ?? ESTONIA_ALL_CITIES} onChange={(event) => changeEstoniaCity(event.target.value)}>
-            <option value={ESTONIA_ALL_CITIES}>Все города</option>
+            <option value={ESTONIA_ALL_CITIES}>{t('allCities')}</option>
             {eeCities.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
           </select>
         </label> : null}
-        <label className="cityField citySearch"><span>Find a station</span>
-          <input type="search" inputMode="search" autoComplete="off" value={eeQuery} onChange={(event) => setEeQuery(event.target.value)} placeholder="Station, city or region" aria-label="Search Estonia by station, city or region" />
+        <label className="cityField citySearch"><span>{t('findStation')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={eeQuery} onChange={(event) => setEeQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchEstoniaAria')} />
         </label>
       </> : <>
-        <label className="cityField"><span>Region</span>
+        <label className="cityField"><span>{t('regionLabel')}</span>
           <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
             {REGIONS.map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
           </select>
         </label>
-        <label className="cityField"><span>City</span>
+        <label className="cityField"><span>{t('cityLabel')}</span>
           <select value={city?.id ?? ''} onChange={(event) => changeCity(event.target.value)}>
             {citiesInRegion.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
           </select>
         </label>
-        <label className="cityField citySearch"><span>Find a city</span>
-          <input type="search" inputMode="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="City name" aria-label="Search for a city" />
+        <label className="cityField citySearch"><span>{t('findCity')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t('cityNamePlaceholder')} aria-label={t('searchCityAria')} />
         </label>
       </>}
     </section>
-    {scope === 'russia' && trimmedQuery ? <section className="cityMatches" aria-label="City search results">
-      {matches.length ? matches.map(({ city: candidate, region }) => <button key={candidate.id} className={`cityMatch ${candidate.id === city?.id ? 'current' : ''}`} onClick={() => { setQuery(''); changeCity(candidate.id); }}><b>{candidate.name}</b><span>{region.name}</span></button>) : <p>No city matches “{trimmedQuery}”</p>}
+    {scope === 'russia' && trimmedQuery ? <section className="cityMatches" aria-label={t('cityResultsAria')}>
+      {matches.length ? matches.map(({ city: candidate, region }) => <button key={candidate.id} className={`cityMatch ${candidate.id === city?.id ? 'current' : ''}`} onClick={() => { setQuery(''); changeCity(candidate.id); }}><b>{candidate.name}</b><span>{region.name}</span></button>) : <p>{t('noCityMatches', { query: trimmedQuery })}</p>}
     </section> : null}
-    {isNetLike && internetLoading ? <section className="catalogueNote"><span>Loading {isInternet ? (internetCountry?.name ?? 'country') : isEstoniaInternet ? 'Эстония' : 'Финляндия'} catalogue…</span></section> : null}
-    {isNetLike && internetError ? <section className="catalogueNote error"><span>{internetError}</span></section> : null}
-    {isFinland && finlandLoading ? <section className="catalogueNote"><span>Loading Финляндия catalogue…</span></section> : null}
-    {isFinland && finlandError ? <section className="catalogueNote error"><span>{finlandError}</span></section> : null}
-    {isEstonia && estoniaLoading ? <section className="catalogueNote"><span>Loading Эстония catalogue…</span></section> : null}
-    {isEstonia && estoniaError ? <section className="catalogueNote error"><span>{estoniaError}</span></section> : null}
+    {isNetLike && internetLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: isInternet ? (internetCountry?.name ?? t('countryLabel')) : isEstoniaInternet ? t('placeEstonia') : t('placeFinland') })}</span></section> : null}
+    {isNetLike && internetError ? <section className="catalogueNote error"><span>{t(internetError)}</span></section> : null}
+    {isFinland && finlandLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: t('placeFinland') })}</span></section> : null}
+    {isFinland && finlandError ? <section className="catalogueNote error"><span>{t(finlandError)}</span></section> : null}
+    {isEstonia && estoniaLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: t('placeEstonia') })}</span></section> : null}
+    {isEstonia && estoniaError ? <section className="catalogueNote error"><span>{t(estoniaError)}</span></section> : null}
     {scope === 'russia' ? <>
-      {auditResults.length > 0 ? <section className="auditSummary"><strong>{auditResults.filter((r) => r.ok).length}/{auditResults.length} playable</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All tested stations passed'}</span></section> : null}
-      {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{metadataAuditResults.filter((r) => r.ok).length}/{metadataAuditResults.length} Now Playing</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || 'All stations returned track metadata'}</span></section> : null}
+      {auditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditPlayable', { ok: auditResults.filter((r) => r.ok).length, total: auditResults.length })}</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllPassed')}</span></section> : null}
+      {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditNowPlaying', { ok: metadataAuditResults.filter((r) => r.ok).length, total: metadataAuditResults.length })}</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllMetadata')}</span></section> : null}
     </> : null}
-    {selected && (nowPlaying || metadataStatus) ? <section className={nowPlaying?.coverUrl ? 'nowPlaying withCover' : 'nowPlaying'}>{nowPlaying?.coverUrl ? <img className="cover" src={nowPlaying.coverUrl} alt="" loading="lazy" referrerPolicy="no-referrer" /> : null}<div className="nowPlayingText"><small>NOW PLAYING{nowPlaying && KIND_LABELS[nowPlaying.kind] ? ` · ${KIND_LABELS[nowPlaying.kind]}` : ''}</small><strong>{nowPlaying?.title || metadataStatus}</strong>{nowPlaying?.artist ? <span>{nowPlaying.artist}</span> : null}{nowPlaying ? <time>{nowPlayingTimeLabel(nowPlaying)}</time> : null}</div></section> : null}
-    <section className="stations" aria-label={`${placeLabel} stations`}>{visibleStations.map((station) => {
-      const [badgeClass, badgeText] = badge(station);
+    {selected && (nowPlaying || metadataStatus) ? <section className={nowPlaying?.coverUrl ? 'nowPlaying withCover' : 'nowPlaying'}>{nowPlaying?.coverUrl ? <img className="cover" src={nowPlaying.coverUrl} alt="" loading="lazy" referrerPolicy="no-referrer" /> : null}<div className="nowPlayingText"><small>{t('nowPlayingLabel')}{nowPlaying && KIND_KEYS[nowPlaying.kind] ? ` · ${t(KIND_KEYS[nowPlaying.kind]!)}` : ''}</small><strong>{nowPlaying?.title || (metadataStatus ? t(metadataStatus) : '')}</strong>{nowPlaying?.artist ? <span>{nowPlaying.artist}</span> : null}{nowPlaying ? <time>{nowPlayingTimeLabel(t, nowPlaying)}</time> : null}</div></section> : null}
+    <section className="stations" aria-label={t('stationsAria', { place: placeLabel })}>{visibleStations.map((station) => {
+      const [badgeClass, badgeKey] = badge(station);
       if (isEstonia) {
         const ee = station as EstoniaStation;
         const where = trimmedEeQuery ? (eeSearchResults.find((entry) => entry.station.id === ee.id)?.where ?? '') : '';
         const eeHit = eeFrequency(ee, where || undefined);
-        const typeLabel = ee.type === 'nationwide' ? 'Вся страна' : ee.type === 'regional' ? 'Региональная' : 'Локальная';
+        const typeLabel = ee.type === 'nationwide' ? t('allCountry') : ee.type === 'regional' ? t('typeRegional') : t('typeLocal');
         return <button className={`station ${selected?.id === ee.id ? 'selected' : ''}`} key={ee.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
           {eeHit != null
             ? eeHit.band === 'AM'
-              ? <span className="frequency">{Math.round(eeHit.mhz * 1000)} <small>кГц</small></span>
-              : <span className="frequency">{eeHit.mhz.toFixed(1)} <small>FM</small></span>
+              ? <span className="frequency">{Math.round(eeHit.mhz * 1000)} <small>{t('unitKHz')}</small></span>
+              : <span className="frequency">{eeHit.mhz.toFixed(1)} <small>{t('unitFM')}</small></span>
             : <span className="frequency netGeo">EE</span>}
           <span className="stationName">{ee.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
-          <span className={badgeClass}>{badgeText}</span>
+          <span className={badgeClass}>{t(badgeKey)}</span>
         </button>;
       }
       if (isFinland) {
@@ -886,25 +902,28 @@ function App() {
         // In search results show the place that actually matched the query, not an arbitrary first city.
         const where = trimmedFiQuery ? (fiSearchResults.find((entry) => entry.station.id === fi.id)?.where ?? '') : '';
         const fiMhz = fiFrequency(fi, where || undefined);
-        const typeLabel = fi.type === 'nationwide' ? 'Вся страна' : fi.type === 'regional' ? 'Региональная' : 'Локальная';
+        const typeLabel = fi.type === 'nationwide' ? t('allCountry') : fi.type === 'regional' ? t('typeRegional') : t('typeLocal');
         return <button className={`station ${selected?.id === fi.id ? 'selected' : ''}`} key={fi.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
-          {fiMhz != null ? <span className="frequency">{fiMhz.toFixed(1)} <small>FM</small></span> : <span className="frequency netGeo">FI</span>}
+          {fiMhz != null ? <span className="frequency">{fiMhz.toFixed(1)} <small>{t('unitFM')}</small></span> : <span className="frequency netGeo">FI</span>}
           <span className="stationName">{fi.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
-          <span className={badgeClass}>{badgeText}</span>
+          <span className={badgeClass}>{t(badgeKey)}</span>
         </button>;
       }
       const net = isNetLike ? (station as InternetStation) : null;
       return <button className={`station ${selected?.id === station.id ? 'selected' : ''}`} key={station.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
-        {net ? <span className="frequency netGeo">{netGeoCode}</span> : <span className="frequency">{station.frequencyMHz?.toFixed(1) ?? '—'} <small>FM</small></span>}
+        {net ? <span className="frequency netGeo">{netGeoCode}</span> : <span className="frequency">{station.frequencyMHz?.toFixed(1) ?? '—'} <small>{t('unitFM')}</small></span>}
         <span className="stationName">{station.name}{net
           ? <small className="feedScope netScope">{net.country}{net.city ? ` · ${net.city}` : ''}{net.genres.length ? ` · ${net.genres.join(', ')}` : ''}</small>
-          : station.feed === 'federal' ? <small className="feedScope" title="Shared federal/central online feed — this city's own FM broadcast may differ">federal feed</small> : null}</span>
-        <span className={badgeClass}>{badgeText}</span>
+          : station.feed === 'federal' ? <small className="feedScope" title={t('federalFeedHint')}>{t('federalFeed')}</small> : null}</span>
+        <span className={badgeClass}>{t(badgeKey)}</span>
       </button>;
-    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && (isNetLike ? !!netCountryData : isEstonia ? !!estoniaData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? `No station matches “${eeQuery.trim()}”` : isFinland && trimmedFiQuery ? `No station matches “${fiQuery.trim()}”` : trimmedNetQuery ? `No station matches “${netQuery.trim()}”` : 'No station matches the selected filters'}</span></p> : null}</section>
-    {chunkedView && visibleCount < shownList.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>Show more · {Math.min(VISIBLE_CHUNK, shownList.length - visibleCount)} of {shownList.length - visibleCount} remaining</button> : null}
-    {history.length > 0 ? <details className="history"><summary>Listening history · {history.length}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
-    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label="Previous station">◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || 'Choose a station'}</strong>}<span>{selected ? playerStatus : `${placeLabel} · ${APP_VERSION}`}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? 'Pause' : 'Play'}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label="Next station">▶▶</button></footer>
+    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && (isNetLike ? !!netCountryData : isEstonia ? !!estoniaData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? t('noStationMatches', { query: eeQuery.trim() }) : isFinland && trimmedFiQuery ? t('noStationMatches', { query: fiQuery.trim() }) : trimmedNetQuery ? t('noStationMatches', { query: netQuery.trim() }) : t('noStationFilters')}</span></p> : null}</section>
+    {chunkedView && visibleCount < shownList.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>{t('showMore', { shown: Math.min(VISIBLE_CHUNK, shownList.length - visibleCount), remaining: shownList.length - visibleCount })}</button> : null}
+    {history.length > 0 ? <details className="history"><summary>{t('historyTitle', { count: history.length })}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
+    <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label={t('prevStation')}>◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || t('chooseStation')}</strong>}<span>{selected ? t(playerStatus.key, { place: placeLabel, version: APP_VERSION, ...playerStatus.params }) : t('placeVersion', { place: placeLabel, version: APP_VERSION })}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? t('pause') : t('play')}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label={t('nextStation')}>▶▶</button></footer>
   </main>;
 }
-createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
+/** Boot waits for the language dictionary so the very first paint is already translated. */
+void initLanguage().finally(() => {
+  createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
+});
