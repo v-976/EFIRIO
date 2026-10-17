@@ -17,7 +17,7 @@
  * plain Map; `main.tsx` passes the `safeGetItem`/`safeSetItem` wrappers.
  */
 
-export type Scope = 'russia' | 'internet' | 'finland' | 'estonia';
+export type Scope = 'russia' | 'internet' | 'finland' | 'estonia' | 'romania';
 
 export const SCOPE_KEY = 'efirio.scope';
 /** The one existing key for the selected Internet country; the migration reuses it. */
@@ -39,7 +39,7 @@ const LEGACY_INTERNET_COUNTRIES: Readonly<Record<string, string>> = {
 };
 
 /** Valid stored scopes; anything else (removed or corrupt) means `russia`. */
-const STORED_SCOPES: readonly Scope[] = ['russia', 'internet', 'finland', 'estonia'];
+const STORED_SCOPES: readonly Scope[] = ['russia', 'internet', 'finland', 'estonia', 'romania'];
 
 /**
  * Reads `efirio.scope` + `efirio.internetCountryId`, rewriting a legacy

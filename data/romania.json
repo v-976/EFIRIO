@@ -1,0 +1,5290 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-17",
+ "country": {
+  "id": "romania",
+  "name": "Румыния",
+  "code": "RO",
+  "timeZone": "Europe/Bucharest"
+ },
+ "stations": [
+  {
+   "id": "rractualitati",
+   "name": "Radio România Actualități",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 105.3,
+   "frequencies": [
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 0.531,
+     "band": "AM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 0.558,
+     "band": "AM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 0.567,
+     "band": "AM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 0.567,
+     "band": "AM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 0.603,
+     "band": "AM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 0.603,
+     "band": "AM"
+    },
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 0.711,
+     "band": "AM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 0.72,
+     "band": "AM"
+    },
+    {
+     "locality": "Sinaia",
+     "region": "Prahova",
+     "mhz": 0.72,
+     "band": "AM"
+    },
+    {
+     "locality": "Nufăru",
+     "region": "Tulcea",
+     "mhz": 0.72,
+     "band": "AM"
+    },
+    {
+     "locality": "Lugoj",
+     "region": "Timiș",
+     "mhz": 0.756,
+     "band": "AM"
+    },
+    {
+     "locality": "Tâncăbești",
+     "region": "Ilfov",
+     "mhz": 0.855,
+     "band": "AM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 0.909,
+     "band": "AM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 0.945,
+     "band": "AM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 1.152,
+     "band": "AM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 1.179,
+     "band": "AM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 1.179,
+     "band": "AM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 1.332,
+     "band": "AM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 1.404,
+     "band": "AM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 1.422,
+     "band": "AM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 1.458,
+     "band": "AM"
+    },
+    {
+     "locality": "Rădăuți",
+     "region": "Suceava",
+     "mhz": 1.53,
+     "band": "AM"
+    },
+    {
+     "locality": "Ion Corvin",
+     "region": "Constanța",
+     "mhz": 1.593,
+     "band": "AM"
+    },
+    {
+     "locality": "Bicaz",
+     "region": "Neamț",
+     "mhz": 87.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 88.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 88.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Gheorgheni",
+     "region": "Harghita",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 88.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 88.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești-Oaș",
+     "region": "Satu Mare",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 89.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Făget",
+     "region": "Timiș",
+     "mhz": 89.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Zimnicea",
+     "region": "Teleorman",
+     "mhz": 90.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Calafat",
+     "region": "Dolj",
+     "mhz": 90.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 90.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Oltenița",
+     "region": "Călărași",
+     "mhz": 91.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Drobeta-Turnu Severin",
+     "region": "Mehedinți",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Alexandria",
+     "region": "Teleorman",
+     "mhz": 91.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Novaci",
+     "region": "Gorj",
+     "mhz": 92.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 93.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung Moldovenesc",
+     "region": "Suceava",
+     "mhz": 96,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 96.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Băile Herculane",
+     "region": "Caraș-Severin",
+     "mhz": 97.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 98.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Bechet",
+     "region": "Dolj",
+     "mhz": 99.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 99.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 99.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Mahmudia",
+     "region": "Tulcea",
+     "mhz": 100.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Vatra Dornei",
+     "region": "Suceava",
+     "mhz": 100.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 100.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Sulina",
+     "region": "Tulcea",
+     "mhz": 100.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Toplița",
+     "region": "Harghita",
+     "mhz": 101,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 101.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Medgidia",
+     "region": "Constanța",
+     "mhz": 101.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 101.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Huși",
+     "region": "Vaslui",
+     "mhz": 101.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 101.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 102.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 102.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 102.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 102.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 102.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 102.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Gheorgheni",
+     "region": "Harghita",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 103.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bran",
+     "region": "Brașov",
+     "mhz": 103.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 103.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 103.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 103.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Orșova",
+     "region": "Mehedinți",
+     "mhz": 104.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 104.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 104.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 104.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 104.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 105,
+     "band": "FM"
+    },
+    {
+     "locality": "Turnu Măgurele",
+     "region": "Teleorman",
+     "mhz": 105.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Moldova Nouă",
+     "region": "Caraș-Severin",
+     "mhz": 105.1,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 105.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 105.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Roman",
+     "region": "Neamț",
+     "mhz": 105.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Slatina",
+     "region": "Olt",
+     "mhz": 105.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 106.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Lehliu-Gară",
+     "region": "Călărași",
+     "mhz": 106.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 106.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 106.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 106.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 106.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Băneasa",
+     "region": "Constanța",
+     "mhz": 106.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 107,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.romania-actualitati.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/romania-actualitati",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Actualități» — таблица FM/AM-частот по местностям (сверена 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/romania-actualitati подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт romania-actualitati.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строка «Maramureș - Văratec» отброшена: Văratec как населённый пункт отсутствует в dисамбигуации (только Neamț и Suceava), для Maramureș это пиковый передатчик."
+   }
+  },
+  {
+   "id": "rrcultural",
+   "name": "Radio România Cultural",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 101.3,
+   "frequencies": [
+    {
+     "locality": "Băneasa",
+     "region": "Constanța",
+     "mhz": 89.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Novaci",
+     "region": "Gorj",
+     "mhz": 89.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Alexandria",
+     "region": "Teleorman",
+     "mhz": 89.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 90.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bechet",
+     "region": "Dolj",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 92.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Moldova Nouă",
+     "region": "Caraș-Severin",
+     "mhz": 93.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 96.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Toplița",
+     "region": "Harghita",
+     "mhz": 98.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung Moldovenesc",
+     "region": "Suceava",
+     "mhz": 98.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 100.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 100.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 100.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 101,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 101,
+     "band": "FM"
+    },
+    {
+     "locality": "Turnu Măgurele",
+     "region": "Teleorman",
+     "mhz": 101.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Calafat",
+     "region": "Dolj",
+     "mhz": 101.1,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 101.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 101.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 101.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 101.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Mahmudia",
+     "region": "Tulcea",
+     "mhz": 102,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 102.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 102.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 102.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 102.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 103,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 103.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Huși",
+     "region": "Vaslui",
+     "mhz": 103.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 103.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 103.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 104.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 105,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 105,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 105,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 105.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Drobeta-Turnu Severin",
+     "region": "Mehedinți",
+     "mhz": 105.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 106,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 106.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Vatra Dornei",
+     "region": "Suceava",
+     "mhz": 107.7,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radioromaniacultural.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/romania-cultural",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Cultural» — таблица FM/AM-частот (сверена 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/romania-cultural подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radioromaniacultural.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строка «Maramureș - Văratec» отброшена по той же причине, что и у Actualități."
+   }
+  },
+  {
+   "id": "rrmuzical",
+   "name": "Radio România Muzical",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 104.8,
+   "frequencies": [
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 95.4,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 104.8,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.romania-muzical.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/romania-muzical",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Muzical» — FM 104.8 București, 95.4 Iași, 97.6 от Vârful Coștila (проза + список «Frecvențe», сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/romania-muzical подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт romania-muzical.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "97.6 MHz (пиковый передатчик Vârful Coștila в Bucegi, покрытие 12 жудецов) не создаёт строки частот. Упоминание DAB+ 223.936 MHz (канал 12A, București) в статье: модель каталога поддерживает только FM/AM."
+   }
+  },
+  {
+   "id": "rrantenasatelor",
+   "name": "Radio România Antena Satelor",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 0.603,
+   "frequencies": [
+    {
+     "locality": "Urziceni",
+     "region": "Ialomița",
+     "mhz": 0.531,
+     "band": "AM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 0.603,
+     "band": "AM"
+    },
+    {
+     "locality": "Voinești",
+     "region": "Dâmbovița",
+     "mhz": 0.63,
+     "band": "AM"
+    },
+    {
+     "locality": "Valu lui Traian",
+     "region": "Constanța",
+     "mhz": 1.314,
+     "band": "AM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 1.314,
+     "band": "AM"
+    },
+    {
+     "locality": "Drăgășani",
+     "region": "Vâlcea",
+     "mhz": 88,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 89,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 93.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Motru",
+     "region": "Gorj",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Bujor",
+     "region": "Galați",
+     "mhz": 99.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sulina",
+     "region": "Tulcea",
+     "mhz": 103.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 106.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.antenasatelor.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/antena-satelor",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Antena Satelor» — 7 FM-строк + 4 AM-строки (Stația Urziceni 531, Voinești 630, Valu lui Traian 1314, Timișoara 1314; сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/antena-satelor подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт antenasatelor.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строка «Bod 153 kHz» (охват всей страны) не создаётся как местность. AM 603 kHz: Stația Herăstrău (передатчик в București, покрытие Ilfov/Giurgiu по wiki) добавлена строкой București."
+   }
+  },
+  {
+   "id": "trinitas",
+   "name": "Radio Trinitas",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": null,
+   "frequencies": [
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Onești",
+     "region": "Bacău",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 88.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Toplița",
+     "region": "Harghita",
+     "mhz": 90.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Bicaz",
+     "region": "Neamț",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Durău",
+     "region": "Neamț",
+     "mhz": 91.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Hârlău",
+     "region": "Iași",
+     "mhz": 92.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 92.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Gura Humorului",
+     "region": "Suceava",
+     "mhz": 92.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Gheorgheni",
+     "region": "Harghita",
+     "mhz": 93,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 93.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 93.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 93.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 93.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 93.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Putna",
+     "region": "Suceava",
+     "mhz": 94.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 95.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Darabani",
+     "region": "Botoșani",
+     "mhz": 95.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 96.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 96.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 96.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Rădăuți",
+     "region": "Suceava",
+     "mhz": 97.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Moinești",
+     "region": "Bacău",
+     "mhz": 99.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Hațeg",
+     "region": "Hunedoara",
+     "mhz": 100.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Moldova Nouă",
+     "region": "Caraș-Severin",
+     "mhz": 104.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 106.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu-Neamț",
+     "region": "Neamț",
+     "mhz": 106.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 106.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://radiotrinitas.ro/",
+   "streams": [
+    {
+     "url": "https://live.radiotrinitas.ro:8003/;stream.nsv",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio Trinitas» — таблица наземных частот (30 строк из ==Istoric==), сверена 17.10.2026.",
+     "Стрим live.radiotrinitas.ro:8003/;stream.nsv подтверждён 17.10.2026 (200, audio/aacp, ADTS); URL взят из плеера radiotrinitas.ro/live/.",
+     "Официальный сайт radiotrinitas.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строка «Bucegi-Coștila 95.30» (пиковый передатчик) исключена. Страница частот на официальном сайте отсутствует; в таблице wiki нет строки București, поэтому frequencyMHz = null и на уровне страны показывается чип «RO»."
+   }
+  },
+  {
+   "id": "kissfm",
+   "name": "Kiss FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 96.1,
+   "frequencies": [
+    {
+     "locality": "Hârlău",
+     "region": "Iași",
+     "mhz": 87.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 88,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 88.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 88.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 89,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 89.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 89.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 90.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Bujor",
+     "region": "Galați",
+     "mhz": 90.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 91.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Alexandria",
+     "region": "Teleorman",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 91.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 91.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 91.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Sfântu Gheorghe",
+     "region": "Covasna",
+     "mhz": 91.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 91.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 91.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Lugoj",
+     "region": "Timiș",
+     "mhz": 91.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 92,
+     "band": "FM"
+    },
+    {
+     "locality": "Hunedoara",
+     "region": "Hunedoara",
+     "mhz": 92.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Predeal",
+     "region": "Brașov",
+     "mhz": 92.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 92.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 92.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Roman",
+     "region": "Neamț",
+     "mhz": 92.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 93.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Caracal",
+     "region": "Olt",
+     "mhz": 93.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Caransebeș",
+     "region": "Caraș-Severin",
+     "mhz": 93.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 94,
+     "band": "FM"
+    },
+    {
+     "locality": "Slatina",
+     "region": "Olt",
+     "mhz": 94.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 95.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung Muscel",
+     "region": "Argeș",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 96.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 96.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Mahmudia",
+     "region": "Tulcea",
+     "mhz": 96.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 97,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 97.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpia Turzii",
+     "region": "Cluj",
+     "mhz": 97.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 98,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgoviște",
+     "region": "Dâmbovița",
+     "mhz": 98,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 98.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 98.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 99,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 99.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 99.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 99.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Drobeta-Turnu Severin",
+     "region": "Mehedinți",
+     "mhz": 101.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 101.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 102.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Pașcani",
+     "region": "Iași",
+     "mhz": 102.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 104.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 104.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Harghita-Băi",
+     "region": "Harghita",
+     "mhz": 104.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 104.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sinaia",
+     "region": "Prahova",
+     "mhz": 104.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 107.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 107.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.kissfm.ro/",
+   "streams": [
+    {
+     "url": "https://live.kissfm.ro/kissfm.aacp",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Kiss FM» — таблица частот (59 строк, сверена 17.10.2026).",
+     "Стрим live.kissfm.ro/kissfm.aacp подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт kissfm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строки с пиковыми передатчиками в скобках ([[Parâng]]) сохранены по местности обслуживания."
+   }
+  },
+  {
+   "id": "europafm",
+   "name": "Europa FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 106.7,
+   "frequencies": [
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 88.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 89.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 89.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Ocna",
+     "region": "Bacău",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung",
+     "region": "Argeș",
+     "mhz": 89.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Onești",
+     "region": "Bacău",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Baraolt",
+     "region": "Covasna",
+     "mhz": 90,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 90,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 90.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 90.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 90.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 90.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Borsec",
+     "region": "Harghita",
+     "mhz": 91.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 92.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 93.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Alexandria",
+     "region": "Teleorman",
+     "mhz": 93.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 94.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 95,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 97.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Voineasa",
+     "region": "Vâlcea",
+     "mhz": 97.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Slatina",
+     "region": "Olt",
+     "mhz": 98.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 99.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 100,
+     "band": "FM"
+    },
+    {
+     "locality": "Drobeta-Turnu Severin",
+     "region": "Mehedinți",
+     "mhz": 100,
+     "band": "FM"
+    },
+    {
+     "locality": "Gheorgheni",
+     "region": "Harghita",
+     "mhz": 100.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Toplița",
+     "region": "Harghita",
+     "mhz": 100.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 100.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 100.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 100.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Ștei",
+     "region": "Bihor",
+     "mhz": 102,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung Moldovenesc",
+     "region": "Suceava",
+     "mhz": 102.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 102.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 104.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 104.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 104.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești-Oaș",
+     "region": "Satu Mare",
+     "mhz": 104.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 105.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Băneasa",
+     "region": "Constanța",
+     "mhz": 105.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 105.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 105.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 106.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 106.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 106.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 106.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 106.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 106.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Drăgănești-Olt",
+     "region": "Olt",
+     "mhz": 106.6,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 106.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 107.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Zimnicea",
+     "region": "Teleorman",
+     "mhz": 107.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 107.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 107.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 107.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgoviște",
+     "region": "Dâmbovița",
+     "mhz": 107.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 107.7,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.europafm.ro/",
+   "streams": [
+    {
+     "url": "https://astreaming.edi.ro:8443/EuropaFM_aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Europa FM» — таблица частот (59 строк, сверена 17.10.2026).",
+     "Стрим astreaming.edi.ro:8443/EuropaFM_aac подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт europafm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строка «Văratec 107.1» отброшена: неоднозначная местность (дисамбигуация указывает Neamț/Suceava)."
+   }
+  },
+  {
+   "id": "digifm",
+   "name": "Digi FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 97.9,
+   "frequencies": [
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Vișeu de Sus",
+     "region": "Maramureș",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Caransebeș",
+     "region": "Caraș-Severin",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Oțelu Roșu",
+     "region": "Caraș-Severin",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 89.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 90,
+     "band": "FM"
+    },
+    {
+     "locality": "Tecuci",
+     "region": "Galați",
+     "mhz": 90,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 91.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Sânnicolau Mare",
+     "region": "Timiș",
+     "mhz": 91.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Făgăraș",
+     "region": "Brașov",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Sfântu Gheorghe",
+     "region": "Covasna",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Odorheiu Secuiesc",
+     "region": "Harghita",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Secuiesc",
+     "region": "Covasna",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 91.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 92,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 92,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 92.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 92.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Mediaș",
+     "region": "Sibiu",
+     "mhz": 92.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 92.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Fetești",
+     "region": "Ialomița",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Cernavodă",
+     "region": "Constanța",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 94,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Curtea de Argeș",
+     "region": "Argeș",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Drăgășani",
+     "region": "Vâlcea",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 94.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Cărbunești",
+     "region": "Gorj",
+     "mhz": 95.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 95.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Hunedoara",
+     "region": "Hunedoara",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Călan",
+     "region": "Hunedoara",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Hațeg",
+     "region": "Hunedoara",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 96.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 96.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Năvodari",
+     "region": "Constanța",
+     "mhz": 96.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 96.7,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 97.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Vatra Dornei",
+     "region": "Suceava",
+     "mhz": 98.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 98.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 98.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 98.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 99.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 99.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 99.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 99.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 99.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Novaci",
+     "region": "Gorj",
+     "mhz": 100.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 100.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 100.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Toplița",
+     "region": "Harghita",
+     "mhz": 102.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Fălticeni",
+     "region": "Suceava",
+     "mhz": 103.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 104,
+     "band": "FM"
+    },
+    {
+     "locality": "Voineasa",
+     "region": "Vâlcea",
+     "mhz": 104.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Turda",
+     "region": "Cluj",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Gherla",
+     "region": "Cluj",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung Moldovenesc",
+     "region": "Suceava",
+     "mhz": 104.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 105.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 105.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 105.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești-Oaș",
+     "region": "Satu Mare",
+     "mhz": 107.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 107.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 107.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 107.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Năsăud",
+     "region": "Bistrița-Năsăud",
+     "mhz": 107.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Salonta",
+     "region": "Bihor",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Aleșd",
+     "region": "Bihor",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Ștei",
+     "region": "Bihor",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Beiuș",
+     "region": "Bihor",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpeni",
+     "region": "Alba",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Drobeta-Turnu Severin",
+     "region": "Mehedinți",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Orșova",
+     "region": "Mehedinți",
+     "mhz": 107.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Motru",
+     "region": "Gorj",
+     "mhz": 107.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.digifm.ro/",
+   "streams": [
+    {
+     "url": "https://edge76.rcs-rds.ro/digifm/digifm.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Digi FM» — таблица частот (81 строка, сверена 17.10.2026).",
+     "Стрим edge76.rcs-rds.ro/digifm/digifm.mp3 подтверждён 17.10.2026 (200, audio/mpeg, MP3).",
+     "Официальный сайт digifm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строки вида «vârful X — municipiile A, B» разобраны как местности обслуживания (сами пиковые передатчики в строки не попадают)."
+   }
+  },
+  {
+   "id": "virginradio",
+   "name": "Virgin Radio România",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 100.2,
+   "frequencies": [
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 88.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 88.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 89.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 90.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Pașcani",
+     "region": "Iași",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 91.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 91.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 92.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 92.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 92.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 93.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Adjud",
+     "region": "Vrancea",
+     "mhz": 94.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 94.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești-Oaș",
+     "region": "Satu Mare",
+     "mhz": 96,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 97.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 97.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 97.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 98.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 99.8,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 100.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 102.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 103.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 104.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 105.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 105.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 105.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 107.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.virginradio.ro/",
+   "streams": [
+    {
+     "url": "https://astreaming.edi.ro:8443/VirginRadio_aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Virgin Radio România» — таблица частот (28 строк, сверена 17.10.2026).",
+     "Стрим astreaming.edi.ro:8443/VirginRadio_aac подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт virginradio.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Бывший Radio 21."
+   }
+  },
+  {
+   "id": "rockfm",
+   "name": "Rock FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 100.6,
+   "frequencies": [
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 88.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 89.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 90.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 90.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 92.2,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 100.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 103.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 104.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 104.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 105.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 107.7,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.rockfm.ro/",
+   "streams": [
+    {
+     "url": "https://live.rockfm.ro/rockfm.aacp",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Rock FM» — таблица частот (14 строк, сверена 17.10.2026).",
+     "Стрим live.rockfm.ro/rockfm.aacp подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт rockfm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Формат classic rock по данным статьи."
+   }
+  },
+  {
+   "id": "magicfm",
+   "name": "Magic FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 90.8,
+   "frequencies": [
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 89.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 89.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 89.8,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 90.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 91.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 92.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 93.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 94.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 94.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 96,
+     "band": "FM"
+    },
+    {
+     "locality": "Zalău",
+     "region": "Sălaj",
+     "mhz": 96.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 97.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 98.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 98.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 99,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 99.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 99.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 99.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 101.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 101.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Sfântu Gheorghe",
+     "region": "Covasna",
+     "mhz": 103,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 105.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Adjud",
+     "region": "Vrancea",
+     "mhz": 107.2,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.magicfm.ro/",
+   "streams": [
+    {
+     "url": "https://live.magicfm.ro/magicfm.aacp",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Magic FM» — таблица частот (30 строк, сверена 17.10.2026).",
+     "Стрим live.magicfm.ro/magicfm.aacp подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт magicfm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Проверка прозаических поправок к таблице wiki не потребовалась: таблица актуальна."
+   }
+  },
+  {
+   "id": "profm",
+   "name": "PRO FM",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 102.8,
+   "frequencies": [
+    {
+     "locality": "Costinești",
+     "region": "Constanța",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 88.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpulung",
+     "region": "Argeș",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 88.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 88.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 88.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 89,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Medgidia",
+     "region": "Constanța",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 90.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Videle",
+     "region": "Teleorman",
+     "mhz": 90.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgoviște",
+     "region": "Dâmbovița",
+     "mhz": 91,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 91.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 92.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Hunedoara",
+     "region": "Hunedoara",
+     "mhz": 93.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Sinaia",
+     "region": "Prahova",
+     "mhz": 93.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Roman",
+     "region": "Neamț",
+     "mhz": 93.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Slatina",
+     "region": "Olt",
+     "mhz": 94.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 94.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Alexandria",
+     "region": "Teleorman",
+     "mhz": 95,
+     "band": "FM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 96.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 96.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 97.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 98.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 99.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 100.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 100.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Hunedoara",
+     "region": "Hunedoara",
+     "mhz": 101.6,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 102.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Giurgiu",
+     "region": "Giurgiu",
+     "mhz": 102.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Predeal",
+     "region": "Brașov",
+     "mhz": 103,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 103,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 106.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 107.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 107.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 107.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 107.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 107.8,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.profm.ro/",
+   "streams": [
+    {
+     "url": "https://edge126.rcs-rds.ro/profm/profm.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «PRO FM» — таблица частот (43 строки, сверена 17.10.2026).",
+     "Стрим edge126.rcs-rds.ro/profm/profm.mp3 подтверждён 17.10.2026 (200, audio/mpeg, MP3).",
+     "Официальный сайт profm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Формат CHRs (слоган «#1 Hit Radio»)."
+   }
+  },
+  {
+   "id": "guerrilla",
+   "name": "Radio Guerrilla",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 94.8,
+   "frequencies": [
+    {
+     "locality": "Mila 23",
+     "region": "Tulcea",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 89.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Curtea de Argeș",
+     "region": "Argeș",
+     "mhz": 90.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Roman",
+     "region": "Neamț",
+     "mhz": 91,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 91.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 92.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Vatra Dornei",
+     "region": "Suceava",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 94.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 95.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 95.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Darabani",
+     "region": "Botoșani",
+     "mhz": 97.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 100,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 105.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Brăila",
+     "region": "Brăila",
+     "mhz": 105.5,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.guerrillaradio.ro/",
+   "streams": [
+    {
+     "url": "https://live.guerrillaradio.ro:8443/guerrilla.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio Guerrilla» — таблица частот (15 строк, сверена 17.10.2026).",
+     "Стрим live.guerrillaradio.ro:8443/guerrilla.aac подтверждён 17.10.2026 (200, audio/aac, ADTS).",
+     "Официальный сайт guerrillaradio.ro — HTTP 200 (17.10.2026); прежний radioguerrilla.ro не отвечает."
+    ],
+    "notes": "Mila 23 — населённый пункт (дельта Дуная, Tulcea), строка сохранена."
+   }
+  },
+  {
+   "id": "impuls",
+   "name": "Radio Impuls",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 88,
+   "frequencies": [
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 88,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 88.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 88.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpina",
+     "region": "Prahova",
+     "mhz": 88.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 88.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 91.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 91.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 91.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 92,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Aiud",
+     "region": "Alba",
+     "mhz": 95.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 95.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Câmpeni",
+     "region": "Alba",
+     "mhz": 96.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 96.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 96.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Bistrița",
+     "region": "Bistrița-Năsăud",
+     "mhz": 97.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 99.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 101.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 102.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Sinaia",
+     "region": "Prahova",
+     "mhz": 103.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Râșnov",
+     "region": "Brașov",
+     "mhz": 104.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 104.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 106.4,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radio-impuls.ro/",
+   "streams": [
+    {
+     "url": "https://live.radio-impuls.ro/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    },
+    {
+     "url": "https://stream.radio-impuls.ro/stream",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio Impuls» — таблица частот (23 строки, сверена 17.10.2026).",
+     "Стримы live.radio-impuls.ru и stream.radio-impuls.ro подтверждены 17.10.2026 (200, audio/mpeg, MP3).",
+     "Официальный сайт radio-impuls.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Штаб-квартира в Cluj-Napoca; зеркало-фолловер stream.radio-impuls.ro."
+   }
+  },
+  {
+   "id": "rfi",
+   "name": "RFI România",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 93.5,
+   "frequencies": [
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 89,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 91.7,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 93.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 94,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 96.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 97.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.rfi.ro/",
+   "streams": [
+    {
+     "url": "https://asculta.radiorfi.ro/live.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 4 КБ, icy-name «RFI», icy-br 64, icy-genre News, Access-Control-Allow-Origin: *."
+    },
+    {
+     "url": "https://asculta.radiorfi.ro/live.mp3",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 4 КБ, icy-name «RFI», icy-br 128. Вторая ссылка с официальной страницы «Link ascultare online MP3»."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "Официальная страница «Cum să asculți RFI România» (www.rfi.fr/ro/, открывается по 301 с www.rfi.ro): раздел «Frecvențe radio RFI România» — Bucureşti 93.5, Craiova 94, Cluj-Napoca 91.7, Iaşi 97.9, Timişoara 96.9, Sibiu 89.0 FM; сверено 17.10.2026.",
+     "Стримы asculta.radiorfi.ro/live.aac (aac 64 kbps) и /live.mp3 (mp3 128 kbps) опубликованы на той же официальной странице как «Link ascultare online AAC/MP3» и подтверждены 17.10.2026 (200, аудио-сигнатуры, icy-url https://www.rfi.ro).",
+     "Официальный домен www.rfi.ro — 301 на www.rfi.fr/ro/; для автоматических запросов WAF отдаёт 403, из браузерного клиента страница читается (17.10.2026)."
+    ],
+    "notes": "Румынская служба RFI, не молдавская: официальная страница заголовком «Cum să asculți RFI România», icy-url и редирект с rfi.ro указывают на RFI România. Строка «Chişinău 107.3 FM» из той же таблицы исключена — Chișinău находится в Молдове, вне каталога RO. Частоты опубликованы для шести городов, где ведётся эфир; национального покрытия через одну частоту станция не имеет, поэтому type: nationwide, а не региональная станция одного жудеца."
+   }
+  },
+  {
+   "id": "radiozu",
+   "name": "Radio ZU",
+   "type": "nationwide",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 89,
+   "frequencies": [
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Moroeni",
+     "region": "Dâmbovița",
+     "mhz": 87.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Pitești",
+     "region": "Argeș",
+     "mhz": 88.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Mahmudia",
+     "region": "Tulcea",
+     "mhz": 88.9,
+     "band": "FM"
+    },
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 89,
+     "band": "FM"
+    },
+    {
+     "locality": "Deva",
+     "region": "Hunedoara",
+     "mhz": 89.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Piatra-Neamț",
+     "region": "Neamț",
+     "mhz": 89.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 89.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Focșani",
+     "region": "Vrancea",
+     "mhz": 89.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Predeal",
+     "region": "Brașov",
+     "mhz": 90,
+     "band": "FM"
+    },
+    {
+     "locality": "Făgăraș",
+     "region": "Brașov",
+     "mhz": 90.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Comănești",
+     "region": "Bacău",
+     "mhz": 90.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Bușteni",
+     "region": "Prahova",
+     "mhz": 90.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Slobozia",
+     "region": "Ialomița",
+     "mhz": 90.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Tecuci",
+     "region": "Galați",
+     "mhz": 91,
+     "band": "FM"
+    },
+    {
+     "locality": "Titu",
+     "region": "Dâmbovița",
+     "mhz": 91.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Slatina",
+     "region": "Olt",
+     "mhz": 92.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Bacău",
+     "region": "Bacău",
+     "mhz": 92.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Buzău",
+     "region": "Buzău",
+     "mhz": 92.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Botoșani",
+     "region": "Botoșani",
+     "mhz": 93.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 93.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Călărași",
+     "region": "Călărași",
+     "mhz": 94.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Moreni",
+     "region": "Dâmbovița",
+     "mhz": 94.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Galați",
+     "region": "Galați",
+     "mhz": 94.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 95,
+     "band": "FM"
+    },
+    {
+     "locality": "Medgidia",
+     "region": "Constanța",
+     "mhz": 95.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Suceava",
+     "region": "Suceava",
+     "mhz": 95.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 95.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 95.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 96.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 97.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Bârlad",
+     "region": "Vaslui",
+     "mhz": 97.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Jiu",
+     "region": "Gorj",
+     "mhz": 97.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Fălticeni",
+     "region": "Suceava",
+     "mhz": 97.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 98,
+     "band": "FM"
+    },
+    {
+     "locality": "Baia Mare",
+     "region": "Maramureș",
+     "mhz": 98.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgoviște",
+     "region": "Dâmbovița",
+     "mhz": 98.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Găești",
+     "region": "Dâmbovița",
+     "mhz": 100.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Mangalia",
+     "region": "Constanța",
+     "mhz": 100.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Putna",
+     "region": "Suceava",
+     "mhz": 101,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 101.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Pașcani",
+     "region": "Iași",
+     "mhz": 103.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 104,
+     "band": "FM"
+    },
+    {
+     "locality": "Hârlău",
+     "region": "Iași",
+     "mhz": 105.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești",
+     "region": "Vaslui",
+     "mhz": 105.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Ploiești",
+     "region": "Prahova",
+     "mhz": 105.7,
+     "band": "FM"
+    },
+    {
+     "locality": "Petroșani",
+     "region": "Hunedoara",
+     "mhz": 105.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighișoara",
+     "region": "Mureș",
+     "mhz": 105.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Vaslui",
+     "region": "Vaslui",
+     "mhz": 107.2,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 107.5,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiozu.ro/",
+   "streams": [
+    {
+     "url": "https://live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, манифест #EXTM3U (Z/IPStream R/2, сегменты .aac по 4.97 с, без #EXT-X-KEY/DRM), последовательность сегментов продвигается, свежий PROGRAM-DATE-TIME; в последних 8 КБ ответа — ADTS-кадры AAC. Единственный публичный HTTPS-поток: прямые потоки zuicast.digitalag.ro:9420 отдаются только по HTTP."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio ZU» — таблица «Frecvențe», 50 FM-строк, сверена 17.10.2026; пиковые передатчики отфильтрованы, каждая строка привязана к городу и жудецу.",
+     "Стрим live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8 подтверждён 17.10.2026: манифест HLS без DRM, сегменты отдают ADTS AAC, последовательность растёт; инфраструктура AntenaPlay (Antena Group).",
+     "Официальный сайт radiozu.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Прямые потоки zuicast.digitalag.ro:9420 доступны только по HTTP, поэтому единственный публичный HTTPS-вариант — HLS-поток AntenaPlay на 48 kbps. HLS в каталоге имеет прецедент: UK-каталог содержит 117 HLS-потоков, а tools/validate-streams.mjs умеет HLS."
+   }
+  },
+  {
+   "id": "bucurestifm",
+   "name": "București FM",
+   "type": "local",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 98.3,
+   "frequencies": [
+    {
+     "locality": "București",
+     "region": "București",
+     "mhz": 98.3,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.bucurestifm.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/bucuresti-fm",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Regional» — группа Radio București FM: 98.3 București (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/bucuresti-fm подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт bucurestifm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Студия Radio România Regional, вещание только в București."
+   }
+  },
+  {
+   "id": "radiocluj",
+   "name": "Radio Cluj",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 95.6,
+   "frequencies": [
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 0.909,
+     "band": "AM"
+    },
+    {
+     "locality": "Oradea",
+     "region": "Bihor",
+     "mhz": 1.593,
+     "band": "AM"
+    },
+    {
+     "locality": "Satu Mare",
+     "region": "Satu Mare",
+     "mhz": 87.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Negrești-Oaș",
+     "region": "Satu Mare",
+     "mhz": 93.3,
+     "band": "FM"
+    },
+    {
+     "locality": "Alba Iulia",
+     "region": "Alba",
+     "mhz": 95.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Sibiu",
+     "region": "Sibiu",
+     "mhz": 95.4,
+     "band": "FM"
+    },
+    {
+     "locality": "Cluj-Napoca",
+     "region": "Cluj",
+     "mhz": 95.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Sighetu Marmației",
+     "region": "Maramureș",
+     "mhz": 101.7,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiocluj.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-cluj",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "Официальный сайт radiocluj.ro/frecvente: 909 и 1593 kHz; Satu Mare 87.9, Negreşti Oaş 93.3, Sighet 101.7, Cluj 95.6, Alba şi Sibiu 95.4 (сверено 17.10.2026).",
+     "Локальности AM-частот (Cluj-Napoca 909, Oradea 1593) — ro.wikipedia «Radio România Regional», секция AM.",
+     "Стрим stream4.srr.ro:8443/radio-cluj подтверждён 17.10.2026 (200, audio/mpeg, MP3)."
+    ],
+    "notes": "Отброшены: AM 1404 kHz Sighetu Marmației (нет на текущей официальной странице) и AM 1593 kHz Sibiu (retransmit 2017 года)."
+   }
+  },
+  {
+   "id": "radiotgmures",
+   "name": "Radio Târgu Mureș",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 102.9,
+   "frequencies": [
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 1.197,
+     "band": "AM"
+    },
+    {
+     "locality": "Miercurea Ciuc",
+     "region": "Harghita",
+     "mhz": 1.593,
+     "band": "AM"
+    },
+    {
+     "locality": "Borsec",
+     "region": "Harghita",
+     "mhz": 94.9,
+     "band": "FM"
+    },
+    {
+     "locality": null,
+     "region": "Harghita",
+     "mhz": 98.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Târgu Mureș",
+     "region": "Mureș",
+     "mhz": 102.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiomures.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-tgmures-fm",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "Официальный сайт radiomures.ro/frecvente: FM 102.9 Tg.-Mureș, 98.9 Harghita, 94.9 Borsec; AM 1197 Brașov, 1593 Miercurea Ciuc (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/radio-tgmures-fm подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radiomures.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "98.9 Harghita указана на официальной странице на уровне жудеца (locality = null). Версия wiki «AM 1593 kHz — Târgu Mureș» заменена официальной локальностью Miercurea Ciuc."
+   }
+  },
+  {
+   "id": "radioconstanta",
+   "name": "Radio Constanța",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 100.1,
+   "frequencies": [
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 1.53,
+     "band": "AM"
+    },
+    {
+     "locality": "Techirghiol",
+     "region": "Constanța",
+     "mhz": 90.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Tulcea",
+     "region": "Tulcea",
+     "mhz": 93,
+     "band": "FM"
+    },
+    {
+     "locality": "Constanța",
+     "region": "Constanța",
+     "mhz": 100.1,
+     "band": "FM"
+    },
+    {
+     "locality": "Sulina",
+     "region": "Tulcea",
+     "mhz": 106.2,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radioconstanta.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-constanta-fm",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Regional» — группа Radio Constanța: 90.8 Techirghiol, 100.1 Constanța, 106.2 Sulina, 93.0 Tulcea, AM 1530 Tulcea (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/radio-constanta-fm подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radioconstanta.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Отброшена строка «AM 909 kHz» без указания местности. Отдельной статьи wiki о частотах станции нет."
+   }
+  },
+  {
+   "id": "radiocraiova",
+   "name": "Radio Craiova",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 102.9,
+   "frequencies": [
+    {
+     "locality": null,
+     "region": "Mehedinți",
+     "mhz": 0.603,
+     "band": "AM"
+    },
+    {
+     "locality": null,
+     "region": "Dolj",
+     "mhz": 1.314,
+     "band": "AM"
+    },
+    {
+     "locality": "Râmnicu Vâlcea",
+     "region": "Vâlcea",
+     "mhz": 99.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Craiova",
+     "region": "Dolj",
+     "mhz": 102.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Novaci",
+     "region": "Gorj",
+     "mhz": 105,
+     "band": "FM"
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-oltenia",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio Craiova» — 102.9 Craiova, 105 Novaci, 99.8 Râmnicu Vâlcea (сверено 17.10.2026).",
+     "AM-строки (603 kHz Mehedinți, 1314 kHz Dolj) — ro.wikipedia «Radio România Regional», секция AM; локальности на уровне жудецов.",
+     "Стрим stream4.srr.ro:8443/radio-oltenia подтверждён 17.10.2026 (200, audio/mpeg, MP3)."
+    ],
+    "notes": "Официальный домен radiocraiova.ro недоступен 17.10.2026 (HTTP→308→HTTPS connection failure), поэтому website = null."
+   }
+  },
+  {
+   "id": "radioiasi",
+   "name": "Radio Iași",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 96.3,
+   "frequencies": [
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 1.053,
+     "band": "AM"
+    },
+    {
+     "locality": "Câmpulung Moldovenesc",
+     "region": "Suceava",
+     "mhz": 90.8,
+     "band": "FM"
+    },
+    {
+     "locality": "Huși",
+     "region": "Vaslui",
+     "mhz": 94.5,
+     "band": "FM"
+    },
+    {
+     "locality": "Iași",
+     "region": "Iași",
+     "mhz": 96.3,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radioiasi.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-iasi-fm",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio Iași» — 96.3 Iași, 90.8 Câmpulung Moldovenesc, 94.5 Huși; AM 1053 kHz Iași («Radio România Regional») — сверено 17.10.2026.",
+     "Стрим stream4.srr.ro:8443/radio-iasi-fm подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radioiasi.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Пиковый передатчик Rarău (строка региональной сети) в частоты не включён; местность обслуживания — Câmpulung Moldovenesc."
+   }
+  },
+  {
+   "id": "radiobacau",
+   "name": "Radio Bacău",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://www.radiobacau.ro/",
+   "streams": [
+    {
+     "url": "https://stream1.srr.ro:8208/;stream/1",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ, icy-name «RADIO ROMÂNIA BACĂU», icy-br 320. Суффикс ;stream/1 обязателен: Shoutcast DNAS 2.6 отдаёт HTML-страницу статуса без него, когда запрос идёт от браузерного User-Agent."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Стрим stream1.srr.ro:8208/;stream/1 подтверждён 17.10.2026 (200, audio/aacp, ADTS, Shoutcast DNAS 2.6.1.777, Access-Control-Allow-Origin: *).",
+     "Официальный сайт radiobacau.ro — HTTP 200 (17.10.2026), WordPress REST API без страниц частот."
+    ],
+    "notes": "Частотные данные не найдены: отдельной статьи wiki нет, «Radio România Regional» не содержит группы Bacău, официальный сайт (SPA + WP API) не публикует MHz/частот. Частоты не выдуманы: frequencyMHz = null, frequencies = []."
+   }
+  },
+  {
+   "id": "radiobrasov",
+   "name": "Brașov FM",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 93.3,
+   "frequencies": [
+    {
+     "locality": "Brașov",
+     "region": "Brașov",
+     "mhz": 93.3,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiobrasovfm.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-brasov",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Brașov FM» + «Radio România Regional» — 93.3 Brașov (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/radio-brasov подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radiobrasovfm.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Студия Radio România Regional (Brașov); не путать с одноимённой коммерческой радиостанцией."
+   }
+  },
+  {
+   "id": "radiotimisoara",
+   "name": "Radio Timișoara",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 105.9,
+   "frequencies": [
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 0.63,
+     "band": "AM"
+    },
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 102.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Coșevița",
+     "region": "Timiș",
+     "mhz": 103.5,
+     "band": "FM"
+    },
+    {
+     "locality": null,
+     "region": "Arad",
+     "mhz": 103.6,
+     "band": "FM"
+    },
+    {
+     "locality": "Timișoara",
+     "region": "Timiș",
+     "mhz": 105.9,
+     "band": "FM"
+    },
+    {
+     "locality": "Urseni",
+     "region": "Timiș",
+     "mhz": 105.9,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiotimisoara.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/timisoara-fm",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aac, ADTS-кадры AAC в окне 8 КБ."
+    },
+    {
+     "url": "https://stream4.srr.ro:8443/timisoara-am",
+     "role": "fallback",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Regional» — группа Radio Timișoara: 105.9 Urseni, 102.9 Arad, 103.5 Coșevița, AM 630 kHz Timișoara (сверено 17.10.2026).",
+     "Проза статьи «Radio Timișoara» и официальные страницы radiotimisoara.ro: 105.9 MHz Timișoara; 102.9 MHz Arad и 103.6 MHz Valea Mureșului (live-radio-arad-fm).",
+     "Стримы timisoara-fm (aac) и timisoara-am (mp3) подтверждены 17.10.2026 (200)."
+    ],
+    "notes": "Пиковый передатчик Parâng (101.5) исключён. Частоты 102.9/103.6 несут днём Radio Timișoara, после 18:00 — Arad FM; строки добавлены обеим станциям."
+   }
+  },
+  {
+   "id": "radioarad",
+   "name": "Arad FM",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 102.9,
+   "frequencies": [
+    {
+     "locality": "Arad",
+     "region": "Arad",
+     "mhz": 102.9,
+     "band": "FM"
+    },
+    {
+     "locality": null,
+     "region": "Arad",
+     "mhz": 103.6,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radiotimisoara.ro/live-radio-arad-fm",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/arad-fm",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "Официальная страница radiotimisoara.ro/live-radio-arad-fm: FM 102.9 MHz Arad, 103.6 MHz Valea Mureșului (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/arad-fm подтверждён 17.10.2026 (200, audio/mpeg, MP3)."
+    ],
+    "notes": "Вечерняя программа (после 18:00) на частотах Radio Timișoara в Arad; 103.6 MHz — Valea Mureșului без конкретного населённого пункта (locality = null)."
+   }
+  },
+  {
+   "id": "radioresita",
+   "name": "Radio Reșița",
+   "type": "regional",
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": 105.6,
+   "frequencies": [
+    {
+     "locality": "Reșița",
+     "region": "Caraș-Severin",
+     "mhz": 105.6,
+     "band": "FM"
+    }
+   ],
+   "website": "https://www.radioresita.ro/",
+   "streams": [
+    {
+     "url": "https://stream4.srr.ro:8443/radio-resita",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/aacp, ADTS-кадры AAC в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": "2026-10-17",
+    "sources": [
+     "ro.wikipedia: «Radio România Regional» — группа Radio Reșița: 105.6 Reșița (сверено 17.10.2026).",
+     "Стрим stream4.srr.ro:8443/radio-resita подтверждён 17.10.2026 (200, audio/aacp, ADTS).",
+     "Официальный сайт radioresita.ro — HTTP 200 (17.10.2026)."
+    ],
+    "notes": "Строки 91.9/92.8 «Clisura Dunării» исключены: это не населённый пункт."
+   }
+  }
+ ],
+ "nationwide": [
+  "rractualitati",
+  "rrcultural",
+  "rrmuzical",
+  "rrantenasatelor",
+  "trinitas",
+  "kissfm",
+  "europafm",
+  "digifm",
+  "virginradio",
+  "rockfm",
+  "magicfm",
+  "profm",
+  "guerrilla",
+  "impuls",
+  "rfi",
+  "radiozu"
+ ],
+ "regions": [
+  {
+   "id": "bucuresti",
+   "name": "București",
+   "stations": [
+    "bucurestifm"
+   ],
+   "cities": [
+    "bucuresti"
+   ]
+  },
+  {
+   "id": "cluj",
+   "name": "Cluj",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "cluj-napoca"
+   ]
+  },
+  {
+   "id": "bihor",
+   "name": "Bihor",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "oradea"
+   ]
+  },
+  {
+   "id": "satu-mare",
+   "name": "Satu Mare",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "satu-mare",
+    "negresti-oas"
+   ]
+  },
+  {
+   "id": "alba",
+   "name": "Alba",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "alba-iulia"
+   ]
+  },
+  {
+   "id": "sibiu",
+   "name": "Sibiu",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "sibiu"
+   ]
+  },
+  {
+   "id": "maramures",
+   "name": "Maramureș",
+   "stations": [
+    "radiocluj"
+   ],
+   "cities": [
+    "sighetu-marmatiei"
+   ]
+  },
+  {
+   "id": "brasov",
+   "name": "Brașov",
+   "stations": [
+    "radiotgmures",
+    "radiobrasov"
+   ],
+   "cities": [
+    "brasov"
+   ]
+  },
+  {
+   "id": "harghita",
+   "name": "Harghita",
+   "stations": [
+    "radiotgmures"
+   ],
+   "cities": [
+    "miercurea-ciuc",
+    "borsec"
+   ]
+  },
+  {
+   "id": "mures",
+   "name": "Mureș",
+   "stations": [
+    "radiotgmures"
+   ],
+   "cities": [
+    "targu-mures"
+   ]
+  },
+  {
+   "id": "tulcea",
+   "name": "Tulcea",
+   "stations": [
+    "radioconstanta"
+   ],
+   "cities": [
+    "tulcea",
+    "sulina"
+   ]
+  },
+  {
+   "id": "constanta",
+   "name": "Constanța",
+   "stations": [
+    "radioconstanta"
+   ],
+   "cities": [
+    "techirghiol",
+    "constanta"
+   ]
+  },
+  {
+   "id": "mehedinti",
+   "name": "Mehedinți",
+   "stations": [
+    "radiocraiova"
+   ],
+   "cities": []
+  },
+  {
+   "id": "dolj",
+   "name": "Dolj",
+   "stations": [
+    "radiocraiova"
+   ],
+   "cities": [
+    "craiova"
+   ]
+  },
+  {
+   "id": "valcea",
+   "name": "Vâlcea",
+   "stations": [
+    "radiocraiova"
+   ],
+   "cities": [
+    "ramnicu-valcea"
+   ]
+  },
+  {
+   "id": "gorj",
+   "name": "Gorj",
+   "stations": [
+    "radiocraiova"
+   ],
+   "cities": [
+    "novaci"
+   ]
+  },
+  {
+   "id": "iasi",
+   "name": "Iași",
+   "stations": [
+    "radioiasi"
+   ],
+   "cities": [
+    "iasi"
+   ]
+  },
+  {
+   "id": "suceava",
+   "name": "Suceava",
+   "stations": [
+    "radioiasi"
+   ],
+   "cities": [
+    "campulung-moldovenesc"
+   ]
+  },
+  {
+   "id": "vaslui",
+   "name": "Vaslui",
+   "stations": [
+    "radioiasi"
+   ],
+   "cities": [
+    "husi"
+   ]
+  },
+  {
+   "id": "timis",
+   "name": "Timiș",
+   "stations": [
+    "radiotimisoara"
+   ],
+   "cities": [
+    "timisoara",
+    "cosevita",
+    "urseni"
+   ]
+  },
+  {
+   "id": "arad",
+   "name": "Arad",
+   "stations": [
+    "radiotimisoara",
+    "radioarad"
+   ],
+   "cities": [
+    "arad"
+   ]
+  },
+  {
+   "id": "caras-severin",
+   "name": "Caraș-Severin",
+   "stations": [
+    "radioresita"
+   ],
+   "cities": [
+    "resita"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "bucuresti",
+   "name": "București",
+   "regionId": "bucuresti",
+   "stations": [
+    "bucurestifm"
+   ]
+  },
+  {
+   "id": "cluj-napoca",
+   "name": "Cluj-Napoca",
+   "regionId": "cluj",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "oradea",
+   "name": "Oradea",
+   "regionId": "bihor",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "satu-mare",
+   "name": "Satu Mare",
+   "regionId": "satu-mare",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "negresti-oas",
+   "name": "Negrești-Oaș",
+   "regionId": "satu-mare",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "alba-iulia",
+   "name": "Alba Iulia",
+   "regionId": "alba",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "sibiu",
+   "name": "Sibiu",
+   "regionId": "sibiu",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "sighetu-marmatiei",
+   "name": "Sighetu Marmației",
+   "regionId": "maramures",
+   "stations": [
+    "radiocluj"
+   ]
+  },
+  {
+   "id": "brasov",
+   "name": "Brașov",
+   "regionId": "brasov",
+   "stations": [
+    "radiotgmures",
+    "radiobrasov"
+   ]
+  },
+  {
+   "id": "miercurea-ciuc",
+   "name": "Miercurea Ciuc",
+   "regionId": "harghita",
+   "stations": [
+    "radiotgmures"
+   ]
+  },
+  {
+   "id": "borsec",
+   "name": "Borsec",
+   "regionId": "harghita",
+   "stations": [
+    "radiotgmures"
+   ]
+  },
+  {
+   "id": "targu-mures",
+   "name": "Târgu Mureș",
+   "regionId": "mures",
+   "stations": [
+    "radiotgmures"
+   ]
+  },
+  {
+   "id": "tulcea",
+   "name": "Tulcea",
+   "regionId": "tulcea",
+   "stations": [
+    "radioconstanta"
+   ]
+  },
+  {
+   "id": "techirghiol",
+   "name": "Techirghiol",
+   "regionId": "constanta",
+   "stations": [
+    "radioconstanta"
+   ]
+  },
+  {
+   "id": "constanta",
+   "name": "Constanța",
+   "regionId": "constanta",
+   "stations": [
+    "radioconstanta"
+   ]
+  },
+  {
+   "id": "sulina",
+   "name": "Sulina",
+   "regionId": "tulcea",
+   "stations": [
+    "radioconstanta"
+   ]
+  },
+  {
+   "id": "ramnicu-valcea",
+   "name": "Râmnicu Vâlcea",
+   "regionId": "valcea",
+   "stations": [
+    "radiocraiova"
+   ]
+  },
+  {
+   "id": "craiova",
+   "name": "Craiova",
+   "regionId": "dolj",
+   "stations": [
+    "radiocraiova"
+   ]
+  },
+  {
+   "id": "novaci",
+   "name": "Novaci",
+   "regionId": "gorj",
+   "stations": [
+    "radiocraiova"
+   ]
+  },
+  {
+   "id": "iasi",
+   "name": "Iași",
+   "regionId": "iasi",
+   "stations": [
+    "radioiasi"
+   ]
+  },
+  {
+   "id": "campulung-moldovenesc",
+   "name": "Câmpulung Moldovenesc",
+   "regionId": "suceava",
+   "stations": [
+    "radioiasi"
+   ]
+  },
+  {
+   "id": "husi",
+   "name": "Huși",
+   "regionId": "vaslui",
+   "stations": [
+    "radioiasi"
+   ]
+  },
+  {
+   "id": "timisoara",
+   "name": "Timișoara",
+   "regionId": "timis",
+   "stations": [
+    "radiotimisoara"
+   ]
+  },
+  {
+   "id": "arad",
+   "name": "Arad",
+   "regionId": "arad",
+   "stations": [
+    "radiotimisoara",
+    "radioarad"
+   ]
+  },
+  {
+   "id": "cosevita",
+   "name": "Coșevița",
+   "regionId": "timis",
+   "stations": [
+    "radiotimisoara"
+   ]
+  },
+  {
+   "id": "urseni",
+   "name": "Urseni",
+   "regionId": "timis",
+   "stations": [
+    "radiotimisoara"
+   ]
+  },
+  {
+   "id": "resita",
+   "name": "Reșița",
+   "regionId": "caras-severin",
+   "stations": [
+    "radioresita"
+   ]
+  }
+ ]
+}

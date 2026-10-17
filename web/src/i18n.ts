@@ -55,6 +55,7 @@ export const en = {
   searchCityAria: 'Search for a city',
   searchFinlandAria: 'Search {country} by station, city or region',
   searchEstoniaAria: 'Search {country} by station, city or region',
+  searchRomaniaAria: 'Search {country} by station, city or region',
   cityResultsAria: 'City search results',
   stationsAria: '{place} stations',
   // Catalogue messages.
@@ -65,6 +66,7 @@ export const en = {
   errCountryLoad: 'The country catalogue could not be loaded',
   errFinlandLoad: 'The {country} catalogue could not be loaded',
   errEstoniaLoad: 'The {country} catalogue could not be loaded',
+  errRomaniaLoad: 'The {country} catalogue could not be loaded',
   // Player states.
   chooseStation: 'Choose a station',
   prevStation: 'Previous station',

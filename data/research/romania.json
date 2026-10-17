@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-17",
+ "note": "R3.5 Румыния: исследование наземных FM/AM и internet-only станций. Каталог публикуется только с подтверждёнными официальными HTTPS-потоками; http-only, зонтичные бренды без собственных частот, мёртвые HLS-потоки и неподтверждённые кандидаты исключены с причинами.",
+ "summary": {
+  "publishedTerrestrial": 27,
+  "publishedInternet": 5,
+  "excluded": 11,
+  "typeCounts": {
+   "nationwide": 16,
+   "regional": 10,
+   "local": 1
+  },
+  "frequencyRows": 623,
+  "bands": {
+   "FM": 586,
+   "AM": 37
+  },
+  "streams": {
+   "total": 30,
+   "https": 30,
+   "aac": 20,
+   "mp3": 9,
+   "hls": 1
+  }
+ },
+ "sources": [
+  "ro.wikipedia.org — статьи о станциях с таблицами «Frecvențe» (город/МГц); каждая строка сверена и привязана к жудецу, пиковые передатчики отфильтрованы",
+  "Официальные сайты станций: radiozu.ro, romanticfm.ro, radiobacau.ro, radio-impuls.ro, bucurestifm.ro и др. (все — HTTP 200, проверено 17.10.2026)",
+  "rfi.fr/ro «Cum să asculți RFI România» — официальный перечень частот RFI România и ссылки «Link ascultare online AAC/MP3»",
+  "romaniaregional.ro — официальный плейлист потоков SRR и футер со списком венгерских служб",
+  "AntenaPlay (live7digi/live14digi.antenaplay.ro) — HLS-инфраструктура Antena Group / Intact; манифесты и сегменты проверены на DRM, ливность и аудио-сигнатуру",
+  "SRR-маунты: stream4.srr.ro:8443 (основные монтировки) и stream1.srr.ro:8208 (Shoutcast DNAS, Radio Bacău)",
+  "Radio Browser API — только discovery кандидатов и перекрёстная проверка URL; каждая запись перепроверена напрямую",
+  "data/internet/united-kingdom.json — принятый прецедент публикации HLS-потоков (117 записей)"
+ ],
+ "frequencyEncoding": {
+  "am": "Диапазон AM хранится как MHz (кГц / 1000) с band: \"AM\" в frequencies[]; UI показывает «<kHz> кГц». Пример: RRA на 531 кГц -> mhz 0.531.",
+  "primaryRule": "frequencyMHz = частота в столице (București), когда станция там вещает; иначе самая низкая подтверждённая частота. Значение всегда присутствует в frequencies[].",
+  "nullFrequency": "radiobacau (частоты не найдены) и trinitas (частоты не публикуются в таблице) имеют frequencyMHz: null; частоты не выдумываются."
+ },
+ "hls": {
+  "status": "one-published",
+  "published": {
+   "id": "radiozu",
+   "url": "https://live7digi.antenaplay.ro/radiozu/radiozu-48000.m3u8",
+   "evidence": "Манифест #EXTM3U (Z/IPStream R/2), сегменты .aac по 4.97 с, без #EXT-X-KEY/SAMPLE-AES (DRM отсутствует), последовательность сегментов продвигается, свежий PROGRAM-DATE-TIME; в сегментах ADTS-кадры AAC."
+  },
+  "precedent": "UK-каталог содержит 117 HLS-потоков; tools/validate-streams.mjs умеет HLS. В наземных каталогах EE/FI HLS не встречается — румынский radiozu становится первым HLS-записью в наземном каталоге.",
+  "engineLimitation": "Web-плеер EFIRIO использует plain <audio> (new Audio()/audio.src) без hls.js. Воспроизведение HLS-потока зависит от нативной поддержки браузером: Safari/iOS воспроизводит, desktop Chrome/Firefox — нет. Ограничение зафиксировано на этапе каталогизации; правка аудиодвижка в R3.5 не выполнялась."
+ },
+ "nowPlaying": {
+  "status": "none-confirmed",
+  "note": "Для румынских станций подтверждённых CORS-эндпоинтов метаданных не найдено. icy-name отражает имя потока («RFI», «RADIO ROMÂNIA BACĂU», «RomanticFM Live»), а не текущий трек. Все записи каталога — metadata.type=none, url=null, historyAvailable=false."
+ },
+ "curation": {
+  "peakTransmitters": "Из wiki-таблиц исключены строки пиковых передатчиков (Rarău, Parâng, Bucegi, Coștila, Releu/Dealul/Platoul и т.п.): в каталог попадают только населённые пункты. Рядом с этим отброшены строки без разрешимого города или жудеца.",
+  "amSigungSift": "Sighetu Marmației на AM 1404 кГц исключена: AM-покрытие Maramureș уже представлено национальными станциями, а строка прошла фильтр только по AM-диапазону.",
+  "dedupe": "Строки дедуплицированы по «город|МГц|диапазон». Повторяющиеся МГц в разных городах сохраняются — это штатное FM-покрытие (Kiss FM — 19 жудецов вне regions[], Digi FM — 14).",
+  "regionModel": "regions[] содержит только жудецы с региональными/локальными станциями (22). Nationwide-станции в регионы не включаются: их частотные строки служат для поиска и отображения, но не участвуют в геофильтре. Все-Румыния показывает 16 nationwide-станций; после выбора жудеца — его региональные/локальные станции."
+ },
+ "bacauFix": {
+  "stationId": "radiobacau",
+  "before": "https://stream1.srr.ro:8208/",
+  "after": "https://stream1.srr.ro:8208/;stream/1",
+  "reason": "Shoutcast DNAS 2.6.1.777 отдаёт HTML-страницу статуса браузерным User-Agent без суффикса ;stream/1. С суффиксом — HTTP 200, audio/aacp, ADTS-кадры AAC, icy-name «RADIO ROMÂNIA BACĂU», icy-br 320, Access-Control-Allow-Origin: *. Подтверждено 17.10.2026 из Финляндии.",
+  "note": "Ранее записанный URL был единственным потоком, не прошедшим браузерную проверку 32 потоков (31 OK). Фикс устраняет единственный отказ."
+ },
+ "verifiedVariants": [
+  {
+   "key": "tgmures-hungarian",
+   "name": "Bukaresti Rádió Románia / Kolozsvári Rádió Románia / Marosvásárhelyi Rádió Románia",
+   "note": "Венгерские региональные службы Radio Romania на частотах таргета Mureș; перечислены в футере romaniaregional.ro и подтверждены как вещающие. Не опубликованы отдельными записями: в проекте принят прецедент Pereraadio (одна запись на сеть вместо раздельных региональных фидов). Идентифицированы и задокументированы для возможного отдельного согласования.",
+   "sources": [
+    "romaniaregional.ro (футер)",
+    "ro.wikipedia (венгерская служба Radio Târgu Mureș)"
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "key": "romaniaregional",
+   "name": "Radio România Regional",
+   "reasonCode": "umbrella-brand-no-own-frequencies",
+   "reason": "Зонтичный бренд SRR над 10 опубликованными региональными студиями; собственных FM-частот у бренда нет (в wiki-таблице — строки студий, не бренда). Официальный маунт https://stream4.srr.ro:8443/radio-ro-regio-100ro работает (mpeg 320k, icy-name «Radio România Regional 100% Românesc») и первым в официальном плейлисте romaniaregional.ro, но публикация бренда дублировала бы региональные записи. Исходная причина «нет HTTPS-потока» была неверной — исправлено.",
+   "factCorrection": "Частный домен radioregional.ro (Activ FM, Suceava) не принадлежит SRR; официальный домен бренда — romaniaregional.ro (через редирект с radioromaniaregional.ro). Ранее в документации был указан неверный домен.",
+   "sources": [
+    "romaniaregional.ro",
+    "ro.wikipedia"
+   ]
+  },
+  {
+   "key": "romanticfm",
+   "name": "Romantic FM",
+   "reasonCode": "no-https-stream",
+   "reason": "Единственный HTTPS-поток (HLS) мёртв: https://live14digi.antenaplay.ro/radioromantic/radioromantic-48000.m3u8 заморожен на MEDIA-SEQUENCE 24128023 с PROGRAM-DATE-TIME 2025-03-24T12:25:44Z — последовательность не продвигается (в т.ч. с cache-bust и no-cache), следующий сегмент 12065/seg48000-24128033.aac отдаёт 404. Официальный плеер станции (romanticfm.ro/js/app.js) использует playbackURL http://ivm.antenaplay.ro/liveaudio/radioromantic/playlist.m3u8, чей мастер-плейлист содержит ровно один вариант — тот же замороженный live14digi. premium.romanticfm.ro/live — HTML-страница, не аудио. Эфир реально идёт только по HTTP: http://zuicast.digitalag.ro:9420/romanticfm (200, audio/aacp, icy-name «RomanticFM Live», icy-br 56); HTTPS на этом хосте не отвечает. По правилу «только публичные HTTPS» не опубликована — решение пользователя 17.10.2026.",
+   "verificationNote": "Первоначальная оценка «цепочка работает, без DRM, сегменты AAC» была сделана по одному пробному скачиванию сегмента из CDN-кэша. Проверка ливности (продвижение последовательности + доступность следующего сегмента + официальный мастер-плейлист) опровергла её.",
+   "sources": [
+    "live14digi.antenaplay.ro",
+    "romanticfm.ro/js/app.js",
+    "zuicast.digitalag.ro",
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "nationalfm",
+   "name": "Național FM",
+   "reasonCode": "no-https-stream",
+   "reason": "Единственный поток http://live2.nationalfm.ro:8001/ — только HTTP; HTTPS-вариант не поднимается. Для HTTPS-страницы это mixed content.",
+   "sources": [
+    "nationalfm.ro",
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "itsybitsy",
+   "name": "Itsy Bitsy",
+   "reasonCode": "no-https-stream",
+   "reason": "Единственный поток http://live.itsybitsy.ro:8000/itsybitsy — только HTTP; HTTPS-вариант не поднимается.",
+   "sources": [
+    "itsybitsy.ro",
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "rri",
+   "name": "Radio România Internațional (RRI)",
+   "reasonCode": "no-https-stream",
+   "reason": "Сайт rri.ro отвечает по HTTPS 200, но потоков в HTML нет. Известные потоки http-only (http://89.34.97.244:8000), stream.rri.ro не резолвится. RRI — внешняя служба Румынии на иностранных языках; эфирный аналог в RO-каталоге отсутствует.",
+   "sources": [
+    "rri.ro",
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "varatec",
+   "name": "Radio Văratec",
+   "reasonCode": "no-official-presence",
+   "reason": "Монастырская станция (мужской/женский монастырь Вăратек); подтверждённого публичного HTTPS-потока и официального сайта с частотной сетью нет. Отброшена на этапе курации.",
+   "sources": [
+    "ro.wikipedia",
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "peak-transmitters",
+   "name": "Пиковые передатчики (Rarău / Parâng / Bucegi / Coștila / Releu / Dealul / Platoul)",
+   "reasonCode": "transmitter-not-locality",
+   "reason": "Строки wiki-таблиц, где вместо населённого пункта указан горный или ретрансляционный объект, не несут географии для пользователя. Исключены фильтром при парсинге; в каталоге только строки с разрешимым городом и жудецом.",
+   "sources": [
+    "ro.wikipedia"
+   ]
+  },
+  {
+   "key": "chisinau-rfi",
+   "name": "RFI Chișinău 107.3 FM",
+   "reasonCode": "foreign-broadcaster",
+   "reason": "Строка присутствует в официальном перечне частот RFI România (rfi.fr/ro), но Chișinău — столица Молдовы, вне каталога RO. Исключение подтверждено в записи rfi.verification.notes.",
+   "sources": [
+    "rfi.fr/ro"
+   ]
+  },
+  {
+   "key": "dab-muzical",
+   "name": "Radio România Muzical (DAB+ 223.936 MHz, блок 12A)",
+   "reasonCode": "dab-only-documented",
+   "reason": "Muzical заявлена на DAB+; в наземном каталоге она уже присутствует как FM-станция. DAB-частота (223.936 MHz, 12A) документируется и отдельной записью не публикуется — по правилам этапа DAB-станции не публикуются без отдельного согласования.",
+   "sources": [
+    "ro.wikipedia",
+    "srr.ro"
+   ]
+  },
+  {
+   "key": "long-tail",
+   "name": "Radio Maria / Dance FM / Gold FM / прочая длинная хвостовая часть",
+   "reasonCode": "stream-not-confirmed",
+   "reason": "Упоминаются в публичных каталогах, но подтверждённая официальная HTTPS-стрима с проверяемой аудио-сигнатурой не найдена. Оставлены unverified candidates; в каталог не включены.",
+   "sources": [
+    "radio-browser"
+   ]
+  },
+  {
+   "key": "sighet-am",
+   "name": "Sighetu Marmației AM 1404 кГц",
+   "reasonCode": "duplicate-coverage",
+   "reason": "AM-покрытие жудеца Maramureș уже представлено национальными станциями (RRA и др.) на других AM-частотах; строка не добавляет новой станции.",
+   "sources": [
+    "ro.wikipedia"
+   ]
+  }
+ ]
+}

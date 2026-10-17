@@ -211,3 +211,39 @@ No station's geography was inferred from server location, TLD or site language; 
 - The DAB+ channel list remains partially documented (JS widget); a future stage may extract it and decide the DAB category rule.
 - Kaguraadio's rotating HLS chunklist query may break the primary URL without a catalogue change; the mount is the stable part.
 - Desktop browser verification only — not tested on real iPhone Safari hardware; no iOS background-playback claims.
+
+## Romania (R3.5) — numbers (verified 2026-10-17)
+
+- **32 published** — 27 terrestrial (`data/romania.json`) plus 5 internet-only (`data/internet/romania.json`); 11 excluded with a recorded reason each, plus 1 verified variant documented without publishing.
+- Terrestrial split: 16 nationwide (Radio România Actualități, Cultural, Muzical, Antena Satelor, Trinitas, Kiss FM, Europa FM, Digi FM, Virgin Radio, Rock FM, Magic FM, PRO FM, Guerrilla, Impuls, **RFI România**, **Radio ZU**), 10 regional, 1 local (București FM). Geography: 22 județe carrying regional/local stations, 27 cities. 623 frequency rows — 586 FM, 37 AM (encoded as MHz with `band: 'AM'`, UI prints «кГц»).
+- Streams: 30/30 terrestrial HTTPS — 20 AAC, 9 MP3, 1 HLS. Radio Bacău's Shoutcast mount requires `;stream/1` for a browser User-Agent; applying it converted the single failing entry of a 32-stream browser check into a passing one.
+- Now Playing: 0 of 32 — no Romanian station exposed a CORS-readable metadata endpoint; icy-name carries the stream name («RFI», «RADIO ROMÂNIA BACĂU»), not a track. Absence never blocks publication.
+- Exclusions (11): 1 dead HTTPS (Romantic FM — HLS frozen since 2025-03-24, broadcast alive only over HTTP); 3 http-only (Național FM, Itsy Bitsy, RRI); 1 umbrella brand without its own frequencies (Radio România Regional); 1 foreign city on a broadcaster's own frequency list (RFI Chișinău 107.3); 1 DAB-only (Muzical 223.936 MHz, 12A); 1 long tail unconfirmed (Radio Maria, Dance FM, Gold FM…); 1 duplicate AM coverage (Sighet 1404); 1 monastery station without official presence (Văratec); 1 filter over transmitter-object rows (Rarău, Parâng, Bucegi, Coștila). Per-station reasons and sources are in `data/research/romania.json`.
+
+## Romania — evidence tiers
+
+1. **ro.wikipedia frequency tables** — the machine-readable basis for every FM/AM row: «Frecvențe» tables parsed per station, each row resolved to a city and a județ through a city→județ map, peak transmitters and unresolvable localities dropped rather than guessed.
+2. **Official station players** — stream URLs taken from each station's own page or JS bundle and validated by real audio bytes (ADTS AAC or MPEG frame sync), never by HTTP status alone. Radio ZU's playlist came out of AntenaPlay's shared bundle and radiozu.ro's own configuration.
+3. **RFI România's own listen page** — `rfi.fr/ro/cum-să-asculți-rfi` publishes both the six Romanian frequencies and the «Link ascultare online AAC/MP3» URLs; this page overrode an earlier "WAF-blocked, skip RFI" note.
+4. **SRR's official mount list** — `stream4.srr.ro:8443` carries every regional mount except Bacău, which lives on `stream1.srr.ro:8208` (Shoutcast DNAS 2.6.1.777).
+5. **HLS manifests checked for liveness, not existence** — sequence advance, next-segment resolution, and absence of `#EXT-X-KEY`/SAMPLE-AES.
+
+No station's geography was inferred from server location, TLD or stream name; Chișinău was excluded even though the broadcaster lists it on its own Romanian page.
+
+## Romania — method decisions worth recording
+
+- **A stale CDN cache is not a working stream.** Romantic FM's HLS passed a naive fetch (manifest plus one segment, no DRM, real AAC) and failed a liveness check: the playlist held `MEDIA-SEQUENCE 24128023` with `PROGRAM-DATE-TIME 2025-03-24T12:25:44Z`, did not advance over 25 s under cache-bust and `Cache-Control: no-cache`, and the very next segment `12065/seg48000-24128033.aac` returned 404 — a player would stall after ~50 s. The station's own `playbackURL` in its player bundle resolves through a master playlist with exactly one variant, the same dead channel; the only live path is `http://zuicast.digitalag.ro:9420/romanticfm` (icy-name «RomanticFM Live»), which answers no HTTPS. Verification now requires the media sequence to advance *and* the next segment to resolve.
+- **The umbrella brand does not ship as a station.** Radio România Regional works as a mount (`mpeg` 320 kbps, icy-name «Radio România Regional 100% Românesc», first in the operator's own playlist) but owns no frequencies of its own — the wiki table lists its ten studios, so a brand record would duplicate the regional entries. Its earlier recorded reason ("no HTTPS stream") was factually wrong and is corrected here; separately, `radioregional.ro` is a private Activ FM (Suceava) domain, not SRR — the brand lives at `romaniaregional.ro` via a redirect from `radioromaniaregional.ro`.
+- **RFI is Romanian, not Moldovan.** The official listen page lists Chișinău 107.3 FM beside six Romanian cities; the city is dropped as foreign while București 93.5, Craiova 94, Cluj-Napoca 91.7, Iași 97.9, Timișoara 96.9 and Sibiu 89.0 publish. The service is the Romanian one: its `icy-url` is `https://www.rfi.ro` and that domain 301s to the Romanian section.
+- **HLS ships where it is the only HTTPS, and the engine limit is recorded, not worked around.** Radio ZU's direct mounts are HTTP-only, so its AntenaPlay playlist (48 kbps AAC segments, no DRM) is the only public HTTPS; the UK catalogue's 117 HLS entries are the accepted precedent and `tools/validate-streams.mjs` already understands HLS. The web player remains a plain `<audio>` with no hls.js, so desktop Chrome/Firefox will not play this one entry — documented as a limitation rather than fixed with a new dependency inside a catalogue stage.
+- **Nationwide is a footprint rule, as elsewhere.** RFI (six cities across five județe) and Radio ZU (50 cities) join the nationwide set and stay out of `regions[]`; their frequency rows serve search and display only, and the All-Romania view grows from 14 to 16 entries.
+- **Shoutcast needs its `;stream/1`.** Radio Bacău's mount serves an HTML status page to browser User-Agent clients without the suffix; with it the stream delivers ADTS AAC at 320 kbps with `Access-Control-Allow-Origin: *`.
+- **Hungarian regional services are documented, not published.** Bukaresti, Kolozsvári and Marosvásárhelyi Rádió Románia appear in the operator's own footer and are confirmed broadcasting; following the Pereraadio precedent they stay documented under the one network record rather than split into copies.
+
+## Romania — known gaps
+
+- Now Playing works for 0 of 32 entries; no browser-readable endpoint was confirmed, so none ships rather than with a guessed adapter.
+- Romantic FM stays excluded while its HTTPS encoder is dead; it becomes publishable the moment a fresh mount appears, and its HTTP broadcast is a known live fallback the project does not adopt.
+- Radio România Regional's ten studios publish as the regional records; if the brand mount ever carries distinct content, a separate rule would be needed.
+- HLS playback is unverified on real iPhone Safari hardware, and desktop Chrome/Firefox cannot play the single HLS entry (Radio ZU); no iOS background-playback claims.
+- The long tail (Radio Maria, Dance FM, Gold FM and similar) remains unverified candidates; none was promoted on aggregator listings alone.

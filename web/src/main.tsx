@@ -118,8 +118,40 @@ type EstoniaCatalogue = {
   regions: EstoniaRegion[];
   cities: EstoniaCity[];
 };
+/**
+ * Romania (R3.5) mirrors the Finland/Estonia shape exactly, including the AM band
+ * on a frequency row: Romania's long-wave/AM services (e.g. Radio Romania
+ * Actualități on AM) render «<kHz> кГц» instead of an invented FM number.
+ */
+type RomaniaFrequency = { locality: string | null; region: string | null; mhz: number; band?: 'FM' | 'AM' };
+type RomaniaStation = {
+  id: string;
+  name: string;
+  type: 'nationwide' | 'regional' | 'local';
+  language: string | null;
+  genres: string[];
+  frequencyMHz: number | null;
+  frequencies: RomaniaFrequency[];
+  website: string | null;
+  streams: InternetStream[];
+  metadata: MetadataConfig;
+  logo: string | null;
+  status: Station['status'];
+  verification: { stationVerifiedAt: string | null; frequencyVerifiedAt: string | null; sources: string[]; notes: string };
+};
+type RomaniaRegion = { id: string; name: string; stations: string[]; cities: string[] };
+type RomaniaCity = { id: string; name: string; regionId: string; stations: string[] };
+type RomaniaCatalogue = {
+  schemaVersion: number;
+  updatedAt: string | null;
+  country: { id: string; name: string; code: string; timeZone: string | null };
+  stations: RomaniaStation[];
+  nationwide: string[];
+  regions: RomaniaRegion[];
+  cities: RomaniaCity[];
+};
 /** Shared view shape so the Russia audit/metadata helpers accept Finland/Estonia entries structurally. */
-type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStation;
+type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStation | RomaniaStation;
 type RuntimeState = 'available' | 'connecting' | 'live' | 'failed';
 type AuditResult = { stationId: string; stationName: string; ok: boolean; streamIndex: number | null; format: string | null; error: string | null };
 type StationMetadataAudit = MetadataProbeResult & { stationId: string; stationName: string };
@@ -141,6 +173,11 @@ const ESTONIA_REGION_KEY = 'efirio.estoniaRegionId';
 const ESTONIA_CITY_KEY = 'efirio.estoniaCityId';
 const ESTONIA_ALL_REGIONS = 'all';
 const ESTONIA_ALL_CITIES = 'all';
+/** Romania keeps its own geography keys, exactly like Finland and Estonia. */
+const ROMANIA_REGION_KEY = 'efirio.romaniaRegionId';
+const ROMANIA_CITY_KEY = 'efirio.romaniaCityId';
+const ROMANIA_ALL_REGIONS = 'all';
+const ROMANIA_ALL_CITIES = 'all';
 
 /** The index is tiny and always bundled; each country's stations are a separate chunk fetched only when opened. */
 // The index ships as data rather than a typed module, so it is narrowed through
@@ -180,6 +217,19 @@ function loadEstoniaCatalogue(): Promise<EstoniaCatalogue> {
   const loader = estoniaModules['../../data/estonia.json'];
   if (!loader) return Promise.reject(new Error('Estonia catalogue unavailable'));
   return loader().then((module) => module as EstoniaCatalogue);
+}
+
+/**
+ * The Romanian terrestrial catalogue follows the same pattern: a single country
+ * file behind its own glob, fetched only when «România» is opened. The Romanian
+ * internet-only catalogue is a regular `data/internet/*.json` country file and
+ * reuses `loadInternetCountry('romania')` through the shared Internet index.
+ */
+const romaniaModules = import.meta.glob('../../data/romania.json', { import: 'default' });
+function loadRomaniaCatalogue(): Promise<RomaniaCatalogue> {
+  const loader = romaniaModules['../../data/romania.json'];
+  if (!loader) return Promise.reject(new Error('Romania catalogue unavailable'));
+  return loader().then((module) => module as RomaniaCatalogue);
 }
 
 /** Every city in the catalogue with its region, so the UI can walk region → city without hard-coding either. */
@@ -278,6 +328,7 @@ function App() {
   const isInternet = scope === 'internet';
   const isFinland = scope === 'finland';
   const isEstonia = scope === 'estonia';
+  const isRomania = scope === 'romania';
   /** Falls back to the first listed country when the saved id is unknown or removed. */
   const internetCountry = React.useMemo(() => internetIndex.countries.find((candidate) => candidate.id === internetCountryId) ?? internetIndex.countries[0] ?? null, [internetCountryId]);
   /** Finland terrestrial catalogue, loaded on demand from its own lazy chunk. */
@@ -288,6 +339,10 @@ function App() {
   const [estoniaData, setEstoniaData] = React.useState<EstoniaCatalogue | null>(null);
   const [estoniaLoading, setEstoniaLoading] = React.useState(false);
   const [estoniaError, setEstoniaError] = React.useState<MessageKey | null>(null);
+  /** Romania terrestrial catalogue, loaded on demand from its own lazy chunk. */
+  const [romaniaData, setRomaniaData] = React.useState<RomaniaCatalogue | null>(null);
+  const [romaniaLoading, setRomaniaLoading] = React.useState(false);
+  const [romaniaError, setRomaniaError] = React.useState<MessageKey | null>(null);
   /**
    * Finland geography persists under its own keys: neither the saved Russian city
    * nor the UK internet selection is ever read or written here. Unknown or removed
@@ -355,6 +410,16 @@ function App() {
   const eeRegion = estoniaData?.regions.find((candidate) => candidate.id === estoniaRegionId) ?? null;
   const eeCities = React.useMemo(() => (eeRegion && estoniaData ? estoniaData.cities.filter((candidate) => candidate.regionId === eeRegion.id) : []), [estoniaData, eeRegion]);
   const eeCity = eeCities.find((candidate) => candidate.id === estoniaCityId) ?? null;
+  /**
+   * Romania geography persists under its own keys, exactly like Finland and
+   * Estonia: the Russian city, the Finland/Estonia choices and the Internet
+   * country selection are never read or written here.
+   */
+  const [romaniaRegionId, setRomaniaRegionId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(ROMANIA_REGION_KEY)) || ROMANIA_ALL_REGIONS);
+  const [romaniaCityId, setRomaniaCityId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(ROMANIA_CITY_KEY)) || ROMANIA_ALL_CITIES);
+  const roRegion = romaniaData?.regions.find((candidate) => candidate.id === romaniaRegionId) ?? null;
+  const roCities = React.useMemo(() => (roRegion && romaniaData ? romaniaData.cities.filter((candidate) => candidate.regionId === roRegion.id) : []), [romaniaData, roRegion]);
+  const roCity = roCities.find((candidate) => candidate.id === romaniaCityId) ?? null;
   /** Estonia search covers station names, cities and regions across the whole catalogue (all 15 maakonnad). */
   const [eeQuery, setEeQuery] = React.useState('');
   const trimmedEeQuery = eeQuery.trim();
@@ -398,6 +463,48 @@ function App() {
     const ids = !eeRegion ? estoniaData.nationwide : (eeCity ? eeCity.stations : eeRegion.stations);
     return ids.map((id) => eeGeoIndex.get(id)?.station).filter((station): station is EstoniaStation => !!station);
   }, [estoniaData, eeGeoIndex, trimmedEeQuery, eeSearchResults, eeRegion, eeCity]);
+  /** Romania search covers station names, cities and județe across the whole catalogue. */
+  const [roQuery, setRoQuery] = React.useState('');
+  const trimmedRoQuery = roQuery.trim();
+  const roGeoIndex = React.useMemo(() => {
+    const index = new Map<string, { station: RomaniaStation; regions: string[]; cities: string[] }>();
+    if (!romaniaData) return index;
+    for (const station of romaniaData.stations) index.set(station.id, { station, regions: [], cities: [] });
+    for (const region of romaniaData.regions) for (const id of region.stations) index.get(id)?.regions.push(region.name);
+    for (const cityEntry of romaniaData.cities) {
+      const regionName = romaniaData.regions.find((candidate) => candidate.id === cityEntry.regionId)?.name ?? '';
+      for (const id of cityEntry.stations) {
+        const entry = index.get(id);
+        if (!entry) continue;
+        entry.cities.push(cityEntry.name);
+        if (regionName && !entry.regions.includes(regionName)) entry.regions.push(regionName);
+      }
+    }
+    return index;
+  }, [romaniaData]);
+  const roSearchResults = React.useMemo(() => {
+    const needle = trimmedRoQuery.toLowerCase();
+    if (!needle) return [];
+    const results: Array<{ station: RomaniaStation; where: string }> = [];
+    for (const entry of roGeoIndex.values()) {
+      const hitCity = entry.cities.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      const hitRegion = entry.regions.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      // Frequency rows are territory-tagged, so a nationwide station is findable
+      // by its transmitter town without being copied into city buckets.
+      const hitFreq = entry.station.frequencies.find((value) => (value.locality ?? '').toLowerCase().includes(needle) || (value.region ?? '').toLowerCase().includes(needle)) ?? null;
+      const hitFreqLocality = hitFreq && (hitFreq.locality ?? '').toLowerCase().includes(needle) ? hitFreq.locality : null;
+      const hitFreqRegion = hitFreq && (hitFreq.region ?? '').toLowerCase().includes(needle) ? hitFreq.region : null;
+      const match = entry.station.name.toLowerCase().includes(needle) || !!hitCity || !!hitRegion || !!hitFreq;
+      if (match) results.push({ station: entry.station, where: hitCity ?? hitFreqLocality ?? hitRegion ?? hitFreqRegion ?? entry.cities[0] ?? entry.regions[0] ?? '' });
+    }
+    return results;
+  }, [roGeoIndex, trimmedRoQuery]);
+  const romaniaVisibleStations = React.useMemo<RomaniaStation[]>(() => {
+    if (!romaniaData) return [];
+    if (trimmedRoQuery) return roSearchResults.map((entry) => entry.station);
+    const ids = !roRegion ? romaniaData.nationwide : (roCity ? roCity.stations : roRegion.stations);
+    return ids.map((id) => roGeoIndex.get(id)?.station).filter((station): station is RomaniaStation => !!station);
+  }, [romaniaData, roGeoIndex, trimmedRoQuery, roSearchResults, roRegion, roCity]);
   /** The selected Internet country's endonym, shared by the picker, breadcrumb, card subtitles and player. */
   const internetCountryName = internetCountry ? countryEndonym(internetCountry.id, internetCountry.name) : '';
   /** Where the player says we are: a country endonym (never translated) or a terrestrial city/region. */
@@ -405,9 +512,11 @@ function App() {
     ? (internetCountryName || t('crumbInternet'))
     : isEstonia
       ? (eeCity?.name ?? eeRegion?.name ?? countryEndonym('estonia'))
-      : isFinland
-        ? (fiCity?.name ?? fiRegion?.name ?? countryEndonym('finland'))
-        : city.name;
+      : isRomania
+        ? (roCity?.name ?? roRegion?.name ?? countryEndonym('romania'))
+        : isFinland
+          ? (fiCity?.name ?? fiRegion?.name ?? countryEndonym('finland'))
+          : city.name;
   const russianStations: Station[] = city?.stations ?? [];
   /**
    * One shared country-file state serves the unified Internet category, and it
@@ -416,14 +525,16 @@ function App() {
    */
   const netCountryData = isInternet && internetCountryData?.id === internetCountry?.id ? internetCountryData : null;
   const internetStations: InternetStation[] = netCountryData?.stations ?? [];
-  const stations: Station[] = isInternet ? internetStations : isEstonia ? estoniaVisibleStations : isFinland ? finlandVisibleStations : russianStations;
+  const stations: Station[] = isInternet ? internetStations : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isFinland ? finlandVisibleStations : russianStations;
   const cityTimeZone = netCountryData
     ? netCountryData.timeZone
     : isEstonia
       ? (estoniaData?.country.timeZone ?? null)
-      : isFinland
-        ? (finlandData?.country.timeZone ?? null)
-        : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
+      : isRomania
+        ? (romaniaData?.country.timeZone ?? null)
+        : isFinland
+          ? (finlandData?.country.timeZone ?? null)
+          : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
   const playableStations = React.useMemo(() => stations.filter((station) => station.streams.length > 0), [stations]);
   const audioRef = React.useRef<HTMLAudioElement | null>(null); const selectedRef = React.useRef<Station | null>(null); const streamIndexRef = React.useRef(0); const shouldPlayRef = React.useRef(false); const playTokenRef = React.useRef(0); const nowPlayingRef = React.useRef<NormalizedTrack | null>(null);
   /** Stream assigned for the current playback session; null while interrupted. */
@@ -562,6 +673,27 @@ function App() {
     safeSetItem(() => localStorage.setItem(ESTONIA_CITY_KEY, cityEntry?.id ?? ESTONIA_ALL_CITIES));
   }, [eeCities, teardownPlayback]);
 
+  /**
+   * Region and city changes inside Romania behave exactly like the Estonia ones:
+   * playback stops and the selection persists under the Romania-only keys; every
+   * other scope's keys are never touched.
+   */
+  const changeRomaniaRegion = React.useCallback((nextRegionId: string) => {
+    const region = romaniaData?.regions.find((candidate) => candidate.id === nextRegionId) ?? null;
+    teardownPlayback();
+    setRomaniaRegionId(region?.id ?? ROMANIA_ALL_REGIONS);
+    setRomaniaCityId(ROMANIA_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(ROMANIA_REGION_KEY, region?.id ?? ROMANIA_ALL_REGIONS));
+    safeSetItem(() => localStorage.setItem(ROMANIA_CITY_KEY, ROMANIA_ALL_CITIES));
+  }, [romaniaData, teardownPlayback]);
+
+  const changeRomaniaCity = React.useCallback((nextCityId: string) => {
+    const cityEntry = roCities.find((candidate) => candidate.id === nextCityId) ?? null;
+    teardownPlayback();
+    setRomaniaCityId(cityEntry?.id ?? ROMANIA_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(ROMANIA_CITY_KEY, cityEntry?.id ?? ROMANIA_ALL_CITIES));
+  }, [roCities, teardownPlayback]);
+
   /** Countries are separate static files, loaded only when that country is opened. */
   React.useEffect(() => {
     if (!isInternet || !internetCountry) return;
@@ -607,6 +739,19 @@ function App() {
       .finally(() => { if (!cancelled) setEstoniaLoading(false); });
     return () => { cancelled = true; };
   }, [isEstonia, estoniaData]);
+
+  /** The Romanian terrestrial catalogue is a lazy chunk, fetched on the first switch to the category. */
+  React.useEffect(() => {
+    if (!isRomania || romaniaData) return;
+    let cancelled = false;
+    setRomaniaLoading(true);
+    setRomaniaError(null);
+    void loadRomaniaCatalogue()
+      .then((data) => { if (!cancelled) setRomaniaData(data); })
+      .catch(() => { if (!cancelled) setRomaniaError('errRomaniaLoad'); })
+      .finally(() => { if (!cancelled) setRomaniaLoading(false); });
+    return () => { cancelled = true; };
+  }, [isRomania, romaniaData]);
 
   React.useEffect(() => {
     setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus(null);
@@ -690,7 +835,7 @@ function App() {
     return internetStations.filter((station) => (!trimmedNetQuery || station.name.toLowerCase().includes(trimmedNetQuery)) && (!netGenre || station.genres.includes(netGenre)) && (!netCity || station.city === netCity));
   }, [isInternet, internetStations, trimmedNetQuery, netGenre, netCity]);
   /** Filters never leak across categories or countries: a UK city must not hide Finnish stations. */
-  React.useEffect(() => { setNetQuery(''); setNetGenre(''); setNetCity(''); setFiQuery(''); }, [scope, internetCountryId]);
+  React.useEffect(() => { setNetQuery(''); setNetGenre(''); setNetCity(''); setFiQuery(''); setRoQuery(''); }, [scope, internetCountryId]);
   /**
    * The internet catalogue holds well over a thousand entries, so only this many rows
    * are mounted at once; the rest are reached incrementally through "Show more".
@@ -698,9 +843,9 @@ function App() {
    */
   const VISIBLE_CHUNK = 60;
   const [visibleCount, setVisibleCount] = React.useState(VISIBLE_CHUNK);
-  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId, trimmedEeQuery, estoniaData, estoniaRegionId, estoniaCityId]);
-  const shownList: Station[] = isInternet ? filteredInternet : isEstonia ? estoniaVisibleStations : isFinland ? finlandVisibleStations : stations;
-  const chunkedView = isInternet || isFinland || isEstonia;
+  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId, trimmedEeQuery, estoniaData, estoniaRegionId, estoniaCityId, trimmedRoQuery, romaniaData, romaniaRegionId, romaniaCityId]);
+  const shownList: Station[] = isInternet ? filteredInternet : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isFinland ? finlandVisibleStations : stations;
+  const chunkedView = isInternet || isFinland || isEstonia || isRomania;
   const visibleStations: Station[] = chunkedView ? shownList.slice(0, visibleCount) : stations;
   /**
    * The frequency chip follows the current geography — the place that matched an
@@ -751,6 +896,33 @@ function App() {
     }
     return ee.frequencyMHz != null ? { mhz: ee.frequencyMHz, band: 'FM' } : null;
   };
+  /**
+   * Romania chip: the matched frequency with its band (AM rows render kHz),
+   * exactly like Estonia; without a confirmed value for that territory the
+   * «RO» geo chip shows instead — an FM number is never invented.
+   */
+  const roFrequency = (ro: RomaniaStation, where?: string): { mhz: number; band: 'FM' | 'AM' } | null => {
+    const bandOf = (value: RomaniaFrequency): { mhz: number; band: 'FM' | 'AM' } => ({ mhz: value.mhz, band: value.band ?? 'FM' });
+    if (ro.frequencies.length) {
+      if (where) {
+        const hit = ro.frequencies.find((value) => (value.locality && (value.locality === where || value.locality.startsWith(where) || where.startsWith(value.locality))) || value.region === where);
+        if (hit) return bandOf(hit);
+      }
+      if (roCity) {
+        const hit = ro.frequencies.find((value) => value.locality && (value.locality === roCity.name || value.locality.startsWith(roCity.name)));
+        if (hit) return bandOf(hit);
+      }
+      if (roRegion) {
+        const hit = ro.frequencies.find((value) => value.region === roRegion.name);
+        if (hit) return bandOf(hit);
+      }
+      if (ro.frequencyMHz != null) {
+        const hit = ro.frequencies.find((value) => value.mhz === ro.frequencyMHz);
+        if (hit) return bandOf(hit);
+      }
+    }
+    return ro.frequencyMHz != null ? { mhz: ro.frequencyMHz, band: 'FM' } : null;
+  };
   const netGeoCode = internetCountry?.code ?? 'GB';
 
   return <main className="shell">
@@ -759,9 +931,11 @@ function App() {
       ? <><span>{t('crumbInternet')}</span><b>›</b><span>{internetCountryName || '—'}</span><b>›</b><span>{t('crumbStations')}</span></>
       : isEstonia
         ? <><span>{countryEndonym('estonia')}</span><b>›</b><span>{eeRegion?.name ?? t('allCountry')}</span>{eeCity ? <><b>›</b><span>{eeCity.name}</span></> : null}</>
-        : isFinland
-          ? <><span>{countryEndonym('finland')}</span><b>›</b><span>{fiRegion?.name ?? t('allCountry')}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
-          : <><span>{countryEndonym('russia')}</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
+        : isRomania
+          ? <><span>{countryEndonym('romania')}</span><b>›</b><span>{roRegion?.name ?? t('allCountry')}</span>{roCity ? <><b>›</b><span>{roCity.name}</span></> : null}</>
+          : isFinland
+            ? <><span>{countryEndonym('finland')}</span><b>›</b><span>{fiRegion?.name ?? t('allCountry')}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
+            : <><span>{countryEndonym('russia')}</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
     <section className="cityPicker">
       <label className="cityField scopeField"><span>{t('categoryLabel')}</span>
         <select value={scope} onChange={(event) => changeScope(event.target.value as Scope)}>
@@ -769,6 +943,7 @@ function App() {
           <option value="internet">{t('scopeInternet')}</option>
           <option value="finland">{countryEndonym('finland')}</option>
           <option value="estonia">{countryEndonym('estonia')}</option>
+          <option value="romania">{countryEndonym('romania')}</option>
         </select>
       </label>
       <label className="cityField"><span>{t('languageLabel')}</span>
@@ -829,6 +1004,22 @@ function App() {
         <label className="cityField citySearch"><span>{t('findStation')}</span>
           <input type="search" inputMode="search" autoComplete="off" value={eeQuery} onChange={(event) => setEeQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchEstoniaAria', { country: countryEndonym('estonia') })} />
         </label>
+      </> : isRomania ? <>
+        <label className="cityField"><span>{t('regionLabel')}</span>
+          <select value={roRegion?.id ?? ROMANIA_ALL_REGIONS} onChange={(event) => changeRomaniaRegion(event.target.value)}>
+            <option value={ROMANIA_ALL_REGIONS}>{t('allCountry')}</option>
+            {(romaniaData?.regions ?? []).map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+          </select>
+        </label>
+        {roRegion ? <label className="cityField"><span>{t('cityLabel')}</span>
+          <select value={roCity?.id ?? ROMANIA_ALL_CITIES} onChange={(event) => changeRomaniaCity(event.target.value)}>
+            <option value={ROMANIA_ALL_CITIES}>{t('allCities')}</option>
+            {roCities.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
+          </select>
+        </label> : null}
+        <label className="cityField citySearch"><span>{t('findStation')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={roQuery} onChange={(event) => setRoQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchRomaniaAria', { country: countryEndonym('romania') })} />
+        </label>
       </> : <>
         <label className="cityField"><span>{t('regionLabel')}</span>
           <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
@@ -854,6 +1045,8 @@ function App() {
     {isFinland && finlandError ? <section className="catalogueNote error"><span>{t(finlandError, { country: countryEndonym('finland') })}</span></section> : null}
     {isEstonia && estoniaLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: countryEndonym('estonia') })}</span></section> : null}
     {isEstonia && estoniaError ? <section className="catalogueNote error"><span>{t(estoniaError, { country: countryEndonym('estonia') })}</span></section> : null}
+    {isRomania && romaniaLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: countryEndonym('romania') })}</span></section> : null}
+    {isRomania && romaniaError ? <section className="catalogueNote error"><span>{t(romaniaError, { country: countryEndonym('romania') })}</span></section> : null}
     {scope === 'russia' ? <>
       {auditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditPlayable', { ok: auditResults.filter((r) => r.ok).length, total: auditResults.length })}</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllPassed')}</span></section> : null}
       {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditNowPlaying', { ok: metadataAuditResults.filter((r) => r.ok).length, total: metadataAuditResults.length })}</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllMetadata')}</span></section> : null}
@@ -873,6 +1066,21 @@ function App() {
               : <span className="frequency">{eeHit.mhz.toFixed(1)} <small>{t('unitFM')}</small></span>
             : <span className="frequency netGeo">EE</span>}
           <span className="stationName">{ee.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
+          <span className={badgeClass}>{t(badgeKey)}</span>
+        </button>;
+      }
+      if (isRomania) {
+        const ro = station as RomaniaStation;
+        const where = trimmedRoQuery ? (roSearchResults.find((entry) => entry.station.id === ro.id)?.where ?? '') : '';
+        const roHit = roFrequency(ro, where || undefined);
+        const typeLabel = ro.type === 'nationwide' ? t('allCountry') : ro.type === 'regional' ? t('typeRegional') : t('typeLocal');
+        return <button className={`station ${selected?.id === ro.id ? 'selected' : ''}`} key={ro.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
+          {roHit != null
+            ? roHit.band === 'AM'
+              ? <span className="frequency">{Math.round(roHit.mhz * 1000)} <small>{t('unitKHz')}</small></span>
+              : <span className="frequency">{roHit.mhz.toFixed(1)} <small>{t('unitFM')}</small></span>
+            : <span className="frequency netGeo">RO</span>}
+          <span className="stationName">{ro.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
           <span className={badgeClass}>{t(badgeKey)}</span>
         </button>;
       }
@@ -896,7 +1104,7 @@ function App() {
           : station.feed === 'federal' ? <small className="feedScope" title={t('federalFeedHint')}>{t('federalFeed')}</small> : null}</span>
         <span className={badgeClass}>{t(badgeKey)}</span>
       </button>;
-    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && (isInternet ? !!netCountryData : isEstonia ? !!estoniaData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? t('noStationMatches', { query: eeQuery.trim() }) : isFinland && trimmedFiQuery ? t('noStationMatches', { query: fiQuery.trim() }) : trimmedNetQuery ? t('noStationMatches', { query: netQuery.trim() }) : t('noStationFilters')}</span></p> : null}</section>
+    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && !romaniaLoading && (isInternet ? !!netCountryData : isEstonia ? !!estoniaData : isRomania ? !!romaniaData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? t('noStationMatches', { query: eeQuery.trim() }) : isRomania && trimmedRoQuery ? t('noStationMatches', { query: roQuery.trim() }) : isFinland && trimmedFiQuery ? t('noStationMatches', { query: fiQuery.trim() }) : trimmedNetQuery ? t('noStationMatches', { query: netQuery.trim() }) : t('noStationFilters')}</span></p> : null}</section>
     {chunkedView && visibleCount < shownList.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>{t('showMore', { shown: Math.min(VISIBLE_CHUNK, shownList.length - visibleCount), remaining: shownList.length - visibleCount })}</button> : null}
     {history.length > 0 ? <details className="history"><summary>{t('historyTitle', { count: history.length })}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
     <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label={t('prevStation')}>◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || t('chooseStation')}</strong>}<span>{selected ? t(playerStatus.key, { place: placeLabel, version: APP_VERSION, ...playerStatus.params }) : t('placeVersion', { place: placeLabel, version: APP_VERSION })}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? t('pause') : t('play')}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label={t('nextStation')}>▶▶</button></footer>

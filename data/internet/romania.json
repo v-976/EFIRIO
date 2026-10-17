@@ -1,0 +1,205 @@
+{
+ "id": "romania",
+ "name": "Румыния",
+ "code": "RO",
+ "timeZone": "Europe/Bucharest",
+ "updatedAt": "2026-10-17",
+ "stations": [
+  {
+   "id": "manelevechi",
+   "name": "Radio Manele Vechi",
+   "country": "Румыния",
+   "region": null,
+   "city": null,
+   "language": "română",
+   "genres": [
+    "manele"
+   ],
+   "frequencyMHz": null,
+   "website": "https://radiomanelevechi.com/",
+   "streams": [
+    {
+     "url": "https://mars.streamerr.co/radiomanelevechi",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт radiomanelevechi.com — HTTP 200 (17.10.2026).",
+     "Стрим mars.streamerr.co/radiomanelevechi из плеера официального сайта подтверждён 17.10.2026 (200, audio/mpeg, MP3-сигнатура); homepage радиостанции в radio-browser = radiomanelevechi.com (агрегатор использован только для сверки)."
+    ],
+    "notes": "Internet-only: подтверждённого эфирного (FM/AM/DAB) вещания нет. Поток проверен из Финляндии 17.10.2026."
+   }
+  },
+  {
+   "id": "rominimal",
+   "name": "ROminimal Radio",
+   "country": "Румыния",
+   "region": null,
+   "city": null,
+   "language": "română",
+   "genres": [
+    "minimal"
+   ],
+   "frequencyMHz": null,
+   "website": "https://rominimal.club/",
+   "streams": [
+    {
+     "url": "https://r4.rominimal.club/listen/rominimal.club/radio2.m4a",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 206 (Range), Content-Type audio/aac, M4A-ftyp-сигнатура."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт rominimal.club — HTTP 200 (17.10.2026).",
+     "Стрим r4.rominimal.club/listen/rominimal.club/radio2.m4a подтверждён 17.10.2026 (206, audio/aac); homepage в radio-browser = rominimal.club (агрегатор использован только для сверки)."
+    ],
+    "notes": "Internet-only: подтверждённого эфирного вещания нет. Прежний URL rominimal.webradio.ro/r4 мёртв. Поток проверен из Финляндии 17.10.2026."
+   }
+  },
+  {
+   "id": "tequila",
+   "name": "Radio Tequila",
+   "country": "Румыния",
+   "region": null,
+   "city": null,
+   "language": "română",
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://www.radiotequila.ro/",
+   "streams": [
+    {
+     "url": "https://petrecere.radiotequila.ro/7000/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Стрим petrecere.radiotequila.ro/7000/stream подтверждён 17.10.2026 (200, audio/mpeg, MP3-сигнатура); домен — поддомен официального radiotequila.ro.",
+     "Официальный сайт radiotequila.ro отвечает 406 автоматическим клиентам (антибот), из браузера доступен (17.10.2026)."
+    ],
+    "notes": "Internet-only: подтверждённого эфирного вещания нет. Поток проверен из Финляндии 17.10.2026."
+   }
+  },
+  {
+   "id": "dhr",
+   "name": "Deep House Radio",
+   "country": "Румыния",
+   "region": null,
+   "city": null,
+   "language": null,
+   "genres": [
+    "house"
+   ],
+   "frequencyMHz": null,
+   "website": "https://www.dancemusic.ro/",
+   "streams": [
+    {
+     "url": "https://live.dancemusic.ro:7000/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: HTTP 200, Content-Type audio/mpeg, MP3-кадры в окне 8 КБ."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт dancemusic.ro — HTTP 200 (17.10.2026).",
+     "Стрим live.dancemusic.ro:7000/radio.mp3 подтверждён 17.10.2026 (200, audio/mpeg, MP3-сигнатура); домен dancemusic.ro совпадает с доменом стрима."
+    ],
+    "notes": "Internet-only: подтверждённого эфирного вещания нет. Поток проверен из Финляндии 17.10.2026."
+   }
+  },
+  {
+   "id": "pescobar",
+   "name": "Pescobar Radio",
+   "country": "Румыния",
+   "region": null,
+   "city": null,
+   "language": null,
+   "genres": [],
+   "frequencyMHz": null,
+   "website": "https://pescobar.radio/",
+   "streams": [
+    {
+     "url": "https://play.radioking.io/pescobar",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-17T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 17.10.2026: официальная короткая ссылка плеера, редирект 302 → listen.radioking.com/radio/701141/stream/766385 (200, audio/mpeg, MP3-кадры)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-17",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт pescobar.radio — HTTP 200 (17.10.2026); короткая ссылка плеера play.radioking.io/pescobar встроена в него.",
+     "Цель редиректа listen.radioking.com/radio/701141/stream/766385 подтверждена 17.10.2026 (200, audio/mpeg, MP3-сигнатура)."
+    ],
+    "notes": "Internet-only: подтверждённого эфирного вещания нет. Радио на платформе Radioking, официальный домен станции — pescobar.radio. Поток проверен из Финляндии 17.10.2026."
+   }
+  }
+ ]
+}
