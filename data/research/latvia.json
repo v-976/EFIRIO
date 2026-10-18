@@ -1,0 +1,33 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "note": "Исследовательский файл R3.6 — Latvija (FM). Источники: tiesraide.lv (агрегатор/плеер, использован для обнаружения и сверки частот/потоков), lv.wikipedia.org (частоты по городам), официальные сайты станций, NEPLP (архивный реестр). Потоки проверены из Финляндии 18.10.2026.",
+ "summary": {
+  "publishedTerrestrial": 16,
+  "publishedInternet": 0,
+  "excluded": 6,
+  "typeCounts": { "nationwide": 3, "regional": 6, "local": 7 },
+  "frequencyRows": 52,
+  "bands": { "FM": 52, "AM": 0 },
+  "streams": { "total": 16, "https": 16, "aac": 9, "mp3": 3, "hls": 4 },
+  "regions": 5,
+  "cities": 9
+ },
+ "sources": [
+  "tiesraide.lv/station/* — встроенный плеер (data-stations) даёт HTTPS-потоки и частоты; использован для обнаружения и сверки.",
+  "lv.wikipedia.org/wiki/Radiostacijas_Latvijā — частоты FM по городам/регионам (источник частот).",
+  "Официальные сайты станций (radioswh.lv, radioskonto.lv, relaxfm.lv, starfm.lv, topradio.lv, kurzemesradio.lv, aliseplus.lv, mixfm.lv, retrofm.lv, xo.fm, latvijasradio.lv)."
+ ],
+ "frequencyEncoding": "Частоты FM хранятся в MHz (band не задаётся, по умолчанию FM). AM/DAB не включались (этап только FM).",
+ "nowPlaying": "Все 16 записей: metadata.type 'none', url null, historyAvailable false — подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек.",
+ "curation": "Только FM. Internet-only, AM и DAB/DAB+ исключены. Национальные сети с подтверждённым HTTPS-потоком и частотами: LR1/LR2/LR3. Региональные/локальные — по частотам из lv.wikipedia.org.",
+ "verifiedVariants": [],
+ "excluded": [
+  { "id": "lr5", "name": "Latvijas Radio 5 — Pieci.lv", "reason": "stream", "details": "HLS-маунт https://muste.latvijasradio.lv/shoutcast/mp4:lr5a.stream/playlist.m3u8 возвращает 404 из Финляндии 18.10.2026. Станция FM существует, но подтверждённого HTTPS-потока нет." },
+  { "id": "lr6", "name": "Latvijas Radio 6 — Radio NABA", "reason": "stream", "details": "HLS-маунт https://muste.latvijasradio.lv/shoutcast/mp4:lr6a.stream/playlist.m3u8 возвращает 404 из Финляндии 18.10.2026." },
+  { "id": "ehr", "name": "European Hit Radio", "reason": "stream", "details": "Нет подтверждённого публичного HTTPS-потока из tiesraide.lv (станция отсутствует в каталоге агрегатора). Частоты FM есть (Rīga 104.3 и др.), но поток не подтверждён." },
+  { "id": "xofm", "name": "XO FM", "reason": "no-fm-frequency", "details": "В English Wikipedia XO FM перечислен среди internet-only станций; подтверждённой FM-частоты нет. Поток HTTPS есть (https://live.xo.fm/xofm128), но без FM-частоты не публикуется (только FM)." },
+  { "id": "njoy", "name": "N-Joy Radio / NJoy", "reason": "no-fm-frequency", "details": "tiesraide.lv перечисляет станцию, поток HTTPS есть (https://live.njoyradio.lv/02), но подтверждённой FM-частоты в доступных источниках нет. Не публикуется (только FM)." },
+  { "id": "lr4", "name": "Latvijas Radio 4 (на русском)", "reason": "stream", "details": "Нет подтверждённого публичного HTTPS-потока из tiesraide.lv и официального сайта. Частоты FM есть." }
+ ]
+}

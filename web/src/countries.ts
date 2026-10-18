@@ -22,6 +22,7 @@ export const COUNTRY_ENDONYMS: Readonly<Record<string, string>> = {
   'united-kingdom': 'United Kingdom',
   romania: 'România',
   greece: 'Ελλάδα',
+  latvia: 'Latvija',
 };
 
 /**

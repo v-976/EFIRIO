@@ -1,0 +1,1155 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "country": {
+  "id": "latvia",
+  "name": "Latvija",
+  "code": "LV",
+  "timeZone": "Europe/Riga"
+ },
+ "stations": [
+  {
+   "id": "lr1",
+   "name": "Latvijas Radio 1",
+   "type": "nationwide",
+   "language": "latviešu",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 90.7,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 90.7
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 90.6
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 107.1
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 99.2
+    },
+    {
+     "locality": "Valmiera",
+     "region": "Vidzeme",
+     "mhz": 104
+    },
+    {
+     "locality": "Rēzekne",
+     "region": "Latgale",
+     "mhz": 107.5
+    },
+    {
+     "locality": "Kuldīga",
+     "region": "Kurzeme",
+     "mhz": 95.9
+    },
+    {
+     "locality": "Cesvaine",
+     "region": "Vidzeme",
+     "mhz": 102.5
+    },
+    {
+     "locality": "Dundaga",
+     "region": "Kurzeme",
+     "mhz": 91.1
+    },
+    {
+     "locality": "Lielauce",
+     "region": "Zemgale",
+     "mhz": 99.6
+    },
+    {
+     "locality": "Limbaži",
+     "region": "Vidzeme",
+     "mhz": 105.5
+    },
+    {
+     "locality": "Mālpils",
+     "region": "Vidzeme",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Alūksne",
+     "region": "Vidzeme",
+     "mhz": 106.8
+    },
+    {
+     "locality": "Aizpute",
+     "region": "Kurzeme",
+     "mhz": 106
+    },
+    {
+     "locality": "Viesīte",
+     "region": "Zemgale",
+     "mhz": 107.6
+    }
+   ],
+   "website": "https://www.latvijasradio.lv/lr1/",
+   "streams": [
+    {
+     "url": "https://muste.latvijasradio.lv/shoutcast/mp4:lr1a.stream/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт latvijasradio.lv (LR1) — 18.10.2026.",
+     "Поток muste.latvijasradio.lv (HLS) подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть Latvijas Radio."
+   }
+  },
+  {
+   "id": "lr2",
+   "name": "Latvijas Radio 2",
+   "type": "nationwide",
+   "language": "latviešu",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 91.5,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 99.8
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 101
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 103
+    },
+    {
+     "locality": "Valmiera",
+     "region": "Vidzeme",
+     "mhz": 101.5
+    },
+    {
+     "locality": "Rēzekne",
+     "region": "Latgale",
+     "mhz": 100.7
+    },
+    {
+     "locality": "Kuldīga",
+     "region": "Kurzeme",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Cesvaine",
+     "region": "Vidzeme",
+     "mhz": 98.1
+    },
+    {
+     "locality": "Alūksne",
+     "region": "Vidzeme",
+     "mhz": 103.6
+    }
+   ],
+   "website": "https://www.latvijasradio.lv/lr2/",
+   "streams": [
+    {
+     "url": "https://muste.latvijasradio.lv/shoutcast/mp4:lr2a.stream/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт latvijasradio.lv (LR2) — 18.10.2026.",
+     "Поток muste.latvijasradio.lv (HLS) подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть Latvijas Radio (латышская музыка)."
+   }
+  },
+  {
+   "id": "lr3",
+   "name": "Latvijas Radio 3 — Klasika",
+   "type": "nationwide",
+   "language": "latviešu",
+   "genres": [
+    "classical"
+   ],
+   "frequencyMHz": 103.7,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 103.7
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 104.6
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 89.8
+    },
+    {
+     "locality": "Valmiera",
+     "region": "Vidzeme",
+     "mhz": 87.6
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 88.1
+    },
+    {
+     "locality": "Kuldīga",
+     "region": "Kurzeme",
+     "mhz": 92
+    },
+    {
+     "locality": "Rēzekne",
+     "region": "Latgale",
+     "mhz": 99.1
+    }
+   ],
+   "website": "https://www.latvijasradio.lv/lr3/",
+   "streams": [
+    {
+     "url": "https://muste.latvijasradio.lv/shoutcast/mp4:lr3a.stream/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт latvijasradio.lv (LR3) — 18.10.2026.",
+     "Поток muste.latvijasradio.lv (HLS) подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть Latvijas Radio (классика)."
+   }
+  },
+  {
+   "id": "skonto",
+   "name": "Radio Skonto",
+   "type": "regional",
+   "language": "latviešu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 107.2,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 107.2
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 97.5
+    },
+    {
+     "locality": "Kuldīga",
+     "region": "Kurzeme",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 106.1
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 100.5
+    }
+   ],
+   "website": "https://www.radioskonto.lv/",
+   "streams": [
+    {
+     "url": "https://stream.radioskonto.lv:8443/stereo",
+     "role": "primary",
+     "format": "aacp",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aacp."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioskonto.lv — 18.10.2026.",
+     "Поток stream.radioskonto.lv:8443/stereo подтверждён 18.10.2026 (200, audio/aacp)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "swh",
+   "name": "Radio SWH",
+   "type": "regional",
+   "language": "latviešu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 105.2,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 105.2
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 105.1
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 105.4
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 105.2
+    }
+   ],
+   "website": "https://radioswh.lv/",
+   "streams": [
+    {
+     "url": "https://live.radioswh.lv:8443/swhmp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioswh.lv — 18.10.2026.",
+     "Поток live.radioswh.lv:8443/swhmp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "relaxfm",
+   "name": "Relax FM",
+   "type": "regional",
+   "language": "latviešu",
+   "genres": [
+    "easy listening"
+   ],
+   "frequencyMHz": 94.9,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 94.9
+    },
+    {
+     "locality": "Valmiera",
+     "region": "Vidzeme",
+     "mhz": 95.9
+    },
+    {
+     "locality": "Dobele",
+     "region": "Zemgale",
+     "mhz": 88.4
+    },
+    {
+     "locality": "Jelgava",
+     "region": "Zemgale",
+     "mhz": 98
+    }
+   ],
+   "website": "https://relaxfm.lv/",
+   "streams": [
+    {
+     "url": "https://live.relaxfm.lv/01",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт relaxfm.lv — 18.10.2026.",
+     "Поток live.relaxfm.lv/01 подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "retrofm",
+   "name": "Retro FM",
+   "type": "regional",
+   "language": "krievu",
+   "genres": [
+    "retro"
+   ],
+   "frequencyMHz": 94.5,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 94.5
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 92.3
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 99.4
+    },
+    {
+     "locality": "Rēzekne",
+     "region": "Latgale",
+     "mhz": 105.5
+    }
+   ],
+   "website": "https://retrofm.lv/",
+   "streams": [
+    {
+     "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/RETRO_FMAAC.aac",
+     "role": "primary",
+     "format": "aacp",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aacp (streamtheworld redirect)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт retrofm.lv / tiesraide.lv — 18.10.2026.",
+     "Поток playerservices.streamtheworld.com (RETRO_FMAAC.aac) подтверждён 18.10.2026 (200, audio/aacp)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "starfm",
+   "name": "Star FM",
+   "type": "regional",
+   "language": "latviešu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 106.2,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 106.2
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 91
+    },
+    {
+     "locality": "Ventspils",
+     "region": "Kurzeme",
+     "mhz": 105
+    },
+    {
+     "locality": "Kuldīga",
+     "region": "Kurzeme",
+     "mhz": 103.8
+    },
+    {
+     "locality": "Valmiera",
+     "region": "Vidzeme",
+     "mhz": 107.4
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 103.2
+    }
+   ],
+   "website": "https://starfm.lv/",
+   "streams": [
+    {
+     "url": "https://live.advailo.com/starfm/hls/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт starfm.lv / tiesraide.lv — 18.10.2026.",
+     "Поток live.advailo.com/starfm/hls/playlist.m3u8 подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "topradio",
+   "name": "TOP Radio",
+   "type": "regional",
+   "language": "latviešu",
+   "genres": [
+    "dance",
+    "pop"
+   ],
+   "frequencyMHz": 98.3,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 98.3
+    },
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 107.6
+    },
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 92.4
+    }
+   ],
+   "website": "https://topradio.lv/",
+   "streams": [
+    {
+     "url": "https://live.advailo.com/topradio/live/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type application/vnd.apple.mpegurl, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт topradio.lv / tiesraide.lv — 18.10.2026.",
+     "Поток live.advailo.com/topradio/live/playlist.m3u8 подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "aliseplus",
+   "name": "Alise Plus",
+   "type": "local",
+   "language": "krievu",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 101.6,
+   "frequencies": [
+    {
+     "locality": "Daugavpils",
+     "region": "Latgale",
+     "mhz": 101.6
+    }
+   ],
+   "website": "https://aliseplus.lv/",
+   "streams": [
+    {
+     "url": "https://fm2inet.aliseplus.lv/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт aliseplus.lv — 18.10.2026.",
+     "Поток fm2inet.aliseplus.lv подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "kurzemesradio",
+   "name": "Kurzemes Radio",
+   "type": "local",
+   "language": "latviešu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 88.4,
+   "frequencies": [
+    {
+     "locality": "Liepāja",
+     "region": "Kurzeme",
+     "mhz": 88.4
+    }
+   ],
+   "website": "https://kurzemesradio.lv/",
+   "streams": [
+    {
+     "url": "https://kurzemesradio.lv:8443/;stream.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт kurzemesradio.lv — 18.10.2026.",
+     "Поток kurzemesradio.lv:8443/;stream.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "radioroks",
+   "name": "Radio Roks",
+   "type": "local",
+   "language": "krievu",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 88.6,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 88.6
+    }
+   ],
+   "website": "https://radioroks.lv/",
+   "streams": [
+    {
+     "url": "https://live.relaxfm.lv/06",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioroks.lv / tiesraide.lv — 18.10.2026.",
+     "Поток live.relaxfm.lv/06 подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "swhrock",
+   "name": "Radio SWH Rock",
+   "type": "local",
+   "language": "latviešu",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 89.2,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 89.2
+    }
+   ],
+   "website": "https://radioswh.lv/",
+   "streams": [
+    {
+     "url": "https://live.radioswh.lv:8443/rockmp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioswh.lv — 18.10.2026.",
+     "Поток live.radioswh.lv:8443/rockmp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "skontoplus",
+   "name": "Radio Skonto Plus",
+   "type": "local",
+   "language": "krievu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 102.3,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 102.3
+    }
+   ],
+   "website": "https://radioskonto.lv/",
+   "streams": [
+    {
+     "url": "https://stream.radioskontoplus.lv:8443/st128",
+     "role": "primary",
+     "format": "aacp",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aacp."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioskonto.lv — 18.10.2026.",
+     "Поток stream.radioskontoplus.lv:8443/st128 подтверждён 18.10.2026 (200, audio/aacp)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "swhplus",
+   "name": "Radio SWH+",
+   "type": "local",
+   "language": "krievu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 105.7,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 105.7
+    }
+   ],
+   "website": "https://radioswh.lv/",
+   "streams": [
+    {
+     "url": "https://live.radioswh.lv:8443/plusmp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioswh.lv — 18.10.2026.",
+     "Поток live.radioswh.lv:8443/plusmp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "mixfm",
+   "name": "MIX FM",
+   "type": "local",
+   "language": "latviešu",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": 102.7,
+   "frequencies": [
+    {
+     "locality": "Rīga",
+     "region": "Rīga",
+     "mhz": 102.7
+    }
+   ],
+   "website": "https://mixfm.lv/",
+   "streams": [
+    {
+     "url": "https://live.relaxfm.lv/07",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт mixfm.lv / tiesraide.lv — 18.10.2026.",
+     "Поток live.relaxfm.lv/07 подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  }
+ ],
+ "nationwide": [
+  "lr1",
+  "lr2",
+  "lr3"
+ ],
+ "regions": [
+  {
+   "id": "rīga",
+   "name": "Rīga",
+   "stations": [
+    "skonto",
+    "swh",
+    "relaxfm",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "radioroks",
+    "swhrock",
+    "skontoplus",
+    "swhplus",
+    "mixfm"
+   ],
+   "cities": [
+    "rīga"
+   ]
+  },
+  {
+   "id": "kurzeme",
+   "name": "Kurzeme",
+   "stations": [
+    "skonto",
+    "swh",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "kurzemesradio"
+   ],
+   "cities": [
+    "liepāja",
+    "kuldīga",
+    "ventspils"
+   ]
+  },
+  {
+   "id": "latgale",
+   "name": "Latgale",
+   "stations": [
+    "skonto",
+    "swh",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "aliseplus"
+   ],
+   "cities": [
+    "daugavpils",
+    "rēzekne"
+   ]
+  },
+  {
+   "id": "vidzeme",
+   "name": "Vidzeme",
+   "stations": [
+    "relaxfm",
+    "starfm"
+   ],
+   "cities": [
+    "valmiera"
+   ]
+  },
+  {
+   "id": "zemgale",
+   "name": "Zemgale",
+   "stations": [
+    "relaxfm"
+   ],
+   "cities": [
+    "dobele",
+    "jelgava"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "rīga",
+   "name": "Rīga",
+   "regionId": "rīga",
+   "stations": [
+    "skonto",
+    "swh",
+    "relaxfm",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "radioroks",
+    "swhrock",
+    "skontoplus",
+    "swhplus",
+    "mixfm"
+   ]
+  },
+  {
+   "id": "liepāja",
+   "name": "Liepāja",
+   "regionId": "kurzeme",
+   "stations": [
+    "skonto",
+    "swh",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "kurzemesradio"
+   ]
+  },
+  {
+   "id": "kuldīga",
+   "name": "Kuldīga",
+   "regionId": "kurzeme",
+   "stations": [
+    "skonto",
+    "starfm"
+   ]
+  },
+  {
+   "id": "daugavpils",
+   "name": "Daugavpils",
+   "regionId": "latgale",
+   "stations": [
+    "skonto",
+    "swh",
+    "retrofm",
+    "starfm",
+    "topradio",
+    "aliseplus"
+   ]
+  },
+  {
+   "id": "ventspils",
+   "name": "Ventspils",
+   "regionId": "kurzeme",
+   "stations": [
+    "skonto",
+    "swh",
+    "starfm"
+   ]
+  },
+  {
+   "id": "valmiera",
+   "name": "Valmiera",
+   "regionId": "vidzeme",
+   "stations": [
+    "relaxfm",
+    "starfm"
+   ]
+  },
+  {
+   "id": "dobele",
+   "name": "Dobele",
+   "regionId": "zemgale",
+   "stations": [
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "jelgava",
+   "name": "Jelgava",
+   "regionId": "zemgale",
+   "stations": [
+    "relaxfm"
+   ]
+  },
+  {
+   "id": "rēzekne",
+   "name": "Rēzekne",
+   "regionId": "latgale",
+   "stations": [
+    "retrofm"
+   ]
+  }
+ ]
+}
