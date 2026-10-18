@@ -10,15 +10,21 @@ import sv from '../src/locales/sv.ts';
 import et from '../src/locales/et.ts';
 import ro from '../src/locales/ro.ts';
 import el from '../src/locales/el.ts';
+import lt from '../src/locales/lt.ts';
+import sq from '../src/locales/sq.ts';
+import sr from '../src/locales/sr.ts';
 
 /** Dictionaries under test; `sv` is deliberately left without a loader to model an unloaded language. */
-const dictionaries = { ru, fi, et, ro, el };
+const dictionaries = { ru, fi, et, ro, el, lt, sq, sr };
 registerLocaleLoaders({
   './locales/ru.ts': () => Promise.resolve(ru),
   './locales/fi.ts': () => Promise.resolve(fi),
   './locales/et.ts': () => Promise.resolve(et),
   './locales/ro.ts': () => Promise.resolve(ro),
   './locales/el.ts': () => Promise.resolve(el),
+  './locales/lt.ts': () => Promise.resolve(lt),
+  './locales/sq.ts': () => Promise.resolve(sq),
+  './locales/sr.ts': () => Promise.resolve(sr),
 });
 
 const PLACEHOLDER = /\{(\w+)\}/g;
@@ -92,8 +98,8 @@ test('translated placeholders always match the English template', () => {
   }
 });
 
-test('the seven supported languages each have an endonym label', () => {
-  assert.deepEqual([...SUPPORTED_LANGUAGES].sort(), ['el', 'en', 'et', 'fi', 'ro', 'ru', 'sv']);
+test('the ten supported languages each have an endonym label', () => {
+  assert.deepEqual([...SUPPORTED_LANGUAGES].sort(), ['el', 'en', 'et', 'fi', 'lt', 'ro', 'ru', 'sq', 'sr', 'sv']);
   for (const code of SUPPORTED_LANGUAGES) {
     assert.ok(LANGUAGE_LABELS[code].trim().length > 0, `${code} needs an endonym`);
   }

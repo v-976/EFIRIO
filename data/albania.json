@@ -17,8 +17,29 @@
     "news",
     "talk"
    ],
-   "frequencyMHz": null,
-   "frequencies": [],
+   "frequencyMHz": 99.5,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 99.5
+    },
+    {
+     "locality": "Shkodër",
+     "region": "Shkodër",
+     "mhz": 91
+    },
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 88.3
+    },
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 99.8
+    }
+   ],
    "website": "https://rtsh.al/radio/kanale/radio-tirana-1/",
    "streams": [
     {
@@ -43,7 +64,8 @@
     "frequencyVerifiedAt": "2026-10-18",
     "sources": [
      "Официальный сайт rtsh.al (Radio Tirana 1) — 18.10.2026.",
-     "Поток stream.rtsh.al/radiotirana1 подтверждён 18.10.2026 (200, audio/mpeg)."
+     "Поток stream.rtsh.al/radiotirana1 подтверждён 18.10.2026 (200, audio/mpeg).",
+     "Региона AMA + radiomap.eu (городские таблицы) — 18.10.2026."
     ],
     "notes": "FM-частота подтверждается регулятором AMA (ama.gov.al), но точное значение из доступных источников не извлечено (реестр AMA загружается динамически)."
    }
@@ -57,8 +79,14 @@
     "music",
     "youth"
    ],
-   "frequencyMHz": null,
-   "frequencies": [],
+   "frequencyMHz": 95.8,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 95.8
+    }
+   ],
    "website": "https://rtsh.al/radio/kanale/radio-tirana-2/",
    "streams": [
     {
@@ -83,7 +111,8 @@
     "frequencyVerifiedAt": "2026-10-18",
     "sources": [
      "Официальный сайт rtsh.al (Radio Tirana 2) — 18.10.2026.",
-     "Поток stream.rtsh.al/radiotirana2 подтверждён 18.10.2026 (200, audio/mpeg)."
+     "Поток stream.rtsh.al/radiotirana2 подтверждён 18.10.2026 (200, audio/mpeg).",
+     "Региона AMA + radiomap.eu (городские таблицы) — 18.10.2026."
     ],
     "notes": "FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
    }
@@ -250,6 +279,1251 @@
     ],
     "notes": "Международная служба RTSH (вещание на нескольких языках). FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
    }
+  },
+  {
+   "id": "rtshjazz",
+   "name": "Radio Tirana Jazz",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "jazz"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-jazz/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotiranajazz",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Tirana Jazz).",
+     "Поток stream.rtsh.al/radiotiranajazz подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Национальная общественная студия джаза; FM-частоты в этом источнике не подтверждены."
+   }
+  },
+  {
+   "id": "top-albania-radio",
+   "name": "Top Albania Radio",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 100,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 100
+    },
+    {
+     "locality": "Shkodër",
+     "region": "Shkodër",
+     "mhz": 94.1
+    },
+    {
+     "locality": "Berat",
+     "region": "Berat",
+     "mhz": 96
+    },
+    {
+     "locality": "Pogradec",
+     "region": "Korçë",
+     "mhz": 98.5
+    },
+    {
+     "locality": "Sarandë",
+     "region": "Vlorë",
+     "mhz": 100.6
+    },
+    {
+     "locality": "Lushnjë",
+     "region": "Fier",
+     "mhz": 103.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://live.top-media.al/tar",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "National licence, multi-city FM. Good geographic spread incl. south (Sarandë) and Korçë region (Pogradec)."
+   }
+  },
+  {
+   "id": "club-fm",
+   "name": "Club FM",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 100.4,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 100.4
+    },
+    {
+     "locality": "Shkodër",
+     "region": "Shkodër",
+     "mhz": 88.9
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/clubfm?mp=/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "National licence; confirmed FM in Tiranë and Shkodër."
+   }
+  },
+  {
+   "id": "radio-klan",
+   "name": "Radio Klan",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "talk"
+   ],
+   "frequencyMHz": 92.9,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 92.9
+    },
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 91.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://klanradio.tvklan.al/live/klanmusicradio1/playlist.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Radio arm of TV Klan. HLS stream verified 200 + audio."
+   }
+  },
+  {
+   "id": "radio-one",
+   "name": "Radio One",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 95.2,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Lushnjë",
+     "region": "Fier",
+     "mhz": 105.2
+    },
+    {
+     "locality": "Fier",
+     "region": "Fier",
+     "mhz": 97.2
+    },
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 101
+    },
+    {
+     "locality": "Selenicë",
+     "region": "Vlorë",
+     "mhz": 90
+    },
+    {
+     "locality": "Llogara",
+     "region": "Vlorë",
+     "mhz": 89.2
+    },
+    {
+     "locality": "Sarandë",
+     "region": "Vlorë",
+     "mhz": 103.2
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/radioone94?mp=/stream",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Strong southern coverage (Vlorë/Sarandë corridor). Identity confirmed in stream metadata."
+   }
+  },
+  {
+   "id": "radio-shqip",
+   "name": "Radio Shqip",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "talk"
+   ],
+   "frequencyMHz": 92,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 92
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/radioshqip?mp=/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Licence extends north (Lezhë/Shkodër/Kukës); FM frequency confirmed only in Tiranë so far."
+   }
+  },
+  {
+   "id": "radio-sol",
+   "name": "Radio Sol",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 89,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 89
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/radiosol/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Stream verified working; ICY name not populated."
+   }
+  },
+  {
+   "id": "radio-ngjallja",
+   "name": "Radio Ngjallja",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "religious"
+   ],
+   "frequencyMHz": 88.5,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 88.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://radio.ngjallja.org/radio_ngjallja",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Broad central-southern coverage licence (incl. Korçë/Maliq/Pustec)."
+   }
+  },
+  {
+   "id": "radio-logos",
+   "name": "Radio Logos",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "religious"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s2.stationplaylist.com:9280/listen.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "IMPORTANT: covers Korçë, Kukës and Dibër regions — one of few verified streams reaching the eastern highlands. No FM frequency confirmed from available sources (left empty, not invented)."
+   }
+  },
+  {
+   "id": "radio-lushnja",
+   "name": "Radio Lushnja",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 95.5,
+   "frequencies": [
+    {
+     "locality": "Lushnjë",
+     "region": "Fier",
+     "mhz": 95.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://stream.radiolushnja.al/listen/radio_lushnja/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Local station for Lushnjë."
+   }
+  },
+  {
+   "id": "play-radio-paper-radio",
+   "name": "Play Radio Albania (Paper Radio / Paper Play)",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 91.1,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 91.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://business.playfm.al:8170/paperplay",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "AMA name 'Play Radio Albania (Paper Radio)'; radiomap lists it as 'Paper Play Radio' at 91.1 Tiranë."
+   }
+  },
+  {
+   "id": "alfa-omega",
+   "name": "Radio Alfa & Omega",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 102.6,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 102.6
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://broadcast.shoutcheap.com/proxy/alban/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Religious/music station, Tiranë–Durrës."
+   }
+  },
+  {
+   "id": "radio-saranda",
+   "name": "Radio Saranda",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 96.1,
+   "frequencies": [
+    {
+     "locality": "Sarandë",
+     "region": "Vlorë",
+     "mhz": 96.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s64.radiolize.com/radio/8050/radio.mp3",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Far-south coverage (Sarandë/Aliko/Finiq/Mesopotam). Identity embeds the FM frequency."
+   }
+  },
+  {
+   "id": "alpo-radio",
+   "name": "Alpo Radio",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 94.1,
+   "frequencies": [
+    {
+     "locality": "Gjirokastër",
+     "region": "Gjirokastër",
+     "mhz": 94.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/alporadio/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "One of the few verified streams covering Gjirokastër region (Dropull/Libohovë)."
+   }
+  },
+  {
+   "id": "radio-emanuel",
+   "name": "Radio Emanuel",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 95.7,
+   "frequencies": [
+    {
+     "locality": "Korçë",
+     "region": "Korçë",
+     "mhz": 95.7
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/radioemanuel/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Covers Korçë region incl. Skrapar/Polican."
+   }
+  },
+  {
+   "id": "radio-popullore",
+   "name": "Radio Popullore (Shqip Popullore)",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "talk"
+   ],
+   "frequencyMHz": 94.4,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 94.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/shqipfolk/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "NOTE: radiomap.eu lists 94.4 Tiranë as 'Eurostar Radio'. The sednastream 'shqipfolk' endpoint self-identifies as 'Radio Shqip Popullore'. Eurostar (radioeurostar.al) is a separate, unverified stream — see excluded."
+   }
+  },
+  {
+   "id": "top-gold-radio",
+   "name": "Top Gold Radio",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 100.8,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Shkodër",
+     "region": "Shkodër",
+     "mhz": 99.3
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://live.topgold.al/topgold",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Sister station to Top Albania Radio."
+   }
+  },
+  {
+   "id": "radio-my-music",
+   "name": "Radio My Music (My Music Radio)",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 97.3,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 97.3
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://live.top-media.al/mmr",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Sister station to Top Albania Radio."
+   }
+  },
+  {
+   "id": "radio-1",
+   "name": "Radio 1",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 93.2,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 93.2
+    },
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 89.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://livestream.radio1.al/hls/radio.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Distinct from RTSH's public channels."
+   }
+  },
+  {
+   "id": "radio-4-plus",
+   "name": "Radio 4+",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://play.4plusmedia.tv/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Local (Lushnjë/Divjakë). No FM frequency confirmed from available sources."
+   }
+  },
+  {
+   "id": "in-radio-105-7",
+   "name": "In Radio 105.7 (Euronews Albania Radio / Intradio)",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 105.7,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 105.7
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://live1.mediadesk.al/oranews.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Frequency 105.7 comes from the AMA licensed name. HLS is not HTTPS on the primary mount."
+   }
+  },
+  {
+   "id": "radio-nrg-energy",
+   "name": "Radio NRG (Energy)",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "dance"
+   ],
+   "frequencyMHz": 94.9,
+   "frequencies": [
+    {
+     "locality": "Vlorë",
+     "region": "Vlorë",
+     "mhz": 94.9
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://stream.louderhost.com/nrgal",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Stream self-identifies 'ENERGY Albania'; AMA licensee is 'Radio Energy'. Treated as same station; slight naming uncertainty flagged."
+   }
+  },
+  {
+   "id": "radio-7",
+   "name": "Radio 7",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 97.7,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 97.7
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://rpn.bozztv.com/radio/Med7-RadioTirana/icecast.audio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "See also Radio 7 Nord (separate local licence, Shkodër)."
+   }
+  },
+  {
+   "id": "radio-jehona",
+   "name": "Radio Jehona",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://stream.iradio.pro/proxy/radiojehona?mp=/1",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Covers Shkodër region (incl. Vau i Dejës). No FM frequency confirmed from available sources."
+   }
+  },
+  {
+   "id": "mcn-radio",
+   "name": "MCN Radio",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 103.1,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 103.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://mcn24.tv/mcn/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Stream works; ICY name not populated. HTTPS endpoint available (mcn24.tv)."
+   }
+  },
+  {
+   "id": "best-radio",
+   "name": "Best Radio (Best Pro Radio)",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://az1.sednastream.com/listen/bestproradio/Live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "AMA (ama.gov.al) — лицензированный вещатель.",
+     "Официальный сайт станции.",
+     "Поток проверён пробой 18.10.2026."
+    ],
+    "notes": "Local Tiranë licence. Stream verified; no FM frequency confirmed from available sources (may be internet-leaning)."
+   }
   }
  ],
  "nationwide": [
@@ -257,17 +1531,117 @@
   "rtsh2",
   "rtsh3",
   "rtshfemije",
-  "rtshinternacional"
+  "rtshinternacional",
+  "rtshjazz",
+  "top-albania-radio",
+  "club-fm",
+  "radio-klan"
  ],
  "regions": [
   {
    "id": "tiranë",
    "name": "Tiranë",
    "stations": [
-    "rtshklasik"
+    "rtshklasik",
+    "radio-one",
+    "radio-shqip",
+    "radio-sol",
+    "radio-ngjallja",
+    "play-radio-paper-radio",
+    "alfa-omega",
+    "radio-popullore",
+    "top-gold-radio",
+    "radio-my-music",
+    "radio-1",
+    "in-radio-105-7",
+    "radio-7",
+    "mcn-radio",
+    "best-radio"
    ],
    "cities": [
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
+    "tiranë",
     "tiranë"
+   ]
+  },
+  {
+   "id": "fier",
+   "name": "Fier",
+   "stations": [
+    "radio-one",
+    "radio-lushnja",
+    "radio-4-plus"
+   ],
+   "cities": [
+    "lushnjë",
+    "fier",
+    "lushnjë",
+    "lushnjë"
+   ]
+  },
+  {
+   "id": "vlorë",
+   "name": "Vlorë",
+   "stations": [
+    "radio-one",
+    "radio-saranda",
+    "radio-1",
+    "radio-nrg-energy"
+   ],
+   "cities": [
+    "vlorë",
+    "selenicë",
+    "llogara",
+    "sarandë",
+    "sarandë",
+    "vlorë",
+    "vlorë"
+   ]
+  },
+  {
+   "id": "korçë",
+   "name": "Korçë",
+   "stations": [
+    "radio-logos",
+    "radio-emanuel"
+   ],
+   "cities": [
+    "korçë",
+    "korçë"
+   ]
+  },
+  {
+   "id": "gjirokastër",
+   "name": "Gjirokastër",
+   "stations": [
+    "alpo-radio"
+   ],
+   "cities": [
+    "gjirokastër"
+   ]
+  },
+  {
+   "id": "shkodër",
+   "name": "Shkodër",
+   "stations": [
+    "top-gold-radio",
+    "radio-jehona"
+   ],
+   "cities": [
+    "shkodër",
+    "shkodër"
    ]
   }
  ],
@@ -277,7 +1651,100 @@
    "name": "Tiranë",
    "regionId": "tiranë",
    "stations": [
-    "rtshklasik"
+    "rtshklasik",
+    "radio-one",
+    "radio-shqip",
+    "radio-sol",
+    "radio-ngjallja",
+    "play-radio-paper-radio",
+    "alfa-omega",
+    "radio-popullore",
+    "top-gold-radio",
+    "radio-my-music",
+    "radio-1",
+    "in-radio-105-7",
+    "radio-7",
+    "mcn-radio",
+    "best-radio"
+   ]
+  },
+  {
+   "id": "lushnjë",
+   "name": "Lushnjë",
+   "regionId": "fier",
+   "stations": [
+    "radio-one",
+    "radio-lushnja",
+    "radio-4-plus"
+   ]
+  },
+  {
+   "id": "fier",
+   "name": "Fier",
+   "regionId": "fier",
+   "stations": [
+    "radio-one"
+   ]
+  },
+  {
+   "id": "vlorë",
+   "name": "Vlorë",
+   "regionId": "vlorë",
+   "stations": [
+    "radio-one",
+    "radio-1",
+    "radio-nrg-energy"
+   ]
+  },
+  {
+   "id": "selenicë",
+   "name": "Selenicë",
+   "regionId": "vlorë",
+   "stations": [
+    "radio-one"
+   ]
+  },
+  {
+   "id": "llogara",
+   "name": "Llogara",
+   "regionId": "vlorë",
+   "stations": [
+    "radio-one"
+   ]
+  },
+  {
+   "id": "sarandë",
+   "name": "Sarandë",
+   "regionId": "vlorë",
+   "stations": [
+    "radio-one",
+    "radio-saranda"
+   ]
+  },
+  {
+   "id": "korçë",
+   "name": "Korçë",
+   "regionId": "korçë",
+   "stations": [
+    "radio-logos",
+    "radio-emanuel"
+   ]
+  },
+  {
+   "id": "gjirokastër",
+   "name": "Gjirokastër",
+   "regionId": "gjirokastër",
+   "stations": [
+    "alpo-radio"
+   ]
+  },
+  {
+   "id": "shkodër",
+   "name": "Shkodër",
+   "regionId": "shkodër",
+   "stations": [
+    "top-gold-radio",
+    "radio-jehona"
    ]
   }
  ]

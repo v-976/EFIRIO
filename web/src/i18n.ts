@@ -12,7 +12,7 @@
  */
 import { safeGetItem, safeSetItem } from './storage.ts';
 
-export const SUPPORTED_LANGUAGES = ['ru', 'en', 'fi', 'sv', 'et', 'ro', 'el'] as const;
+export const SUPPORTED_LANGUAGES = ['ru', 'en', 'fi', 'sv', 'et', 'ro', 'el', 'lt', 'sq', 'sr'] as const;
 export type Language = (typeof SUPPORTED_LANGUAGES)[number];
 
 /** Endonyms: the switcher always reads in its own language and never translates. */
@@ -24,6 +24,9 @@ export const LANGUAGE_LABELS: Record<Language, string> = {
   et: 'Eesti',
   ro: 'Română',
   el: 'Ελληνικά',
+  lt: 'Lietuvių',
+  sq: 'Shqip',
+  sr: 'Српски',
 };
 
 export const LANGUAGE_KEY = 'efirio.uiLanguage';

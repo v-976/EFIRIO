@@ -509,3 +509,42 @@ ERT3/Thessaloniki has no working stream — every `radiostreaming.ert.gr/ert3*` 
 ### Verification (R3.10, expanded)
 
 `tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `greece-Chip16p9.js` (50.14 kB / 5.28 kB gzip) split off as a lazy chunk. Catalogue and research summary cross-checked by script (station/type/frequency/region/city/exclusion counts agree). Not committed — working tree holds the change awaiting review.
+
+## R3.11: Lietuva, Shqipëria, Kosova (2026-10-18)
+
+### Decision: three independent catalogue expansions + three new localizations (`lt`, `sq`, `sr`)
+
+R3.10 Greece (`1dcdeda`) stayed the baseline; this stage research-expanded the three catalogues and added three full UI localizations without touching other countries or the architecture.
+
+**Catalogues (`data/{lithuania,albania,kosovo}.json`), after:**
+
+| Country | stations (was) | FM freq rows (was) | regions (was) | cities (was) | HTTPS streams |
+|---|---|---|---|---|---|
+| Lietuva | 32 (23) | 142 (95) | 6 (6) | 10 (7) | 34/34 |
+| Shqipëria | 32 (6) | 42 (1) | 6 (1) | 10 (1) | 32/32 |
+| Kosova | 18 (9) | 44 (27) | 6 (3) | 10 (3) | 18/18 |
+
+New confirmed FM frequencies and working HTTPS streams were added only where a probe returned HTTP 200 with an audio/playlist content-type; no stream was published as working on an HTTP 200 alone, and no frequency was invented.
+
+- **Lithuania** +9 stations: M-1 Plius (nationwide, 10 RRT-confirmed frequencies incl. Raseiniai 106.4), M-1 Dance, Laluna, XFM (7 cities), Vilnius FM, JAZZ FM, RS2, Pulsas, Start FM. New cities Biržai, Kėdainiai, Šilutė. Regions stayed 6: Marijampolė/Tauragė/Utena carry only nationwide stations (M-1 Plius etc.), and nationwide stations are not placed in region/city filters by project convention, so no empty regions were created. Radio Znad Wilii (plays.zw.lt/zw128) returns HTTP 403 (referer/geo gate) — recorded as a verification LIMITATION, not as nonexistent.
+- **Albania** +26: 6 baseline RTSH kept their `stream.rtsh.al/*` streams (all re-verified 200) and gained confirmed frequencies (Tirana 1: 99.5 Tiranë, 91.0 Shkodër, 88.3+99.8 Vlorë; Tirana 2: 95.8 Tiranë); new RTSH Tirana Jazz (`stream.rtsh.al/radiotiranajazz`, 200 aac); 25 commercial/community stations (Top Albania, Club FM, Radio Klan, Radio One, Radio Shqip, Radio Sol, Radio Ngjallja, Radio Logos, Radio Lushnja, Play Radio, Alfa & Omega, Radio Saranda, Alpo, Radio Emanuel, Radio Popullore, Top Gold, My Music, Radio 1, Radio 4+, In Radio, NRG, Radio 7, Radio Jehona, MCN, Best Radio). Regions grew 1→6 (Tiranë + Shkodër, Vlorë, Fier, Korçë, Gjirokastër), cities 1→10.
+- **Kosovo** +9: Radio KFOR (Srpski) — Serbian-language, UBT Campus, Club FM Kosovë, Radio Maria Kosovë, Radio Dukagjini, 92.1 Capital FM, Radio 1 Peja, Radio Fontana, Radio Kontakt Plus. Regions 3→6 (+Peja, Istog, Mitrovica), cities 3→10 (+Fushë Kosovë, Lipjan, Obiliq, Peja, Istog, Mitrovica, Suharekë). `radiokosovaelire` stream fixed: root `radiokos.radioca.st/` serves HTML → `/stream`.
+
+### Decision: geo membership is driven by confirmed frequencies; nationwide stations stay out of region/city filters
+
+Existing station IDs, streams and integration were preserved; only verified new stations and confirmed new frequencies were appended. Region/city `stations[]` membership is rebuilt from each regional/local station's confirmed `frequencies[]` (Lithuania's convention allows a regional station in several regions, unlike Greece's one-region-per-station); nationwide stations live only in `nationwide[]`. Two dead HLS fallbacks (`live.top-media.al/tar.m3u8`, `/mmr.m3u8` → 404) were dropped, leaving the working MP3 as primary.
+
+### Decision: three full localizations — `lt` Lietuvių, `sq` Shqip, `sr` Српски
+
+`SUPPORTED_LANGUAGES` 7→10 (`ru,en,fi,sv,et,ro,el` + `lt,sq,sr`); `LANGUAGE_LABELS` adds Lietuvių / Shqip / Српски (Cyrillic primary). New dictionaries `web/src/locales/{lt,sq,sr}.ts`, each covering the full 84-key English contract with non-empty strings and matching placeholders (verified by `node --test`). Language and country remain independent settings; browser detection, manual selection and persistence untouched; endonyms preserved. Serbian/Cyrillic-Latin and diacritic search behaviour rides the existing normalization.
+
+### Known gaps and honest nulls
+
+- **Lithuania:** Telšiai region — no regional/local station with a verified HTTPS stream. Radiomas.eu and fmworld.org unreachable (DNS) from this environment. Radio Znad Wilii geo-gated (403). Several small stations HTTP-only or dead (Pūkas, SUPER FM, XXL FM, Utenos/Tauragės radijas, etc.) — 17 exclusions in `data/research/lithuania.json`.
+- **Albania:** AMA registry loads dynamically — frequencies not machine-extractable. Durrës, Elbasan, Lezhë, Kukës, Dibër have licensed coverage but no confirmed city frequency this round, so no region object was created for them (7 of 12 qarku carry frequency-confirmed stations; Berat carries only nationwide Top Albania, so its region is absent rather than empty). Radio Maria Albania is HTTP-only; Radio DJ 98.2 / Radio Love 90.7 have placeholder stream URLs — excluded. zeno.fm is 401-gated (Syri/Kiss/Nacional). 17 exclusions in `data/research/albania.json`.
+- **Kosovo:** KPM/IMC registry unreachable (SPA). Gjakovë, Gjilan, Vushtrri and several municipalities are covered only by nationwide stations (RTK, Klan, KFOR) — no local station there had a verified HTTPS stream. Many locals are HTTP-only or 401/502 — 38 exclusions in `data/research/kosovo.json`.
+- **Project-wide:** iOS/PWA background behaviour and HLS playback on real iPhone Safari remain unverified — not claimed.
+
+### Verification (R3.11, one minimal cycle)
+
+`tsc -b` clean; `node --test` 89/89; locale completeness script: lt/sq/sr each 84 keys, 0 missing, 0 empty, only `kHz`/`FM`/`Internet`/`{place} · {version}` identical to English (technical terms), no English placeholders; catalogue structure: 0 duplicate IDs, 0 orphan region/city/nationwide refs, 100% HTTPS primary streams across all four (incl. unchanged Greece); one production build, exit 0, with `lt`, `sq`, `sr` locale chunks and `lithuania`, `albania`, `kosovo` catalogue chunks split off as lazy chunks. Not committed, not pushed, Pages not republished — working tree holds the change awaiting review.

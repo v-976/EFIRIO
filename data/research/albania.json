@@ -1,34 +1,63 @@
 {
  "schemaVersion": 1,
  "updatedAt": "2026-10-18",
- "note": "Исследовательский файл R3.8 — Shqipëria (FM). Источники: rtsh.al (официальный сайт RTSH, встроенный плеер даёт HTTPS-потоки), en.wikipedia.org (Radio Tirana Klasik 101.2 MHz), AMA (ama.gov.al — реестр лицензиатов, загружается динамически, частоты из реестра машинно не извлечены). Потоки проверены из Финляндии 18.10.2026.",
+ "note": "Исследовательский файл R3.11 — Shqipëria (FM). Расширение с 6 до 32 станций, охват всех 12 qarku (подтверждённые частоты — 7 из 12). Источники: ama.gov.al (реестр лицензиатов, покрытие/лицензии), radiomap.eu/al (частоты по городам), официальные сайты вещателей. Потоки проверены из Финляндии 18.10.2026.",
  "summary": {
-  "publishedTerrestrial": 6,
+  "publishedTerrestrial": 32,
   "publishedInternet": 0,
-  "excluded": 7,
-  "typeCounts": { "nationwide": 5, "regional": 0, "local": 1 },
-  "frequencyRows": 1,
-  "bands": { "FM": 1, "AM": 0 },
-  "streams": { "total": 6, "https": 6, "aac": 3, "mp3": 3, "hls": 0 },
-  "regions": 1,
-  "cities": 1
+  "excluded": 17,
+  "typeCounts": { "nationwide": 9, "regional": 13, "local": 10 },
+  "frequencyRows": 42,
+  "bands": { "FM": 42, "AM": 0 },
+  "streams": { "total": 32, "https": 32, "aac": 9, "mp3": 20, "hls": 3 },
+  "regions": 6,
+  "cities": 10
  },
  "sources": [
-  "rtsh.al/radio/kanale/* — встроенный плеер (data-radio-url) даёт HTTPS-потоки RTSH.",
-  "en.wikipedia.org/wiki/RTSH — Radio Tirana Klasik broadcasting in Tirana at 101.2 MHz.",
-  "ama.gov.al/ofruesit-e-sherbimit-mediatik-audio — официальный реестр лицензиатов AMA (52 вещателя, динамическая таблица, частоты машинно не извлечены)."
+  "https://ama.gov.al — реестр лицензированных вещателей AMA (52 аудио-провайдера, зоны покрытия, типы лицензий: Kombëtare/Rajonale/Lokale). ВАЖНО: количество лицензий НЕ равно числу действующих программ.",
+  "https://www.radiomap.eu/al/tirana.htm, /shkodra.htm, /vlora.htm — таблицы частот по городам.",
+  "Официальные сайты: topalbaniaradio.com, radioone.al, clubfm.al, klanradio.tvklan.al, emanuelradio.net, alpomedia.com, radio.saranda.love, radiologos.al, radiopopullore.al, rtsh.al.",
+  "RadioBrowser API (de1.api.radio-browser.info) + OnlineRadioBox — обнаружение/сверка потоков."
  ],
- "frequencyEncoding": "Частоты FM хранятся в MHz. Только Radio Tirana Klasik имеет подтверждённую частоту (101.2 MHz, Tiranë). Остальные RTSH-каналы вещают на FM (подтверждено регулятором AMA), но точное значение частоты из доступных источников не извлечено — frequencyMHz: null, frequencies: [].",
- "nowPlaying": "Все 6 записей: metadata.type 'none', url null, historyAvailable false.",
- "curation": "Только FM. Internet-only, AM, DAB исключены. RTSH-каналы с подтверждённым HTTPS-потоком: Radio Tirana 1/2/3, Klasik, Fëmijë, Internacional. Radio Tirana Jazz — digital-only (не FM), исключён. Региональные RTSH (Kukësi, Shkodra, Korça, Gjirokastra) — нет подтверждённого HTTPS-потока. Коммерческие станции (Top Albania Radio, Club FM, Radio Klan и др.) — нет подтверждённого HTTPS-потока.",
+ "frequencyEncoding": "Частоты FM в MHz. Станции расставлены по регионам/городам ТОЛЬКО по подтверждённым частотным строкам (frequencies[].city/region → id). AMA-покрытие без подтверждённой городской частоты (Durrës, Elbasan, Lezhë, Kukës, Dibër) НЕ создаёт регион — честный пробел, записан в geoNote.",
+ "nowPlaying": "Все 32 записи: metadata.type 'none', url null, historyAvailable false.",
+ "curation": "Только FM. Internet-only, AM, DAB исключены. RTSH (6 базовых) сохранены с их потоками stream.rtsh.al/* (все подтверждены 200) + добавлен Radio Tirana Jazz (stream.rtsh.al/radiotiranajazz, 200 aac). Новые коммерческие/общественные: Top Albania Radio, Club FM, Radio Klan, Radio One, Radio Shqip, Radio Sol, Radio Ngjallja, Radio Logos и др. (25). Национальные (Kombëtare) — в nationwide[]. Региональные/локальные — по подтверждённым частотам во все qarku.",
  "verifiedVariants": [],
+ "newRegions": ["fier", "vlorë", "korçë", "gjirokastër", "shkodër"],
+ "newCities": ["shkodër", "vlorë", "sarandë", "selenicë", "llogara", "lushnjë", "fier", "korçë", "gjirokastër"],
+ "geoNote": "Qarku с подтверждёнными частотами региональных/локальных станций (7): Tiranë, Shkodër, Vlorë, Fier, Korçë, Berat*, Gjirokastër (*Berat — только национальная Top Albania, поэтому регион Berat не создан: пустой). Честные пробелы (лицензированное покрытие AMA без подтверждённой городской частоты в этом раунде): Durrës, Elbasan, Lezhë, Kukës, Dibër. AMA-реестр загружается динамически — частоты машинно не извлекаются.",
  "excluded": [
-  { "id": "rtshjazz", "name": "Radio Tirana Jazz", "reason": "digital-only", "details": "Вещает только в цифровом формате, не FM (по en.wikipedia)." },
-  { "id": "rtshkukesi", "name": "Radio Kukësi", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет (stream.rtsh.al/radiokukesi → 404)." },
-  { "id": "rtshshkodra", "name": "Radio Shkodra", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
-  { "id": "rtshkorca", "name": "Radio Korça", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
-  { "id": "rtshgjirokastra", "name": "Radio Gjirokastra", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
-  { "id": "topalbaniaradio", "name": "Top Albania Radio", "reason": "stream", "details": "FM-станция (national frequency per en.wikipedia), но подтверждённого HTTPS-потока нет." },
-  { "id": "commercial-local", "name": "Club FM, Radio Klan, 7 Nord, ABC News, Albania FM, Alfa & Omega, Alpo, Alsat, Best Radio, Channel 7, City FM, City Radio Albania, Club Alsion, Durrësi, Emanuel, Eurostar, Fieri, House of Arts, Idea, In Radio 105.7, Jehona, Jeta, Jug, Kiss FM, Klea, Kontakt, Living, Logos, Love, Lushnja, Mati, Motiv, My Music, NRG, Nacional, Ora, One, Radio 1, Radio 4+, Radio 7, Radio Ime, Rash, Saranda, Scan, Sport, Star, Top Gold, Travel, Val' e Kaltër, Vintage, Vlora", "reason": "stream", "details": "FM-станции (local frequency per en.wikipedia), но подтверждённого HTTPS-потока нет." }
+  { "id": "radio-maria", "name": "Radio Maria (Shqiptare)", "reason": "http-only", "details": "Поток только HTTP (dreamsiteradiocp2.com:8028/stream, probe OK mp3); HTTPS-прокси (proxy/radioalbania) — 404. Широкое покрытие (Tiranë/Durrës/Elbasan/Vlorë/Lezhë/Shkodër), но правило включения — прямой HTTPS-поток. LIMITATION." },
+  { "id": "radio-dj-98-2", "name": "Radio DJ 98.2", "reason": "stream", "details": "URL потока в отчёте — placeholder-текст; предполагаемые albaniadigitalradio.al endpoints — 404/DNS-отказ 18.10.2026. Рабочего HTTPS-адреса нет." },
+  { "id": "radio-love-90-7", "name": "Radio Love 90.7", "reason": "stream", "details": "URL потока — placeholder-текст; предполагаемые endpoints не работают. Рабочего HTTPS-адреса нет." },
+  { "id": "tirana-jazz-radio", "name": "Tirana Jazz Radio", "reason": "no-fm", "details": "Рабочий поток + identity 'Tirana Jazz Radio', но НЕТ в реестре AMA — internet-only. Отличается от RTSH Radio Tirana Jazz (включён)." },
+  { "id": "pulse-fm", "name": "Pulse FM", "reason": "no-fm", "details": "Рабочий поток (pulsefm.al), но нет в реестре AMA — internet-only." },
+  { "id": "radio-plus", "name": "Radio Plus (radioplus.fm)", "reason": "unverified-fm", "details": "Заявляет 102.2 FM, но провайдер не найден в AMA. Непроверенное FM-заявление — исключено до подтверждения реестром." },
+  { "id": "radio-shqip-folklor", "name": "Radio-Shqip Folklor", "reason": "no-fm", "details": "Рабочий поток, но нет в AMA и без FM-подтверждения — internet-only." },
+  { "id": "albania-360", "name": "Albania 360 Radio", "reason": "no-fm", "details": "Нет в AMA — internet-only." },
+  { "id": "nest-radio", "name": "Nest Radio", "reason": "no-fm", "details": "Нет в AMA; поток недоступен (status 0)." },
+  { "id": "eurostar", "name": "Eurostar Radio", "reason": "unverified", "details": "radiomap 94.4 Tiranë, но отдельный Eurostar-поток не верифицирован (агрегатор указал shqipfolk = Radio Shqip Popullore); нет в AMA под этим именем." },
+  { "id": "syri-fm", "name": "Syri FM", "reason": "stream", "details": "FM 89.8 Tiranë (radiomap), но zeno.fm маунт — HTTP 401 (токен-гейт). Не верифицируемо здесь — LIMITATION, не несуществование." },
+  { "id": "kiss-fm", "name": "Kiss FM", "reason": "stream", "details": "FM 98.5 Tiranë, AMA-лицензия (Lokale), но zeno.fm — 401. LIMITATION." },
+  { "id": "radio-nacional", "name": "Radio Nacional", "reason": "stream", "details": "FM 93.6 Tiranë, AMA-лицензия (Lokale), но zeno.fm — 401. LIMITATION." },
+  { "id": "rtsh-regional", "name": "RTSH regional (Korça, Kukës, Shkodra, Gjirokastra)", "reason": "stream", "details": "Страницы каналов есть на rtsh.al, но рабочий маунт потока не найден (404/недоступно). LIMITATION." },
+  { "id": "chillradio", "name": "ChillRadio / Chill Radio / Balkan Radio", "reason": "no-fm", "details": "Internet-only агрегаторы/потоки; FM-лицензия не подтверждена." },
+  { "id": "non-albania", "name": "Косово/неалбанские (Club FM Kosova, Radio Zemra, Radio Liria и др.)", "reason": "out-of-scope", "details": "Вне Албании (Косово или диаспора). Вне области." },
+  { "id": "mislabeled", "name": "Неалбанские записи RadioBrowser (EXA FM, WindowRadio, Phish Radio, Radio Viciana и др.)", "reason": "out-of-scope", "details": "Страна в агрегаторе помечена AL ошибочно; не албанские. Исключены." }
+ ],
+ "unverifiedSources": [
+  "radiomas.eu, fmworld.org — DNS-недоступны из этого окружения.",
+  "radiolive.rtsh.dev — недоступен.",
+  "zeno.fm — HTTP 401 (антибот/токен-гейт); не обходится (Syri/Kiss/Nacional).",
+  "stream.rtsh.al / livestream.radio1.al — потоки проверены; livestream.radio1.al принадлежит Radio 1 (коммерческий), НЕ RTSH Tirana 1 (тот — stream.rtsh.al/radiotirana1).",
+  "radios.albaniadigitalradio.al — 404/DNS-отказ (Radio DJ/Love)."
+ ],
+ "sourcesUsed": [
+  "https://ama.gov.al — реестр лицензированных вещателей (52 провайдера, зоны покрытия, типы).",
+  "https://www.radiomap.eu/al/{tirana,shkodra,vlora}.htm — таблицы частот по городам.",
+  "https://www.topalbaniaradio.com, https://radioone.al, https://clubfm.al, https://emanuelradio.net, https://alpomedia.com, https://radio.saranda.love, https://radiologos.al, https://radiopopullore.al, https://www.tvklan.al.",
+  "https://rtsh.al — список каналов RTSH.",
+  "RadioBrowser API (de1.api.radio-browser.info) — обнаружение/сверка потоков.",
+  "OnlineRadioBox — сверка частот/потоков."
  ]
 }

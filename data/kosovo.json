@@ -317,12 +317,12 @@
    "website": "https://www.radiokosovaelire.com/",
    "streams": [
     {
-     "url": "https://radiokos.radioca.st/",
+     "url": "https://radiokos.radioca.st/stream",
      "role": "primary",
      "format": "mp3",
      "verifiedAt": "2026-10-18T12:00:00.000Z",
      "availableFromFinland": true,
-     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg (корневой URL отдаёт HTML)."
     }
    ],
    "metadata": {
@@ -527,6 +527,440 @@
     ],
     "notes": ""
    }
+  },
+  {
+   "id": "radiokforsrpski",
+   "name": "Radio KFOR (Srpski)",
+   "type": "regional",
+   "language": "srpski",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 96.6,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 96.6
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 105.4
+    }
+   ],
+   "website": "https://radiokfor.com/",
+   "streams": [
+    {
+     "url": "https://radiokfor.com/2/proxy/proxy.php",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (re-verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/ks/prishtina.htm: 96.6 Golesh tx, 105.4 Camp Film City tx",
+     "worldradio.online cross-check (96.6 MHz, Pristina)",
+     "Official radiokfor.com (channel 2)"
+    ],
+    "notes": "Only Prishtina-area transmitters confirmed; KFOR Srpski likely also on northern transmitters (Mitrovica/Leposaviq) — unconfirmed this round. Second verified Serbian-language station after KFOR."
+   }
+  },
+  {
+   "id": "ubtcampus",
+   "name": "UBT Campus Radio",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "education"
+   ],
+   "frequencyMHz": 100.7,
+   "frequencies": [
+    {
+     "locality": "Lipjan",
+     "region": "Prishtina",
+     "mhz": 100.7
+    }
+   ],
+   "website": "https://www.ubt-uni.net/",
+   "streams": [
+    {
+     "url": "https://radiostream.ubt-uni.net/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/ks/prishtina.htm: 100.7 UBT Campus Radio, Lipjani tx",
+     "Stream hosted on university infrastructure (radiostream.ubt-uni.net)"
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "clubfm",
+   "name": "Club FM",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 101.7,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 101.7
+    }
+   ],
+   "website": "https://clubfm.al/",
+   "streams": [
+    {
+     "url": "https://cp1.sednastream.com/proxy/clubfmkosova?mp=/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/ks/prishtina.htm: 101.7 Golesh tx",
+     "TuneIn identity slug club-fm-kosove-1017",
+     "Official clubfm.al"
+    ],
+    "notes": "worldradio.online card claims 107.1 MHz — wrong; corrected to 101.7 (radiomap + TuneIn agree)."
+   }
+  },
+  {
+   "id": "radiomariakosove",
+   "name": "Radio Maria Kosovë",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "religious"
+   ],
+   "frequencyMHz": 107.4,
+   "frequencies": [
+    {
+     "locality": "Obiliq",
+     "region": "Prishtina",
+     "mhz": 107.4
+    },
+    {
+     "locality": "Suharekë",
+     "region": "Prizren",
+     "mhz": 105.2
+    }
+   ],
+   "website": "https://www.radiomariakosove.org/",
+   "streams": [
+    {
+     "url": "https://dreamsiteradiocp2.com/proxy/rmkosovo2?mp=/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/ks/prishtina.htm: 107.4, transmitter Hajvalia (Radio Vaticani feed)",
+     "Wikipedia: Kastrioti/Obilić 107.4; Suhareka 105.2",
+     "Official radiomariakosove.org embeds this stream"
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "radiodukagjini",
+   "name": "Radio Dukagjini",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 99.7,
+   "frequencies": [
+    {
+     "locality": "Peja",
+     "region": "Peja",
+     "mhz": 99.7
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 99.7
+    }
+   ],
+   "website": "http://www.dukagjini.com/",
+   "streams": [
+    {
+     "url": "https://s2.voscast.com:8825/radiodukagjini",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round). NEW: HTTPS voscast endpoint found via TuneIn (s54361) — previously excluded as http-only."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/ks/prishtina.htm: 99.7 Golesh tx (reception Prishtina)",
+     "worldradio.online: 99.7 MHz Pejë (HQ city)",
+     "Official dukagjini.com (site carries no numeric frequency)"
+    ],
+    "notes": "HQ in Pejë; 99.7 broadcasts from Golesh transmitter serving Prishtina area."
+   }
+  },
+  {
+   "id": "capitalfm",
+   "name": "92.1 Capital FM",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "talk"
+   ],
+   "frequencyMHz": 92.1,
+   "frequencies": [
+    {
+     "locality": "Fushë Kosovë",
+     "region": "Prishtina",
+     "mhz": 92.1
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 92.1
+    }
+   ],
+   "website": "https://capital921.com/",
+   "streams": [
+    {
+     "url": "https://cfm.albaservers.com:8012/live.m4a",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/aacp (verified twice this round). URL embedded on official homepage player."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Official capital921.com: player stream + footer '92.1 Capital FM, Rr Dardania 272, Fushë Kosovë'",
+     "Wikipedia: Fushë Kosovë 92.1 (local) and Prishtinë 92.1 (regional)",
+     "radiomap.eu/ks/prishtina.htm: 92.1 Capital FM, Drenas tx (reception Prishtina)"
+    ],
+    "notes": "Self-described as regional station; Wikipedia also has a dedicated '92.1 Capital FM' article."
+   }
+  },
+  {
+   "id": "radio1peja",
+   "name": "Radio 1",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 98.0,
+   "frequencies": [
+    {
+     "locality": "Peja",
+     "region": "Peja",
+     "mhz": 98.0
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://ec6.yesstreaming.net:3430/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Wikipedia: Radio 1 98.0 FM Pejë (with TuneIn link s324756)",
+     "TuneIn slug Radio-1-980-s324756",
+     "worldradio.online: 98.0 MHz Pejë"
+    ],
+    "notes": "Official site not established; worldradio associates njeshi.com (news portal) — unconfirmed as official station site, left null."
+   }
+  },
+  {
+   "id": "fontana",
+   "name": "Radio Fontana",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 98.8,
+   "frequencies": [
+    {
+     "locality": "Istog",
+     "region": "Istog",
+     "mhz": 98.8
+    }
+   ],
+   "website": "http://www.radiofontana.org/",
+   "streams": [
+    {
+     "url": "https://live.radiostreaming.al:8010/;stream.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Wikipedia: Radio Fontana 98.8 Istog",
+     "worldradio.online: 98.8 MHz Istok, website radiofontana.org"
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "kontaktplus",
+   "name": "Radio Kontakt Plus",
+   "type": "local",
+   "language": "srpski",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 101.9,
+   "frequencies": [
+    {
+     "locality": "Mitrovica",
+     "region": "Mitrovica",
+     "mhz": 101.9
+    }
+   ],
+   "website": "https://www.radiokontaktplus.org/",
+   "streams": [
+    {
+     "url": "https://radio.dukahosting.com:7005/;*.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Probe OK: HTTP 200, audio/mpeg (verified twice this round)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Проверенный CORS-эндпоинт метаданных отсутствует; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Wikipedia: Radio Kontakt Plus 101.9 Mitrovica",
+     "worldradio.online: 101.9 MHz Mitrovica, Srpski, website radiokontaktplus.org",
+     "Official radiokontaktplus.org"
+    ],
+    "notes": "Serbian-language station in Mitrovica — third verified srpski station (with KFOR Srpski)."
+   }
   }
  ],
  "nationwide": [
@@ -543,9 +977,23 @@
     "radiokosovaelire",
     "glamradio",
     "radioplus",
-    "radioprishtina"
+    "radioprishtina",
+    "radiokforsrpski",
+    "ubtcampus",
+    "clubfm",
+    "radiomariakosove",
+    "radiodukagjini",
+    "capitalfm"
    ],
    "cities": [
+    "prishtina",
+    "prishtina",
+    "prishtina",
+    "lipjan",
+    "prishtina",
+    "obiliq",
+    "prishtina",
+    "fushokosove",
     "prishtina"
    ]
   },
@@ -563,10 +1011,44 @@
    "id": "prizren",
    "name": "Prizren",
    "stations": [
-    "urbanfm"
+    "urbanfm",
+    "radiomariakosove"
    ],
    "cities": [
-    "prizren"
+    "prizren",
+    "suhareke"
+   ]
+  },
+  {
+   "id": "peja",
+   "name": "Peja",
+   "stations": [
+    "radiodukagjini",
+    "radio1peja"
+   ],
+   "cities": [
+    "peja",
+    "peja"
+   ]
+  },
+  {
+   "id": "istog",
+   "name": "Istog",
+   "stations": [
+    "fontana"
+   ],
+   "cities": [
+    "istog"
+   ]
+  },
+  {
+   "id": "mitrovica",
+   "name": "Mitrovica",
+   "stations": [
+    "kontaktplus"
+   ],
+   "cities": [
+    "mitrovica"
    ]
   }
  ],
@@ -579,7 +1061,11 @@
     "radiokosovaelire",
     "glamradio",
     "radioplus",
-    "radioprishtina"
+    "radioprishtina",
+    "radiokforsrpski",
+    "clubfm",
+    "radiodukagjini",
+    "capitalfm"
    ]
   },
   {
@@ -596,6 +1082,63 @@
    "regionId": "prizren",
    "stations": [
     "urbanfm"
+   ]
+  },
+  {
+   "id": "lipjan",
+   "name": "Lipjan",
+   "regionId": "prishtina",
+   "stations": [
+    "ubtcampus"
+   ]
+  },
+  {
+   "id": "obiliq",
+   "name": "Obiliq",
+   "regionId": "prishtina",
+   "stations": [
+    "radiomariakosove"
+   ]
+  },
+  {
+   "id": "suhareke",
+   "name": "Suharekë",
+   "regionId": "prizren",
+   "stations": [
+    "radiomariakosove"
+   ]
+  },
+  {
+   "id": "peja",
+   "name": "Peja",
+   "regionId": "peja",
+   "stations": [
+    "radiodukagjini",
+    "radio1peja"
+   ]
+  },
+  {
+   "id": "fushokosove",
+   "name": "Fushë Kosovë",
+   "regionId": "prishtina",
+   "stations": [
+    "capitalfm"
+   ]
+  },
+  {
+   "id": "istog",
+   "name": "Istog",
+   "regionId": "istog",
+   "stations": [
+    "fontana"
+   ]
+  },
+  {
+   "id": "mitrovica",
+   "name": "Mitrovica",
+   "regionId": "mitrovica",
+   "stations": [
+    "kontaktplus"
    ]
   }
  ]

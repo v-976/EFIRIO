@@ -1,34 +1,63 @@
 {
  "schemaVersion": 1,
  "updatedAt": "2026-10-18",
- "note": "Исследовательский файл R3.7 — Lietuva (FM). Источники: radijas.eu (агрегатор/плеер, использован для обнаружения и сверки потоков/частот), en.wikipedia.org (список станций и частот по городам), официальные сайты вещателей. Потоки проверены из Финляндии 18.10.2026.",
+ "note": "Исследовательский файл R3.11 — Lietuva (FM). Расширение до максимального охвата регионов. Источники: rrt.lt (официальный реестр RRT — главный источник частот), radijas.eu (сверка частот/потоков), официальные сайты вещателей. Потоки проверены из Финляндии 18.10.2026 (телом ответа: HTTP 200 + аудио content-type).",
  "summary": {
-  "publishedTerrestrial": 23,
+  "publishedTerrestrial": 32,
   "publishedInternet": 0,
-  "excluded": 7,
-  "typeCounts": { "nationwide": 11, "regional": 9, "local": 3 },
-  "frequencyRows": 95,
-  "bands": { "FM": 95, "AM": 0 },
-  "streams": { "total": 23, "https": 23, "aac": 2, "mp3": 18, "hls": 3 },
+  "excluded": 17,
+  "typeCounts": { "nationwide": 12, "regional": 13, "local": 7 },
+  "frequencyRows": 142,
+  "bands": { "FM": 142, "AM": 0 },
+  "streams": { "total": 34, "https": 34, "aac": 4, "mp3": 23, "hls": 7 },
   "regions": 6,
-  "cities": 7
+  "cities": 10
  },
  "sources": [
-  "radijas.eu/stotis/* — встроенный плеер даёт HTTPS-потоки и частоты; использован для обнаружения и сверки.",
-  "en.wikipedia.org/wiki/List_of_radio_stations_in_Lithuania — частоты FM по городам/регионам.",
-  "Официальные сайты станций (m-1.lt, lietus.lt, lrt.lt, radiocentras.lt, ziniuradijas.lt, goldfm.lt, relaxfm.lt, zipfm.lt, rockfm.lt, ehr.lt, radio3.lt, radiofiesta.lt, fm99.lt, radijaskelyje.lt, marijosradijas.lt)."
+  "https://www.rrt.lt/radijo-spektras/rtv-transliavimas/ — RRT (Lietuvos radijo ir televizijos komisija) официальный реестр FM-частот. АВТОРИТЕТ для частот (10 населённых пунктов M-1 Plius и т.д.).",
+  "https://radijas.eu/fm-dazniai/ — полная таблица город×частота×станция (297 строк) для сверки.",
+  "Официальные сайты вещателей (radio.m-1.fm, m1dance.lt, laluna.15min.lt, xfm.lt, vilniusfm.lt, jazzfm.lt, rs2.lt, startfm.lt, pliusas.15min.lt) — потоки и принадлежность.",
+  "https://onlineradiobox.com/lt/ — АГРЕГАТОР, только для обнаружения/сверки."
  ],
- "frequencyEncoding": "Частоты FM хранятся в MHz (band не задаётся, по умолчанию FM). AM/DAB не включались (этап только FM).",
- "nowPlaying": "Все 23 записи: metadata.type 'none', url null, historyAvailable false — подтверждённого CORS-эндпоинта метаданных нет.",
- "curation": "Только FM. Internet-only, AM и DAB/DAB+ исключены. Национальные сети с подтверждённым HTTPS-потоком и частотами: LRT Radijas/Klasika/Opus, M-1, Lietus, Power Hit Radio, Relax FM, Radiocentras, Žinių radijas, GOLD FM, Marijos radijas. Региональные/локальные — по частотам из en.wikipedia.",
+ "frequencyEncoding": "Частоты FM хранятся в MHz (band не задаётся, по умолчанию FM). Населённый пункт — display-строка (locality), регион — display-строка (region); они отображаются на карточке и не обязаны совпадать с id regions/cities.",
+ "nowPlaying": "Все 32 записи: metadata.type 'none', url null, historyAvailable false — подтверждённого CORS-эндпоинта метаданных нет.",
+ "curation": "Только FM. Internet-only, AM и DAB/DAB+ исключены. Новые (R3.11): M-1 Plius (nationwide, 10 частот), M-1 Dance, Laluna, XFM (7 городов), Vilnius FM, JAZZ FM, RS2, Pulsas, Start FM. Многорегиональные региональные станции попадают во все регионы подтверждённых частот (конвенция Литвы, в отличие от одной-страны на станцию в Греции). Национальные станции — только в nationwide[], не в регионах/городах.",
  "verifiedVariants": [],
+ "newRegions": [],
+ "newCities": ["biržai", "kėdainiai", "šilutė"],
+ "geoNote": "Регионов осталось 6: новые (Marijampolė/Tauragė/Utena) покрываются ТОЛЬКО национальными станциями (M-1 Plius и др.), а nationwide-станции не попадают в региональные фильтры по конвенции проекта — пустые регионы не создаются. Telšiai — честный пробел: ни одной региональной/локальной станции с подтверждённым HTTPS-потоком.",
  "excluded": [
-  { "id": "beveikradijas", "name": "Beveik Radijas", "reason": "no-fm-frequency", "details": "Поток HTTPS есть (halo.streamerr.co), но подтверждённой FM-частоты нет — станция internet-only. Исключена (только FM)." },
-  { "id": "m1plius", "name": "M-1 Plius", "reason": "stream", "details": "Частоты FM есть (Vilnius 106.2 и др.), но подтверждённого публичного HTTPS-потока нет (radijas.eu не даёт отдельный маунт)." },
-  { "id": "m1dance", "name": "M-1 Dance", "reason": "stream", "details": "Частоты FM есть (Klaipėda 100.8), но подтверждённого публичного HTTPS-потока нет." },
-  { "id": "pukas", "name": "Pūkas", "reason": "http-only", "details": "Поток только HTTP (http://212.95.45.82:8000/stream); HTTPS-маунта нет." },
-  { "id": "laluna", "name": "Laluna", "reason": "stream", "details": "Частоты FM есть (Klaipėda 94.9), но подтверждённого публичного HTTPS-потока нет." },
-  { "id": "xxlfm", "name": "XXL FM", "reason": "stream", "details": "Частоты FM есть (Klaipėda/Šiauliai/Plungė/Telšiai/Tauragė), но подтверждённого публичного HTTPS-потока нет." },
-  { "id": "regional-small", "name": "RS2, Radijo Klubas, Saulės Radijas, Pulsas, Utenos Radijas, Tauragės Radijas, Mažeikiai FM, Mažeikių aidas, Kapsai, Mano FM, Tau Radijas, Sol FM, Baltupių radijas, Vilnius FM, Vaikų Radijas, Start FM, Jazz FM, XFM, Radio Znad Wilii, BBC World Service", "reason": "stream", "details": "Частоты FM есть, но подтверждённого публичного HTTPS-потока нет (станции отсутствуют в radijas.eu)." }
+  { "id": "znadwilii", "name": "Radio Znad Wilii", "reason": "geo-gated", "details": "plays.zw.lt/zw128 отдаёт HTTP 403 (referer/geo-гейт) из Финляндии 18.10.2026. Поток СУЩЕСТВУЕТ (listed radijas.eu), но содержимое не верифицировано — LIMITATION, не несуществование. availableFromFinland: false." },
+  { "id": "pukas", "name": "Pūkas", "reason": "http-only", "details": "Поток только HTTP (212.95.45.82:8000); HTTPS-маунта нет." },
+  { "id": "pukas2", "name": "Pūkas-2", "reason": "http-only", "details": "Поток только HTTP (212.95.39.164:8074); HTTPS-маунта нет." },
+  { "id": "superfm", "name": "SUPER FM", "reason": "http-only", "details": "Поток только HTTP (82.140.131.217:8000/superfm.mp3); HTTPS-вариант не работает." },
+  { "id": "xxlfm", "name": "XXL FM", "reason": "http-only", "details": "Поток только HTTP (91.211.246.42:8000/XXL-FM); HTTPS нет." },
+  { "id": "manofm", "name": "MANO FM", "reason": "http-only", "details": "Нет подтверждённого HTTPS-потока." },
+  { "id": "extrafm", "name": "EXTRA FM", "reason": "http-only", "details": "extrafm.lt редиректит на radio3.tv3.lt (ребрендинг Radio 3); отдельного HTTPS-потока нет." },
+  { "id": "taufm", "name": "Tau", "reason": "stream-dead", "details": "taufm.lt — DNS-таймаут; подтверждённого HTTPS-потока нет." },
+  { "id": "kapsai", "name": "Kapsai", "reason": "stream-dead", "details": "kapsai.lt — таймаут соединения; поток мёртв." },
+  { "id": "mazeikiuaidas", "name": "Mažeikių aidas", "reason": "stream-dead", "details": "Подтверждённого HTTPS-потока нет." },
+  { "id": "mazeikiaifm", "name": "Mažeikiai.FM", "reason": "stream-dead", "details": "Подтверждённого HTTPS-потока нет." },
+  { "id": "radijoklubas", "name": "Radijo klubas", "reason": "stream-dead", "details": "radioklubas.lt — DNS-таймаут; поток мёртв." },
+  { "id": "saulesradijas", "name": "SAULĖS RADIJAS", "reason": "stream-dead", "details": "saulesradijas.lt возвращает 200 с пустым телом (0 байт); потока нет." },
+  { "id": "utenosradijas", "name": "Utenos radijas", "reason": "stream-dead", "details": "utenosradijas.lt — JS-оболочка (127 байт), URL потока в HTML отсутствует." },
+  { "id": "tauragesradijas", "name": "Tauragės radijas", "reason": "stream-dead", "details": "tauragesradijas.lt — DNS-таймаут; потока нет." },
+  { "id": "baltupiuradijas", "name": "Baltupių radijas", "reason": "stream-dead", "details": "baltupiuradijas.lt — DNS-таймаут; потока нет." },
+  { "id": "bbcworldservice", "name": "BBC WORLD SERVICE", "reason": "stream-dead", "details": "Подтверждённого прямого HTTPS-потока нет." }
+ ],
+ "unverifiedSources": [
+  "https://radiomas.eu/ — DNS-резолв не удавался из этого окружения (источник обнаружения недоступен).",
+  "https://plays.zw.lt/zw128 (Znad Wilii) — HTTP 403 при пробе; referer/geo-гейт. Поток существует, но содержимое не верифицировано.",
+  "http://82.140.131.217:8000/superfm.mp3, http://91.211.246.42:8000/XXL-FM — HTTP-only; HTTPS-варианты не работают.",
+  "http://212.95.45.82:8000/stream (Pūkas), http://212.95.39.164:8074/stream (Pūkas-2) — HTTP-only.",
+  "https://taufm.lt, https://m1dance.lt* , https://uteneradijas.lt, https://radioklubas.lt, https://baltupiuradijas.lt — DNS-отказы (*m1dance.lt как сайт, но поток radio.m-1.fm/m-1dance подтверждён).",
+  "https://xxlfm.lt, https://kapsai.lt — таймауты соединения.",
+  "https://www.saulesradijas.lt/ — 200 с пустым телом; https://www.utenosradijas.lt/ — JS-оболочка без URL потока."
+ ],
+ "sourcesUsed": [
+  "https://www.rrt.lt/radijo-spektras/rtv-transliavimas/ — официальный реестр RRT (частоты).",
+  "https://radijas.eu/fm-dazniai/ — таблица город×частота×станция (сверка).",
+  "Официальные сайты: m-1.fm, vilniusfm.lt, jazzfm.lt, rs2.lt, startfm.lt, xfm.lt, laluna.15min.lt.",
+  "https://onlineradiobox.com/lt/ — агрегатор (сверка)."
  ]
 }
