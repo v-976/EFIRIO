@@ -1,0 +1,2551 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "country": {
+  "id": "greece",
+  "name": "Ελλάδα",
+  "code": "GR",
+  "timeZone": "Europe/Athens"
+ },
+ "stations": [
+  {
+   "id": "ertproto",
+   "name": "ΕΡΤ Πρώτο Πρόγραμμα",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 91.6,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 91.6
+    }
+   ],
+   "website": "https://www.ert.gr/radio/proto/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-proto",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ert.gr — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-proto подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть ERT (Proto)."
+   }
+  },
+  {
+   "id": "ertdeftero",
+   "name": "ΕΡΑ Δεύτερο Πρόγραμμα",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "music"
+   ],
+   "frequencyMHz": 103.7,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 103.7
+    }
+   ],
+   "website": "https://www.ert.gr/radio/deftero/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-deftero",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ert.gr — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-deftero подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть ERT (Deftero)."
+   }
+  },
+  {
+   "id": "erttrito",
+   "name": "ΕΡΑ Τρίτο Πρόγραμμα",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "culture",
+    "classical"
+   ],
+   "frequencyMHz": 90.9,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 90.9
+    }
+   ],
+   "website": "https://www.ert.gr/radio/trito/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-trito",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ert.gr — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-trito подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть ERT (Trito)."
+   }
+  },
+  {
+   "id": "ertkosmos",
+   "name": "ΕΡΑ Kosmos",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "world",
+    "jazz"
+   ],
+   "frequencyMHz": 93.6,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 93.6
+    }
+   ],
+   "website": "https://www.ert.gr/radio/kosmos/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-kosmos",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ert.gr — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-kosmos подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть ERT (Kosmos)."
+   }
+  },
+  {
+   "id": "ertzeppelin",
+   "name": "ΕΡΑ Zeppelin",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 106.7,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 106.7
+    }
+   ],
+   "website": "https://www.ert.gr/radio/zeppelin/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-zeppelin",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ert.gr — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-zeppelin подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "skai",
+   "name": "ΣΚΑΪ 100.3",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 100.3,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 100.3
+    },
+    {
+     "locality": "Patra",
+     "region": "Western Greece",
+     "mhz": 89.4
+    },
+    {
+     "locality": "Heraklion",
+     "region": "Crete",
+     "mhz": 92.1
+    },
+    {
+     "locality": "Katerini",
+     "region": "Central Macedonia",
+     "mhz": 93
+    }
+   ],
+   "website": "https://www.skairadio.gr/",
+   "streams": [
+    {
+     "url": "https://skai.live24.gr/skai1003",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт skairadio.gr — 18.10.2026.",
+     "Поток skai.live24.gr/skai1003 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть ΣΚΑΪ."
+   }
+  },
+  {
+   "id": "realfm",
+   "name": "Real FM 97.8",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 97.8,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 97.8
+    }
+   ],
+   "website": "https://www.realfm.gr/",
+   "streams": [
+    {
+     "url": "https://netradio.live24.gr/realfm",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт realfm.gr — 18.10.2026.",
+     "Поток netradio.live24.gr/realfm подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "alpha989",
+   "name": "Alpha 98.9",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 98.9,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 98.9
+    }
+   ],
+   "website": "https://www.alpha989.gr/",
+   "streams": [
+    {
+     "url": "https://stream.rcs.revma.com/tm4crkyeda3vv",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт alpha989.gr — 18.10.2026.",
+     "Поток stream.rcs.revma.com/tm4crkyeda3vv подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "rythmos",
+   "name": "Rythmos 94.9",
+   "type": "nationwide",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 94.9,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 94.9
+    },
+    {
+     "locality": "Thessaloniki",
+     "region": "Central Macedonia",
+     "mhz": 104
+    },
+    {
+     "locality": "Patra",
+     "region": "Western Greece",
+     "mhz": 94.9
+    },
+    {
+     "locality": "Heraklion",
+     "region": "Crete",
+     "mhz": 104.5
+    }
+   ],
+   "website": "https://www.rythmos.gr/",
+   "streams": [
+    {
+     "url": "https://stream.rcs.revma.com/0btynq5r4a0uv",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rythmos.gr — 18.10.2026.",
+     "Поток stream.rcs.revma.com/0btynq5r4a0uv подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Rythmos."
+   }
+  },
+  {
+   "id": "melodia",
+   "name": "Μελωδία FM 99.2",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "greek pop"
+   ],
+   "frequencyMHz": 99.2,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 99.2
+    }
+   ],
+   "website": "https://www.melodia.gr/",
+   "streams": [
+    {
+     "url": "https://stream.radiojar.com/melodia992",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт melodia.gr — 18.10.2026.",
+     "Поток stream.radiojar.com/melodia992 подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "kissfm",
+   "name": "92.9 Kiss FM",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 92.9,
+   "frequencies": [
+    {
+     "locality": "Athens",
+     "region": "Attica",
+     "mhz": 92.9
+    }
+   ],
+   "website": "https://www.kiss929.gr/",
+   "streams": [
+    {
+     "url": "https://netradio.live24.gr/kiss2111",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт kiss929.gr — 18.10.2026.",
+     "Поток netradio.live24.gr/kiss2111 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "ertchania",
+   "name": "ΕΡΤ Χανίων",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 104,
+   "frequencies": [
+    {
+     "locality": "Chania",
+     "region": "Crete",
+     "mhz": 104
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-chania",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-chania.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-chania подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Ханья, Крит)."
+   }
+  },
+  {
+   "id": "ertiraklio",
+   "name": "ΕΡΤ Ηρακλείου",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-heraklio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Поток radiostreaming.ert.gr/ert-heraklio подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Ираклион, Крит). Точная FM-частота не подтверждена из доступных источников — оставлена null."
+   }
+  },
+  {
+   "id": "ertpatra",
+   "name": "ΕΡΤ Πάτρας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 92.5,
+   "frequencies": [
+    {
+     "locality": "Patras",
+     "region": "Western Greece",
+     "mhz": 92.5
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-patra",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-patra.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-patra подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Патры)."
+   }
+  },
+  {
+   "id": "ertpyrgos",
+   "name": "ΕΡΤ Πύργου",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 102.4,
+   "frequencies": [
+    {
+     "locality": "Pyrgos",
+     "region": "Western Greece",
+     "mhz": 102.4
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-pyrgos",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-pyrgos.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-pyrgos подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Пиргос, Элида)."
+   }
+  },
+  {
+   "id": "ertvolos",
+   "name": "ΕΡΤ Βόλου",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 100.7,
+   "frequencies": [
+    {
+     "locality": "Volos",
+     "region": "Thessaly",
+     "mhz": 100.7
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-volos",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-volos.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-volos подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Волос)."
+   }
+  },
+  {
+   "id": "ertlarisa",
+   "name": "ΕΡΤ Λάρισας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 98.3,
+   "frequencies": [
+    {
+     "locality": "Larissa",
+     "region": "Thessaly",
+     "mhz": 98.3
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-larisa",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-larisa.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-larisa подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Лариса)."
+   }
+  },
+  {
+   "id": "ertkavala",
+   "name": "ΕΡΤ Καβάλας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 96.3,
+   "frequencies": [
+    {
+     "locality": "Kavala",
+     "region": "East Macedonia and Thrace",
+     "mhz": 96.3
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-kavala",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-kavala.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-kavala подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Кавала)."
+   }
+  },
+  {
+   "id": "ertkomotini",
+   "name": "ΕΡΤ Κομοτηνής",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 91.2,
+   "frequencies": [
+    {
+     "locality": "Komotini",
+     "region": "East Macedonia and Thrace",
+     "mhz": 91.2
+    },
+    {
+     "locality": "Komotini",
+     "region": "East Macedonia and Thrace",
+     "mhz": 98.1
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-komotini",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-komotini.htm — 18.10.2026 (91.2/98.1 FM).",
+     "Поток radiostreaming.ert.gr/ert-komotini подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Комотини); передаёт на 91.2 и 98.1 FM."
+   }
+  },
+  {
+   "id": "ertorestiada",
+   "name": "ΕΡΤ Ορεστιάδας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 101,
+   "frequencies": [
+    {
+     "locality": "Orestiada",
+     "region": "East Macedonia and Thrace",
+     "mhz": 101
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-orestiada",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-orestiada.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-orestiada подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Орестиада)."
+   }
+  },
+  {
+   "id": "ertserres",
+   "name": "ΕΡΤ Σερρών",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 101.5,
+   "frequencies": [
+    {
+     "locality": "Serres",
+     "region": "Central Macedonia",
+     "mhz": 101.5
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-serres",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-serres.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-serres подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Серры)."
+   }
+  },
+  {
+   "id": "ertkerkyra",
+   "name": "ΕΡΤ Κέρκυρας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 99.3,
+   "frequencies": [
+    {
+     "locality": "Corfu",
+     "region": "Ionian Islands",
+     "mhz": 99.3
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-kerkyra",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-kerkyra.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-kerkyra подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Корфу)."
+   }
+  },
+  {
+   "id": "ertzakynthos",
+   "name": "ΕΡΤ Ζακύνθου",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 93.2,
+   "frequencies": [
+    {
+     "locality": "Zakynthos",
+     "region": "Ionian Islands",
+     "mhz": 93.2
+    },
+    {
+     "locality": "Zakynthos",
+     "region": "Ionian Islands",
+     "mhz": 95.2
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-zakynthos",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-zakynthos.htm — 18.10.2026 (93.2/95.2 FM).",
+     "Поток radiostreaming.ert.gr/ert-zakynthos подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Закинф); передаёт на 93.2 и 95.2 FM."
+   }
+  },
+  {
+   "id": "ertrodos",
+   "name": "ΕΡΤ Ρόδου",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 92.7,
+   "frequencies": [
+    {
+     "locality": "Rhodes",
+     "region": "South Aegean",
+     "mhz": 92.7
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-rodos",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-rodos.htm — 18.10.2026 (92.7–93.1 FM).",
+     "Поток radiostreaming.ert.gr/ert-rodos подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Родос); передаёт в диапазоне 92.7–93.1 FM."
+   }
+  },
+  {
+   "id": "ertkalamata",
+   "name": "ΕΡΤ Καλαμάτας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 107.2,
+   "frequencies": [
+    {
+     "locality": "Kalamata",
+     "region": "Peloponnese",
+     "mhz": 107.2
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-kalamata",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-kalamata.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-kalamata подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Каламата)."
+   }
+  },
+  {
+   "id": "erttripoli",
+   "name": "ΕΡΤ Τρίπολης",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 101.5,
+   "frequencies": [
+    {
+     "locality": "Tripoli",
+     "region": "Peloponnese",
+     "mhz": 101.5
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-tripoli",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-tripoli.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-tripoli подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Триполи)."
+   }
+  },
+  {
+   "id": "ertioannina",
+   "name": "ΕΡΤ Ιωαννίνων",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 88.2,
+   "frequencies": [
+    {
+     "locality": "Ioannina",
+     "region": "Epirus",
+     "mhz": 88.2
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-ioannina",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-ioannina.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-ioannina подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Янина)."
+   }
+  },
+  {
+   "id": "ertkozani",
+   "name": "ΕΡΤ Κοζάνης",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 100.2,
+   "frequencies": [
+    {
+     "locality": "Kozani",
+     "region": "Western Macedonia",
+     "mhz": 100.2
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-kozani",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-kozani.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-kozani подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Козани)."
+   }
+  },
+  {
+   "id": "ertflorina",
+   "name": "ΕΡΤ Φλώρινας",
+   "type": "regional",
+   "language": "ελληνικά",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 96.6,
+   "frequencies": [
+    {
+     "locality": "Florina",
+     "region": "Western Macedonia",
+     "mhz": 96.6
+    }
+   ],
+   "website": "https://www.ert.gr/",
+   "streams": [
+    {
+     "url": "https://radiostreaming.ert.gr/ert-florina",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ert-florina.htm — 18.10.2026.",
+     "Поток radiostreaming.ert.gr/ert-florina подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная сеть ERT (Флорина)."
+   }
+  },
+  {
+   "id": "olympos",
+   "name": "Όλυμπος 101.5",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 101.5,
+   "frequencies": [
+    {
+     "locality": "Katerini",
+     "region": "Central Macedonia",
+     "mhz": 101.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://streamer.stordia.net/listen/olympos/radio.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/olympos.htm — 18.10.2026.",
+     "Поток streamer.stordia.net/listen/olympos/radio.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Катерини (Пиерия, Центральная Македония)."
+   }
+  },
+  {
+   "id": "yparxo",
+   "name": "Υπάρχω 101.4",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 101.4,
+   "frequencies": [
+    {
+     "locality": "Alexandroupoli",
+     "region": "East Macedonia and Thrace",
+     "mhz": 101.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cast4.magicstreams.gr:2200/ssl/sc_gr40c?mp=/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/yparxo.htm — 18.10.2026.",
+     "Поток cast4.magicstreams.gr подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Александруполи (Фракия)."
+   }
+  },
+  {
+   "id": "cinar",
+   "name": "Radyo Çınar 91.8",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "turkish minority"
+   ],
+   "frequencyMHz": 91.8,
+   "frequencies": [
+    {
+     "locality": "Komotini",
+     "region": "East Macedonia and Thrace",
+     "mhz": 91.8
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://cinarfm.ozelip.com:9964/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/cinar.htm — 18.10.2026.",
+     "Поток cinarfm.ozelip.com:9964 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Станция турецкого меньшинства, Комотини (Фракия)."
+   }
+  },
+  {
+   "id": "ena",
+   "name": "ΕΝΑ 90.5",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 90.5,
+   "frequencies": [
+    {
+     "locality": "Kavala",
+     "region": "East Macedonia and Thrace",
+     "mhz": 90.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://rdst.win:48000/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/ena.htm — 18.10.2026.",
+     "Поток rdst.win:48000 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Кавалы."
+   }
+  },
+  {
+   "id": "kanali5",
+   "name": "Κανάλι 5 91.7",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 91.7,
+   "frequencies": [
+    {
+     "locality": "Kavala",
+     "region": "East Macedonia and Thrace",
+     "mhz": 91.7
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://i5.streams.ovh:14036/live",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/kanali5-kavala.htm — 18.10.2026.",
+     "Поток i5.streams.ovh:14036/live подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Кавалы."
+   }
+  },
+  {
+   "id": "pilio",
+   "name": "Πήλιο 93.4",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 93.4,
+   "frequencies": [
+    {
+     "locality": "Volos",
+     "region": "Thessaly",
+     "mhz": 93.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s3.myradiostream.com/4060/listen.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/pilio.htm — 18.10.2026.",
+     "Поток s3.myradiostream.com/4060/listen.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Волоса (Магнисия)."
+   }
+  },
+  {
+   "id": "kissvolos",
+   "name": "Kiss FM 98.8",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 98.8,
+   "frequencies": [
+    {
+     "locality": "Volos",
+     "region": "Thessaly",
+     "mhz": 98.8
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s6.onweb.gr:7029/stream.mp3.m3u",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/kiss98.htm — 18.10.2026.",
+     "Поток s6.onweb.gr:7029 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный Kiss FM Волоса (не путать с афинским Kiss FM 92.9)."
+   }
+  },
+  {
+   "id": "scanner",
+   "name": "Scanner 102.2",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 102.2,
+   "frequencies": [
+    {
+     "locality": "Larissa",
+     "region": "Thessaly",
+     "mhz": 102.2
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://sh.onweb.gr:8074/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/scanner.htm — 18.10.2026.",
+     "Поток sh.onweb.gr:8074 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Лариссы."
+   }
+  },
+  {
+   "id": "partyelassona",
+   "name": "Party 97.1",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 97.1,
+   "frequencies": [
+    {
+     "locality": "Elassona",
+     "region": "Thessaly",
+     "mhz": 97.1
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://sh.onweb.gr:7024/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/party971.htm — 18.10.2026.",
+     "Поток sh.onweb.gr:7024 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Элассоны (Лариса, Фессалия)."
+   }
+  },
+  {
+   "id": "deejaylamia",
+   "name": "DeeJay 91.2",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": 91.2,
+   "frequencies": [
+    {
+     "locality": "Lamia",
+     "region": "Central Greece",
+     "mhz": 91.2
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://sp1.32bit.gr/8014/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Фтиотида) — 18.10.2026.",
+     "Поток sp1.32bit.gr/8014/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Ламии (Фтиотида, Центральная Греция)."
+   }
+  },
+  {
+   "id": "nrglamia",
+   "name": "NRG 92.4",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 92.4,
+   "frequencies": [
+    {
+     "locality": "Lamia",
+     "region": "Central Greece",
+     "mhz": 92.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s6.onweb.gr:7031/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Фтиотида) — 18.10.2026.",
+     "Поток s6.onweb.gr:7031/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Ламии."
+   }
+  },
+  {
+   "id": "fistikilamia",
+   "name": "Φυστίκι 95.8",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 95.8,
+   "frequencies": [
+    {
+     "locality": "Lamia",
+     "region": "Central Greece",
+     "mhz": 95.8
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://sh.onweb.gr:8444/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Фтиотида) — 18.10.2026.",
+     "Поток sh.onweb.gr:8444/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Ламии."
+   }
+  },
+  {
+   "id": "lepanto",
+   "name": "Λεπάντο 101.4",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 101.4,
+   "frequencies": [
+    {
+     "locality": "Nafpaktos",
+     "region": "Western Greece",
+     "mhz": 101.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s30.myradiostream.com/31754/listen.mp3",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aacp."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "radiomap.eu/gr/play/lepanto.htm — 18.10.2026.",
+     "Поток s30.myradiostream.com/31754/listen.mp3 подтверждён 18.10.2026 (200, audio/aacp)."
+    ],
+    "notes": "Местный станция Навпакта (Этолоакарнания, Западная Греция)."
+   }
+  },
+  {
+   "id": "radiocafesamos",
+   "name": "Radio Cafe 102.4",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 102.4,
+   "frequencies": [
+    {
+     "locality": "Samos",
+     "region": "North Aegean",
+     "mhz": 102.4
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://s6.onweb.gr/8046/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Самос) — 18.10.2026.",
+     "Поток s6.onweb.gr/8046/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Самоса (Северные Спорады)."
+   }
+  },
+  {
+   "id": "fm2000samos",
+   "name": "2000 FM 99.8",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 99.8,
+   "frequencies": [
+    {
+     "locality": "Samos",
+     "region": "North Aegean",
+     "mhz": 99.8
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://i8.streams.ovh/ic/2000fm/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Самос) — 18.10.2026.",
+     "Поток i8.streams.ovh/ic/2000fm/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Самоса."
+   }
+  },
+  {
+   "id": "radioactivesifnos",
+   "name": "RadioActive 91.3",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 91.3,
+   "frequencies": [
+    {
+     "locality": "Sifnos",
+     "region": "South Aegean",
+     "mhz": 91.3
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://streamyourdream.org:8050/radioactive",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Киклады) — 18.10.2026.",
+     "Поток streamyourdream.org:8050/radioactive подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Сифноса (Киклады)."
+   }
+  },
+  {
+   "id": "parosfm",
+   "name": "Πάρος FM 98.5",
+   "type": "local",
+   "language": "ελληνικά",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 98.5,
+   "frequencies": [
+    {
+     "locality": "Paros",
+     "region": "South Aegean",
+     "mhz": 98.5
+    }
+   ],
+   "website": null,
+   "streams": [
+    {
+     "url": "https://sh.onweb.gr:7020/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "onradio.gr (Киклады) — 18.10.2026.",
+     "Поток sh.onweb.gr:7020/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Местный станция Пароса (Киклады)."
+   }
+  }
+ ],
+ "nationwide": [
+  "ertproto",
+  "ertdeftero",
+  "erttrito",
+  "ertkosmos",
+  "skai",
+  "rythmos"
+ ],
+ "regions": [
+  {
+   "id": "attica",
+   "name": "Attica",
+   "stations": [
+    "ertzeppelin",
+    "realfm",
+    "alpha989",
+    "melodia",
+    "kissfm"
+   ],
+   "cities": [
+    "athens"
+   ]
+  },
+  {
+   "id": "central-macedonia",
+   "name": "Central Macedonia",
+   "stations": [
+    "ertserres",
+    "olympos"
+   ],
+   "cities": [
+    "serres",
+    "katerini"
+   ]
+  },
+  {
+   "id": "western-macedonia",
+   "name": "Western Macedonia",
+   "stations": [
+    "ertkozani",
+    "ertflorina"
+   ],
+   "cities": [
+    "kozani",
+    "florina"
+   ]
+  },
+  {
+   "id": "east-macedonia-thrace",
+   "name": "East Macedonia and Thrace",
+   "stations": [
+    "ertkavala",
+    "ertkomotini",
+    "ertorestiada",
+    "yparxo",
+    "cinar",
+    "ena",
+    "kanali5"
+   ],
+   "cities": [
+    "kavala",
+    "komotini",
+    "orestiada",
+    "alexandroupoli"
+   ]
+  },
+  {
+   "id": "epirus",
+   "name": "Epirus",
+   "stations": [
+    "ertioannina"
+   ],
+   "cities": [
+    "ioannina"
+   ]
+  },
+  {
+   "id": "thessaly",
+   "name": "Thessaly",
+   "stations": [
+    "ertvolos",
+    "ertlarisa",
+    "pilio",
+    "kissvolos",
+    "scanner",
+    "partyelassona"
+   ],
+   "cities": [
+    "volos",
+    "larissa",
+    "elassona"
+   ]
+  },
+  {
+   "id": "central-greece",
+   "name": "Central Greece",
+   "stations": [
+    "deejaylamia",
+    "nrglamia",
+    "fistikilamia"
+   ],
+   "cities": [
+    "lamia"
+   ]
+  },
+  {
+   "id": "western-greece",
+   "name": "Western Greece",
+   "stations": [
+    "ertpatra",
+    "ertpyrgos",
+    "lepanto"
+   ],
+   "cities": [
+    "patras",
+    "pyrgos",
+    "nafpaktos"
+   ]
+  },
+  {
+   "id": "peloponnese",
+   "name": "Peloponnese",
+   "stations": [
+    "ertkalamata",
+    "erttripoli"
+   ],
+   "cities": [
+    "kalamata",
+    "tripoli"
+   ]
+  },
+  {
+   "id": "crete",
+   "name": "Crete",
+   "stations": [
+    "ertchania",
+    "ertiraklio"
+   ],
+   "cities": [
+    "chania",
+    "heraklion"
+   ]
+  },
+  {
+   "id": "north-aegean",
+   "name": "North Aegean",
+   "stations": [
+    "radiocafesamos",
+    "fm2000samos"
+   ],
+   "cities": [
+    "samos"
+   ]
+  },
+  {
+   "id": "south-aegean",
+   "name": "South Aegean",
+   "stations": [
+    "ertrodos",
+    "radioactivesifnos",
+    "parosfm"
+   ],
+   "cities": [
+    "rhodes",
+    "sifnos",
+    "paros"
+   ]
+  },
+  {
+   "id": "ionian-islands",
+   "name": "Ionian Islands",
+   "stations": [
+    "ertkerkyra",
+    "ertzakynthos"
+   ],
+   "cities": [
+    "corfu",
+    "zakynthos"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "athens",
+   "name": "Athens",
+   "regionId": "attica",
+   "stations": [
+    "ertzeppelin",
+    "realfm",
+    "alpha989",
+    "melodia",
+    "kissfm"
+   ]
+  },
+  {
+   "id": "serres",
+   "name": "Serres",
+   "regionId": "central-macedonia",
+   "stations": [
+    "ertserres"
+   ]
+  },
+  {
+   "id": "katerini",
+   "name": "Katerini",
+   "regionId": "central-macedonia",
+   "stations": [
+    "olympos"
+   ]
+  },
+  {
+   "id": "kozani",
+   "name": "Kozani",
+   "regionId": "western-macedonia",
+   "stations": [
+    "ertkozani"
+   ]
+  },
+  {
+   "id": "florina",
+   "name": "Florina",
+   "regionId": "western-macedonia",
+   "stations": [
+    "ertflorina"
+   ]
+  },
+  {
+   "id": "kavala",
+   "name": "Kavala",
+   "regionId": "east-macedonia-thrace",
+   "stations": [
+    "ertkavala",
+    "ena",
+    "kanali5"
+   ]
+  },
+  {
+   "id": "komotini",
+   "name": "Komotini",
+   "regionId": "east-macedonia-thrace",
+   "stations": [
+    "ertkomotini",
+    "cinar"
+   ]
+  },
+  {
+   "id": "orestiada",
+   "name": "Orestiada",
+   "regionId": "east-macedonia-thrace",
+   "stations": [
+    "ertorestiada"
+   ]
+  },
+  {
+   "id": "alexandroupoli",
+   "name": "Alexandroupoli",
+   "regionId": "east-macedonia-thrace",
+   "stations": [
+    "yparxo"
+   ]
+  },
+  {
+   "id": "ioannina",
+   "name": "Ioannina",
+   "regionId": "epirus",
+   "stations": [
+    "ertioannina"
+   ]
+  },
+  {
+   "id": "volos",
+   "name": "Volos",
+   "regionId": "thessaly",
+   "stations": [
+    "ertvolos",
+    "pilio",
+    "kissvolos"
+   ]
+  },
+  {
+   "id": "larissa",
+   "name": "Larissa",
+   "regionId": "thessaly",
+   "stations": [
+    "ertlarisa",
+    "scanner"
+   ]
+  },
+  {
+   "id": "elassona",
+   "name": "Elassona",
+   "regionId": "thessaly",
+   "stations": [
+    "partyelassona"
+   ]
+  },
+  {
+   "id": "lamia",
+   "name": "Lamia",
+   "regionId": "central-greece",
+   "stations": [
+    "deejaylamia",
+    "nrglamia",
+    "fistikilamia"
+   ]
+  },
+  {
+   "id": "patras",
+   "name": "Patras",
+   "regionId": "western-greece",
+   "stations": [
+    "ertpatra"
+   ]
+  },
+  {
+   "id": "pyrgos",
+   "name": "Pyrgos",
+   "regionId": "western-greece",
+   "stations": [
+    "ertpyrgos"
+   ]
+  },
+  {
+   "id": "nafpaktos",
+   "name": "Nafpaktos",
+   "regionId": "western-greece",
+   "stations": [
+    "lepanto"
+   ]
+  },
+  {
+   "id": "kalamata",
+   "name": "Kalamata",
+   "regionId": "peloponnese",
+   "stations": [
+    "ertkalamata"
+   ]
+  },
+  {
+   "id": "tripoli",
+   "name": "Tripoli",
+   "regionId": "peloponnese",
+   "stations": [
+    "erttripoli"
+   ]
+  },
+  {
+   "id": "chania",
+   "name": "Chania",
+   "regionId": "crete",
+   "stations": [
+    "ertchania"
+   ]
+  },
+  {
+   "id": "heraklion",
+   "name": "Heraklion",
+   "regionId": "crete",
+   "stations": [
+    "ertiraklio"
+   ]
+  },
+  {
+   "id": "samos",
+   "name": "Samos",
+   "regionId": "north-aegean",
+   "stations": [
+    "radiocafesamos",
+    "fm2000samos"
+   ]
+  },
+  {
+   "id": "rhodes",
+   "name": "Rhodes",
+   "regionId": "south-aegean",
+   "stations": [
+    "ertrodos"
+   ]
+  },
+  {
+   "id": "sifnos",
+   "name": "Sifnos",
+   "regionId": "south-aegean",
+   "stations": [
+    "radioactivesifnos"
+   ]
+  },
+  {
+   "id": "paros",
+   "name": "Paros",
+   "regionId": "south-aegean",
+   "stations": [
+    "parosfm"
+   ]
+  },
+  {
+   "id": "corfu",
+   "name": "Corfu",
+   "regionId": "ionian-islands",
+   "stations": [
+    "ertkerkyra"
+   ]
+  },
+  {
+   "id": "zakynthos",
+   "name": "Zakynthos",
+   "regionId": "ionian-islands",
+   "stations": [
+    "ertzakynthos"
+   ]
+  }
+ ]
+}

@@ -271,8 +271,38 @@ type KosovoCatalogue = {
   regions: KosovoRegion[];
   cities: KosovoCity[];
 };
+/**
+ * Greece (R3.10) mirrors the Kosovo/Albania shape exactly.
+ */
+type GreeceFrequency = { locality: string | null; region: string | null; mhz: number; band?: 'FM' | 'AM' };
+type GreeceStation = {
+  id: string;
+  name: string;
+  type: 'nationwide' | 'regional' | 'local';
+  language: string | null;
+  genres: string[];
+  frequencyMHz: number | null;
+  frequencies: GreeceFrequency[];
+  website: string | null;
+  streams: InternetStream[];
+  metadata: MetadataConfig;
+  logo: string | null;
+  status: Station['status'];
+  verification: { stationVerifiedAt: string | null; frequencyVerifiedAt: string | null; sources: string[]; notes: string };
+};
+type GreeceRegion = { id: string; name: string; stations: string[]; cities: string[] };
+type GreeceCity = { id: string; name: string; regionId: string; stations: string[] };
+type GreeceCatalogue = {
+  schemaVersion: number;
+  updatedAt: string | null;
+  country: { id: string; name: string; code: string; timeZone: string | null };
+  stations: GreeceStation[];
+  nationwide: string[];
+  regions: GreeceRegion[];
+  cities: GreeceCity[];
+};
 /** Shared view shape so the Russia audit/metadata helpers accept Finland/Estonia entries structurally. */
-type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStation | RomaniaStation | LatviaStation | LithuaniaStation | AlbaniaStation | KosovoStation;
+type CatalogueStation = Station | InternetStation | FinlandStation | EstoniaStation | RomaniaStation | LatviaStation | LithuaniaStation | AlbaniaStation | KosovoStation | GreeceStation;
 type RuntimeState = 'available' | 'connecting' | 'live' | 'failed';
 type AuditResult = { stationId: string; stationName: string; ok: boolean; streamIndex: number | null; format: string | null; error: string | null };
 type StationMetadataAudit = MetadataProbeResult & { stationId: string; stationName: string };
@@ -319,6 +349,11 @@ const KOSOVO_REGION_KEY = 'efirio.kosovoRegionId';
 const KOSOVO_CITY_KEY = 'efirio.kosovoCityId';
 const KOSOVO_ALL_REGIONS = 'all';
 const KOSOVO_ALL_CITIES = 'all';
+/** Greece keeps its own geography keys, exactly like Kosovo. */
+const GREECE_REGION_KEY = 'efirio.greeceRegionId';
+const GREECE_CITY_KEY = 'efirio.greeceCityId';
+const GREECE_ALL_REGIONS = 'all';
+const GREECE_ALL_CITIES = 'all';
 
 /** The index is tiny and always bundled; each country's stations are a separate chunk fetched only when opened. */
 // The index ships as data rather than a typed module, so it is narrowed through
@@ -399,6 +434,13 @@ function loadKosovoCatalogue(): Promise<KosovoCatalogue> {
   const loader = kosovoModules['../../data/kosovo.json'];
   if (!loader) return Promise.reject(new Error('Kosovo catalogue unavailable'));
   return loader().then((module) => module as KosovoCatalogue);
+}
+
+const greeceModules = import.meta.glob('../../data/greece.json', { import: 'default' });
+function loadGreeceCatalogue(): Promise<GreeceCatalogue> {
+  const loader = greeceModules['../../data/greece.json'];
+  if (!loader) return Promise.reject(new Error('Greece catalogue unavailable'));
+  return loader().then((module) => module as GreeceCatalogue);
 }
 
 /** Every city in the catalogue with its region, so the UI can walk region → city without hard-coding either. */
@@ -502,6 +544,7 @@ function App() {
   const isLithuania = scope === 'lithuania';
   const isAlbania = scope === 'albania';
   const isKosovo = scope === 'kosovo';
+  const isGreece = scope === 'greece';
   /** Falls back to the first listed country when the saved id is unknown or removed. */
   const internetCountry = React.useMemo(() => internetIndex.countries.find((candidate) => candidate.id === internetCountryId) ?? internetIndex.countries[0] ?? null, [internetCountryId]);
   /** Finland terrestrial catalogue, loaded on demand from its own lazy chunk. */
@@ -532,6 +575,10 @@ function App() {
   const [kosovoData, setKosovoData] = React.useState<KosovoCatalogue | null>(null);
   const [kosovoLoading, setKosovoLoading] = React.useState(false);
   const [kosovoError, setKosovoError] = React.useState<MessageKey | null>(null);
+  /** Greece terrestrial catalogue, loaded on demand from its own lazy chunk. */
+  const [greeceData, setGreeceData] = React.useState<GreeceCatalogue | null>(null);
+  const [greeceLoading, setGreeceLoading] = React.useState(false);
+  const [greeceError, setGreeceError] = React.useState<MessageKey | null>(null);
   /**
    * Finland geography persists under its own keys: neither the saved Russian city
    * nor the UK internet selection is ever read or written here. Unknown or removed
@@ -641,6 +688,14 @@ function App() {
   const ksRegion = kosovoData?.regions.find((candidate) => candidate.id === kosovoRegionId) ?? null;
   const ksCities = React.useMemo(() => (ksRegion && kosovoData ? kosovoData.cities.filter((candidate) => candidate.regionId === ksRegion.id) : []), [kosovoData, ksRegion]);
   const ksCity = ksCities.find((candidate) => candidate.id === kosovoCityId) ?? null;
+  /**
+   * Greece geography persists under its own keys, exactly like Kosovo.
+   */
+  const [greeceRegionId, setGreeceRegionId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(GREECE_REGION_KEY)) || GREECE_ALL_REGIONS);
+  const [greeceCityId, setGreeceCityId] = React.useState<string>(() => safeGetItem(() => localStorage.getItem(GREECE_CITY_KEY)) || GREECE_ALL_CITIES);
+  const grRegion = greeceData?.regions.find((candidate) => candidate.id === greeceRegionId) ?? null;
+  const grCities = React.useMemo(() => (grRegion && greeceData ? greeceData.cities.filter((candidate) => candidate.regionId === grRegion.id) : []), [greeceData, grRegion]);
+  const grCity = grCities.find((candidate) => candidate.id === greeceCityId) ?? null;
   /** Estonia search covers station names, cities and regions across the whole catalogue (all 15 maakonnad). */
   const [eeQuery, setEeQuery] = React.useState('');
   const trimmedEeQuery = eeQuery.trim();
@@ -886,6 +941,46 @@ function App() {
     const ids = !ksRegion ? kosovoData.nationwide : (ksCity ? ksCity.stations : ksRegion.stations);
     return ids.map((id) => ksGeoIndex.get(id)?.station).filter((station): station is KosovoStation => !!station);
   }, [kosovoData, ksGeoIndex, trimmedKsQuery, ksSearchResults, ksRegion, ksCity]);
+  /** Greece search covers station names, cities and regions across the whole catalogue. */
+  const [grQuery, setGrQuery] = React.useState('');
+  const trimmedGrQuery = grQuery.trim();
+  const grGeoIndex = React.useMemo(() => {
+    const index = new Map<string, { station: GreeceStation; regions: string[]; cities: string[] }>();
+    if (!greeceData) return index;
+    for (const station of greeceData.stations) index.set(station.id, { station, regions: [], cities: [] });
+    for (const region of greeceData.regions) for (const id of region.stations) index.get(id)?.regions.push(region.name);
+    for (const cityEntry of greeceData.cities) {
+      const regionName = greeceData.regions.find((candidate) => candidate.id === cityEntry.regionId)?.name ?? '';
+      for (const id of cityEntry.stations) {
+        const entry = index.get(id);
+        if (!entry) continue;
+        entry.cities.push(cityEntry.name);
+        if (regionName && !entry.regions.includes(regionName)) entry.regions.push(regionName);
+      }
+    }
+    return index;
+  }, [greeceData]);
+  const grSearchResults = React.useMemo(() => {
+    const needle = trimmedGrQuery.toLowerCase();
+    if (!needle) return [];
+    const results: Array<{ station: GreeceStation; where: string }> = [];
+    for (const entry of grGeoIndex.values()) {
+      const hitCity = entry.cities.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      const hitRegion = entry.regions.find((value) => value.toLowerCase().includes(needle)) ?? null;
+      const hitFreq = entry.station.frequencies.find((value) => (value.locality ?? '').toLowerCase().includes(needle) || (value.region ?? '').toLowerCase().includes(needle)) ?? null;
+      const hitFreqLocality = hitFreq && (hitFreq.locality ?? '').toLowerCase().includes(needle) ? hitFreq.locality : null;
+      const hitFreqRegion = hitFreq && (hitFreq.region ?? '').toLowerCase().includes(needle) ? hitFreq.region : null;
+      const match = entry.station.name.toLowerCase().includes(needle) || !!hitCity || !!hitRegion || !!hitFreq;
+      if (match) results.push({ station: entry.station, where: hitCity ?? hitFreqLocality ?? hitRegion ?? hitFreqRegion ?? entry.cities[0] ?? entry.regions[0] ?? '' });
+    }
+    return results;
+  }, [grGeoIndex, trimmedGrQuery]);
+  const greeceVisibleStations = React.useMemo<GreeceStation[]>(() => {
+    if (!greeceData) return [];
+    if (trimmedGrQuery) return grSearchResults.map((entry) => entry.station);
+    const ids = !grRegion ? greeceData.nationwide : (grCity ? grCity.stations : grRegion.stations);
+    return ids.map((id) => grGeoIndex.get(id)?.station).filter((station): station is GreeceStation => !!station);
+  }, [greeceData, grGeoIndex, trimmedGrQuery, grSearchResults, grRegion, grCity]);
   /** The selected Internet country's endonym, shared by the picker, breadcrumb, card subtitles and player. */
   const internetCountryName = internetCountry ? countryEndonym(internetCountry.id, internetCountry.name) : '';
   /** Where the player says we are: a country endonym (never translated) or a terrestrial city/region. */
@@ -903,6 +998,8 @@ function App() {
             ? (alCity?.name ?? alRegion?.name ?? countryEndonym('albania'))
           : isKosovo
             ? (ksCity?.name ?? ksRegion?.name ?? countryEndonym('kosovo'))
+          : isGreece
+            ? (grCity?.name ?? grRegion?.name ?? countryEndonym('greece'))
           : isFinland
             ? (fiCity?.name ?? fiRegion?.name ?? countryEndonym('finland'))
             : city.name;
@@ -914,7 +1011,7 @@ function App() {
    */
   const netCountryData = isInternet && internetCountryData?.id === internetCountry?.id ? internetCountryData : null;
   const internetStations: InternetStation[] = netCountryData?.stations ?? [];
-  const stations: Station[] = isInternet ? internetStations : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isLatvia ? latviaVisibleStations : isLithuania ? lithuaniaVisibleStations : isAlbania ? albaniaVisibleStations : isKosovo ? kosovoVisibleStations : isFinland ? finlandVisibleStations : russianStations;
+  const stations: Station[] = isInternet ? internetStations : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isLatvia ? latviaVisibleStations : isLithuania ? lithuaniaVisibleStations : isAlbania ? albaniaVisibleStations : isKosovo ? kosovoVisibleStations : isGreece ? greeceVisibleStations : isFinland ? finlandVisibleStations : russianStations;
   const cityTimeZone = netCountryData
     ? netCountryData.timeZone
     : isEstonia
@@ -929,6 +1026,8 @@ function App() {
             ? (albaniaData?.country.timeZone ?? null)
           : isKosovo
             ? (kosovoData?.country.timeZone ?? null)
+          : isGreece
+            ? (greeceData?.country.timeZone ?? null)
           : isFinland
             ? (finlandData?.country.timeZone ?? null)
             : (typeof city?.timeZone === 'string' && city.timeZone.trim() ? city.timeZone.trim() : null);
@@ -1155,6 +1254,22 @@ function App() {
     safeSetItem(() => localStorage.setItem(KOSOVO_CITY_KEY, cityEntry?.id ?? KOSOVO_ALL_CITIES));
   }, [ksCities, teardownPlayback]);
 
+  const changeGreeceRegion = React.useCallback((nextRegionId: string) => {
+    const region = greeceData?.regions.find((candidate) => candidate.id === nextRegionId) ?? null;
+    teardownPlayback();
+    setGreeceRegionId(region?.id ?? GREECE_ALL_REGIONS);
+    setGreeceCityId(GREECE_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(GREECE_REGION_KEY, region?.id ?? GREECE_ALL_REGIONS));
+    safeSetItem(() => localStorage.setItem(GREECE_CITY_KEY, GREECE_ALL_CITIES));
+  }, [greeceData, teardownPlayback]);
+
+  const changeGreeceCity = React.useCallback((nextCityId: string) => {
+    const cityEntry = grCities.find((candidate) => candidate.id === nextCityId) ?? null;
+    teardownPlayback();
+    setGreeceCityId(cityEntry?.id ?? GREECE_ALL_CITIES);
+    safeSetItem(() => localStorage.setItem(GREECE_CITY_KEY, cityEntry?.id ?? GREECE_ALL_CITIES));
+  }, [grCities, teardownPlayback]);
+
   /** Countries are separate static files, loaded only when that country is opened. */
   React.useEffect(() => {
     if (!isInternet || !internetCountry) return;
@@ -1266,6 +1381,19 @@ function App() {
     return () => { cancelled = true; };
   }, [isKosovo, kosovoData]);
 
+  /** The Greek terrestrial catalogue is a lazy chunk, fetched on the first switch to the category. */
+  React.useEffect(() => {
+    if (!isGreece || greeceData) return;
+    let cancelled = false;
+    setGreeceLoading(true);
+    setGreeceError(null);
+    void loadGreeceCatalogue()
+      .then((data) => { if (!cancelled) setGreeceData(data); })
+      .catch(() => { if (!cancelled) setGreeceError('errGreeceLoad'); })
+      .finally(() => { if (!cancelled) setGreeceLoading(false); });
+    return () => { cancelled = true; };
+  }, [isGreece, greeceData]);
+
   React.useEffect(() => {
     setNowPlaying(null); nowPlayingRef.current = null; setMetadataStatus(null);
     if (!isSupportedMetadata(selected?.metadata)) return;
@@ -1348,7 +1476,7 @@ function App() {
     return internetStations.filter((station) => (!trimmedNetQuery || station.name.toLowerCase().includes(trimmedNetQuery)) && (!netGenre || station.genres.includes(netGenre)) && (!netCity || station.city === netCity));
   }, [isInternet, internetStations, trimmedNetQuery, netGenre, netCity]);
   /** Filters never leak across categories or countries: a UK city must not hide Finnish stations. */
-  React.useEffect(() => { setNetQuery(''); setNetGenre(''); setNetCity(''); setFiQuery(''); setRoQuery(''); setLvQuery(''); setLtQuery(''); setAlQuery(''); setKsQuery(''); }, [scope, internetCountryId]);
+  React.useEffect(() => { setNetQuery(''); setNetGenre(''); setNetCity(''); setFiQuery(''); setRoQuery(''); setLvQuery(''); setLtQuery(''); setAlQuery(''); setKsQuery(''); setGrQuery(''); }, [scope, internetCountryId]);
   /**
    * The internet catalogue holds well over a thousand entries, so only this many rows
    * are mounted at once; the rest are reached incrementally through "Show more".
@@ -1356,9 +1484,9 @@ function App() {
    */
   const VISIBLE_CHUNK = 60;
   const [visibleCount, setVisibleCount] = React.useState(VISIBLE_CHUNK);
-  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId, trimmedEeQuery, estoniaData, estoniaRegionId, estoniaCityId, trimmedRoQuery, romaniaData, romaniaRegionId, romaniaCityId, trimmedLvQuery, latviaData, latviaRegionId, latviaCityId, trimmedLtQuery, lithuaniaData, lithuaniaRegionId, lithuaniaCityId, trimmedAlQuery, albaniaData, albaniaRegionId, albaniaCityId, trimmedKsQuery, kosovoData, kosovoRegionId, kosovoCityId]);
-  const shownList: Station[] = isInternet ? filteredInternet : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isLatvia ? latviaVisibleStations : isLithuania ? lithuaniaVisibleStations : isAlbania ? albaniaVisibleStations : isKosovo ? kosovoVisibleStations : isFinland ? finlandVisibleStations : stations;
-  const chunkedView = isInternet || isFinland || isEstonia || isRomania || isLatvia || isLithuania || isAlbania || isKosovo;
+  React.useEffect(() => { setVisibleCount(VISIBLE_CHUNK); }, [trimmedNetQuery, netGenre, netCity, internetCountryData, trimmedFiQuery, finlandData, finlandRegionId, finlandCityId, trimmedEeQuery, estoniaData, estoniaRegionId, estoniaCityId, trimmedRoQuery, romaniaData, romaniaRegionId, romaniaCityId, trimmedLvQuery, latviaData, latviaRegionId, latviaCityId, trimmedLtQuery, lithuaniaData, lithuaniaRegionId, lithuaniaCityId, trimmedAlQuery, albaniaData, albaniaRegionId, albaniaCityId, trimmedKsQuery, kosovoData, kosovoRegionId, kosovoCityId, trimmedGrQuery, greeceData, greeceRegionId, greeceCityId]);
+  const shownList: Station[] = isInternet ? filteredInternet : isEstonia ? estoniaVisibleStations : isRomania ? romaniaVisibleStations : isLatvia ? latviaVisibleStations : isLithuania ? lithuaniaVisibleStations : isAlbania ? albaniaVisibleStations : isKosovo ? kosovoVisibleStations : isGreece ? greeceVisibleStations : isFinland ? finlandVisibleStations : stations;
+  const chunkedView = isInternet || isFinland || isEstonia || isRomania || isLatvia || isLithuania || isAlbania || isKosovo || isGreece;
   const visibleStations: Station[] = chunkedView ? shownList.slice(0, visibleCount) : stations;
   /**
    * The frequency chip follows the current geography — the place that matched an
@@ -1540,6 +1668,32 @@ function App() {
     }
     return ks.frequencyMHz != null ? { mhz: ks.frequencyMHz, band: 'FM' } : null;
   };
+  /**
+   * Greece chip: the matched frequency with its band, exactly like Kosovo;
+   * without a confirmed value the «GR» geo chip shows.
+   */
+  const grFrequency = (gr: GreeceStation, where?: string): { mhz: number; band: 'FM' | 'AM' } | null => {
+    const bandOf = (value: GreeceFrequency): { mhz: number; band: 'FM' | 'AM' } => ({ mhz: value.mhz, band: value.band ?? 'FM' });
+    if (gr.frequencies.length) {
+      if (where) {
+        const hit = gr.frequencies.find((value) => (value.locality && (value.locality === where || value.locality.startsWith(where) || where.startsWith(value.locality))) || value.region === where);
+        if (hit) return bandOf(hit);
+      }
+      if (grCity) {
+        const hit = gr.frequencies.find((value) => value.locality && (value.locality === grCity.name || value.locality.startsWith(grCity.name)));
+        if (hit) return bandOf(hit);
+      }
+      if (grRegion) {
+        const hit = gr.frequencies.find((value) => value.region === grRegion.name);
+        if (hit) return bandOf(hit);
+      }
+      if (gr.frequencyMHz != null) {
+        const hit = gr.frequencies.find((value) => value.mhz === gr.frequencyMHz);
+        if (hit) return bandOf(hit);
+      }
+    }
+    return gr.frequencyMHz != null ? { mhz: gr.frequencyMHz, band: 'FM' } : null;
+  };
   const netGeoCode = internetCountry?.code ?? 'GB';
 
   return <main className="shell">
@@ -1558,6 +1712,8 @@ function App() {
             ? <><span>{countryEndonym('albania')}</span><b>›</b><span>{alRegion?.name ?? t('allCountry')}</span>{alCity ? <><b>›</b><span>{alCity.name}</span></> : null}</>
           : isKosovo
             ? <><span>{countryEndonym('kosovo')}</span><b>›</b><span>{ksRegion?.name ?? t('allCountry')}</span>{ksCity ? <><b>›</b><span>{ksCity.name}</span></> : null}</>
+          : isGreece
+            ? <><span>{countryEndonym('greece')}</span><b>›</b><span>{grRegion?.name ?? t('allCountry')}</span>{grCity ? <><b>›</b><span>{grCity.name}</span></> : null}</>
           : isFinland
             ? <><span>{countryEndonym('finland')}</span><b>›</b><span>{fiRegion?.name ?? t('allCountry')}</span>{fiCity ? <><b>›</b><span>{fiCity.name}</span></> : null}</>
             : <><span>{countryEndonym('russia')}</span><b>›</b><span>{cityRegion?.name ?? '—'}</span><b>›</b><span>{city?.name ?? '—'}</span></>}</section>
@@ -1573,6 +1729,7 @@ function App() {
           <option value="lithuania">{countryEndonym('lithuania')}</option>
           <option value="albania">{countryEndonym('albania')}</option>
           <option value="kosovo">{countryEndonym('kosovo')}</option>
+          <option value="greece">{countryEndonym('greece')}</option>
         </select>
       </label>
       <label className="cityField"><span>{t('languageLabel')}</span>
@@ -1713,6 +1870,22 @@ function App() {
         <label className="cityField citySearch"><span>{t('findStation')}</span>
           <input type="search" inputMode="search" autoComplete="off" value={ksQuery} onChange={(event) => setKsQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchKosovoAria', { country: countryEndonym('kosovo') })} />
         </label>
+      </> : isGreece ? <>
+        <label className="cityField"><span>{t('regionLabel')}</span>
+          <select value={grRegion?.id ?? GREECE_ALL_REGIONS} onChange={(event) => changeGreeceRegion(event.target.value)}>
+            <option value={GREECE_ALL_REGIONS}>{t('allCountry')}</option>
+            {(greeceData?.regions ?? []).map((region) => <option key={region.id} value={region.id}>{region.name}</option>)}
+          </select>
+        </label>
+        {grRegion ? <label className="cityField"><span>{t('cityLabel')}</span>
+          <select value={grCity?.id ?? GREECE_ALL_CITIES} onChange={(event) => changeGreeceCity(event.target.value)}>
+            <option value={GREECE_ALL_CITIES}>{t('allCities')}</option>
+            {grCities.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
+          </select>
+        </label> : null}
+        <label className="cityField citySearch"><span>{t('findStation')}</span>
+          <input type="search" inputMode="search" autoComplete="off" value={grQuery} onChange={(event) => setGrQuery(event.target.value)} placeholder={t('stationGeoPlaceholder')} aria-label={t('searchGreeceAria', { country: countryEndonym('greece') })} />
+        </label>
       </> : <>
         <label className="cityField"><span>{t('regionLabel')}</span>
           <select value={cityRegion?.id ?? ''} onChange={onRegionChange}>
@@ -1748,6 +1921,8 @@ function App() {
     {isAlbania && albaniaError ? <section className="catalogueNote error"><span>{t(albaniaError, { country: countryEndonym('albania') })}</span></section> : null}
     {isKosovo && kosovoLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: countryEndonym('kosovo') })}</span></section> : null}
     {isKosovo && kosovoError ? <section className="catalogueNote error"><span>{t(kosovoError, { country: countryEndonym('kosovo') })}</span></section> : null}
+    {isGreece && greeceLoading ? <section className="catalogueNote"><span>{t('loadingCatalogue', { name: countryEndonym('greece') })}</span></section> : null}
+    {isGreece && greeceError ? <section className="catalogueNote error"><span>{t(greeceError, { country: countryEndonym('greece') })}</span></section> : null}
     {scope === 'russia' ? <>
       {auditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditPlayable', { ok: auditResults.filter((r) => r.ok).length, total: auditResults.length })}</strong><span>{auditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllPassed')}</span></section> : null}
       {metadataAuditResults.length > 0 ? <section className="auditSummary"><strong>{t('auditNowPlaying', { ok: metadataAuditResults.filter((r) => r.ok).length, total: metadataAuditResults.length })}</strong><span>{metadataAuditResults.filter((r) => !r.ok).map((r) => `${r.stationName}: ${r.error}`).join(' · ') || t('auditAllMetadata')}</span></section> : null}
@@ -1845,6 +2020,21 @@ function App() {
           <span className={badgeClass}>{t(badgeKey)}</span>
         </button>;
       }
+      if (isGreece) {
+        const gr = station as GreeceStation;
+        const where = trimmedGrQuery ? (grSearchResults.find((entry) => entry.station.id === gr.id)?.where ?? '') : '';
+        const grHit = grFrequency(gr, where || undefined);
+        const typeLabel = gr.type === 'nationwide' ? t('allCountry') : gr.type === 'regional' ? t('typeRegional') : t('typeLocal');
+        return <button className={`station ${selected?.id === gr.id ? 'selected' : ''}`} key={gr.id} onClick={() => void chooseStation(station, station.streams.length > 0)}>
+          {grHit != null
+            ? grHit.band === 'AM'
+              ? <span className="frequency">{Math.round(grHit.mhz * 1000)} <small>{t('unitKHz')}</small></span>
+              : <span className="frequency">{grHit.mhz.toFixed(1)} <small>{t('unitFM')}</small></span>
+            : <span className="frequency netGeo">GR</span>}
+          <span className="stationName">{gr.name}<small className="feedScope netScope">{where ? `${typeLabel} · ${where}` : typeLabel}</small></span>
+          <span className={badgeClass}>{t(badgeKey)}</span>
+        </button>;
+      }
       if (isFinland) {
         const fi = station as FinlandStation;
         // In search results show the place that actually matched the query, not an arbitrary first city.
@@ -1865,7 +2055,7 @@ function App() {
           : station.feed === 'federal' ? <small className="feedScope" title={t('federalFeedHint')}>{t('federalFeed')}</small> : null}</span>
         <span className={badgeClass}>{t(badgeKey)}</span>
       </button>;
-    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && !romaniaLoading && (isInternet ? !!netCountryData : isEstonia ? !!estoniaData : isRomania ? !!romaniaData : isLatvia ? !!latviaData : isLithuania ? !!lithuaniaData : isAlbania ? !!albaniaData : isKosovo ? !!kosovoData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? t('noStationMatches', { query: eeQuery.trim() }) : isRomania && trimmedRoQuery ? t('noStationMatches', { query: roQuery.trim() }) : isLatvia && trimmedLvQuery ? t('noStationMatches', { query: lvQuery.trim() }) : isLithuania && trimmedLtQuery ? t('noStationMatches', { query: ltQuery.trim() }) : isAlbania && trimmedAlQuery ? t('noStationMatches', { query: alQuery.trim() }) : isKosovo && trimmedKsQuery ? t('noStationMatches', { query: ksQuery.trim() }) : isFinland && trimmedFiQuery ? t('noStationMatches', { query: fiQuery.trim() }) : trimmedNetQuery ? t('noStationMatches', { query: netQuery.trim() }) : t('noStationFilters')}</span></p> : null}</section>
+    })}{chunkedView && !visibleStations.length && !internetLoading && !finlandLoading && !estoniaLoading && !romaniaLoading && (isInternet ? !!netCountryData : isEstonia ? !!estoniaData : isRomania ? !!romaniaData : isLatvia ? !!latviaData : isLithuania ? !!lithuaniaData : isAlbania ? !!albaniaData : isKosovo ? !!kosovoData : isGreece ? !!greeceData : !!finlandData) ? <p className="catalogueNote"><span>{isEstonia && trimmedEeQuery ? t('noStationMatches', { query: eeQuery.trim() }) : isRomania && trimmedRoQuery ? t('noStationMatches', { query: roQuery.trim() }) : isLatvia && trimmedLvQuery ? t('noStationMatches', { query: lvQuery.trim() }) : isLithuania && trimmedLtQuery ? t('noStationMatches', { query: ltQuery.trim() }) : isAlbania && trimmedAlQuery ? t('noStationMatches', { query: alQuery.trim() }) : isKosovo && trimmedKsQuery ? t('noStationMatches', { query: ksQuery.trim() }) : isGreece && trimmedGrQuery ? t('noStationMatches', { query: grQuery.trim() }) : isFinland && trimmedFiQuery ? t('noStationMatches', { query: fiQuery.trim() }) : trimmedNetQuery ? t('noStationMatches', { query: netQuery.trim() }) : t('noStationFilters')}</span></p> : null}</section>
     {chunkedView && visibleCount < shownList.length ? <button className="showMore" onClick={() => setVisibleCount((count) => count + VISIBLE_CHUNK)}>{t('showMore', { shown: Math.min(VISIBLE_CHUNK, shownList.length - visibleCount), remaining: shownList.length - visibleCount })}</button> : null}
     {history.length > 0 ? <details className="history"><summary>{t('historyTitle', { count: history.length })}</summary>{history.slice(0, 20).map((item, index) => <div key={`${item.stationId}-${item.detectedAt}-${index}`}><time>{historyTimeLabel(item)}</time><span><b>{item.title}</b>{item.artist ? ` · ${item.artist}` : ''}<small>{item.stationName}</small></span></div>)}</details> : null}
     <footer className="player"><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(-1)} aria-label={t('prevStation')}>◀</button><div className="playerInfo">{nowPlaying ? <Ticker station={selected?.name ?? ''} air={airText(nowPlaying)} /> : <strong>{selected?.name || t('chooseStation')}</strong>}<span>{selected ? t(playerStatus.key, { place: placeLabel, version: APP_VERSION, ...playerStatus.params }) : t('placeVersion', { place: placeLabel, version: APP_VERSION })}</span>{selected && diagnostic ? <span title={diagnostic}>{diagnostic}</span> : null}</div><button className="play" disabled={!selected?.streams.length} onClick={() => void togglePlayback()} aria-label={isPlaying ? t('pause') : t('play')}>{isPlaying ? 'Ⅱ' : '▶'}</button><button className="play" disabled={!playableStations.length} onClick={() => void stepStation(1)} aria-label={t('nextStation')}>▶▶</button></footer>

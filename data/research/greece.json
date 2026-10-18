@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-18",
+  "note": "Исследовательский файл R3.10 — Ελλάδα (FM), расширен на все 13 административных регионов. Источники: radiomap.eu/gr (стримы и частоты по 15 городам + play-страницы), onradio.gr (местные станции, AJAX-плеер admin-ajax.php radio-slider → /player/?id=N, поток в var stream = {mp3}), ert.gr (официальные потоки ERT), en.wikipedia.org. Потоки проверены GET-ом из Финляндии 18.10.2026 (200 + audio/*). Только реальные FM-станции с подтверждёнными HTTPS-потоками; HTTP-, AM-, DAB/DAB+- и internet-only исключены. Ни один неподтверждённый поток не опубликован как рабочий.",
+  "summary": {
+    "publishedTerrestrial": 46,
+    "publishedInternet": 0,
+    "excluded": 23,
+    "typeCounts": { "nationwide": 6, "regional": 23, "local": 17 },
+    "frequencyRows": 53,
+    "bands": { "FM": 53, "AM": 0 },
+    "streams": { "total": 46, "https": 46, "mp3": 44, "aac": 2, "hls": 0 },
+    "regionsCovered": 13,
+    "regionsTotal": 13,
+    "cities": 27
+  },
+  "sources": [
+    "radiomap.eu/gr — 15 городских страниц (Афины, Фессалоники, Александруполи, Волос, Драма, Ираклион, Янина, Кавала, Корфу, Комотини, Ларисса, Ксанти, Патры, Родос, Серры); play-страницы /gr/play/<id>.htm дают HTTPS/HTTP потоки и частоты в <title>.",
+    "onradio.gr — местные станции по регионам; плеер /player/?id=N содержит поток в JS var stream = { mp3: \"https://...\" }; категории по номах (Φθιώτιδος, Λέσβου, Χίου, Σάμου, Κυκλάδων, ...).",
+    "radiostreaming.ert.gr — официальные потоки ERT: национальные (ert-proto, ert-deftero, ert-trito, ert-kosmos, ert-zeppelin) и региональные ert-<город> (18 подтверждены).",
+    "en.wikipedia.org/wiki/List_of_radio_stations_in_Greece — перекрёстная проверка частот."
+  ],
+  "frequencyEncoding": "Частоты FM хранятся в MHz. Каждая строка frequencies[] = (locality, region, mhz). 53 подтверждённые FM-строки по 27 городам и всем 13 регионам. ERT Комотини/Закинф/Родос передают на нескольких частотах — сохранены как отдельные строки. ΕΡΤ Ηρακλείου: точная FM не подтверждена из доступных источников → frequencyMHz null (поток 200/mp3 рабочий).",
+  "nowPlaying": "Все 46 записей: metadata.type 'none', url null, historyAvailable false. Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек.",
+  "curation": "Только FM. Internet-only, AM, DAB/DAB+ исключены. Не дублируются программы на разных частотах: каждая FM-программа — одна запись станции; мультичастотные ERT собраны в frequencies[] одной записи. Nationwide: ERT Proto/Deftero/Trito/Kosmos, SKAI, Rythmos. Региональные ERT: 18 местных сетей. Местные: 17 (Катерини, Александруполи, Комотини, Кавала ×2, Волос ×2, Ларисса, Элассона, Ламия ×3, Навпакт, Самос ×2, Сифнос, Парос). Kiss FM Волос 98.8 — отдельная от афинского Kiss FM 92.9 станция.",
+  "verifiedVariants": [
+    "18 региональных ERT-потоков radiostreaming.ert.gr/ert-<город> подтверждены 200/audio/mpeg.",
+    "35 из 40 проверенных HTTPS-кандидатов подтверждены (34 mp3 + 1 aac); 5 исключены как недостижимые."
+  ],
+  "regionCoverage": [
+    { "region": "Attica", "stations": 5, "cities": ["Athens"], "note": "Был на R3.10 (baseline)." },
+    { "region": "Central Macedonia", "stations": 2, "cities": ["Serres", "Katerini"], "note": "ERT3/Фессалоники не найден (404); только Серры (ERT) + Катерини (Όλυμπος)." },
+    { "region": "Western Macedonia", "stations": 2, "cities": ["Kozani", "Florina"], "note": "ERT Козани/Флорина." },
+    { "region": "East Macedonia and Thrace", "stations": 7, "cities": ["Kavala", "Komotini", "Orestiada", "Alexandroupoli"], "note": "Богатейший регион после Аттики: 3 ERT + 4 местных (включая турецкую Radyo Çınar)." },
+    { "region": "Epirus", "stations": 1, "cities": ["Ioannina"], "note": "Только ERT Янина; местные Ioannina-станции недостижимы по HTTPS." },
+    { "region": "Thessaly", "stations": 6, "cities": ["Volos", "Larissa", "Elassona"], "note": "2 ERT + 4 местных." },
+    { "region": "Central Greece", "stations": 3, "cities": ["Lamia"], "note": "ERT-поток для Lamia отсутствует; 3 местных станции Ламии (Фтиотида) с onradio.gr." },
+    { "region": "Western Greece", "stations": 3, "cities": ["Patras", "Pyrgos", "Nafpaktos"], "note": "2 ERT + Λεπάντο (Nafpaktos, aac)." },
+    { "region": "Peloponnese", "stations": 2, "cities": ["Kalamata", "Tripoli"], "note": "ERT Каламата/Триполи; аргос/нафплио/спарта потоки не найдены." },
+    { "region": "Crete", "stations": 2, "cities": ["Chania", "Heraklion"], "note": "ERT Ханья (104.0) + ERT Ираклион (частота null). Ретимно/Сития не найдены." },
+    { "region": "North Aegean", "stations": 2, "cities": ["Samos"], "note": "Только Самос (2 местных). Лесвос/Хиос — все потоки HTTP-only или недостижимы." },
+    { "region": "South Aegean", "stations": 3, "cities": ["Rhodes", "Sifnos", "Paros"], "note": "ERT Родос + 2 кикладских местных. Миконос/Наксос потоки недостижимы." },
+    { "region": "Ionian Islands", "stations": 2, "cities": ["Corfu", "Zakynthos"], "note": "ERT Корфу/Закинф; Кефалония/Лефкада потоки не найдены." }
+  ],
+  "excluded": [
+    { "id": "ertnews", "name": "ΕΡΤnews Radio", "reason": "stream", "details": "FM-станция (Athens 97.9/105.8 MHz), но HTTPS-поток (radiostreaming.ert.gr/ert-news и все варианты ert-news-radio, ertnews) возвращает 404." },
+    { "id": "ertspor", "name": "ΕΡΑ Σπορ", "reason": "stream", "details": "FM-станция (Athens 101.8 MHz), но HTTPS-поток (radiostreaming.ert.gr/ert-era-spor, ert-spor, ertspor) возвращает 404." },
+    { "id": "ertvoiceofgreece", "name": "Η Φωνή της Ελλάδας (Voice of Greece)", "reason": "not-fm", "details": "Поток radiostreaming.ert.gr/ert-voiceofgreece отвечает 200, но это международная/цифровая (DAB+/satellite/internet) служба, не наземное FM-вещание. Исключено по правилу «только FM»." },
+    { "id": "ert3-thessaloniki", "name": "ΕΡΤ3 Μακεδονίας", "reason": "stream", "details": "FM-сеть Центральной Македонии (Фессалоники 95.8/102.0 FM по radiomap). Ни один вариант URL (radiostreaming.ert.gr/ert3, ert3thess, ert3macedonia, ert3makedonias, ert3fm и т.д.) не вернул 200. Play-страницы radiomap.eu/gr/play/ert3-958 и ert3-102 не содержат URL потока (JS-плеер). Требуется отдельный источник." },
+    { "id": "lesvos-stations", "name": "Станции Лесвоса/Митилини (Slam 101.5, Ραδιόφωνο 108, Αίολος 92.8, Astra 93.2, Στο Νησί 99, Ράδιο Μυτιλήνης 90.0)", "reason": "http-only", "details": "Все потоки с onradio.gr (Лесвос) — HTTP (eco.onestreaming.com, s5.onweb.gr, shoutcast.24radio.gr). HTTPS-варианты тех же хостов не принимают TLS (fetch failed). ERT-поток для Лесвоса (ert-lesvos, ert-mytilini, ert-mytilene) — 404. Регион покрыт только станциями Самоса." },
+    { "id": "chios-stations", "name": "Станции Хиоса (ΑΝΤ1 ΑΙΓΑΙΟΥ 105, Μαστίχα 107.7)", "reason": "http-only", "details": "Потоки HTTP (live.onestreaming.com:aegeanant1, 46.4.98.200:8000) или недостижимы. ERT-поток для Хиоса (ert-chios) — 404." },
+    { "id": "thessaloniki-privates", "name": "Местные Фессалоник (Λαϊκός 87.6, 88μισό, Μύθος 93.4, Λυδία 94.2, Flash 99.4, Τοξότης 96.3, Status 107.7, Shook 104.4, Πρακτορείο 104.9)", "reason": "http-only", "details": "Почти все потоки Фессалоник — HTTP (ice.streamcloud.mediacdn.com, free-shoutcast, radiolydia, onestreaming, 207.154.248.204). Исключения: Ραδιόφωνο 904 (icecast.902.gr/904.m3u редиректит на HTTP) и Γνώμη 93.7 (greekstream.net редиректит на HTTP). Центральная Македония покрыта Серрами (ERT) и Катерини." },
+    { "id": "alexandroupoli-http", "name": "Местные Александруполи (Maximum 93.6, Status 94.2, Έβρος, Ελπίδα 96.1, Κανάλι 5, METRO 97.8, NRG 98.5, YOU 98.7, Σφαιρικός, Θράκη, Δέλτα, Πόλης 102.6, Ελλάδα 104, Αλέξιος Κομνηνός)", "reason": "http-only", "details": "HTTP-потоки (eco.onestreaming, live.radioevros.gr). Регион покрыт 3 ERT + Υπάρχω (HTTPS)." },
+    { "id": "kavala-failed", "name": "Energy 96.6 (Καβάλα)", "reason": "stream", "details": "HTTPS-поток i8.streams.ovh/sc/radioene/stream;audio.mp3 возвращает 404." },
+    { "id": "larissa-failed", "name": "Ζωή 94.4 / Ζήνων (Λάρισα)", "reason": "stream", "details": "HTTPS gointernet.gr:9012 возвращает 502. Регион покрыт ERT Ларисса + Scanner (HTTPS)." },
+    { "id": "ioannina-privates", "name": "Местные Янины (Melody 94.9, Πρώτο 95.4, Δήμος 98.7, NRG 101.5, Γήινο 107.6)", "reason": "stream", "details": "HTTPS-потоки streams.ovh и radiojar возвращают ошибку/404 (ioannina987 → radiojar 404). Регион покрыт ERT Янина (88.2)." },
+    { "id": "patra-failed", "name": "KIIS 92.2, Chroma 102.1, Thema Patras, Oxygen 95.3 (Πάτρα)", "reason": "http-only", "details": "enjoyfm.gr playlist'ы редиректят на HTTP; radio.themapatras.gr отдаёт localhost; oxygen.radiostream123.com — HTML-страница, не поток. Регион покрыт ERT Патры/Пиргос + Λεπάντο." },
+    { "id": "serres-failed", "name": "Epiloges 105.5 (Σέρρες)", "reason": "stream", "details": "listen2myradio возвращает HTML-страницу, не аудио. Регион покрыт ERT Серры." },
+    { "id": "oscar909", "name": "Oscar 90.9 (Λαμία)", "reason": "stream", "details": "HTTPS sp1.32bit.gr:8008/stream нестабилен — 4 попытки подряд завершились fetch failed из Финляндии. Не опубликован как рабочий." },
+    { "id": "glenti95", "name": "ΓΛΕΝΤΙ FM 95 (Λαμία)", "reason": "stream", "details": "HTTPS sh.onweb.gr:8554/stream нестабилен — 4 попытки fetch failed. Не опубликован." },
+    { "id": "armonia1032", "name": "Αρμονία 103.2 (Σάμος)", "reason": "stream", "details": "HTTPS sh.onweb.gr:8500/stream нестабилен — 4 попытки fetch failed. Не опубликован." },
+    { "id": "venus993", "name": "Venus Radio 99.3 (Μύκονος)", "reason": "stream", "details": "HTTPS sh.onweb.gr:8410/stream нестабилен — 4 попытки fetch failed. Не опубликован." },
+    { "id": "aegeanvoice1075", "name": "Aegean Voice 107.5 (Νάξος)", "reason": "stream", "details": "HTTPS sh.onweb.gr:8810/stream нестабилен — 4 попытки fetch failed (audio/aacp в одной попытке, но не воспроизводится стабильно). Не опубликован." },
+    { "id": "kefalonia-lefkada", "name": "Станции Кефалонии и Лефкады", "reason": "stream", "details": "ERT-потоки (ert-kefalonia, ert-lefkada, ert-lefkas, ert-pargos) — 404. onradio.gr категории (Κεφαλληνίας, Λευκάδας) не отдают потоки в доступном HTML/AJAX. Регион Ионических островов покрыт Корфу/Закинфом (ERT)." },
+    { "id": "rethymno-lasithi", "name": "Станции Ретимно и Ласифи (Крит)", "reason": "stream", "details": "ERT-потоки (ert-rethymno, ert-rethymnon, ert-sitia, ert-agios-nikolaos) — 404. Регион Крита покрыт Ханьей/Ираклионом (ERT)." },
+    { "id": "cyclades-http", "name": "Миконос/Наксос остальные станции", "reason": "http-only", "details": "Помимо RadioActive (Сифнос) и Парос FM, остальные кикладские станции — HTTP или недостижимы (Aegean Voice — нестабильна)." },
+    { "id": "dab-stations", "name": "DAB+ станции (Arion, Magic Star, Rock Paradise, κ.ά.)", "reason": "dab-only", "details": "DAB+ мультиплекс — не FM. Исключены по правилу «только FM, без DAB/DAB+»." },
+    { "id": "internet-only", "name": "Internet-only станции (греческие веб-радио без FM-лицензии)", "reason": "internet-only", "details": "Исключены по правилу «только FM». Каталог включает только станции с подтверждённой FM-частотой в радиусе действия." }
+  ],
+  "unverifiedSources": [
+    "ert.gr — страницы /radio/ert-terrestrial-radio-stations/, /radio/ert-terrestrial-frequencies/, /radio/ert-sychnotites/ возвращают 404; страницы отдельных программ (/radio/ert-irakleio/) тоже 404. Частоты ERT брались из radiomap.eu play-страниц.",
+    "radiomap.eu play-страницы для Афин, Ираклиона, Корфу, Родоса — старый HTML4-формат без play-ссылок; потоки извлекаются только для новых страниц (Фессалоники и др.).",
+    "radiomap.eu городские страницы пусты (0 play-ссылок) для: Lamia, Mytilene, Lesvos, Chios, Samos, Syros, Thira, Santorini, Kefalonia, Lefkada, Rethymno, Kalamata, Tripoli, Kozani, Florina, Kastoria.",
+    "onradio.gr — категории по номам (/county/<slug>/) грузятся через AJAX (radio-slider); station-слаги ищутся через /radio/<slug>/ и /player/?id=N. WP REST API (/wp-json/wp/v2/radio) — rest_no_route.",
+    "radio.gr — сейчас перенаправлен на спам-сайт онлайн-казино; непригоден как источник.",
+    "en.wikipedia.org — страница «Κατάλογος ραδιοφωνικών σταθμών της Ελλάδας» (el) возвращает 404; использовалась англоязычная List of radio stations in Greece."
+  ],
+  "notes": {
+    "heraklionFrequency": "ΕΡΤ Ηρακλείου — поток подтверждён (200/audio/mpeg), но точная FM-частота не подтверждена из доступных источников (radiomap play-страница старого формата без частоты, ert.gr 404). Частота оставлена null, а не угадана.",
+    "dualFrequencyERT": "ERT Комотини (91.2 + 98.1), ERT Закинф (93.2 + 95.2), ERT Родос (92.7–93.1) — мультичастотные; сохранены как отдельные строки frequencies[] одной записи станции (без дублирования программ).",
+    "kissDuplication": "Kiss FM 98.8 (Волос, Фессалия) и Kiss FM 92.9 (Афины, Аттика) — разные станции разных сетей, не дубликаты; обе сохранены."
+  }
+}

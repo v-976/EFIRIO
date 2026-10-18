@@ -487,3 +487,25 @@ Known limitations recorded, not hidden: HLS playback works in this Electron buil
 ### Verification (R3.9)
 
 `tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `kosovo-CIo0ntj2.js` (10.70 kB / 1.69 kB gzip) split off as a lazy chunk. Not committed — working tree holds the change awaiting review.
+
+## R3.10: Ελλάδα (Ελλάδα, 2026-10-18)
+
+### Decision: Greece is the R3.9 pattern — one `greece` scope, endonym `Ελλάδα`, FM only
+
+`Scope` gains `greece`. Terrestrial Greece lives in `data/greece.json` (registry + `nationwide[]` + `regions[]` + `cities[]`); no internet-only catalogue (FM only). Loads on demand: 11.51 kB raw / 1.65 kB gzip. `Ελλάδα` is the endonym from `web/src/countries.ts` (already in table). Greek geography persists on `efirio.greeceRegionId/CityId`.
+
+### Decision: expanded to all 13 regions — 46 FM stations with verified HTTPS streams
+
+Baseline Athens catalogue (11) grew to 46 stations across all 13 Greek administrative regions and 27 cities: 6 nationwide, 23 regional, 17 local; 53 FM frequency rows; 46 working HTTPS streams (44 MP3, 2 AAC). All `metadata.type: 'none'`; no unverified stream published as working.
+
+The backbone is 18 regional ERT streams on `radiostreaming.ert.gr/ert-<city>` (Chania, Heraklion, Patras, Pyrgos, Volos, Larisa, Kavala, Komotini, Orestiada, Serres, Ioannina, Kerkyra, Zakynthos, Rodos, Kalamata, Tripoli, Kozani, Florina), all 200/audio-mpeg, frequencies read from radiomap.eu play-`<title>`. 17 local private stations fill regions ERT does not reach, primarily from onradio.gr (its `/player/?id=N` page exposes the stream in `var stream = { mp3: … }`; the WP REST API is unavailable) and radiomap.eu play pages.
+
+Research rules honoured: HTTP-only, AM, DAB/DAB+ and internet-only stations excluded; multi-frequency ERT entries (Komotini 91.2+98.1, Zakynthos 93.2+95.2, Rodos 92.7–93.1) stored as multiple `frequencies[]` rows of one station, not duplicated programmes; Kiss FM Volos 98.8 kept distinct from Athens Kiss FM 92.9.
+
+### Known gaps and honest nulls
+
+ERT3/Thessaloniki has no working stream — every `radiostreaming.ert.gr/ert3*` variant 404s and radiomap play pages are JS-only, so Central Macedonia is covered by Serres + Katerini only. ERT Heraklion's exact FM value is unconfirmed (radiomap page is legacy HTML4, ert.gr 404s) → `frequencyMHz: null` rather than a guess; its stream is verified. Lesvos and Chios (North Aegean) are HTTP-only or unreachable, so North Aegean is covered by Samos alone. 23 exclusions with reasons are logged in `data/research/greece.json`.
+
+### Verification (R3.10, expanded)
+
+`tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `greece-Chip16p9.js` (50.14 kB / 5.28 kB gzip) split off as a lazy chunk. Catalogue and research summary cross-checked by script (station/type/frequency/region/city/exclusion counts agree). Not committed — working tree holds the change awaiting review.
