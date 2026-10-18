@@ -1,0 +1,284 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "country": {
+  "id": "albania",
+  "name": "Shqipëria",
+  "code": "AL",
+  "timeZone": "Europe/Tirane"
+ },
+ "stations": [
+  {
+   "id": "rtsh1",
+   "name": "Radio Tirana 1",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-1/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotirana1",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Tirana 1) — 18.10.2026.",
+     "Поток stream.rtsh.al/radiotirana1 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "FM-частота подтверждается регулятором AMA (ama.gov.al), но точное значение из доступных источников не извлечено (реестр AMA загружается динамически)."
+   }
+  },
+  {
+   "id": "rtsh2",
+   "name": "Radio Tirana 2",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "youth"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-2/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotirana2",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Tirana 2) — 18.10.2026.",
+     "Поток stream.rtsh.al/radiotirana2 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
+   }
+  },
+  {
+   "id": "rtsh3",
+   "name": "Radio Tirana 3",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "albanian"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-3/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotirana3",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Tirana 3) — 18.10.2026.",
+     "Поток stream.rtsh.al/radiotirana3 подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
+   }
+  },
+  {
+   "id": "rtshklasik",
+   "name": "Radio Tirana Klasik",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "classical"
+   ],
+   "frequencyMHz": 101.2,
+   "frequencies": [
+    {
+     "locality": "Tiranë",
+     "region": "Tiranë",
+     "mhz": 101.2
+    }
+   ],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-klasik/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotiranaklasik1",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": null,
+    "sources": [
+     "Официальный сайт rtsh.al + en.wikipedia.org (Radio Tirana Klasik broadcasting in Tirana at 101.2 MHz) — 18.10.2026.",
+     "Поток stream.rtsh.al/radiotiranaklasik1 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "rtshfemije",
+   "name": "Radio Tirana Fëmijë",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "children"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-tirana-femije/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/radiotiranafemije",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Tirana Fëmijë) — 18.10.2026.",
+     "Поток stream.rtsh.al/radiotiranafemije подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
+   }
+  },
+  {
+   "id": "rtshinternacional",
+   "name": "Radio Tirana Internacional",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "international"
+   ],
+   "frequencyMHz": null,
+   "frequencies": [],
+   "website": "https://rtsh.al/radio/kanale/radio-internacional/",
+   "streams": [
+    {
+     "url": "https://stream.rtsh.al/rti",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (Radio Internacional) — 18.10.2026.",
+     "Поток stream.rtsh.al/rti подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Международная служба RTSH (вещание на нескольких языках). FM-частота подтверждается регулятором AMA, но точное значение из доступных источников не извлечено."
+   }
+  }
+ ],
+ "nationwide": [
+  "rtsh1",
+  "rtsh2",
+  "rtsh3",
+  "rtshfemije",
+  "rtshinternacional"
+ ],
+ "regions": [
+  {
+   "id": "tiranë",
+   "name": "Tiranë",
+   "stations": [
+    "rtshklasik"
+   ],
+   "cities": [
+    "tiranë"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "tiranë",
+   "name": "Tiranë",
+   "regionId": "tiranë",
+   "stations": [
+    "rtshklasik"
+   ]
+  }
+ ]
+}

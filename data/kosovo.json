@@ -1,0 +1,602 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "country": {
+  "id": "kosovo",
+  "name": "Kosova",
+  "code": "XK",
+  "timeZone": "Europe/Belgrade"
+ },
+ "stations": [
+  {
+   "id": "rtkkosova1",
+   "name": "RTK Radio Kosova 1",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 95.7,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 95.7
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 91.9
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 99.2
+    },
+    {
+     "locality": "Prizren",
+     "region": "Prizren",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Gjakova",
+     "region": "Gjakova",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Peja",
+     "region": "Peja",
+     "mhz": 88.9
+    },
+    {
+     "locality": "Gjilan",
+     "region": "Gjilan",
+     "mhz": 88.5
+    }
+   ],
+   "website": "https://rtsh.al/radio/kanale/radio-kosova-1/",
+   "streams": [
+    {
+     "url": "https://gjirafa-video-live.gjirafa.net/gjvideo-radio/radio-kosova-1/tracks-v1a1/mono.ts.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, HLS-плейлист (mono.ts.m3u8)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (RTK Radio Kosova 1) — 18.10.2026.",
+     "Поток gjirafa-video-live.gjirafa.net (HLS) подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть RTK."
+   }
+  },
+  {
+   "id": "rtkkosova2",
+   "name": "RTK Radio Kosova 2",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "music",
+    "youth"
+   ],
+   "frequencyMHz": 97.7,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 97.7
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 93.3
+    },
+    {
+     "locality": "Mitrovica",
+     "region": "Mitrovica",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Prizren",
+     "region": "Prizren",
+     "mhz": 92.4
+    },
+    {
+     "locality": "Gjakova",
+     "region": "Gjakova",
+     "mhz": 92.4
+    },
+    {
+     "locality": "Peja",
+     "region": "Peja",
+     "mhz": 92.4
+    },
+    {
+     "locality": "Gjilan",
+     "region": "Gjilan",
+     "mhz": 90.5
+    }
+   ],
+   "website": "https://rtsh.al/radio/kanale/radio-kosova-2/",
+   "streams": [
+    {
+     "url": "https://gjirafa-video-live.gjirafa.net/gjvideo-radio/radio-kosova-2/tracks-v1a1/mono.ts.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rtsh.al (RTK Radio Kosova 2) — 18.10.2026.",
+     "Поток gjirafa-video-live.gjirafa.net (HLS) подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть RTK."
+   }
+  },
+  {
+   "id": "klankosova",
+   "name": "Klan Kosova FM",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 95.2,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Deçan",
+     "region": "Gjakova",
+     "mhz": 90.8
+    }
+   ],
+   "website": "https://klankosova.tv/klan-kosova-fm/",
+   "streams": [
+    {
+     "url": "https://s4.radio.co/sd1d1904dc/listen",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт klankosova.tv — 18.10.2026.",
+     "Поток s4.radio.co/sd1d1904dc/listen подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Klan Kosova."
+   }
+  },
+  {
+   "id": "radiokfor",
+   "name": "Radio KFOR",
+   "type": "nationwide",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 90.2,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 90.2
+    },
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 98.2
+    },
+    {
+     "locality": "Mitrovica",
+     "region": "Mitrovica",
+     "mhz": 104.2
+    },
+    {
+     "locality": "Leposaviq",
+     "region": "Mitrovica",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Prizren",
+     "region": "Prizren",
+     "mhz": 93.4
+    },
+    {
+     "locality": "Peja",
+     "region": "Peja",
+     "mhz": 93.4
+    },
+    {
+     "locality": "Gjakova",
+     "region": "Gjakova",
+     "mhz": 93.4
+    },
+    {
+     "locality": "Gjilan",
+     "region": "Gjilan",
+     "mhz": 104.3
+    },
+    {
+     "locality": "Kaçanik",
+     "region": "Ferizaj",
+     "mhz": 97
+    }
+   ],
+   "website": "https://radiokfor.com/",
+   "streams": [
+    {
+     "url": "https://radiokfor.com/1/proxy.php",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radiokfor.com — 18.10.2026.",
+     "Поток radiokfor.com/1/proxy.php подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Radio KFOR."
+   }
+  },
+  {
+   "id": "radiokosovaelire",
+   "name": "Radio Kosova e Lirë",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 94.2,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 94.2
+    }
+   ],
+   "website": "https://www.radiokosovaelire.com/",
+   "streams": [
+    {
+     "url": "https://radiokos.radioca.st/",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radiokosovaelire.com — 18.10.2026.",
+     "Поток radiokos.radioca.st подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "urbanfm",
+   "name": "Urban FM",
+   "type": "regional",
+   "language": "shqip",
+   "genres": [
+    "alternative"
+   ],
+   "frequencyMHz": 103.5,
+   "frequencies": [
+    {
+     "locality": "Ferizaj",
+     "region": "Ferizaj",
+     "mhz": 103.5
+    },
+    {
+     "locality": "Prizren",
+     "region": "Prizren",
+     "mhz": 105.5
+    }
+   ],
+   "website": "https://radiourban.fm/",
+   "streams": [
+    {
+     "url": "https://radio.itprishtina.com/urbanfm.ogg",
+     "role": "primary",
+     "format": "ogg",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg (ogg)."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radiourban.fm — 18.10.2026.",
+     "Поток radio.itprishtina.com/urbanfm.ogg подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "glamradio",
+   "name": "Glam Radio",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 88.6,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 88.6
+    }
+   ],
+   "website": "https://glamradio.fm/",
+   "streams": [
+    {
+     "url": "https://stream.glamradio.fm:8443/glamradio",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт glamradio.fm — 18.10.2026.",
+     "Поток stream.glamradio.fm:8443/glamradio подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "radioplus",
+   "name": "Radio Plus",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 102.2,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 102.2
+    }
+   ],
+   "website": "https://www.radioplus.fm/",
+   "streams": [
+    {
+     "url": "https://cast2.my-control-panel.com/proxy/radiopl1/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioplus.fm — 18.10.2026.",
+     "Поток cast2.my-control-panel.com/proxy/radiopl1/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  },
+  {
+   "id": "radioprishtina",
+   "name": "Radio Prishtina",
+   "type": "local",
+   "language": "shqip",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 89.8,
+   "frequencies": [
+    {
+     "locality": "Prishtina",
+     "region": "Prishtina",
+     "mhz": 89.8
+    }
+   ],
+   "website": "https://www.radioprishtina.com/",
+   "streams": [
+    {
+     "url": "https://stream.radio.co/sbe73908d2/listen",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radioprishtina.com — 18.10.2026.",
+     "Поток stream.radio.co/sbe73908d2/listen подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": ""
+   }
+  }
+ ],
+ "nationwide": [
+  "rtkkosova1",
+  "rtkkosova2",
+  "klankosova",
+  "radiokfor"
+ ],
+ "regions": [
+  {
+   "id": "prishtina",
+   "name": "Prishtina",
+   "stations": [
+    "radiokosovaelire",
+    "glamradio",
+    "radioplus",
+    "radioprishtina"
+   ],
+   "cities": [
+    "prishtina"
+   ]
+  },
+  {
+   "id": "ferizaj",
+   "name": "Ferizaj",
+   "stations": [
+    "urbanfm"
+   ],
+   "cities": [
+    "ferizaj"
+   ]
+  },
+  {
+   "id": "prizren",
+   "name": "Prizren",
+   "stations": [
+    "urbanfm"
+   ],
+   "cities": [
+    "prizren"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "prishtina",
+   "name": "Prishtina",
+   "regionId": "prishtina",
+   "stations": [
+    "radiokosovaelire",
+    "glamradio",
+    "radioplus",
+    "radioprishtina"
+   ]
+  },
+  {
+   "id": "ferizaj",
+   "name": "Ferizaj",
+   "regionId": "ferizaj",
+   "stations": [
+    "urbanfm"
+   ]
+  },
+  {
+   "id": "prizren",
+   "name": "Prizren",
+   "regionId": "prizren",
+   "stations": [
+    "urbanfm"
+   ]
+  }
+ ]
+}

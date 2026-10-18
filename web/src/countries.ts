@@ -23,6 +23,9 @@ export const COUNTRY_ENDONYMS: Readonly<Record<string, string>> = {
   romania: 'România',
   greece: 'Ελλάδα',
   latvia: 'Latvija',
+  lithuania: 'Lietuva',
+  albania: 'Shqipëria',
+  kosovo: 'Kosova',
 };
 
 /**

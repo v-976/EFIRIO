@@ -1,0 +1,34 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "note": "Исследовательский файл R3.9 — Kosova (FM). Источники: radiomap.eu/ks (стримы и частоты по городам), en.wikipedia.org/wiki/List_of_radio_stations_in_Kosovo (частоты), imc-ks.org (регулятор KPM, реестр лицензиатов). Потоки проверены из Финляндии 18.10.2026.",
+ "summary": {
+  "publishedTerrestrial": 9,
+  "publishedInternet": 0,
+  "excluded": 6,
+  "typeCounts": { "nationwide": 4, "regional": 2, "local": 3 },
+  "frequencyRows": 27,
+  "bands": { "FM": 27, "AM": 0 },
+  "streams": { "total": 9, "https": 9, "aac": 0, "mp3": 7, "hls": 2, "ogg": 1 },
+  "regions": 3,
+  "cities": 3
+ },
+ "sources": [
+  "radiomap.eu/ks/play/* — встроенный плеер даёт HTTPS-потоки и частоты по городам.",
+  "en.wikipedia.org/wiki/List_of_radio_stations_in_Kosovo — частоты FM по городам.",
+  "imc-ks.org — реестр лицензированных вещателей KPM (Independent Media Commission)."
+ ],
+ "frequencyEncoding": "Частоты FM хранятся в MHz. band не задаётся (по умолчанию FM).",
+ "nowPlaying": "Все 9 записей: metadata.type 'none', url null, historyAvailable false.",
+ "curation": "Только FM. Internet-only, AM, DAB исключены. Национальные: RTK Radio Kosova 1/2, Klan Kosova FM, Radio KFOR. Региональные: Radio Kosova e Lirë, Urban FM. Локальные: Glam Radio, Radio Plus, Radio Prishtina.",
+ "verifiedVariants": [],
+ "excluded": [
+  { "id": "rtv21", "name": "Radio 21", "reason": "stream", "details": "FM-станция (Prishtina 100.2/102.8 MHz), но подтверждённого HTTPS-потока нет (radiomap.eu даёт только ссылку на rtv21.tv)." },
+  { "id": "dukagjini", "name": "Radio Dukagjini", "reason": "http-only", "details": "Поток только HTTP (http://s6.voscast.com:8824); HTTPS-маунта нет." },
+  { "id": "capitalfm", "name": "Capital FM (92.1)", "reason": "http-only", "details": "Поток только HTTP (http://cfm.albaservers.com:8010); HTTPS-маунта нет." },
+  { "id": "valarinore", "name": "Radio Vala Rinore", "reason": "stream", "details": "FM-станция (Prishtina 94.7 MHz), но HTTPS-поток (rcast.net/stream/61253) возвращает 404 из Финляндии 18.10.2026." },
+  { "id": "paperradio", "name": "Paper Radio", "reason": "stream", "details": "FM-станция (Prishtina 91.1 MHz), но HTTPS-поток (paper2020.radioca.st/stream) недоступен из Финляндии 18.10.2026." },
+  { "id": "radiollapi", "name": "Radio Llapi", "reason": "http-only", "details": "Поток только HTTP (http://radio.1dhe1.com:8555); HTTPS-маунта нет." },
+  { "id": "local-stations", "name": "Radio Besa, Radio Dardania, Radio Prizreni, Radio Omega 3, Radio Balkan, Radio Romano Avazo, Radio Helix, Radio Peja, Radio Fontana, Radio Drenica, Radio K, Radio Energji, Radio Mega Vox, Radio Rinia, Radio Star, Radio Victoria, Radio Mitrovica, Radio Kontakt Plus, Radio Kiss, Radio Ylberi, Radio Globi, Radio Vizioni, Radio Llapi (excl.), Radio R, Radio Elit, Radio Herc, Radio Zëri i Shtimes, Radio Iliria, Radio Vala 2000, Radio Maria Kosovë, Radio Drenasi, Radio 24, Radio Index, Radio Kamenica, Radio Premiera, Radio Bubamara, Radio Impuls, Radio Mir, Radio Lešak, Radio Astra, Radio Malisheva, Radio Start, Radio Bambus, Radio Klokot, Radio Alba, Radio Vitez, Radio Zëri i Pozheranit, Radio Bum, Radio Herc, Radio Vicianum, Radio Kolašin, Radio M, Radio AS, Radio Kosovska Mitrovica, Top Iliria Radio, Radio M BM, Radio Borzani, Radio Spektar, Radio Antenna, Radio KIM, Radio AS DB, Radio SHARRI, Radio Gora Dragaš, Radio Ferizaj, Radio Festina, Radio Furtuna, Radio Dodona, Radio Goraždevac, Radio Fontana, Radio Elit, Radio Hayat, Radio Herc, Radio Vitez, Radio Zëri i Shtimes, Radio Iliria, Radio Vizioni, Radio Vicianum, Radio Kolašin, Radio M, Radio AS, Radio Kosovska Mitrovica, Radio Klokot, Radio Bambus, Radio Bum, Radio Vitez, Radio Zëri i Pozheranit", "reason": "stream", "details": "FM-станции (по en.wikipedia), но подтверждённого HTTPS-потока нет (нет в radiomap.eu с HTTPS-маунтом)." }
+ ]
+}

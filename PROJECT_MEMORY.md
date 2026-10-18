@@ -445,3 +445,45 @@ Known limitations recorded, not hidden: HLS playback works in this Electron buil
 ### Verification (R3.6)
 
 `tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `latvia-t__Kl33l.js` (20.26 kB / 2.51 kB gzip) split off as a lazy chunk. Not committed — working tree holds the change awaiting review.
+
+## R3.7: Lietuva (Lietuva, 2026-10-18)
+
+### Decision: Lithuania is the R3.6 pattern — one `lithuania` scope, endonym `Lietuva`, FM only
+
+`Scope` gains `lithuania`. Terrestrial Lithuania lives in `data/lithuania.json` (registry + `nationwide[]` + `regions[]` + `cities[]`); no internet-only catalogue (FM only). Loads on demand: 29.28 kB raw / 3.21 kB gzip. `Lietuva` is the endonym from `web/src/countries.ts`. Lithuanian geography persists on `efirio.lithuaniaRegionId/CityId`.
+
+### Decision: 23 FM stations with verified HTTPS streams
+
+11 nationwide (LRT Radijas/Klasika/Opus, M-1, Lietus, Power Hit Radio, Relax FM, Radiocentras, Žinių radijas, GOLD FM, Marijos radijas), 9 regional, 3 local — across 6 regions (Vilniaus, Kauno, Klaipėdos, Šiaulių, Panevėžio, Alytaus) and 7 cities. 23 working HTTPS streams (3 HLS, 18 MP3, 2 AAC). All `metadata.type: 'none'`. Stream sources: radijas.eu embedded player + official sites. 7 exclusions (Beveik Radijas internet-only, M-1 Plius/M-1 Dance/Laluna/XXL FM no verified stream, Pūkas HTTP-only, small regional stations no stream) documented in `data/research/lithuania.json`.
+
+### Verification (R3.7)
+
+`tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `lithuania-CcrJxJ55.js` (29.28 kB / 3.21 kB gzip) split off as a lazy chunk. Not committed — working tree holds the change awaiting review.
+
+## R3.8: Shqipëria (Shqipëria, 2026-10-18)
+
+### Decision: Albania is the R3.7 pattern — one `albania` scope, endonym `Shqipëria`, FM only
+
+`Scope` gains `albania`. Terrestrial Albania lives in `data/albania.json` (registry + `nationwide[]` + `regions[]` + `cities[]`); no internet-only catalogue (FM only). Loads on demand: 7.12 kB raw / 1.29 kB gzip. `Shqipëria` is the endonym from `web/src/countries.ts`. Albanian geography persists on `efirio.albaniaRegionId/CityId`.
+
+### Decision: 6 RTSH channels with verified HTTPS streams; frequencies mostly unconfirmed
+
+6 FM stations: 5 nationwide (Radio Tirana 1/2/3, Fëmijë, Internacional) + 1 local (Radio Tirana Klasik, 101.2 MHz in Tiranë) — across 1 region (Tiranë) and 1 city (Tiranë). 6 working HTTPS streams (3 MP3, 3 AAC). All `metadata.type: 'none'`. Stream sources: rtsh.al embedded player (data-radio-url). Only Radio Tirana Klasik has a confirmed FM frequency (101.2 MHz, en.wikipedia). Other RTSH channels broadcast on FM (confirmed by regulator AMA) but exact frequency values were not machine-extractable from the AMA registry (dynamically loaded table) — frequencyMHz: null, frequencies: []. 7 exclusions documented in `data/research/albania.json` (Radio Tirana Jazz digital-only; Kukësi/Shkodra/Korça/Gjirokastra no HTTPS stream; Top Albania Radio / Club FM / Radio Klan / ~50 local stations no verified HTTPS stream).
+
+### Verification (R3.8)
+
+`tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `albania-DeOTLTTN.js` (7.12 kB / 1.29 kB gzip) split off as a lazy chunk. Not committed — working tree holds the change awaiting review.
+
+## R3.9: Kosova (Kosova, 2026-10-18)
+
+### Decision: Kosovo is the R3.8 pattern — one `kosovo` scope, endonym `Kosova`, FM only
+
+`Scope` gains `kosovo`. Terrestrial Kosovo lives in `data/kosovo.json` (registry + `nationwide[]` + `regions[]` + `cities[]`); no internet-only catalogue (FM only). Loads on demand: 10.70 kB raw / 1.69 kB gzip. `Kosova` is the endonym from `web/src/countries.ts`. Kosovo geography persists on `efirio.kosovoRegionId/CityId`.
+
+### Decision: 9 FM stations with verified HTTPS streams
+
+4 nationwide (RTK Radio Kosova 1/2, Klan Kosova FM, Radio KFOR), 2 regional (Radio Kosova e Lirë, Urban FM), 3 local (Glam Radio, Radio Plus, Radio Prishtina) — across 3 regions (Prishtina, Ferizaj, Prizren) and 3 cities (Prishtina, Ferizaj, Prizren). 9 working HTTPS streams (2 HLS, 7 MP3, 1 OGG). All `metadata.type: 'none'`. Stream sources: radiomap.eu (play pages). Frequencies from en.wikipedia.org (List of radio stations in Kosovo) and radiomap.eu. 6 exclusions documented in `data/research/kosovo.json` (Radio 21, Dukagjini, Capital FM, Vala Rinore, Paper Radio, Radio Llapi — no verified HTTPS stream; ~50 local stations no verified HTTPS stream).
+
+### Verification (R3.9)
+
+`tsc -b` clean; `node --test` 89/89; one production build, exit 0, with `kosovo-CIo0ntj2.js` (10.70 kB / 1.69 kB gzip) split off as a lazy chunk. Not committed — working tree holds the change awaiting review.

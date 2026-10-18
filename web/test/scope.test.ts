@@ -54,8 +54,8 @@ test('the unified Internet scope keeps the previously selected country', () => {
   assert.equal(snapshot(storage), before, 'an already-migrated store must not be rewritten');
 });
 
-test('russia, finland, estonia, romania and latvia pass through untouched', () => {
-  for (const scope of ['russia', 'finland', 'estonia', 'romania', 'latvia'] as const) {
+test('russia, finland, estonia, romania, latvia, lithuania, albania and kosovo pass through untouched', () => {
+  for (const scope of ['russia', 'finland', 'estonia', 'romania', 'latvia', 'lithuania', 'albania', 'kosovo'] as const) {
     const storage = memoryStorage([[SCOPE_KEY, scope], [INTERNET_COUNTRY_KEY, 'estonia']]);
     const before = snapshot(storage);
     assert.deepEqual(bootScope(storage), { scope, internetCountryId: 'estonia' });

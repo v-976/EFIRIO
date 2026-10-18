@@ -1,0 +1,34 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "note": "Исследовательский файл R3.8 — Shqipëria (FM). Источники: rtsh.al (официальный сайт RTSH, встроенный плеер даёт HTTPS-потоки), en.wikipedia.org (Radio Tirana Klasik 101.2 MHz), AMA (ama.gov.al — реестр лицензиатов, загружается динамически, частоты из реестра машинно не извлечены). Потоки проверены из Финляндии 18.10.2026.",
+ "summary": {
+  "publishedTerrestrial": 6,
+  "publishedInternet": 0,
+  "excluded": 7,
+  "typeCounts": { "nationwide": 5, "regional": 0, "local": 1 },
+  "frequencyRows": 1,
+  "bands": { "FM": 1, "AM": 0 },
+  "streams": { "total": 6, "https": 6, "aac": 3, "mp3": 3, "hls": 0 },
+  "regions": 1,
+  "cities": 1
+ },
+ "sources": [
+  "rtsh.al/radio/kanale/* — встроенный плеер (data-radio-url) даёт HTTPS-потоки RTSH.",
+  "en.wikipedia.org/wiki/RTSH — Radio Tirana Klasik broadcasting in Tirana at 101.2 MHz.",
+  "ama.gov.al/ofruesit-e-sherbimit-mediatik-audio — официальный реестр лицензиатов AMA (52 вещателя, динамическая таблица, частоты машинно не извлечены)."
+ ],
+ "frequencyEncoding": "Частоты FM хранятся в MHz. Только Radio Tirana Klasik имеет подтверждённую частоту (101.2 MHz, Tiranë). Остальные RTSH-каналы вещают на FM (подтверждено регулятором AMA), но точное значение частоты из доступных источников не извлечено — frequencyMHz: null, frequencies: [].",
+ "nowPlaying": "Все 6 записей: metadata.type 'none', url null, historyAvailable false.",
+ "curation": "Только FM. Internet-only, AM, DAB исключены. RTSH-каналы с подтверждённым HTTPS-потоком: Radio Tirana 1/2/3, Klasik, Fëmijë, Internacional. Radio Tirana Jazz — digital-only (не FM), исключён. Региональные RTSH (Kukësi, Shkodra, Korça, Gjirokastra) — нет подтверждённого HTTPS-потока. Коммерческие станции (Top Albania Radio, Club FM, Radio Klan и др.) — нет подтверждённого HTTPS-потока.",
+ "verifiedVariants": [],
+ "excluded": [
+  { "id": "rtshjazz", "name": "Radio Tirana Jazz", "reason": "digital-only", "details": "Вещает только в цифровом формате, не FM (по en.wikipedia)." },
+  { "id": "rtshkukesi", "name": "Radio Kukësi", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет (stream.rtsh.al/radiokukesi → 404)." },
+  { "id": "rtshshkodra", "name": "Radio Shkodra", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
+  { "id": "rtshkorca", "name": "Radio Korça", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
+  { "id": "rtshgjirokastra", "name": "Radio Gjirokastra", "reason": "stream", "details": "FM-станция RTSH, но подтверждённого HTTPS-потока нет." },
+  { "id": "topalbaniaradio", "name": "Top Albania Radio", "reason": "stream", "details": "FM-станция (national frequency per en.wikipedia), но подтверждённого HTTPS-потока нет." },
+  { "id": "commercial-local", "name": "Club FM, Radio Klan, 7 Nord, ABC News, Albania FM, Alfa & Omega, Alpo, Alsat, Best Radio, Channel 7, City FM, City Radio Albania, Club Alsion, Durrësi, Emanuel, Eurostar, Fieri, House of Arts, Idea, In Radio 105.7, Jehona, Jeta, Jug, Kiss FM, Klea, Kontakt, Living, Logos, Love, Lushnja, Mati, Motiv, My Music, NRG, Nacional, Ora, One, Radio 1, Radio 4+, Radio 7, Radio Ime, Rash, Saranda, Scan, Sport, Star, Top Gold, Travel, Val' e Kaltër, Vintage, Vlora", "reason": "stream", "details": "FM-станции (local frequency per en.wikipedia), но подтверждённого HTTPS-потока нет." }
+ ]
+}

@@ -12,6 +12,9 @@ const APPROVED: Record<string, string> = {
   romania: 'România',
   greece: 'Ελλάδα',
   latvia: 'Latvija',
+  lithuania: 'Lietuva',
+  albania: 'Shqipëria',
+  kosovo: 'Kosova',
 };
 
 test('the endonym reference holds exactly the approved native names', () => {

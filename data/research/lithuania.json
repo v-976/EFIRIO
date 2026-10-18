@@ -1,0 +1,34 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "note": "Исследовательский файл R3.7 — Lietuva (FM). Источники: radijas.eu (агрегатор/плеер, использован для обнаружения и сверки потоков/частот), en.wikipedia.org (список станций и частот по городам), официальные сайты вещателей. Потоки проверены из Финляндии 18.10.2026.",
+ "summary": {
+  "publishedTerrestrial": 23,
+  "publishedInternet": 0,
+  "excluded": 7,
+  "typeCounts": { "nationwide": 11, "regional": 9, "local": 3 },
+  "frequencyRows": 95,
+  "bands": { "FM": 95, "AM": 0 },
+  "streams": { "total": 23, "https": 23, "aac": 2, "mp3": 18, "hls": 3 },
+  "regions": 6,
+  "cities": 7
+ },
+ "sources": [
+  "radijas.eu/stotis/* — встроенный плеер даёт HTTPS-потоки и частоты; использован для обнаружения и сверки.",
+  "en.wikipedia.org/wiki/List_of_radio_stations_in_Lithuania — частоты FM по городам/регионам.",
+  "Официальные сайты станций (m-1.lt, lietus.lt, lrt.lt, radiocentras.lt, ziniuradijas.lt, goldfm.lt, relaxfm.lt, zipfm.lt, rockfm.lt, ehr.lt, radio3.lt, radiofiesta.lt, fm99.lt, radijaskelyje.lt, marijosradijas.lt)."
+ ],
+ "frequencyEncoding": "Частоты FM хранятся в MHz (band не задаётся, по умолчанию FM). AM/DAB не включались (этап только FM).",
+ "nowPlaying": "Все 23 записи: metadata.type 'none', url null, historyAvailable false — подтверждённого CORS-эндпоинта метаданных нет.",
+ "curation": "Только FM. Internet-only, AM и DAB/DAB+ исключены. Национальные сети с подтверждённым HTTPS-потоком и частотами: LRT Radijas/Klasika/Opus, M-1, Lietus, Power Hit Radio, Relax FM, Radiocentras, Žinių radijas, GOLD FM, Marijos radijas. Региональные/локальные — по частотам из en.wikipedia.",
+ "verifiedVariants": [],
+ "excluded": [
+  { "id": "beveikradijas", "name": "Beveik Radijas", "reason": "no-fm-frequency", "details": "Поток HTTPS есть (halo.streamerr.co), но подтверждённой FM-частоты нет — станция internet-only. Исключена (только FM)." },
+  { "id": "m1plius", "name": "M-1 Plius", "reason": "stream", "details": "Частоты FM есть (Vilnius 106.2 и др.), но подтверждённого публичного HTTPS-потока нет (radijas.eu не даёт отдельный маунт)." },
+  { "id": "m1dance", "name": "M-1 Dance", "reason": "stream", "details": "Частоты FM есть (Klaipėda 100.8), но подтверждённого публичного HTTPS-потока нет." },
+  { "id": "pukas", "name": "Pūkas", "reason": "http-only", "details": "Поток только HTTP (http://212.95.45.82:8000/stream); HTTPS-маунта нет." },
+  { "id": "laluna", "name": "Laluna", "reason": "stream", "details": "Частоты FM есть (Klaipėda 94.9), но подтверждённого публичного HTTPS-потока нет." },
+  { "id": "xxlfm", "name": "XXL FM", "reason": "stream", "details": "Частоты FM есть (Klaipėda/Šiauliai/Plungė/Telšiai/Tauragė), но подтверждённого публичного HTTPS-потока нет." },
+  { "id": "regional-small", "name": "RS2, Radijo Klubas, Saulės Radijas, Pulsas, Utenos Radijas, Tauragės Radijas, Mažeikiai FM, Mažeikių aidas, Kapsai, Mano FM, Tau Radijas, Sol FM, Baltupių radijas, Vilnius FM, Vaikų Radijas, Start FM, Jazz FM, XFM, Radio Znad Wilii, BBC World Service", "reason": "stream", "details": "Частоты FM есть, но подтверждённого публичного HTTPS-потока нет (станции отсутствуют в radijas.eu)." }
+ ]
+}

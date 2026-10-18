@@ -1,0 +1,1699 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-10-18",
+ "country": {
+  "id": "lithuania",
+  "name": "Lietuva",
+  "code": "LT",
+  "timeZone": "Europe/Vilnius"
+ },
+ "stations": [
+  {
+   "id": "lrtradijas",
+   "name": "LRT Radijas",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 89,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 89
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 96.5
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 88.6
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 101
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 100.9
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 102.5
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 103.8
+    }
+   ],
+   "website": "https://www.lrt.lt/radijas",
+   "streams": [
+    {
+     "url": "https://stream-live.lrt.lt/radio_radijas/lrt_radijas.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт lrt.lt — 18.10.2026.",
+     "Поток stream-live.lrt.lt/radio_radijas/lrt_radijas.m3u8 подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть LRT."
+   }
+  },
+  {
+   "id": "lrtklasika",
+   "name": "LRT Klasika",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "classical"
+   ],
+   "frequencyMHz": 105.1,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 105.1
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 99.8
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 98.2
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 103.4
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 102.9
+    }
+   ],
+   "website": "https://www.lrt.lt/radijas/klasika",
+   "streams": [
+    {
+     "url": "https://stream-live.lrt.lt/radio_klasika/lrt_klasika.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт lrt.lt — 18.10.2026.",
+     "Поток stream-live.lrt.lt/radio_klasika/lrt_klasika.m3u8 подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть LRT (классика)."
+   }
+  },
+  {
+   "id": "lrtopus",
+   "name": "LRT Opus",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "alternative",
+    "electronic"
+   ],
+   "frequencyMHz": 98.3,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 98.3
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 96.1
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 91.8
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 95.2
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 90.3
+    }
+   ],
+   "website": "https://www.lrt.lt/radijas/opus",
+   "streams": [
+    {
+     "url": "https://stream-live.lrt.lt/radio_opus/lrt_opus.m3u8",
+     "role": "primary",
+     "format": "hls",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, HLS-плейлист."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт lrt.lt — 18.10.2026.",
+     "Поток stream-live.lrt.lt/radio_opus/lrt_opus.m3u8 подтверждён 18.10.2026 (200, audio/mpegurl)."
+    ],
+    "notes": "Национальная сеть LRT (альтернатива)."
+   }
+  },
+  {
+   "id": "m1",
+   "name": "M-1",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 106.8,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 106.8
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 91.5
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 103.5
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 102.4
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 104.2
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 98.8
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 101.3
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 99.2
+    },
+    {
+     "locality": "Tauragė",
+     "region": "Tauragės",
+     "mhz": 97.6
+    },
+    {
+     "locality": "Telšiai",
+     "region": "Telšių",
+     "mhz": 96.3
+    }
+   ],
+   "website": "https://m-1.lt/",
+   "streams": [
+    {
+     "url": "https://stream.m-1.fm/m1/mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт m-1.lt — 18.10.2026.",
+     "Поток stream.m-1.fm/m1/mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть M-1."
+   }
+  },
+  {
+   "id": "lietus",
+   "name": "Lietus",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "pop",
+    "lithuanian"
+   ],
+   "frequencyMHz": 103.1,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 103.1
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 93.2
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 98.4
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 94.6
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 105.3
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 100.5
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 99.7
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 101.1
+    }
+   ],
+   "website": "https://lietus.lt/",
+   "streams": [
+    {
+     "url": "https://stream.m-1.fm/lietus/mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт lietus.lt — 18.10.2026.",
+     "Поток stream.m-1.fm/lietus/mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть (литовская поп-музыка)."
+   }
+  },
+  {
+   "id": "powerhit",
+   "name": "Power Hit Radio",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "dance",
+    "pop"
+   ],
+   "frequencyMHz": 95.9,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 95.9
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 107.1
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 99.3
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 104.8
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 93.7
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 100.1
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 95.5
+    },
+    {
+     "locality": "Tauragė",
+     "region": "Tauragės",
+     "mhz": 92.3
+    }
+   ],
+   "website": "https://powerhitradio.lt/",
+   "streams": [
+    {
+     "url": "https://stream.rcs.revma.com/f31w7e0fveuvv",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт powerhitradio.lt — 18.10.2026.",
+     "Поток stream.rcs.revma.com/f31w7e0fveuvv подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Национальная сеть Power Hit Radio."
+   }
+  },
+  {
+   "id": "relaxfm",
+   "name": "Relax FM",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "easy listening"
+   ],
+   "frequencyMHz": 96.4,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 96.4
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 101.7
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 104.3
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 93.9
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 97.2
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 95.1
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 102
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 98.2
+    },
+    {
+     "locality": "Tauragė",
+     "region": "Tauragės",
+     "mhz": 100.6
+    },
+    {
+     "locality": "Telšiai",
+     "region": "Telšių",
+     "mhz": 94.8
+    }
+   ],
+   "website": "https://relaxfm.lt/",
+   "streams": [
+    {
+     "url": "https://stream1.relaxfm.lt/relaxfm128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт relaxfm.lt — 18.10.2026.",
+     "Поток stream1.relaxfm.lt/relaxfm128.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Relax FM."
+   }
+  },
+  {
+   "id": "radiocentras",
+   "name": "Radiocentras",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 89.6,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 89.6
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 94.4
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 94.2
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 97.7
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 93.1
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 92.5
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 96.7
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 91.2
+    }
+   ],
+   "website": "https://radiocentras.lt/",
+   "streams": [
+    {
+     "url": "https://stream4.radijas.lt/rc",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radiocentras.lt — 18.10.2026.",
+     "Поток stream4.radijas.lt/rc подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Radiocentras."
+   }
+  },
+  {
+   "id": "ziniur",
+   "name": "Žinių radijas",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "news",
+    "talk"
+   ],
+   "frequencyMHz": 97.3,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 97.3
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 95.3
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 92.7
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 90.5
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 94
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 98.1
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 103.2
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 99.6
+    }
+   ],
+   "website": "https://www.ziniuradijas.lt/",
+   "streams": [
+    {
+     "url": "https://netradio.ziniur.lt/ziniur.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ziniuradijas.lt — 18.10.2026.",
+     "Поток netradio.ziniur.lt/ziniur.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Žinių radijas."
+   }
+  },
+  {
+   "id": "goldfm",
+   "name": "GOLD FM",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "retro",
+    "gold hits"
+   ],
+   "frequencyMHz": 102.6,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 102.6
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 104.9
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 99.5
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 96.9
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 101.4
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 103.7
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 98.9
+    }
+   ],
+   "website": "https://goldfm.lt/",
+   "streams": [
+    {
+     "url": "https://stream.goldfm.lt/goldfm.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт goldfm.lt — 18.10.2026.",
+     "Поток stream.goldfm.lt/goldfm.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть GOLD FM."
+   }
+  },
+  {
+   "id": "marijos",
+   "name": "Marijos radijas",
+   "type": "nationwide",
+   "language": "lietuvių",
+   "genres": [
+    "religious"
+   ],
+   "frequencyMHz": 93.1,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 93.1
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 95.7
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 90.6
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 92.1
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 96.3
+    },
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 94.5
+    },
+    {
+     "locality": "Utena",
+     "region": "Utenos",
+     "mhz": 97.9
+    },
+    {
+     "locality": "Marijampolė",
+     "region": "Marijampolės",
+     "mhz": 100.2
+    }
+   ],
+   "website": "https://marijosradijas.lt/",
+   "streams": [
+    {
+     "url": "https://marijosradijas.lt/marijosradijas.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт marijosradijas.lt — 18.10.2026.",
+     "Поток marijosradijas.lt/marijosradijas.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Национальная сеть Marijos radijas."
+   }
+  },
+  {
+   "id": "ehr",
+   "name": "European Hit Radio",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "pop",
+    "euro hits"
+   ],
+   "frequencyMHz": 99.7,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 99.7
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 100.3
+    }
+   ],
+   "website": "https://ehr.lt/",
+   "streams": [
+    {
+     "url": "https://stream.ehr.lt:8443/ehr",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт ehr.lt — 18.10.2026.",
+     "Поток stream.ehr.lt:8443/ehr подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "gerasfm",
+   "name": "Geras FM",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "pop",
+    "dance"
+   ],
+   "frequencyMHz": 101.9,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 101.9
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 91.9
+    }
+   ],
+   "website": "https://gerasfm.lt/",
+   "streams": [
+    {
+     "url": "https://stream.goldfm.lt/gerasfm.aac",
+     "role": "primary",
+     "format": "aac",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/aac."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт gerasfm.lt — 18.10.2026.",
+     "Поток stream.goldfm.lt/gerasfm.aac подтверждён 18.10.2026 (200, audio/aac)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "rockfm",
+   "name": "ROCK FM",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "rock"
+   ],
+   "frequencyMHz": 87.8,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 87.8
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 91.1
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 96.6
+    }
+   ],
+   "website": "https://rockfm.lt/",
+   "streams": [
+    {
+     "url": "https://stream1.rockfm.lt/crf128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт rockfm.lt — 18.10.2026.",
+     "Поток stream1.rockfm.lt/crf128.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "radio3",
+   "name": "Radio 3",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 88.5,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 88.5
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 105
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 94.1
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 90.1
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 99
+    }
+   ],
+   "website": "https://radio3.lt/",
+   "streams": [
+    {
+     "url": "https://stream.rcs.revma.com/8cwskd80zxcwv",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radio3.lt / tiesraide... — 18.10.2026.",
+     "Поток stream.rcs.revma.com/8cwskd80zxcwv подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "easyfm",
+   "name": "EASY FM",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "easy listening"
+   ],
+   "frequencyMHz": 101.5,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 101.5
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 99.3
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 97.4
+    }
+   ],
+   "website": "https://easyfm.lt/",
+   "streams": [
+    {
+     "url": "https://netradio.ziniur.lt/easyfm.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт easyfm.lt — 18.10.2026.",
+     "Поток netradio.ziniur.lt/easyfm.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "fiesta",
+   "name": "Radio Fiesta",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "latino"
+   ],
+   "frequencyMHz": 90.7,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 90.7
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 93.6
+    }
+   ],
+   "website": "https://radiofiesta.lt/",
+   "streams": [
+    {
+     "url": "https://stream1.radiofiesta.lt/rfs128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radiofiesta.lt — 18.10.2026.",
+     "Поток stream1.radiofiesta.lt/rfs128.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "fm99",
+   "name": "FM99",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "pop",
+    "rock"
+   ],
+   "frequencyMHz": 99,
+   "frequencies": [
+    {
+     "locality": "Alytus",
+     "region": "Alytaus",
+     "mhz": 99
+    },
+    {
+     "locality": "Druskininkai",
+     "region": "Alytaus",
+     "mhz": 97.2
+    }
+   ],
+   "website": "https://fm99.lt/",
+   "streams": [
+    {
+     "url": "https://securestream.casthost.net:8617/fm99",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт fm99.lt — 18.10.2026.",
+     "Поток securestream.casthost.net:8617/fm99 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "kelyjevilnius",
+   "name": "Radijas Kelyje Vilnius",
+   "type": "local",
+   "language": "lietuvių",
+   "genres": [
+    "traffic",
+    "pop"
+   ],
+   "frequencyMHz": 107.7,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 107.7
+    }
+   ],
+   "website": "https://radijaskelyje.lt/",
+   "streams": [
+    {
+     "url": "https://solid55.streamupsolutions.com/proxy/ugeiluxh/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radijaskelyje.lt — 18.10.2026.",
+     "Поток solid55.streamupsolutions.com/proxy/ugeiluxh/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "kelyjekaunas",
+   "name": "Radijas Kelyje Kaunas",
+   "type": "local",
+   "language": "lietuvių",
+   "genres": [
+    "traffic",
+    "pop"
+   ],
+   "frequencyMHz": 105.9,
+   "frequencies": [
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 105.9
+    }
+   ],
+   "website": "https://radijaskelyje.lt/",
+   "streams": [
+    {
+     "url": "https://solid55.streamupsolutions.com/proxy/opcubjpd/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radijaskelyje.lt — 18.10.2026.",
+     "Поток solid55.streamupsolutions.com/proxy/opcubjpd/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "kelyjeklaipeda",
+   "name": "Radijas Kelyje Klaipėda",
+   "type": "local",
+   "language": "lietuvių",
+   "genres": [
+    "traffic",
+    "pop"
+   ],
+   "frequencyMHz": 99.8,
+   "frequencies": [
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 99.8
+    }
+   ],
+   "website": "https://radijaskelyje.lt/",
+   "streams": [
+    {
+     "url": "https://solid55.streamupsolutions.com/proxy/ugeiluxh/stream",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radijaskelyje.lt — 18.10.2026.",
+     "Поток solid55.streamupsolutions.com/proxy/ugeiluxh/stream подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Kelyje Klaipėda использует тот же прокси-маунт, что и Kelyje Vilnius (по данным radijas.eu)."
+   }
+  },
+  {
+   "id": "zipfm",
+   "name": "ZIP FM",
+   "type": "regional",
+   "language": "lietuvių",
+   "genres": [
+    "dance"
+   ],
+   "frequencyMHz": 100.1,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 100.1
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 92.3
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 100.8
+    },
+    {
+     "locality": "Šiauliai",
+     "region": "Šiaulių",
+     "mhz": 98.5
+    },
+    {
+     "locality": "Panevėžys",
+     "region": "Panevėžio",
+     "mhz": 95.9
+    }
+   ],
+   "website": "https://zipfm.lt/",
+   "streams": [
+    {
+     "url": "https://stream1.zipfm.lt/zipfm128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт zipfm.lt — 18.10.2026.",
+     "Поток stream1.zipfm.lt/zipfm128.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  },
+  {
+   "id": "radior",
+   "name": "Radio R",
+   "type": "regional",
+   "language": "krievu",
+   "genres": [
+    "pop"
+   ],
+   "frequencyMHz": 105.6,
+   "frequencies": [
+    {
+     "locality": "Vilnius",
+     "region": "Vilniaus",
+     "mhz": 105.6
+    },
+    {
+     "locality": "Kaunas",
+     "region": "Kauno",
+     "mhz": 103.3
+    },
+    {
+     "locality": "Klaipėda",
+     "region": "Klaipėdos",
+     "mhz": 101.2
+    }
+   ],
+   "website": "https://radior.lt/",
+   "streams": [
+    {
+     "url": "https://stream1.relaxfm.lt/rrb128.mp3",
+     "role": "primary",
+     "format": "mp3",
+     "verifiedAt": "2026-10-18T12:00:00.000Z",
+     "availableFromFinland": true,
+     "notes": "Подтверждено из Финляндии 18.10.2026: HTTP 200, Content-Type audio/mpeg."
+    }
+   ],
+   "metadata": {
+    "type": "none",
+    "url": null,
+    "historyAvailable": false,
+    "notes": "Подтверждённого CORS-эндпоинта метаданных нет; icy-name — имя потока, не трек."
+   },
+   "logo": null,
+   "status": "active",
+   "verification": {
+    "stationVerifiedAt": "2026-10-18",
+    "frequencyVerifiedAt": "2026-10-18",
+    "sources": [
+     "Официальный сайт radior.lt — 18.10.2026.",
+     "Поток stream1.relaxfm.lt/rrb128.mp3 подтверждён 18.10.2026 (200, audio/mpeg)."
+    ],
+    "notes": "Региональная/локальная станция."
+   }
+  }
+ ],
+ "nationwide": [
+  "lrtradijas",
+  "lrtklasika",
+  "lrtopus",
+  "m1",
+  "lietus",
+  "powerhit",
+  "relaxfm",
+  "radiocentras",
+  "ziniur",
+  "goldfm",
+  "marijos"
+ ],
+ "regions": [
+  {
+   "id": "vilniaus",
+   "name": "Vilniaus",
+   "stations": [
+    "ehr",
+    "gerasfm",
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "fiesta",
+    "kelyjevilnius",
+    "zipfm",
+    "radior"
+   ],
+   "cities": [
+    "vilnius"
+   ]
+  },
+  {
+   "id": "kauno",
+   "name": "Kauno",
+   "stations": [
+    "ehr",
+    "gerasfm",
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "fiesta",
+    "kelyjekaunas",
+    "zipfm",
+    "radior"
+   ],
+   "cities": [
+    "kaunas"
+   ]
+  },
+  {
+   "id": "klaipedos",
+   "name": "Klaipėdos",
+   "stations": [
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "kelyjeklaipeda",
+    "zipfm",
+    "radior"
+   ],
+   "cities": [
+    "klaipeda"
+   ]
+  },
+  {
+   "id": "šiauliu",
+   "name": "Šiaulių",
+   "stations": [
+    "radio3",
+    "zipfm"
+   ],
+   "cities": [
+    "šiauliai"
+   ]
+  },
+  {
+   "id": "panevežio",
+   "name": "Panevėžio",
+   "stations": [
+    "radio3",
+    "zipfm"
+   ],
+   "cities": [
+    "panevežys"
+   ]
+  },
+  {
+   "id": "alytaus",
+   "name": "Alytaus",
+   "stations": [
+    "fm99"
+   ],
+   "cities": [
+    "alytus",
+    "druskininkai"
+   ]
+  }
+ ],
+ "cities": [
+  {
+   "id": "vilnius",
+   "name": "Vilnius",
+   "regionId": "vilniaus",
+   "stations": [
+    "ehr",
+    "gerasfm",
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "fiesta",
+    "kelyjevilnius",
+    "zipfm",
+    "radior"
+   ]
+  },
+  {
+   "id": "kaunas",
+   "name": "Kaunas",
+   "regionId": "kauno",
+   "stations": [
+    "ehr",
+    "gerasfm",
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "fiesta",
+    "kelyjekaunas",
+    "zipfm",
+    "radior"
+   ]
+  },
+  {
+   "id": "klaipeda",
+   "name": "Klaipėda",
+   "regionId": "klaipedos",
+   "stations": [
+    "rockfm",
+    "radio3",
+    "easyfm",
+    "kelyjeklaipeda",
+    "zipfm",
+    "radior"
+   ]
+  },
+  {
+   "id": "šiauliai",
+   "name": "Šiauliai",
+   "regionId": "šiauliu",
+   "stations": [
+    "radio3",
+    "zipfm"
+   ]
+  },
+  {
+   "id": "panevežys",
+   "name": "Panevėžys",
+   "regionId": "panevežio",
+   "stations": [
+    "radio3",
+    "zipfm"
+   ]
+  },
+  {
+   "id": "alytus",
+   "name": "Alytus",
+   "regionId": "alytaus",
+   "stations": [
+    "fm99"
+   ]
+  },
+  {
+   "id": "druskininkai",
+   "name": "Druskininkai",
+   "regionId": "alytaus",
+   "stations": [
+    "fm99"
+   ]
+  }
+ ]
+}
